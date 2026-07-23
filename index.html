@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đánh Giá Trình Độ Bậc Thợ - Vincons</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Check login immediately
+        const loggedInUser = JSON.parse(localStorage.getItem('vincons_logged_in_user'));
+        if (!loggedInUser) {
+            window.location.href = 'login.html';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">VC</div>
+            <div class="logo-text">
+                <h1>Vincons</h1>
+                <p>BCH Hạ Long Xanh</p>
+            </div>
+        </div>
+        <div class="header-nav" style="display: flex; align-items: center; gap: 15px;">
+            <span id="userInfoDisplay" style="font-size: 13px; font-weight: 700; color: var(--primary);"></span>
+            <a href="history.html" class="nav-link">📋 Lịch sử bài thi</a>
+            <button onclick="handleLogout()" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Đăng xuất</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2 class="card-title">Đăng Ký Dự Thi</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="candidateName">Họ và tên thí sinh (*)</label>
+                    <input type="text" id="candidateName" class="form-control" placeholder="Nhập họ và tên đầy đủ" required readonly style="background-color: #e9ecef; cursor: not-allowed;">
+                </div>
+                
+                <div class="form-group">
+                    <label for="candidateId">Số điện thoại / Gmail (*)</label>
+                    <input type="text" id="candidateId" class="form-control" placeholder="Nhập SĐT hoặc Gmail" required readonly style="background-color: #e9ecef; cursor: not-allowed;">
+                </div>
+
+                <div class="form-group">
+                    <label for="candidateJob">Tổ thợ / Vị trí ứng tuyển (*)</label>
+                    <select id="candidateJob" class="form-control" required>
+                        <option value="" disabled selected>-- Chọn vị trí --</option>
+                        <option value="Thợ Xây dựng (Nề)">Thợ Xây dựng (Nề)</option>
+                        <option value="Thợ Điện nước (M&E)">Thợ Điện nước (M&E)</option>
+                        <option value="Thợ Sắt cốt thép">Thợ Sắt cốt thép</option>
+                        <option value="Thợ Mộc cốp pha">Thợ Mộc cốp pha</option>
+                        <option value="Kỹ sư Giám sát (T7, T8)">Kỹ sư Giám sát (T7, T8)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="examType">Phần thi đăng ký (*)</label>
+                    <select id="examType" class="form-control" required>
+                        <option value="" disabled selected>-- Chọn phần thi --</option>
+                        <option value="Lý thuyết">Thi Lý thuyết (Thời gian: 30 phút)</option>
+                        <option value="Thực hành">Thi Thực hành (Thời gian: 60 phút)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-accent btn-block" style="margin-top: 10px;">Bắt đầu làm bài</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Vincons - Ban Chỉ Huy Dự Án Hạ Long Xanh. All rights reserved.
+    </footer>
+
+    <script>
+        // Display user info and populate fields
+        if (loggedInUser) {
+            const roleText = loggedInUser.role === 'admin' ? 'Giám thị' : 'Thí sinh';
+            document.getElementById('userInfoDisplay').textContent = `${loggedInUser.name} (${roleText})`;
+            document.getElementById('candidateName').value = loggedInUser.name;
+            document.getElementById('candidateId').value = loggedInUser.username;
+        }
+
+        function handleLogout() {
+            if (confirm('Bạn có chắc chắn muốn đăng xuất tài khoản?')) {
+                localStorage.removeItem('vincons_logged_in_user');
+                localStorage.removeItem('vincons_candidate');
+                localStorage.removeItem('vincons_answers');
+                localStorage.removeItem('vincons_time_left');
+                localStorage.removeItem('vincons_active_questions');
+                window.location.href = 'login.html';
+            }
+        }
+
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('candidateName').value.trim();
+            const id = document.getElementById('candidateId').value.trim();
+            const job = document.getElementById('candidateJob').value;
+            const examType = document.getElementById('examType').value;
+            
+            if (!name || !id || !job || !examType) {
+                alert('Vui lòng điền đầy đủ các thông tin bắt buộc.');
+                return;
+            }
+            
+            // Save candidate info to localStorage
+            const candidateInfo = {
+                name: name,
+                id: id,
+                job: job,
+                examType: examType,
+                startTime: new Date().getTime()
+            };
+            
+            localStorage.setItem('vincons_candidate', JSON.stringify(candidateInfo));
+            
+            // Redirect to exam page
+            window.location.href = 'exam.html';
+        });
+        
+        // Clean up any old exam state on reload
+        localStorage.removeItem('vincons_answers');
+        localStorage.removeItem('vincons_time_left');
+    </script>
+</body>
+</html>

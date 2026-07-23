@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết Quả Đánh Giá Bậc Thợ - Vincons</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/config.js"></script>
+    <script>
+        // Check login immediately
+        const loggedInUser = JSON.parse(localStorage.getItem('vincons_logged_in_user'));
+        if (!loggedInUser) {
+            window.location.href = 'login.html';
+        }
+        
+        function handleLogout() {
+            if (confirm('Bạn có chắc chắn muốn đăng xuất tài khoản?')) {
+                localStorage.removeItem('vincons_logged_in_user');
+                localStorage.removeItem('vincons_candidate');
+                localStorage.removeItem('vincons_answers');
+                localStorage.removeItem('vincons_time_left');
+                localStorage.removeItem('vincons_active_questions');
+                window.location.href = 'login.html';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            if (loggedInUser) {
+                const roleText = loggedInUser.role === 'admin' ? 'Giám thị' : 'Thí sinh';
+                const userInfo = document.getElementById('userInfoDisplay');
+                if (userInfo) userInfo.textContent = `${loggedInUser.name} (${roleText})`;
+                
+                // If admin, hide the "🏠 Trang chủ" link since admins don't take tests
+                if (loggedInUser.role === 'admin') {
+                    const homeLink = document.getElementById('navHomeLink');
+                    if (homeLink) homeLink.style.display = 'none';
+                    // Hide bottom return home button
+                    const homeBtn = document.querySelector("a[href='index.html']");
+                    if (homeBtn) homeBtn.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">VC</div>
+            <div class="logo-text">
+                <h1>Vincons</h1>
+                <p>BCH Hạ Long Xanh</p>
+            </div>
+        </div>
+        <div class="header-nav" style="display: flex; align-items: center; gap: 15px;">
+            <span id="userInfoDisplay" style="font-size: 13px; font-weight: 700; color: var(--primary);"></span>
+            <a href="index.html" class="nav-link" id="navHomeLink">🏠 Trang chủ</a>
+            <a href="history.html" class="nav-link">📋 Lịch sử bài thi</a>
+            <button onclick="handleLogout()" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Đăng xuất</button>
+        </div>
+    </header>
+
+    <!-- Toast container for notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <main style="flex-direction: column; justify-content: flex-start; gap: 30px;">
+        <!-- General Result Summary Card -->
+        <div class="card" style="max-width: 900px; padding: 30px;">
+            <h2 class="card-title" style="margin-bottom: 10px;">BÁO CÁO KẾT QUẢ ĐÁNH GIÁ</h2>
+            <p style="text-align: center; color: #7f8c8d; font-size: 13px; font-weight: 600; text-transform: uppercase; margin-bottom: 20px;">
+                Dự án: Khu Đô Thị Phức Hợp Hạ Long Xanh
+            </p>
+            
+            <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; border-top: 1.5px solid var(--border); padding-top: 24px;">
+                <!-- Candidate Info Details -->
+                <div style="font-size: 15px; line-height: 1.8; display: flex; flex-direction: column; gap: 10px;">
+                    <div><strong style="color: var(--primary);">Họ và tên:</strong> <span id="resName" style="font-weight: 700;">-</span></div>
+                    <div><strong style="color: var(--primary);">Số báo danh/SĐT:</strong> <span id="resId">-</span></div>
+                    <div><strong style="color: var(--primary);">Vị trí đánh giá:</strong> <span id="resJob" style="font-weight: 600;">-</span></div>
+                    <div><strong style="color: var(--primary);">Phần thi thực hiện:</strong> <span id="resExamType" style="font-weight: 700; color: var(--accent);">-</span></div>
+                    <div><strong style="color: var(--primary);">Thời gian nộp bài:</strong> <span id="resTime">-</span></div>
+                </div>
+
+                <!-- Score Badges -->
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; border-left: 1.5px solid var(--border); padding-left: 20px;">
+                    <div class="score-badge">
+                        <span class="score-num" id="resScore">0/0</span>
+                        <span class="score-lbl">Câu đúng</span>
+                    </div>
+                    
+                    <!-- Pass/Fail Badge -->
+                    <div class="result-badge" id="resStatusBadge">-</div>
+                </div>
+            </div>
+            
+            <!-- Actions buttons -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; border-top: 1.5px solid var(--border); padding-top: 20px;">
+                <button class="btn btn-primary" onclick="window.print()">🖨️ In báo cáo (PDF)</button>
+                <a href="history.html" class="btn btn-accent">📋 Xem lịch sử thi</a>
+                <a href="index.html" class="btn btn-secondary">Quay lại trang chủ</a>
+            </div>
+        </div>
+
+        <!-- Detailed Review Section -->
+        <div class="result-details-section">
+            <h3 class="grid-title" style="font-size: 16px; margin-bottom: 10px; border-bottom: 2px solid var(--primary); padding-bottom: 8px;">
+                CHI TIẾT BÀI LÀM CỦA THÍ SINH
+            </h3>
+            <div id="reviewContainer" style="display: flex; flex-direction: column; gap: 15px;">
+                <!-- Dynamically generated question reviews -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Vincons - Ban Chỉ Huy Dự Án Hạ Long Xanh. All rights reserved.
+    </footer>
+
+    <script src="questions.js"></script>
+    <script>
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast-notification ${type}`;
+            toast.innerHTML = message;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.remove();
+            }, 4000);
+        }
+
+        // Load data from localStorage
+        const candidate = JSON.parse(localStorage.getItem('vincons_candidate'));
+        const answers = JSON.parse(localStorage.getItem('vincons_answers')) || {};
+        
+        if (!candidate) {
+            alert('Không tìm thấy thông tin thí sinh. Vui lòng đăng ký lại.');
+            window.location.href = 'index.html';
+        }
+        
+        // Load active questions from localStorage
+        const activeQuestions = JSON.parse(localStorage.getItem('vincons_active_questions')) || [];
+        
+        // Calculate score
+        let correctCount = 0;
+        activeQuestions.forEach((q, index) => {
+            const userAnswer = answers[index];
+            if (userAnswer !== undefined && userAnswer === q.correct_index) {
+                correctCount++;
+            }
+        });
+        
+        const totalCount = activeQuestions.length;
+        const scorePercentage = totalCount > 0 ? (correctCount / totalCount) * 100 : 0;
+        
+        // Vincons evaluation rule: >= 70% is PASS
+        const isPass = scorePercentage >= 70;
+        
+        // Display candidate metadata
+        document.getElementById('resName').textContent = candidate.name;
+        document.getElementById('resId').textContent = candidate.id;
+        document.getElementById('resJob').textContent = candidate.job;
+        document.getElementById('resExamType').textContent = candidate.examType === 'Lý thuyết' ? 'Thi Lý thuyết' : 'Thi Thực hành';
+        
+        const submitDate = new Date();
+        const formattedTime = submitDate.toLocaleString('vi-VN');
+        document.getElementById('resTime').textContent = formattedTime;
+        document.getElementById('resScore').textContent = `${correctCount}/${totalCount}`;
+        
+        const badge = document.getElementById('resStatusBadge');
+        if (isPass) {
+            badge.textContent = 'ĐẠT YÊU CẦU';
+            badge.className = 'result-badge pass';
+        } else {
+            badge.textContent = 'CHƯA ĐẠT';
+            badge.className = 'result-badge fail';
+        }
+        
+        // Render detailed question review
+        const reviewContainer = document.getElementById('reviewContainer');
+        activeQuestions.forEach((q, index) => {
+            const userAnswer = answers[index];
+            const isCorrect = userAnswer !== undefined && userAnswer === q.correct_index;
+            
+            const item = document.createElement('div');
+            item.className = 'review-item';
+            
+            let optionsHTML = '';
+            q.options.forEach((opt, optIdx) => {
+                let statusClass = '';
+                if (optIdx === q.correct_index) {
+                    statusClass = 'correct-answer'; // Highlight correct answer
+                } else if (userAnswer !== undefined && optIdx === userAnswer && !isCorrect) {
+                    statusClass = 'selected-wrong'; // Highlight user's incorrect choice
+                }
+                
+                optionsHTML += `
+                    <div class="review-opt ${statusClass}">
+                        ${optIdx + 1}. ${opt}
+                        ${optIdx === q.correct_index ? ' ✓ (Đáp án đúng)' : ''}
+                        ${userAnswer !== undefined && optIdx === userAnswer && !isCorrect ? ' ✗ (Lựa chọn của bạn)' : ''}
+                    </div>
+                `;
+            });
+            
+            item.innerHTML = `
+                <div class="review-question-header">
+                    <span style="font-weight: 700; color: var(--primary);">Câu hỏi ${index + 1}:</span>
+                    <span class="review-badge ${isCorrect ? 'correct' : 'incorrect'}">
+                        ${isCorrect ? 'Đúng' : (userAnswer === undefined ? 'Chưa trả lời' : 'Sai')}
+                    </span>
+                </div>
+                <div style="font-size: 15px; font-weight: 700; margin-bottom: 15px; color: var(--text); line-height: 1.4;">
+                    ${q.question}
+                </div>
+                <div class="review-options">
+                    ${optionsHTML}
+                </div>
+            `;
+            reviewContainer.appendChild(item);
+        });
+
+        // AUTO-SAVE EXAM RESULT DATA
+        const recordId = `res_${candidate.id}_${candidate.startTime || Date.now()}`;
+        const resultData = {
+            id: recordId,
+            candidate: candidate,
+            answers: answers,
+            questions: activeQuestions,
+            correctCount: correctCount,
+            totalCount: totalCount,
+            percentage: scorePercentage,
+            isPass: isPass,
+            submitTime: formattedTime,
+            timestamp: Date.now()
+        };
+
+        // 1. Save to localStorage
+        try {
+            let localHistory = JSON.parse(localStorage.getItem('vincons_history')) || [];
+            const existingIndex = localHistory.findIndex(r => r.id === recordId);
+            if (existingIndex >= 0) {
+                localHistory[existingIndex] = resultData;
+            } else {
+                localHistory.unshift(resultData);
+            }
+            localStorage.setItem('vincons_history', JSON.stringify(localHistory));
+        } catch (e) {
+            console.error('LocalStorage Save Error:', e);
+        }
+
+        // 2. Save to Server Backend API
+        fetch(CONFIG.API_BASE_URL + '/api/save-result', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(resultData)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.status === 'success') {
+                showToast('✅ Kết quả đã được tự động lưu vào Server & Bộ nhớ!');
+            } else {
+                showToast('✅ Đã lưu kết quả bài thi vào bộ nhớ trình duyệt!');
+            }
+        })
+        .catch(err => {
+            showToast('✅ Đã lưu kết quả bài thi vào bộ nhớ trình duyệt (Chế độ offline)!');
+        });
+    </script>
+</body>
+</html>
+

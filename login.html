@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập Hệ Thống - Vincons</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/config.js"></script>
+    <style>
+        .auth-container {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        .auth-tabs {
+            display: flex;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 25px;
+        }
+        .auth-tab {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            color: #7f8c8d;
+            transition: all 0.3s ease;
+            font-size: 15px;
+        }
+        .auth-tab.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+            margin-bottom: -2px;
+        }
+        .auth-form {
+            display: none;
+        }
+        .auth-form.active {
+            display: block;
+        }
+        .role-selector {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .role-option {
+            flex: 1;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+        .role-option.active {
+            border-color: var(--primary);
+            background-color: rgba(11, 60, 93, 0.05);
+            color: var(--primary);
+        }
+        .admin-code-group {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .password-toggle-container {
+            position: relative;
+        }
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #7f8c8d;
+            font-size: 14px;
+            user-select: none;
+        }
+        .input-info-text {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">VC</div>
+            <div class="logo-text">
+                <h1>Vincons</h1>
+                <p>BCH Hạ Long Xanh</p>
+            </div>
+        </div>
+    </header>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <main>
+        <div class="auth-container">
+            <div class="card" style="padding: 30px;">
+                <div class="auth-tabs">
+                    <div class="auth-tab active" onclick="switchTab('login')">Đăng Nhập</div>
+                    <div class="auth-tab" onclick="switchTab('register')">Đăng Ký</div>
+                </div>
+
+                <!-- Form Đăng Nhập -->
+                <form id="loginForm" class="auth-form active" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginUsername">Số điện thoại hoặc Gmail (*)</label>
+                        <input type="text" id="loginUsername" class="form-control" placeholder="Nhập SĐT hoặc Gmail của bạn" required>
+                        <p class="input-info-text">Ví dụ: 0987654321 hoặc candidate@gmail.com</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Mật khẩu (*)</label>
+                        <div class="password-toggle-container">
+                            <input type="password" id="loginPassword" class="form-control" placeholder="Nhập mật khẩu" required>
+                            <span class="password-toggle" onclick="togglePassword('loginPassword')">👁️</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block" style="margin-top: 15px;">Đăng Nhập</button>
+                    
+                    <div style="margin-top: 15px; text-align: center; font-size: 13px; color: #7f8c8d;">
+                        Chưa có tài khoản? <span style="color: var(--primary); font-weight: 700; cursor: pointer;" onclick="switchTab('register')">Đăng ký ngay</span>
+                    </div>
+                </form>
+
+                <!-- Form Đăng Ký -->
+                <form id="registerForm" class="auth-form" onsubmit="handleRegister(event)">
+                    <div class="form-group">
+                        <label for="registerName">Họ và tên của bạn (*)</label>
+                        <input type="text" id="registerName" class="form-control" placeholder="Nhập họ và tên đầy đủ" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerUsername">Số điện thoại hoặc Gmail (*)</label>
+                        <input type="text" id="registerUsername" class="form-control" placeholder="Nhập SĐT hoặc Gmail đăng ký" required>
+                        <p class="input-info-text">Tài khoản này dùng để đăng nhập và lưu kết quả thi.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Vai trò tài khoản (*)</label>
+                        <div class="role-selector">
+                            <div class="role-option active" id="roleCandidate" onclick="selectRole('candidate')">
+                                Thí sinh dự thi
+                            </div>
+                            <div class="role-option" id="roleAdmin" onclick="selectRole('admin')">
+                                Giám thị / Quản lý
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trường nhập mã kích hoạt Admin (Ẩn mặc định) -->
+                    <div class="form-group admin-code-group" id="adminCodeGroup">
+                        <label for="adminCode" style="color: var(--accent);">Mã kích hoạt Giám thị (*)</label>
+                        <input type="password" id="adminCode" class="form-control" style="border-color: var(--accent);" placeholder="Nhập mã kích hoạt giám thị do BCH cấp">
+                        <p class="input-info-text" style="color: var(--accent);">Vui lòng liên hệ Admin để nhận mã này.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerPassword">Mật khẩu (*)</label>
+                        <div class="password-toggle-container">
+                            <input type="password" id="registerPassword" class="form-control" placeholder="Nhập mật khẩu (tối thiểu 6 ký tự)" required minlength="6">
+                            <span class="password-toggle" onclick="togglePassword('registerPassword')">👁️</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-accent btn-block" style="margin-top: 15px;">Đăng Ký Tài Khoản</button>
+                    
+                    <div style="margin-top: 15px; text-align: center; font-size: 13px; color: #7f8c8d;">
+                        Đã có tài khoản? <span style="color: var(--primary); font-weight: 700; cursor: pointer;" onclick="switchTab('login')">Đăng nhập</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Vincons - Ban Chỉ Huy Dự Án Hạ Long Xanh. All rights reserved.
+    </footer>
+
+    <script>
+        let selectedRole = 'candidate';
+
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast-notification ${type}`;
+            toast.innerHTML = message;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.remove();
+            }, 4000);
+        }
+
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            if (input.type === 'password') {
+                input.type = 'text';
+            } else {
+                input.type = 'password';
+            }
+        }
+
+        function switchTab(tab) {
+            document.querySelectorAll('.auth-tab').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.auth-form').forEach(el => el.classList.remove('active'));
+
+            if (tab === 'login') {
+                document.querySelectorAll('.auth-tab')[0].classList.add('active');
+                document.getElementById('loginForm').classList.add('active');
+            } else {
+                document.querySelectorAll('.auth-tab')[1].classList.add('active');
+                document.getElementById('registerForm').classList.add('active');
+            }
+        }
+
+        function selectRole(role) {
+            selectedRole = role;
+            const optCandidate = document.getElementById('roleCandidate');
+            const optAdmin = document.getElementById('roleAdmin');
+            const adminCodeGroup = document.getElementById('adminCodeGroup');
+            const adminCodeInput = document.getElementById('adminCode');
+
+            if (role === 'candidate') {
+                optCandidate.classList.add('active');
+                optAdmin.classList.remove('active');
+                adminCodeGroup.style.display = 'none';
+                adminCodeInput.removeAttribute('required');
+            } else {
+                optCandidate.classList.remove('active');
+                optAdmin.classList.add('active');
+                adminCodeGroup.style.display = 'block';
+                adminCodeInput.setAttribute('required', 'required');
+            }
+        }
+
+        // Validate Phone or Email
+        function validateUsername(username) {
+            username = username.trim();
+            // Email regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            // Phone regex (simple: 9 to 11 digits)
+            const phoneRegex = /^[0-9]{9,11}$/;
+            
+            if (emailRegex.test(username)) {
+                return 'email';
+            } else if (phoneRegex.test(username)) {
+                return 'phone';
+            }
+            return null;
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('loginUsername').value.trim();
+            const password = document.getElementById('loginPassword').value;
+
+            if (!username || !password) {
+                showToast('❌ Vui lòng điền đầy đủ thông tin!', 'danger');
+                return;
+            }
+
+            const inputType = validateUsername(username);
+            if (!inputType) {
+                showToast('❌ Tài khoản phải là Số điện thoại (9-11 số) hoặc địa chỉ Gmail hợp lệ!', 'danger');
+                return;
+            }
+
+            // Call API
+            fetch(CONFIG.API_BASE_URL + '/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            })
+            .then(async res => {
+                const data = await res.json();
+                if (!res.ok) {
+                    throw new Error(data.message || 'Đăng nhập thất bại');
+                }
+                return data;
+            })
+            .then(data => {
+                showToast('✅ Đăng nhập thành công!', 'success');
+                // Save user to localStorage
+                localStorage.setItem('vincons_logged_in_user', JSON.stringify(data.user));
+                
+                // Clear old candidate exam cache to be safe
+                localStorage.removeItem('vincons_candidate');
+                localStorage.removeItem('vincons_answers');
+                localStorage.removeItem('vincons_time_left');
+                localStorage.removeItem('vincons_active_questions');
+                
+                setTimeout(() => {
+                    if (data.user.role === 'admin') {
+                        window.location.href = 'history.html';
+                    } else {
+                        window.location.href = 'index.html';
+                    }
+                }, 1000);
+            })
+            .catch(err => {
+                showToast(`❌ ${err.message}`, 'danger');
+            });
+        }
+
+        function handleRegister(event) {
+            event.preventDefault();
+            const name = document.getElementById('registerName').value.trim();
+            const username = document.getElementById('registerUsername').value.trim();
+            const password = document.getElementById('registerPassword').value;
+            const adminCode = document.getElementById('adminCode').value.trim();
+
+            if (!name || !username || !password) {
+                showToast('❌ Vui lòng nhập đầy đủ các thông tin bắt buộc!', 'danger');
+                return;
+            }
+
+            const inputType = validateUsername(username);
+            if (!inputType) {
+                showToast('❌ Tài khoản phải là Số điện thoại (9-11 số) hoặc địa chỉ Gmail hợp lệ!', 'danger');
+                return;
+            }
+
+            if (selectedRole === 'admin' && !adminCode) {
+                showToast('❌ Giám thị cần nhập Mã kích hoạt!', 'danger');
+                return;
+            }
+
+            // Call API
+            fetch(CONFIG.API_BASE_URL + '/api/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name,
+                    username,
+                    password,
+                    role: selectedRole,
+                    adminCode
+                })
+            })
+            .then(async res => {
+                const data = await res.json();
+                if (!res.ok) {
+                    throw new Error(data.message || 'Đăng ký thất bại');
+                }
+                return data;
+            })
+            .then(data => {
+                showToast('✅ Đăng ký tài khoản thành công! Hãy đăng nhập.', 'success');
+                // Clear forms
+                document.getElementById('registerForm').reset();
+                selectRole('candidate');
+                // Switch to login tab
+                setTimeout(() => {
+                    switchTab('login');
+                    document.getElementById('loginUsername').value = username;
+                }, 1500);
+            })
+            .catch(err => {
+                showToast(`❌ ${err.message}`, 'danger');
+            });
+        }
+
+        // Check if already logged in
+        window.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('vincons_logged_in_user'));
+            if (user) {
+                if (user.role === 'admin') {
+                    window.location.href = 'history.html';
+                } else {
+                    window.location.href = 'index.html';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

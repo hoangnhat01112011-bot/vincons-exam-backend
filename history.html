@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Sử Bài Thi - Vincons</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/config.js"></script>
+    <script>
+        // Check login immediately
+        const loggedInUser = JSON.parse(localStorage.getItem('vincons_logged_in_user'));
+        if (!loggedInUser) {
+            window.location.href = 'login.html';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">VC</div>
+            <div class="logo-text">
+                <h1>Vincons</h1>
+                <p>BCH Hạ Long Xanh</p>
+            </div>
+        </div>
+        <div class="header-nav" style="display: flex; align-items: center; gap: 15px;">
+            <span id="userInfoDisplay" style="font-size: 13px; font-weight: 700; color: var(--primary);"></span>
+            <a href="index.html" class="nav-link" id="navHomeLink">🏠 Trang chủ</a>
+            <a href="history.html" class="nav-link active">📋 Lịch sử bài thi</a>
+            <button onclick="handleLogout()" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Đăng xuất</button>
+        </div>
+    </header>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <main style="flex-direction: column; justify-content: flex-start; gap: 25px;">
+        <div class="history-container">
+            <!-- Header title -->
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                <div>
+                    <h2 style="font-size: 24px; color: var(--primary); font-weight: 800;">QUẢN LÝ LỊCH SỬ BÀI THI</h2>
+                    <p style="font-size: 13px; color: #7f8c8d; font-weight: 600; text-transform: uppercase;">
+                        Dự án Khu Đô Thị Phức Hợp Hạ Long Xanh - Danh sách kết quả sát hạch
+                    </p>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn btn-primary btn-sm" onclick="exportData()">📥 Xuất Excel / CSV</button>
+                    <button class="btn btn-secondary btn-sm" onclick="window.print()">🖨️ In báo cáo</button>
+                    <button class="btn btn-danger btn-sm" onclick="confirmClearAll()">🗑️ Xóa lịch sử</button>
+                </div>
+            </div>
+
+            <!-- Stats Overview Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="statTotal">0</span>
+                    <span class="stat-label">Tổng số bài thi</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="statPass" style="color: var(--success);">0</span>
+                    <span class="stat-label">Thí sinh Đạt</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="statRate" style="color: var(--accent);">0%</span>
+                    <span class="stat-label">Tỷ lệ Đạt</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="statAvg">0%</span>
+                    <span class="stat-label">Điểm số trung bình</span>
+                </div>
+            </div>
+
+            <!-- Filter & Search Toolbar -->
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <input type="text" id="searchInput" class="form-control search-input" placeholder="🔍 Tìm theo Họ tên, SBD / SĐT..." oninput="filterResults()">
+                    
+                    <select id="jobFilter" class="form-control" style="width: auto; min-width: 180px;" onchange="filterResults()">
+                        <option value="">-- Tất cả vị trí --</option>
+                        <option value="Thợ Xây dựng">Thợ Xây dựng (Nề)</option>
+                        <option value="Thợ Điện">Thợ Điện nước (M&E)</option>
+                        <option value="Thợ Sắt">Thợ Sắt cốt thép</option>
+                        <option value="Thợ Mộc">Thợ Mộc cốp pha</option>
+                        <option value="Giám sát">Kỹ sư Giám sát</option>
+                    </select>
+
+                    <select id="statusFilter" class="form-control" style="width: auto; min-width: 150px;" onchange="filterResults()">
+                        <option value="">-- Tất cả kết quả --</option>
+                        <option value="PASS">ĐẠT YÊU CẦU</option>
+                        <option value="FAIL">CHƯA ĐẠT</option>
+                    </select>
+                </div>
+                <div style="font-size: 13px; font-weight: 700; color: var(--primary);" id="resultCountLabel">
+                    Hiển thị 0 bản ghi
+                </div>
+            </div>
+
+            <!-- Results Data Table -->
+            <div class="table-card">
+                <div class="table-responsive">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Thời gian nộp</th>
+                                <th>Họ và tên</th>
+                                <th>SBD / SĐT</th>
+                                <th>Vị trí ứng tuyển</th>
+                                <th>Phần thi</th>
+                                <th>Điểm số</th>
+                                <th>Tỷ lệ</th>
+                                <th>Kết quả</th>
+                                <th style="text-align: center;">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTableBody">
+                            <!-- Dynamically populated rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for Detailed Review -->
+    <div id="detailModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Chi Tiết Bài Làm Thí Sinh</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamically loaded review details -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Vincons - Ban Chỉ Huy Dự Án Hạ Long Xanh. All rights reserved.
+    </footer>
+
+    <script>
+        let allResults = [];
+        let filteredResults = [];
+
+        function showToast(msg, type = 'success') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast-notification ${type}`;
+            toast.innerHTML = msg;
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 4000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Display user info and adapt UI
+            if (loggedInUser) {
+                const roleText = loggedInUser.role === 'admin' ? 'Giám thị' : 'Thí sinh';
+                document.getElementById('userInfoDisplay').textContent = `${loggedInUser.name} (${roleText})`;
+                
+                if (loggedInUser.role !== 'admin') {
+                    // Hide management button for candidates
+                    const clearBtn = document.querySelector("button[onclick='confirmClearAll()']");
+                    if (clearBtn) clearBtn.style.display = 'none';
+                    
+                    // Update header title
+                    const titleText = document.querySelector("h2");
+                    if (titleText) titleText.textContent = "KẾT QUẢ BÀI THI CỦA BẠN";
+                } else {
+                    // Admins don't take tests - hide "Trang chủ"
+                    const homeLink = document.getElementById('navHomeLink');
+                    if (homeLink) homeLink.style.display = 'none';
+                }
+            }
+            
+            loadResultsData();
+        });
+
+        function handleLogout() {
+            if (confirm('Bạn có chắc chắn muốn đăng xuất tài khoản?')) {
+                localStorage.removeItem('vincons_logged_in_user');
+                localStorage.removeItem('vincons_candidate');
+                localStorage.removeItem('vincons_answers');
+                localStorage.removeItem('vincons_time_left');
+                localStorage.removeItem('vincons_active_questions');
+                window.location.href = 'login.html';
+            }
+        }
+
+        function loadResultsData() {
+            const userId = encodeURIComponent(loggedInUser.username);
+            const role = encodeURIComponent(loggedInUser.role);
+            
+            // Try fetching from Python server endpoint first with authorization params
+            fetch(CONFIG.API_BASE_URL + `/api/results?userId=${userId}&role=${role}`)
+                .then(res => {
+                    if (!res.ok) throw new Error('API not available');
+                    return res.json();
+                })
+                .then(data => {
+                    allResults = data || [];
+                    
+                    // Merge local history if server has fewer items (and matches username if candidate)
+                    const localData = JSON.parse(localStorage.getItem('vincons_history')) || [];
+                    localData.forEach(item => {
+                        const candId = item.candidate?.id || '';
+                        if (loggedInUser.role !== 'admin' && candId.toLowerCase() !== loggedInUser.username.toLowerCase()) {
+                            return; // Filter out other users' local cache
+                        }
+                        if (!allResults.some(r => r.id === item.id)) {
+                            allResults.push(item);
+                        }
+                    });
+                    
+                    // Sort newest first
+                    allResults.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+                    filterResults();
+                })
+                .catch(err => {
+                    console.log('Loading from localStorage (Offline mode):', err);
+                    let local = JSON.parse(localStorage.getItem('vincons_history')) || [];
+                    if (loggedInUser.role !== 'admin') {
+                        local = local.filter(item => {
+                            const candId = item.candidate?.id || '';
+                            return candId.toLowerCase() === loggedInUser.username.toLowerCase();
+                        });
+                    }
+                    allResults = local;
+                    allResults.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+                    filterResults();
+                });
+        }
+
+        function filterResults() {
+            const search = document.getElementById('searchInput').value.trim().toLowerCase();
+            const job = document.getElementById('jobFilter').value;
+            const status = document.getElementById('statusFilter').value;
+
+            filteredResults = allResults.filter(item => {
+                const cand = item.candidate || {};
+                const nameMatch = (cand.name || '').toLowerCase().includes(search);
+                const idMatch = (cand.id || '').toLowerCase().includes(search);
+                const searchMatch = !search || nameMatch || idMatch;
+
+                const jobMatch = !job || (cand.job || '').includes(job);
+                
+                let statusMatch = true;
+                if (status === 'PASS') statusMatch = item.isPass === true;
+                if (status === 'FAIL') statusMatch = item.isPass === false;
+
+                return searchMatch && jobMatch && statusMatch;
+            });
+
+            updateStats();
+            renderTable();
+        }
+
+        function updateStats() {
+            const total = allResults.length;
+            const passCount = allResults.filter(r => r.isPass).length;
+            const passRate = total > 0 ? ((passCount / total) * 100).toFixed(1) : '0';
+            
+            let avgScore = 0;
+            if (total > 0) {
+                const sumPct = allResults.reduce((acc, curr) => acc + (curr.percentage || 0), 0);
+                avgScore = (sumPct / total).toFixed(1);
+            }
+
+            document.getElementById('statTotal').textContent = total;
+            document.getElementById('statPass').textContent = passCount;
+            document.getElementById('statRate').textContent = `${passRate}%`;
+            document.getElementById('statAvg').textContent = `${avgScore}%`;
+            
+            document.getElementById('resultCountLabel').textContent = `Hiển thị ${filteredResults.length}/${total} bản ghi`;
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('historyTableBody');
+            tbody.innerHTML = '';
+
+            if (filteredResults.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="10" style="text-align: center; padding: 40px; color: #7f8c8d; font-weight: 600;">
+                            Chưa có dữ liệu bài thi nào phù hợp.
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            filteredResults.forEach((item, index) => {
+                const cand = item.candidate || {};
+                const tr = document.createElement('tr');
+
+                const statusBadge = item.isPass 
+                    ? `<span class="review-badge correct">ĐẠT YÊU CẦU</span>` 
+                    : `<span class="review-badge incorrect">CHƯA ĐẠT</span>`;
+
+                const actionButtons = loggedInUser.role === 'admin'
+                    ? `<button class="btn btn-info btn-sm" onclick="viewDetail('${item.id}')" style="margin-right: 5px;">👁️ Xem</button>
+                       <button class="btn btn-danger btn-sm" onclick="deleteRecord('${item.id}')">🗑️ Xóa</button>`
+                    : `<button class="btn btn-info btn-sm" onclick="viewDetail('${item.id}')">👁️ Xem Chi Tiết</button>`;
+
+                tr.innerHTML = `
+                    <td style="font-weight: 700;">${index + 1}</td>
+                    <td style="font-size: 13px; color: #555;">${item.submitTime || '-'}</td>
+                    <td style="font-weight: 700; color: var(--primary);">${cand.name || '-'}</td>
+                    <td><code style="background: rgba(0,0,0,0.05); padding: 2px 6px; border-radius: 4px;">${cand.id || '-'}</code></td>
+                    <td style="font-weight: 600;">${cand.job || '-'}</td>
+                    <td>${cand.examType || '-'}</td>
+                    <td style="font-weight: 800;">${item.correctCount}/${item.totalCount}</td>
+                    <td style="font-weight: 700; color: ${item.isPass ? 'var(--success)' : 'var(--danger)'};">${(item.percentage || 0).toFixed(1)}%</td>
+                    <td>${statusBadge}</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        ${actionButtons}
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function viewDetail(id) {
+            const item = allResults.find(r => r.id === id);
+            if (!item) return;
+
+            const cand = item.candidate || {};
+            const questions = item.questions || [];
+            const answers = item.answers || {};
+
+            document.getElementById('modalTitle').textContent = `Chi Tiết Bài Làm - ${cand.name} (${cand.id})`;
+            
+            let modalHTML = `
+                <div style="background: rgba(11, 60, 93, 0.04); padding: 16px; border-radius: 10px; margin-bottom: 20px; border: 1px solid var(--border);">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 14px;">
+                        <div><strong>Họ và tên:</strong> ${cand.name}</div>
+                        <div><strong>SBD / SĐT:</strong> ${cand.id}</div>
+                        <div><strong>Vị trí:</strong> ${cand.job}</div>
+                        <div><strong>Phần thi:</strong> ${cand.examType}</div>
+                        <div><strong>Số câu đúng:</strong> ${item.correctCount}/${item.totalCount} (${(item.percentage || 0).toFixed(1)}%)</div>
+                        <div><strong>Kết quả:</strong> <strong style="color: ${item.isPass ? 'var(--success)' : 'var(--danger)'};">${item.isPass ? 'ĐẠT YÊU CẦU' : 'CHƯA ĐẠT'}</strong></div>
+                    </div>
+                </div>
+                <h4 style="font-size: 15px; color: var(--primary); margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 6px;">
+                    DANH SÁCH CÂU HỎI VÀ LỰA CHỌN THÍ SINH
+                </h4>
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+            `;
+
+            questions.forEach((q, idx) => {
+                const userAnswer = answers[idx];
+                const isCorrect = userAnswer !== undefined && userAnswer === q.correct_index;
+                
+                let optionsHTML = '';
+                q.options.forEach((opt, optIdx) => {
+                    let statusClass = '';
+                    if (optIdx === q.correct_index) {
+                        statusClass = 'correct-answer';
+                    } else if (userAnswer !== undefined && optIdx === userAnswer && !isCorrect) {
+                        statusClass = 'selected-wrong';
+                    }
+                    
+                    optionsHTML += `
+                        <div class="review-opt ${statusClass}" style="font-size: 13px;">
+                            ${optIdx + 1}. ${opt}
+                            ${optIdx === q.correct_index ? ' ✓ (Đáp án đúng)' : ''}
+                            ${userAnswer !== undefined && optIdx === userAnswer && !isCorrect ? ' ✗ (Lựa chọn của thí sinh)' : ''}
+                        </div>
+                    `;
+                });
+
+                modalHTML += `
+                    <div class="review-item" style="padding: 16px;">
+                        <div class="review-question-header">
+                            <span style="font-weight: 700; color: var(--primary); font-size: 13px;">Câu ${idx + 1}: (${q.category || ''})</span>
+                            <span class="review-badge ${isCorrect ? 'correct' : 'incorrect'}">
+                                ${isCorrect ? 'Đúng' : (userAnswer === undefined ? 'Chưa trả lời' : 'Sai')}
+                            </span>
+                        </div>
+                        <div style="font-size: 14px; font-weight: 700; margin-bottom: 10px; color: var(--text);">
+                            ${q.question}
+                        </div>
+                        <div class="review-options">
+                            ${optionsHTML}
+                        </div>
+                    </div>
+                `;
+            });
+
+            modalHTML += `</div>`;
+
+            document.getElementById('modalBody').innerHTML = modalHTML;
+            document.getElementById('detailModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('detailModal').classList.remove('active');
+        }
+
+        function deleteRecord(id) {
+            if (!confirm('Bạn có chắc chắn muốn xóa bản ghi lịch sử thi này không?')) return;
+
+            // 1. Delete locally
+            allResults = allResults.filter(r => r.id !== id);
+            localStorage.setItem('vincons_history', JSON.stringify(allResults));
+
+            // 2. Delete on server
+            const role = encodeURIComponent(loggedInUser.role);
+            fetch(CONFIG.API_BASE_URL + `/api/delete-result?id=${encodeURIComponent(id)}&role=${role}`, { method: 'DELETE' })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === 'error') {
+                        showToast(`❌ ${data.message}`, 'danger');
+                    } else {
+                        showToast('Đã xóa bản ghi thành công!');
+                    }
+                })
+                .catch(err => {
+                    showToast('Đã xóa bản ghi khỏi bộ nhớ cục bộ!');
+                });
+
+            filterResults();
+        }
+
+        function confirmClearAll() {
+            if (allResults.length === 0) {
+                alert('Không có dữ liệu lịch sử nào để xóa.');
+                return;
+            }
+            if (!confirm('⚠️ CẢNH BÁO: Bạn có chắc chắn muốn XÓA TOÀN BỘ lịch sử bài thi không?\nHành động này không thể hoàn tác!')) {
+                return;
+            }
+
+            allResults = [];
+            localStorage.removeItem('vincons_history');
+
+            const role = encodeURIComponent(loggedInUser.role);
+            fetch(CONFIG.API_BASE_URL + `/api/clear-results?role=${role}`, { method: 'DELETE' })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === 'error') {
+                        showToast(`❌ ${data.message}`, 'danger');
+                    } else {
+                        showToast('Đã xóa toàn bộ lịch sử bài thi!');
+                    }
+                })
+                .catch(() => showToast('Đã xóa lịch sử trình duyệt!'));
+
+            filterResults();
+        }
+
+        function exportData() {
+            if (allResults.length === 0) {
+                alert('Không có dữ liệu để xuất.');
+                return;
+            }
+            const userId = encodeURIComponent(loggedInUser.username);
+            const role = encodeURIComponent(loggedInUser.role);
+            // Trigger server CSV download with role authorization
+            window.location.href = CONFIG.API_BASE_URL + `/api/export-csv?userId=${userId}&role=${role}`;
+        }
+    </script>
+</body>
+</html>

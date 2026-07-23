@@ -1,0 +1,407 @@
+[
+  {
+    "id": "res_0935947680_1784548645847",
+    "candidate": {
+      "name": "Phạm Ngọc Điểm",
+      "id": "0935947680",
+      "job": "Thợ Điện nước (M&E)",
+      "examType": "Lý thuyết",
+      "startTime": 1784548645847
+    },
+    "answers": {},
+    "questions": [
+      {
+        "id": 50,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Để đo điện năng tiêu thụ ta dùng",
+        "options": [
+          "Oát kế",
+          "Ampe kế",
+          "Vôn kế",
+          "Công tơ"
+        ],
+        "correct_index": 3
+      },
+      {
+        "id": 67,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Khi khởi động máy bơm nước mà áp tô mát tự động ngắt điện hoặc đứt cầu chì là do",
+        "options": [
+          "Động cơ bị rò điện.",
+          "Dây quấn động cơ bị chập",
+          "Mất điện.",
+          "Không có nguồn nước cấp."
+        ],
+        "correct_index": 1
+      },
+      {
+        "id": 62,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Số cuộn dây quấn làm việc của động cơ điện 3 pha là",
+        "options": [
+          "Một.",
+          "Hai.",
+          "Ba.",
+          "Bốn."
+        ],
+        "correct_index": 2
+      },
+      {
+        "id": 72,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Trong động cơ chạy tụ, dây quấn phụ mắc nối tiếp với tụ C là để",
+        "options": [
+          "Ngăn cản dòng điện chạy qua dây quấn phụ",
+          "Dòng điện trong hai dây quấn chính và phụ được ổn định",
+          "Tạo sự lệch pha của dịng điện trong cuộn khởi động và cuộn làm việc",
+          "Tích điện, dự trữ điện cung cấp cho mạch khi sụt áp"
+        ],
+        "correct_index": 2
+      },
+      {
+        "id": 80,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Một mạch điện gồm nhiều bóng đèn mắc nối tiếp, nếu có một bóng bị đứt thì",
+        "options": [
+          "Một số bóng đèn sáng, một số bóng đèn không sáng.",
+          "Các bóng đèn sáng bình thường ngoại trừ bóng đứt.",
+          "Các bóng đèn sáng mờ.",
+          "Tất cả các bóng dèn trong mạch đều không sáng"
+        ],
+        "correct_index": 3
+      },
+      {
+        "id": 53,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Đồng hồ đo điện vạn năng dùng để đo :",
+        "options": [
+          "Điện áp xoay chiều, điện áp một chiều, điện trở, dòng điện một chiều",
+          "Điện áp một chiều, điện áp xoay chiều, điện trở cách điện máy điện",
+          "Điện áp xoay chiều, dòng điện xoay chiều, điện trở cách điện",
+          "Điện trở, điện áp và  dòng điện máy điện"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": 56,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Khi sử dụng đồng hồ đo điện vạn năng dạng hiện số cần chú ý",
+        "options": [
+          "Xác định đại lượng cần đo, chọn thang đo thích hợp",
+          "Kiểm tra pin, xác định đại lượng cần đo, chọn thang đo thích hợp",
+          "Xác định đại lượng cần đo và chỉnh về thang đo lớn nhất rồi giảm dần",
+          "Kiểm tra pin, xác định đại lượng cần đo, chỉnh thang đo nhỏ nhất rồi tăng dầ"
+        ],
+        "correct_index": 1
+      },
+      {
+        "id": 84,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Sơ đồ cấp điện cho nhà chung cư theo thứ tự thế nào là đú",
+        "options": [
+          "Tủ điện tổng; trạm biến áp; tủ điện tầng; bảng điện; các tải của căn hộ",
+          "Trạm biến áp; tủ điện tổng; tủ điện tầng; bảng điện; các tải của căn hộ",
+          "Tủ điện tầng; trạm biến áp; tủ điện tổng; bảng điện; các tải của căn hộ",
+          "Bảng điện; tủ điện tầng; trạm biến áp; tủ điện tổng; các tải của căn hộ"
+        ],
+        "correct_index": 1
+      },
+      {
+        "id": 60,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Lượng nước máy bơm bơm được trong một đơn vị thời gian gọi là",
+        "options": [
+          "Tốc độ bơm",
+          "Lưu lượng",
+          "Công suất bơm",
+          "Dung lượng máy bơm"
+        ],
+        "correct_index": 1
+      },
+      {
+        "id": 58,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Hình vẽ bên là kí hiệu của:",
+        "options": [
+          "động cơ điện.",
+          "máy phát điện.",
+          "công tơ điện.",
+          "máy biến áp."
+        ],
+        "correct_index": 3
+      },
+      {
+        "id": 85,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Đây là kí hiệu của các phần tử nào",
+        "options": [
+          "Chuông điện và máy biến áp",
+          "Công tơ điện và máy biến áp",
+          "Chuông điện và trạm biến áp",
+          "Công tơ điện và trạm biến áp"
+        ],
+        "correct_index": 2
+      },
+      {
+        "id": 41,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Nghề điện công nghiệp hoạt động chủ yếu trong các lĩnh vực nào?",
+        "options": [
+          "Sản xuất, truyền tải, phân phối điện.",
+          "Chế tạo vật tư ngành điện.",
+          "Sử dụng điện phục vụ đời sống, điều khiển tự động hóa sản xuất.",
+          "Mua bán vật tư ngành điện."
+        ],
+        "correct_index": 2
+      },
+      {
+        "id": 74,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Đại lượng đo ánh sáng nào được quan tâm nhất khi tính toán chiếu sáng",
+        "options": [
+          "Quang thông.",
+          "Độ chói.",
+          "Độ rọi.",
+          "Công suất đèn."
+        ],
+        "correct_index": 2
+      },
+      {
+        "id": 73,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Cầu chì là khí cụ dùng để",
+        "options": [
+          "Bảo vệ mạch điện.",
+          "Đóng cắt thiết bị điện.",
+          "Bảo vệ quá tải và ngắn mạch cho thiết bị và đường dây.",
+          "Bảo vệ quá tải cho thiết bị điện và đường dây."
+        ],
+        "correct_index": 2
+      },
+      {
+        "id": 77,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Để thể hiện rõ mối liên hệ về điện của các phần tử trong mạch điện ta dùng",
+        "options": [
+          "Sơ đồ cấu tạo của mạch điện",
+          "Sơ đồ lắp đặt của mạch điện",
+          "Sơ đồ nguyên lí của mạch điện",
+          "Sơ đồ nguyên lí và cấu tạo của mạch điện"
+        ],
+        "correct_index": 2
+      },
+      {
+        "id": 78,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Công tắc 3 cực thường được sử dụng phổ biến ở các mạch đèn nào",
+        "options": [
+          "Mạch đèn thay đổi ánh sáng.",
+          "Mạch đèn cầu thang.",
+          "Mạch đèn nhà kho.",
+          "Mạch đèn phòng học."
+        ],
+        "correct_index": 1
+      },
+      {
+        "id": 45,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Khi thiết bị điện bị rò điện ra vỏ thì có tác hại là",
+        "options": [
+          "Thiết bị không hoạt động được",
+          "Thiết bị không hoạt động được và nguy hiểm cho người sử dụng",
+          "Nguy hiểm cho người sử dụng khi chạm vào vỏ thiết bị",
+          "Gây nguy hiểm cho người sử dụng và thiết bị dễ bị quá tải"
+        ],
+        "correct_index": 2
+      },
+      {
+        "id": 75,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Đây là kí hiệu của :",
+        "options": [
+          "Động cơ điện.",
+          "Máy biến áp.",
+          "Công tơ  điện.",
+          "Máy phát điện."
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": 52,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Đo điện trở hai đầu của cuộn dây cho giá trị R = ∞ chứng tỏ rằng :",
+        "options": [
+          "Cuộn dây bị ngắn mạch",
+          "Cuộn dây bị ẩm nên điện trở tăng",
+          "Cuộn dây bị đứt",
+          "Cuộn dây bị chập một số vòng"
+        ],
+        "correct_index": 2
+      },
+      {
+        "id": 89,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Sử dụng thiết bị đo nào để kiểm tra cách điện động cơ, cáp điện",
+        "options": [
+          "Đồng  hồ vạn năng",
+          "Đồng hồ ampe kìm",
+          "Đồng hồ đo điện trở đất Teraohm",
+          "Đồng hồ Megaohm"
+        ],
+        "correct_index": 3
+      },
+      {
+        "id": 86,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Yêu cầu điện trở tiếp địa hệ thống chống sét, tủ điện, motor cần đạt được là:",
+        "options": [
+          "A≥ 10 Ohm (W)",
+          "B≤ 10 Ohm (W)",
+          "C≤ 4 Ohm (W)",
+          "D≤ 6 Ohm (W)"
+        ],
+        "correct_index": 1
+      },
+      {
+        "id": 64,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Động cơ điện có các phần chính là",
+        "options": [
+          "Stato là phần quay và roto là phần tĩnh.",
+          "Stato là phần tĩnh và roto là phần quay."
+        ],
+        "correct_index": 1
+      },
+      {
+        "id": 43,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Khi tay người khô ráo sẽ bị điện giật nhẹ hơn khi tay  ướt là do",
+        "options": [
+          "Điện trở của tay khô  nhỏ hơn tay ướt.",
+          "Điện trở của tay khô  lớn hơn tay ướt.",
+          "Điện áp của dòng điện tăng lên.",
+          "Điện trở tay và điện áp đều giảm."
+        ],
+        "correct_index": 1
+      },
+      {
+        "id": 71,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Khi đóng điện vào máy bơm nước, có điện vào, động cơ rung nhẹ nhưng không quay là do",
+        "options": [
+          "Điện áp nguồn quá cao so với định mức",
+          "Mạch cấp điện cho động cơ bị hở mạch do đứt dây",
+          "Tụ điện khởi động bị hỏng",
+          "Dây quấn động cơ bị cháy"
+        ],
+        "correct_index": 2
+      },
+      {
+        "id": 61,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Máy bơm nước gia đình, máy giặt dùng nguồn điện",
+        "options": [
+          "Xoay chiều 220V–50Hz.",
+          "Xoay chiều 380 V.",
+          "Một chiều 220 V-50Hz.",
+          "Một chiều 380V."
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": 87,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Yêu cầu điện trở tiếp địa hệ thống tiếp địa trạm biến áp cần đạt được là:",
+        "options": [
+          "A≥ 10 Ohm (W)",
+          "B≤ 10 Ohm (W)",
+          "C≤ 4 Ohm (W)",
+          "D≤ 6 Ohm (W)"
+        ],
+        "correct_index": 2
+      },
+      {
+        "id": 70,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Khi cuộn dây động cơ bị ẩm ta cần làm như sau :",
+        "options": [
+          "Tháo động cơ, phơi nắng",
+          "Tháo động cơ để trong mát một thời gian",
+          "Tháo động cơ, rửa sạch bằng nước, phơi nắng",
+          "Tháo động cơ, rửa sạch bằng xăng, dùng máy sấy khô"
+        ],
+        "correct_index": 3
+      },
+      {
+        "id": 63,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Động cơ điện một pha thường có công suất",
+        "options": [
+          "Dưới 600W.",
+          "Trên 600W.",
+          "Trên 1000W.",
+          "Dưới 6000W"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": 76,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Đây là kí hiệu của :",
+        "options": [
+          "Động cơ điện.",
+          "Máy biến áp.",
+          "Công tơ điện.",
+          "Máy phát điện."
+        ],
+        "correct_index": 2
+      },
+      {
+        "id": 81,
+        "category": "Lý thuyết - Thợ điện",
+        "question": "Mạch điện có một bóng đèn có thể tắt, mở ở hai vị trí khác nhau là",
+        "options": [
+          "Mạch đèn sợi đốt đơn giản.",
+          "Mạch đèn cầu thang.",
+          "Mạch đèn thay đổi ánh sáng.",
+          "Mạch đèn sáng luân phiên."
+        ],
+        "correct_index": 1
+      }
+    ],
+    "correctCount": 0,
+    "totalCount": 30,
+    "percentage": 0,
+    "isPass": false,
+    "submitTime": "18:57:34 20/7/2026",
+    "timestamp": 1784548654261
+  },
+  {
+    "id": "test_2",
+    "candidate": {
+      "name": "Tran Van B",
+      "id": "0987654321",
+      "job": "Tho Xay dung",
+      "examType": "Thuc hanh"
+    },
+    "correctCount": 18,
+    "totalCount": 20,
+    "percentage": 90.0,
+    "isPass": true,
+    "submitTime": "20/07/2026 10:35:00"
+  },
+  {
+    "id": "test_1",
+    "candidate": {
+      "name": "Nguyen Van A",
+      "id": "0912345678",
+      "job": "Tho Dien nuoc (M&E)",
+      "examType": "Ly thuyet"
+    },
+    "correctCount": 25,
+    "totalCount": 30,
+    "percentage": 83.3,
+    "isPass": true,
+    "submitTime": "20/07/2026 10:30:00"
+  }
+]

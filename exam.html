@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Thi Sát Hạch Bậc Thợ - Vincons</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/config.js"></script>
+    <script>
+        // Check login immediately
+        const loggedInUser = JSON.parse(localStorage.getItem('vincons_logged_in_user'));
+        if (!loggedInUser) {
+            window.location.href = 'login.html';
+        }
+        
+        function handleLogout() {
+            if (confirm('Bạn có chắc chắn muốn đăng xuất tài khoản và HỦY bài thi đang làm?')) {
+                localStorage.removeItem('vincons_logged_in_user');
+                localStorage.removeItem('vincons_candidate');
+                localStorage.removeItem('vincons_answers');
+                localStorage.removeItem('vincons_time_left');
+                localStorage.removeItem('vincons_active_questions');
+                window.location.href = 'login.html';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            if (loggedInUser) {
+                const roleText = loggedInUser.role === 'admin' ? 'Giám thị' : 'Thí sinh';
+                const userInfo = document.getElementById('userInfoDisplay');
+                if (userInfo) userInfo.textContent = `${loggedInUser.name} (${roleText})`;
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">VC</div>
+            <div class="logo-text">
+                <h1>Vincons</h1>
+                <p>BCH Hạ Long Xanh</p>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <div class="header-meta" id="examTitle">Bài Thi Sát Hạch</div>
+            <span id="userInfoDisplay" style="font-size: 13px; font-weight: 700; color: var(--primary);"></span>
+            <button onclick="handleLogout()" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Đăng xuất</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="exam-container" id="examContainer">
+            <!-- 3D Interactive Model Panel (Shown for Practical Exams) -->
+            <div class="model3d-panel" id="model3dPanel" style="display: none;">
+                <div class="model3d-header">
+                    <div class="model3d-title">
+                        <span style="font-size: 16px;">🏛️</span>
+                        <strong id="model3dTitleText">Mô Hình Revit BIM M&E (Ikigai Center)</strong>
+                    </div>
+                    <div class="model3d-nav-controls">
+                        <!-- M&E System Filter Tabs -->
+                        <div class="mep-system-tabs" id="mepSystemTabs">
+                            <button class="mep-tab-btn active" onclick="switchMepSystem('all')">Tất Cả Hệ</button>
+                            <button class="mep-tab-btn sys-power" onclick="switchMepSystem('power')">⚡ Cấp Điện</button>
+                            <button class="mep-tab-btn sys-lighting" onclick="switchMepSystem('lighting')">💡 Chiếu Sáng</button>
+                            <button class="mep-tab-btn sys-lv" onclick="switchMepSystem('low_voltage')">🔌 Điện Nhẹ</button>
+                            <button class="mep-tab-btn sys-hvac" onclick="switchMepSystem('hvac_fire')">❄️ HVAC & FA</button>
+                        </div>
+                        <select id="hotspotSelect" class="toolbar-select" onchange="navigateToHotspot(this.value)">
+                            <option value="pos_1">📍 1. Sàn Kỹ Thuật (Tủ MDB)</option>
+                            <option value="pos_2">📍 2. Sảnh (Máng cáp & Đèn)</option>
+                            <option value="pos_3">📍 3. Phòng Yoga (HVAC & FA)</option>
+                            <option value="pos_4">📍 4. Phòng Thiền (Điện nhẹ)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 3D Canvas Viewport -->
+                <div class="model3d-viewport" id="model3dViewport"></div>
+
+                <!-- Revit BIM Parameter Inspector Card -->
+                <div class="bim-inspector-card" id="bimInspectorPanel">
+                    <div class="bim-inspector-header">
+                        <span style="font-size: 14px;">📐</span>
+                        <strong style="color: var(--accent);">Bảng Thông Số Kỹ Thuật Revit BIM Element:</strong>
+                        <span id="bimFamilyName" style="color: #64748b; font-weight: 700; margin-left: 5px;">Bấm chọn thiết bị M&E trên mô hình 3D</span>
+                    </div>
+                    <div class="bim-inspector-body" id="bimInspectorBody">
+                        <div class="bim-param-grid">
+                            <div><strong>Category:</strong> <span id="bimCategory">Electrical Equipment</span></div>
+                            <div><strong>Kích thước/Tiết diện:</strong> <span id="bimSize">800 x 1800 x 400 mm</span></div>
+                            <div><strong>Cao độ lắp đặt:</strong> <span id="bimElevation">+0.00 mm (Cốt sàn)</span></div>
+                            <div><strong>Mã quy chuẩn:</strong> <code id="bimCode">MDB-IKIGAI-01</code></div>
+                        </div>
+                        <div style="font-size: 12px; margin-top: 6px; color: #cbd5e1; line-height: 1.4;">
+                            <strong>Mô tả kỹ thuật:</strong> <span id="bimSpec">Sơ đồ CAD: 1 Cap dien nha IKIGAI.dwg - Tủ điện tổng MDB 3 pha 400A, vỏ tĩnh điện IP54.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blueprint PDF Viewer Panel (Shown for Practical Exams) -->
+            <div class="blueprint-panel" id="blueprintPanel" style="display: none;">
+                <div class="blueprint-header">
+                    <div class="blueprint-title">
+                        <span style="font-size: 16px;">📐</span> 
+                        <strong id="blueprintTitleText">Bản Vẽ Thiết Kế Kỹ Thuật (PDF)</strong>
+                    </div>
+                    <div class="blueprint-toolbar">
+                        <select id="pdfSelect" class="toolbar-select" onchange="changePdfSource(this.value)">
+                            <option value="">-- Chọn bản vẽ PDF --</option>
+                        </select>
+                        <label class="toolbar-btn" title="Tải lên tệp bản vẽ PDF">
+                            📁 Chọn PDF
+                            <input type="file" id="pdfFileInput" accept="application/pdf" style="display: none;" onchange="handlePdfFileUpload(event)">
+                        </label>
+                        <button class="toolbar-btn" onclick="zoomPdf(0.25)" title="Phóng to">🔍 +</button>
+                        <button class="toolbar-btn" onclick="zoomPdf(-0.25)" title="Thu nhỏ">🔍 -</button>
+                        <button class="toolbar-btn" onclick="resetZoomPdf()" title="Kích thước chuẩn">100%</button>
+                        <button class="toolbar-btn" onclick="rotatePdf()" title="Xoay bản vẽ 90°">🔄 Xoay</button>
+                        <button class="toolbar-btn" onclick="toggleFullscreenPdf()" title="Mở rộng toàn màn hình">🔲 Phóng to</button>
+                    </div>
+                </div>
+                <!-- Blueprint Viewport container -->
+                <div class="blueprint-viewport" id="blueprintViewport">
+                    <iframe id="pdfIframe" src="" frameborder="0" width="100%" height="100%" allow="fullscreen"></iframe>
+                </div>
+            </div>
+
+            <!-- Left Side: Question Details -->
+            <div class="question-panel">
+                <div>
+                    <div class="question-header" id="questionNumLabel">Câu hỏi 1/30</div>
+                    <div class="question-text" id="questionContent">Đang tải câu hỏi...</div>
+                    <div class="options-list" id="optionsContainer">
+                        <!-- Options generated dynamically -->
+                    </div>
+                </div>
+                
+                <div class="navigation-bar">
+                    <button class="btn btn-secondary" id="btnPrev" onclick="prevQuestion()">&larr; Câu trước</button>
+                    <button class="btn btn-primary" id="btnNext" onclick="nextQuestion()">Câu sau &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Right Side: Sidebar Status & Timer -->
+            <div class="sidebar-panel">
+                <div>
+                    <div class="grid-title" style="margin-bottom: 12px;">Thí Sinh</div>
+                    <div id="candidateDisplayInfo" style="font-size: 14px; font-weight: 600; line-height: 1.5; color: var(--primary);">
+                        Đang tải...
+                    </div>
+                </div>
+
+                <div class="timer-box" id="timerBox">
+                    <span style="font-size: 16px;">⏱️</span>
+                    <span id="countdownText">30:00</span>
+                </div>
+
+                <div>
+                    <div class="grid-title" style="margin-bottom: 12px;">Danh Sách Câu Hỏi</div>
+                    <div class="questions-grid" id="questionsGrid">
+                        <!-- Grid elements generated dynamically -->
+                    </div>
+                </div>
+
+                <div class="status-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: var(--primary);"></div>
+                        <span>Đã trả lời</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: var(--white); border: 1px solid rgba(0,0,0,0.15);"></div>
+                        <span>Chưa trả lời</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="box-shadow: 0 0 0 2px var(--accent); background: var(--white);"></div>
+                        <span>Câu hiện tại</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-accent btn-block" style="margin-top: 10px;" onclick="confirmSubmit()">Nộp Bài Thi</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Vincons - Ban Chỉ Huy Dự Án Hạ Long Xanh. All rights reserved.
+    </footer>
+
+    <!-- Converted Questions File -->
+    <script src="questions.js"></script>
+    <!-- Revit BIM MEP Builder Engine -->
+    <script src="js/revit-mep-builder.js"></script>
+    <!-- 3D Interactive Building Engine -->
+    <script src="js/ikigai-3d-model.js"></script>
+    <!-- App Control JavaScript logic -->
+    <script src="app.js"></script>
+</body>
+</html>
+
+
