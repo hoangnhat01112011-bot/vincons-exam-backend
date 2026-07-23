@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="style.css">
     <script>
         // Check login immediately
-        const loggedInUser = JSON.parse(localStorage.getItem('vincons_logged_in_user'));
+        let loggedInUser = JSON.parse(localStorage.getItem('vincons_logged_in_user'));
         if (!loggedInUser) {
-            window.location.href = 'login.html';
+            loggedInUser = { name: "", username: "", role: "candidate" };
+            localStorage.setItem('vincons_logged_in_user', JSON.stringify(loggedInUser));
         }
     </script>
 </head>
@@ -35,12 +36,12 @@
             <form id="registrationForm">
                 <div class="form-group">
                     <label for="candidateName">Họ và tên thí sinh (*)</label>
-                    <input type="text" id="candidateName" class="form-control" placeholder="Nhập họ và tên đầy đủ" required readonly style="background-color: #e9ecef; cursor: not-allowed;">
+                    <input type="text" id="candidateName" class="form-control" placeholder="Nhập họ và tên đầy đủ" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="candidateId">Số điện thoại / Gmail (*)</label>
-                    <input type="text" id="candidateId" class="form-control" placeholder="Nhập SĐT hoặc Gmail" required readonly style="background-color: #e9ecef; cursor: not-allowed;">
+                    <label for="candidateId">Số báo danh / SĐT (*)</label>
+                    <input type="text" id="candidateId" class="form-control" placeholder="Nhập SBD hoặc Số điện thoại" required>
                 </div>
 
                 <div class="form-group">
@@ -77,11 +78,15 @@
         // Display user info and populate fields
         if (loggedInUser) {
             const roleText = loggedInUser.role === 'admin' ? 'Giám thị' : 'Thí sinh';
-            document.getElementById('userInfoDisplay').textContent = `${loggedInUser.name} (${roleText})`;
-            document.getElementById('candidateName').value = loggedInUser.name;
-            document.getElementById('candidateId').value = loggedInUser.username;
+            document.getElementById('userInfoDisplay').textContent = loggedInUser.name ? `${loggedInUser.name} (${roleText})` : `Thí sinh`;
+            if (loggedInUser.name) {
+                document.getElementById('candidateName').value = loggedInUser.name;
+            }
+            if (loggedInUser.username) {
+                document.getElementById('candidateId').value = loggedInUser.username;
+            }
         }
-
+ 
         function handleLogout() {
             if (confirm('Bạn có chắc chắn muốn đăng xuất tài khoản?')) {
                 localStorage.removeItem('vincons_logged_in_user');
@@ -89,7 +94,7 @@
                 localStorage.removeItem('vincons_answers');
                 localStorage.removeItem('vincons_time_left');
                 localStorage.removeItem('vincons_active_questions');
-                window.location.href = 'login.html';
+                window.location.href = 'index.html';
             }
         }
 
@@ -106,6 +111,11 @@
                 return;
             }
             
+            // Sync candidate info to logged in user so that other pages display correctly
+            loggedInUser.name = name;
+            loggedInUser.username = id;
+            localStorage.setItem('vincons_logged_in_user', JSON.stringify(loggedInUser));
+
             // Save candidate info to localStorage
             const candidateInfo = {
                 name: name,
