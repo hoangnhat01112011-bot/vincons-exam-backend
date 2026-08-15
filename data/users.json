@@ -1,14 +1,20 @@
 [
   {
     "username": "admin@vincons.vn",
-    "password": "24078914ba377b8ce7e15228fd000e73e7e2264c760359871790b8ef4d4023c7",
+    "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
     "name": "Giám thị Admin (Gmail)",
     "role": "admin"
   },
   {
     "username": "0935947680",
-    "password": "24078914ba377b8ce7e15228fd000e73e7e2264c760359871790b8ef4d4023c7",
+    "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
     "name": "Giám thị Admin (SĐT)",
+    "role": "admin"
+  },
+  {
+    "username": "0948353814",
+    "password": "3996fe74d2176f6b8be63e39b009183c320c10b2ccee562219324a426cb55c20",
+    "name": "Phạm Ngọc Điểm",
     "role": "admin"
   }
 ]

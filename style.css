@@ -209,11 +209,31 @@ main {
 /* Exam Layout */
 .exam-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px; /* Increased to allow more space for the image */
     display: grid;
-    grid-template-columns: 1fr 320px;
+    grid-template-columns: 1fr 450px;
     gap: 30px;
     padding: 0 15px;
+}
+
+.image-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.image-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
 }
 
 .question-panel {

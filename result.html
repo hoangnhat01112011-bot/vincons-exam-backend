@@ -55,6 +55,8 @@
         <div class="header-nav" style="display: flex; align-items: center; gap: 15px;">
             <span id="userInfoDisplay" style="font-size: 13px; font-weight: 700; color: var(--primary);"></span>
             <a href="index.html" class="nav-link" id="navHomeLink">🏠 Trang chủ</a>
+            <a href="kpi.html" class="nav-link">📊 Quản lý KPI</a>
+            <a href="bao_cao_san_luong.html" class="nav-link">✍️ Báo cáo sản lượng</a>
             <a href="history.html" class="nav-link">📋 Lịch sử bài thi</a>
             <button onclick="handleLogout()" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Đăng xuất</button>
         </div>
@@ -96,7 +98,8 @@
             <!-- Actions buttons -->
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; border-top: 1.5px solid var(--border); padding-top: 20px;">
                 <button class="btn btn-primary" onclick="window.print()">🖨️ In báo cáo (PDF)</button>
-                <a href="history.html" class="btn btn-accent">📋 Xem lịch sử thi</a>
+                <a href="https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit" target="_blank" class="btn btn-accent" style="text-decoration: none;">📊 Google Sheets Cloud (Tự động)</a>
+                <a href="history.html" class="btn btn-secondary">📋 Xem lịch sử thi</a>
                 <a href="index.html" class="btn btn-secondary">Quay lại trang chủ</a>
             </div>
         </div>
@@ -145,8 +148,20 @@
         let correctCount = 0;
         activeQuestions.forEach((q, index) => {
             const userAnswer = answers[index];
-            if (userAnswer !== undefined && userAnswer === q.correct_index) {
-                correctCount++;
+            if (q.type === 'multiple_choice') {
+                if (userAnswer !== undefined && userAnswer === q.correct_index) {
+                    correctCount++;
+                }
+            } else if (q.type === 'input_group') {
+                if (userAnswer !== undefined) {
+                    let allCorrect = true;
+                    q.sub_questions.forEach(subQ => {
+                        if (String(userAnswer[subQ.id]) !== String(subQ.correct_value)) {
+                            allCorrect = false;
+                        }
+                    });
+                    if (allCorrect) correctCount++;
+                }
             }
         });
         
@@ -180,28 +195,58 @@
         const reviewContainer = document.getElementById('reviewContainer');
         activeQuestions.forEach((q, index) => {
             const userAnswer = answers[index];
-            const isCorrect = userAnswer !== undefined && userAnswer === q.correct_index;
+            
+            let isCorrect = false;
+            if (q.type === 'multiple_choice') {
+                isCorrect = userAnswer !== undefined && userAnswer === q.correct_index;
+            } else if (q.type === 'input_group') {
+                if (userAnswer !== undefined) {
+                    let allCorrect = true;
+                    q.sub_questions.forEach(subQ => {
+                        if (String(userAnswer[subQ.id]) !== String(subQ.correct_value)) allCorrect = false;
+                    });
+                    isCorrect = allCorrect;
+                }
+            }
             
             const item = document.createElement('div');
             item.className = 'review-item';
             
             let optionsHTML = '';
-            q.options.forEach((opt, optIdx) => {
-                let statusClass = '';
-                if (optIdx === q.correct_index) {
-                    statusClass = 'correct-answer'; // Highlight correct answer
-                } else if (userAnswer !== undefined && optIdx === userAnswer && !isCorrect) {
-                    statusClass = 'selected-wrong'; // Highlight user's incorrect choice
-                }
-                
-                optionsHTML += `
-                    <div class="review-opt ${statusClass}">
-                        ${optIdx + 1}. ${opt}
-                        ${optIdx === q.correct_index ? ' ✓ (Đáp án đúng)' : ''}
-                        ${userAnswer !== undefined && optIdx === userAnswer && !isCorrect ? ' ✗ (Lựa chọn của bạn)' : ''}
-                    </div>
-                `;
-            });
+            
+            if (q.type === 'multiple_choice') {
+                q.options.forEach((opt, optIdx) => {
+                    let statusClass = '';
+                    if (optIdx === q.correct_index) {
+                        statusClass = 'correct-answer'; 
+                    } else if (userAnswer !== undefined && optIdx === userAnswer && !isCorrect) {
+                        statusClass = 'selected-wrong'; 
+                    }
+                    
+                    optionsHTML += `
+                        <div class="review-opt ${statusClass}">
+                            ${optIdx + 1}. ${opt}
+                            ${optIdx === q.correct_index ? ' ✓ (Đáp án đúng)' : ''}
+                            ${userAnswer !== undefined && optIdx === userAnswer && !isCorrect ? ' ✗ (Lựa chọn của bạn)' : ''}
+                        </div>
+                    `;
+                });
+            } else if (q.type === 'input_group') {
+                q.sub_questions.forEach(subQ => {
+                    const uAns = (userAnswer && userAnswer[subQ.id]) !== undefined ? userAnswer[subQ.id] : 'Chưa điền';
+                    const cAns = subQ.correct_value;
+                    const subIsCorrect = String(uAns) === String(cAns);
+                    
+                    let statusClass = subIsCorrect ? 'correct-answer' : 'selected-wrong';
+                    
+                    optionsHTML += `
+                        <div class="review-opt ${statusClass}">
+                            <strong>${subQ.label}:</strong> Bạn nhập: <em>${uAns}</em> 
+                            ${!subIsCorrect ? `(Đáp án đúng: <strong>${cAns}</strong>)` : '✓'}
+                        </div>
+                    `;
+                });
+            }
             
             item.innerHTML = `
                 <div class="review-question-header">
@@ -250,7 +295,7 @@
         }
 
         // 2. Save to Server Backend API
-        fetch(CONFIG.API_BASE_URL + '/api/save-result', {
+        CONFIG.apiCall('/api/save-result', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(resultData)

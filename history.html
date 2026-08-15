@@ -6,6 +6,7 @@
     <title>Lịch Sử Bài Thi - Vincons</title>
     <link rel="stylesheet" href="style.css">
     <script src="js/config.js"></script>
+    <script src="questions.js"></script>
     <script>
         // Check login immediately
         let loggedInUser = JSON.parse(localStorage.getItem('vincons_logged_in_user'));
@@ -27,8 +28,11 @@
         <div class="header-nav" style="display: flex; align-items: center; gap: 15px;">
             <span id="userInfoDisplay" style="font-size: 13px; font-weight: 700; color: var(--primary);"></span>
             <a href="index.html" class="nav-link" id="navHomeLink">🏠 Trang chủ</a>
+            <a href="kpi.html" class="nav-link">📊 Quản lý KPI</a>
+            <a href="bao_cao_san_luong.html" class="nav-link">✍️ Báo cáo sản lượng</a>
             <a href="history.html" class="nav-link active">📋 Lịch sử bài thi</a>
-            <button onclick="handleLogout()" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Đăng xuất</button>
+            <a href="login.html" class="nav-link" id="navLoginLink">🔑 Đăng nhập Giám thị/Admin</a>
+            <button onclick="handleLogout()" id="btnLogout" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Đăng xuất</button>
         </div>
     </header>
 
@@ -44,7 +48,8 @@
                         Dự án Khu Đô Thị Phức Hợp Hạ Long Xanh - Danh sách kết quả sát hạch
                     </p>
                 </div>
-                <div style="display: flex; gap: 10px;">
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <a href="https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit" target="_blank" class="btn btn-accent btn-sm" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">📊 Google Sheets Cloud (Tự động)</a>
                     <button class="btn btn-primary btn-sm" onclick="exportData()">📥 Xuất Excel / CSV</button>
                     <button class="btn btn-secondary btn-sm" onclick="window.print()">🖨️ In báo cáo</button>
                     <button class="btn btn-danger btn-sm" onclick="confirmClearAll()">🗑️ Xóa lịch sử</button>
@@ -172,6 +177,19 @@
                     const homeLink = document.getElementById('navHomeLink');
                     if (homeLink) homeLink.style.display = 'none';
                 }
+                
+                // Toggle login/logout view
+                if (loggedInUser.username && loggedInUser.username !== "thi_sinh") {
+                    const loginLink = document.getElementById('navLoginLink');
+                    if (loginLink) loginLink.style.display = 'none';
+                    const logoutBtn = document.getElementById('btnLogout');
+                    if (logoutBtn) logoutBtn.style.display = 'block';
+                } else {
+                    const loginLink = document.getElementById('navLoginLink');
+                    if (loginLink) loginLink.style.display = 'block';
+                    const logoutBtn = document.getElementById('btnLogout');
+                    if (logoutBtn) logoutBtn.style.display = 'none';
+                }
             }
             
             loadResultsData();
@@ -184,7 +202,7 @@
                 localStorage.removeItem('vincons_answers');
                 localStorage.removeItem('vincons_time_left');
                 localStorage.removeItem('vincons_active_questions');
-                window.location.href = 'index.html';
+                window.location.href = 'login.html';
             }
         }
 
@@ -193,7 +211,7 @@
             const role = encodeURIComponent(loggedInUser.role);
             
             // Try fetching from Python server endpoint first with authorization params
-            fetch(CONFIG.API_BASE_URL + `/api/results?userId=${userId}&role=${role}`)
+            CONFIG.apiCall(`/api/results?userId=${userId}&role=${role}`)
                 .then(res => {
                     if (!res.ok) throw new Error('API not available');
                     return res.json();
@@ -326,18 +344,30 @@
             if (!item) return;
 
             const cand = item.candidate || {};
-            const questions = item.questions || [];
+            let questions = item.questions || [];
             const answers = item.answers || {};
 
-            document.getElementById('modalTitle').textContent = `Chi Tiết Bài Làm - ${cand.name} (${cand.id})`;
+            // Fallback: If questions array is missing or empty in history record, load matching questions from QUESTIONS
+            if ((!questions || questions.length === 0) && typeof QUESTIONS !== 'undefined') {
+                if (cand.examType === 'Thực hành') {
+                    questions = QUESTIONS.filter(q => q.category && q.category.includes('Thực hành CNCH'));
+                } else {
+                    questions = QUESTIONS.filter(q => q.category && q.category.includes('Lý thuyết'));
+                    if (questions.length > 30) {
+                        questions = questions.slice(0, 30);
+                    }
+                }
+            }
+
+            document.getElementById('modalTitle').textContent = `Chi Tiết Bài Làm - ${cand.name || 'Thí sinh'} (${cand.id || '-'})`;
             
             let modalHTML = `
                 <div style="background: rgba(11, 60, 93, 0.04); padding: 16px; border-radius: 10px; margin-bottom: 20px; border: 1px solid var(--border);">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 14px;">
-                        <div><strong>Họ và tên:</strong> ${cand.name}</div>
-                        <div><strong>SBD / SĐT:</strong> ${cand.id}</div>
-                        <div><strong>Vị trí:</strong> ${cand.job}</div>
-                        <div><strong>Phần thi:</strong> ${cand.examType}</div>
+                        <div><strong>Họ và tên:</strong> ${cand.name || '-'}</div>
+                        <div><strong>SBD / SĐT:</strong> ${cand.id || '-'}</div>
+                        <div><strong>Vị trí:</strong> ${cand.job || '-'}</div>
+                        <div><strong>Phần thi:</strong> ${cand.examType || '-'}</div>
                         <div><strong>Số câu đúng:</strong> ${item.correctCount}/${item.totalCount} (${(item.percentage || 0).toFixed(1)}%)</div>
                         <div><strong>Kết quả:</strong> <strong style="color: ${item.isPass ? 'var(--success)' : 'var(--danger)'};">${item.isPass ? 'ĐẠT YÊU CẦU' : 'CHƯA ĐẠT'}</strong></div>
                     </div>
@@ -348,45 +378,97 @@
                 <div style="display: flex; flex-direction: column; gap: 15px;">
             `;
 
-            questions.forEach((q, idx) => {
-                const userAnswer = answers[idx];
-                const isCorrect = userAnswer !== undefined && userAnswer === q.correct_index;
-                
-                let optionsHTML = '';
-                q.options.forEach((opt, optIdx) => {
-                    let statusClass = '';
-                    if (optIdx === q.correct_index) {
-                        statusClass = 'correct-answer';
-                    } else if (userAnswer !== undefined && optIdx === userAnswer && !isCorrect) {
-                        statusClass = 'selected-wrong';
+            if (!questions || questions.length === 0) {
+                modalHTML += `<div style="padding: 20px; text-align: center; color: #7f8c8d;">Không có dữ liệu câu hỏi chi tiết cho bài thi này.</div>`;
+            } else {
+                questions.forEach((q, idx) => {
+                    const userAnswer = answers[idx];
+                    let isCorrect = false;
+                    let optionsHTML = '';
+
+                    const isInputGroup = q.type === 'input_group' || (!q.options && q.sub_questions);
+
+                    if (isInputGroup) {
+                        // Handle input_group (used in Practical / Thực hành exam)
+                        const subQs = q.sub_questions || [];
+                        if (userAnswer !== undefined && typeof userAnswer === 'object') {
+                            let allCorrect = subQs.length > 0;
+                            subQs.forEach(subQ => {
+                                const uVal = userAnswer[subQ.id];
+                                if (uVal === undefined || uVal === null || uVal === '' || String(uVal).trim() !== String(subQ.correct_value).trim()) {
+                                    allCorrect = false;
+                                }
+                            });
+                            isCorrect = allCorrect;
+                        }
+
+                        subQs.forEach((subQ) => {
+                            const uAns = (userAnswer && userAnswer[subQ.id] !== undefined && userAnswer[subQ.id] !== '') ? userAnswer[subQ.id] : 'Chưa điền';
+                            const cAns = subQ.correct_value;
+                            const subIsCorrect = String(uAns).trim() === String(cAns).trim();
+                            const statusClass = subIsCorrect ? 'correct-answer' : 'selected-wrong';
+
+                            optionsHTML += `
+                                <div class="review-opt ${statusClass}" style="font-size: 13px; margin-bottom: 6px; padding: 8px 12px; border-radius: 6px;">
+                                    <strong>${subQ.label}:</strong> Thí sinh nhập: <strong style="color: ${subIsCorrect ? 'var(--success)' : 'var(--danger)'};">${uAns}</strong> 
+                                    ${subIsCorrect 
+                                        ? ' <span style="color: var(--success); font-weight: 700;">✓ (Chính xác)</span>' 
+                                        : ` <span style="color: var(--danger); font-weight: 700;">✗ (Đáp án đúng: <strong>${cAns}</strong>)</span>`}
+                                </div>
+                            `;
+                        });
+                    } else {
+                        // Handle multiple_choice
+                        isCorrect = userAnswer !== undefined && userAnswer === q.correct_index;
+                        const opts = q.options || [];
+
+                        opts.forEach((opt, optIdx) => {
+                            let statusClass = '';
+                            if (optIdx === q.correct_index) {
+                                statusClass = 'correct-answer';
+                            } else if (userAnswer !== undefined && optIdx === userAnswer && !isCorrect) {
+                                statusClass = 'selected-wrong';
+                            }
+
+                            const isCandidateChoice = (userAnswer !== undefined && optIdx === userAnswer);
+                            const isCorrectOpt = (optIdx === q.correct_index);
+
+                            optionsHTML += `
+                                <div class="review-opt ${statusClass}" style="font-size: 13px; margin-bottom: 6px; padding: 8px 12px; border-radius: 6px;">
+                                    <strong>${String.fromCharCode(65 + optIdx)}.</strong> ${opt}
+                                    ${isCorrectOpt ? ' <span style="color: var(--success); font-weight: 700;">✓ (Đáp án đúng)</span>' : ''}
+                                    ${isCandidateChoice && !isCorrectOpt ? ' <span style="color: var(--danger); font-weight: 700;">✗ (Lựa chọn của thí sinh)</span>' : ''}
+                                    ${isCandidateChoice && isCorrectOpt ? ' <span style="color: var(--success); font-weight: 700;">(Lựa chọn của thí sinh)</span>' : ''}
+                                </div>
+                            `;
+                        });
                     }
-                    
-                    optionsHTML += `
-                        <div class="review-opt ${statusClass}" style="font-size: 13px;">
-                            ${optIdx + 1}. ${opt}
-                            ${optIdx === q.correct_index ? ' ✓ (Đáp án đúng)' : ''}
-                            ${userAnswer !== undefined && optIdx === userAnswer && !isCorrect ? ' ✗ (Lựa chọn của thí sinh)' : ''}
+
+                    const imageHTML = q.image ? `
+                        <div style="margin: 10px 0; text-align: center;">
+                            <img src="${q.image}" style="max-width: 100%; max-height: 380px; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.08);" alt="Hình ảnh câu hỏi">
+                        </div>
+                    ` : '';
+
+                    modalHTML += `
+                        <div class="review-item" style="padding: 16px; border-radius: 8px; border: 1px solid var(--border); background: #fff; margin-bottom: 15px;">
+                            <div class="review-question-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <span style="font-weight: 700; color: var(--primary); font-size: 13px;">Câu ${idx + 1}: ${q.category ? `(${q.category})` : ''}</span>
+                                <span class="review-badge ${isCorrect ? 'correct' : 'incorrect'}">
+                                    ${isCorrect ? 'Đúng' : (userAnswer === undefined ? 'Chưa trả lời' : 'Sai')}
+                                </span>
+                            </div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 10px; color: var(--text); line-height: 1.4;">
+                                ${q.question}
+                            </div>
+                            ${imageHTML}
+                            <div class="review-options" style="margin-top: 10px;">
+                                ${optionsHTML}
+                            </div>
                         </div>
                     `;
                 });
-
-                modalHTML += `
-                    <div class="review-item" style="padding: 16px;">
-                        <div class="review-question-header">
-                            <span style="font-weight: 700; color: var(--primary); font-size: 13px;">Câu ${idx + 1}: (${q.category || ''})</span>
-                            <span class="review-badge ${isCorrect ? 'correct' : 'incorrect'}">
-                                ${isCorrect ? 'Đúng' : (userAnswer === undefined ? 'Chưa trả lời' : 'Sai')}
-                            </span>
-                        </div>
-                        <div style="font-size: 14px; font-weight: 700; margin-bottom: 10px; color: var(--text);">
-                            ${q.question}
-                        </div>
-                        <div class="review-options">
-                            ${optionsHTML}
-                        </div>
-                    </div>
-                `;
-            });
+            }
 
             modalHTML += `</div>`;
 
@@ -407,7 +489,7 @@
 
             // 2. Delete on server
             const role = encodeURIComponent(loggedInUser.role);
-            fetch(CONFIG.API_BASE_URL + `/api/delete-result?id=${encodeURIComponent(id)}&role=${role}`, { method: 'DELETE' })
+            CONFIG.apiCall(`/api/delete-result?id=${encodeURIComponent(id)}&role=${role}`, { method: 'DELETE' })
                 .then(res => res.json())
                 .then(data => {
                     if (data.status === 'error') {
@@ -436,7 +518,7 @@
             localStorage.removeItem('vincons_history');
 
             const role = encodeURIComponent(loggedInUser.role);
-            fetch(CONFIG.API_BASE_URL + `/api/clear-results?role=${role}`, { method: 'DELETE' })
+            CONFIG.apiCall(`/api/clear-results?role=${role}`, { method: 'DELETE' })
                 .then(res => res.json())
                 .then(data => {
                     if (data.status === 'error') {

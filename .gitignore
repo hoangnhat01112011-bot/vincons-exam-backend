@@ -3,3 +3,7 @@ __pycache__/
 .DS_Store
 .vscode/
 .idea/
+*.apk
+*.idsig
+*.keystore
+android_build/

@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vincons KPI - Cổng Báo Cáo Sản Lượng</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="js/config.js"></script>
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --panel-bg: rgba(30, 41, 59, 0.7);
+            --panel-border: rgba(255, 255, 255, 0.08);
+            --primary: #0ea5e9;
+            --primary-hover: #0284c7;
+            --primary-glow: rgba(14, 165, 233, 0.35);
+            --success: #10b981;
+            --success-glow: rgba(16, 185, 129, 0.25);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --input-bg: rgba(15, 23, 42, 0.6);
+            --input-border: rgba(255, 255, 255, 0.1);
+            --input-focus: #0ea5e9;
+            --danger: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 16px;
+            overflow-x: hidden;
+        }
+
+        /* Container & Glassmorphism Card */
+        .app-container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .logo-title {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #38bdf8, #0ea5e9, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4px;
+            text-shadow: 0 4px 20px rgba(14, 165, 233, 0.2);
+        }
+
+        .logo-subtitle {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card {
+            background: var(--panel-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--panel-border);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 14px;
+            width: 18px;
+            height: 18px;
+            fill: var(--text-muted);
+            pointer-events: none;
+            transition: fill 0.3s ease;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 14px 14px 14px 44px;
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 14px;
+            color: var(--text-main);
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2394a3b8'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            background-size: 20px;
+            padding-right: 40px;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--input-focus);
+            box-shadow: 0 0 0 3px var(--primary-glow);
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        input:focus + .input-icon,
+        select:focus + .input-icon {
+            fill: var(--primary);
+        }
+
+        /* Number Picker grid for labor */
+        .labor-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .labor-card {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--panel-border);
+            border-radius: 16px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .labor-card label {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .counter-control {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--input-bg);
+            border-radius: 10px;
+            border: 1px solid var(--input-border);
+            overflow: hidden;
+        }
+
+        .counter-btn {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            width: 36px;
+            height: 36px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .counter-btn:active {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .counter-value {
+            font-size: 15px;
+            font-weight: 600;
+            width: 40px;
+            text-align: center;
+            border: none;
+            background: none;
+            color: var(--text-main);
+            pointer-events: none;
+        }
+
+        /* Unit indicator */
+        .unit-badge {
+            position: absolute;
+            right: 14px;
+            background: rgba(14, 165, 233, 0.2);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            pointer-events: none;
+        }
+
+        /* Buttons */
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #4f46e5 100%);
+            border: none;
+            border-radius: 14px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px var(--primary-glow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.5);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .btn:disabled {
+            background: #475569;
+            box-shadow: none;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        /* Login Layout */
+        #login-screen {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .welcome-text {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .welcome-text h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .welcome-text p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Main Form Layout */
+        #form-screen {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Profile Banner */
+        .profile-banner {
+            background: rgba(14, 165, 233, 0.08);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            border-radius: 18px;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .profile-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: #38bdf8;
+        }
+
+        .profile-team {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .logout-btn {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: var(--danger);
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .logout-btn:hover {
+            background: var(--danger);
+            color: white;
+        }
+
+        /* History Section */
+        .history-card {
+            margin-top: 15px;
+        }
+
+        .history-header {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .history-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .history-item {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--panel-border);
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .history-details {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            max-width: 75%;
+        }
+
+        .history-task {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-main);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .history-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .history-value {
+            text-align: right;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Success & Loading Overlays */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.95);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(14, 165, 233, 0.1);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .success-checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--success);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 30px var(--success-glow);
+            transform: scale(0.5);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .overlay.active .success-checkmark {
+            transform: scale(1);
+        }
+
+        /* Notifications */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(30, 41, 59, 0.95);
+            border: 1px solid var(--danger);
+            color: var(--text-main);
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            z-index: 2000;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+            text-align: center;
+            width: calc(100% - 32px);
+            max-width: 400px;
+        }
+
+        .toast.success {
+            border-color: var(--success);
+        }
+
+        .toast.active {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Nav links to return back */
+        .nav-back-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .nav-back-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-back-link:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <header>
+        <div class="logo-title">VINCONS KPI</div>
+        <div class="logo-subtitle">Cổng Nhập Báo Cáo Sản Lượng</div>
+    </header>
+
+    <!-- 1. LOGIN SCREEN -->
+    <div id="login-screen" class="card">
+        <div class="welcome-text">
+            <h2>Đăng Nhập Tổ Trưởng</h2>
+            <p>Nhập số điện thoại và Mã nhân viên đã đăng ký trong Danh Mục Tổ để truy cập hệ thống báo cáo.</p>
+        </div>
+        
+        <form id="login-form" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label for="phone-input">Số điện thoại</label>
+                <div class="input-wrapper">
+                    <!-- Icon phone -->
+                    <svg class="input-icon" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    <input type="number" id="phone-input" placeholder="Ví dụ: 0989675839" required pattern="[0-9]*" inputmode="numeric">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mnv-input">Mã nhân viên (MNV)</label>
+                <div class="input-wrapper">
+                    <!-- Icon badge -->
+                    <svg class="input-icon" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                    <input type="text" id="mnv-input" placeholder="Ví dụ: MNV001" required>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn" id="login-submit-btn">
+                <span>Đăng Nhập</span>
+                <!-- Chevron right icon -->
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                </svg>
+            </button>
+        </form>
+        
+        <div class="nav-back-container">
+            <a href="index.html" class="nav-back-link">🏠 Quay lại Trang chủ</a>
+            <span style="color: var(--panel-border)">|</span>
+            <a href="kpi.html" class="nav-back-link">📊 Quản lý KPI</a>
+        </div>
+    </div>
+
+    <!-- 2. REPORT ENTRY FORM SCREEN -->
+    <div id="form-screen">
+        <div class="profile-banner">
+            <div class="profile-info">
+                <div class="profile-name" id="user-display-name">Nguyễn Văn Trung</div>
+                <div class="profile-team" id="user-display-team">Tổ: Phạm Quang Thắng</div>
+            </div>
+            <button class="logout-btn" onclick="handleLogout()">Đăng xuất</button>
+        </div>
+
+        <div class="card" style="margin-bottom: 15px;">
+            <form id="report-form" onsubmit="handleReportSubmit(event)">
+                
+                <!-- Ngày báo cáo -->
+                <div class="form-group">
+                    <label for="report-date">Ngày báo cáo</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24">
+                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                        </svg>
+                        <input type="date" id="report-date" required>
+                    </div>
+                </div>
+
+                <!-- Hạng mục Cấp 1 -->
+                <div class="form-group">
+                    <label for="category-c1">Hạng mục thi công (Cấp 1)</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24">
+                            <path d="M4 14h6v-4H4v4zm0 5h6v-4H4v4zM4 9h6V5H4v4zm7 5h9v-4h-9v4zm0 5h9v-4h-9v4zM11 5v4h9V5h-9z"/>
+                        </svg>
+                        <select id="category-c1" onchange="onCategoryC1Change()" required>
+                            <option value="">-- Chọn Hạng mục Cấp 1 --</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Hạng mục Cấp 2 -->
+                <div class="form-group">
+                    <label for="category-c2">Nội dung công việc (Cấp 2)</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24">
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                        </svg>
+                        <select id="category-c2" onchange="onCategoryC2Change()" required disabled>
+                            <option value="">-- Chọn Nội dung công việc --</option>
+                        </select>
+                        <span id="unit-badge" class="unit-badge" style="display: none;">bộ</span>
+                    </div>
+                </div>
+
+                <!-- Vị trí thi công -->
+                <div class="form-group">
+                    <label for="location-input">Vị trí thi công</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <input type="text" id="location-input" placeholder="Ví dụ: Bình Minh 1, tầng 3..." required>
+                    </div>
+                </div>
+
+                <!-- Tổng khối lượng thực hiện -->
+                <div class="form-group">
+                    <label for="quantity-input">Tổng khối lượng thực hiện</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                        </svg>
+                        <input type="number" id="quantity-input" placeholder="Nhập số khối lượng thực tế" step="any" required min="0.001">
+                    </div>
+                </div>
+
+                <!-- Nhân sự tham gia -->
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label>Nhân sự tham gia thi công (Số người)</label>
+                </div>
+
+                <div class="labor-grid">
+                    <!-- Tổ trưởng -->
+                    <div class="labor-card">
+                        <label>Tổ trưởng</label>
+                        <div class="counter-control">
+                            <button type="button" class="counter-btn" onclick="adjustLabor('to-truong', -0.5)">-</button>
+                            <input type="number" id="labor-to-truong" class="counter-value" value="1" readonly>
+                            <button type="button" class="counter-btn" onclick="adjustLabor('to-truong', 0.5)">+</button>
+                        </div>
+                    </div>
+                    <!-- Thợ bậc 1 -->
+                    <div class="labor-card">
+                        <label>Thợ Bậc 1</label>
+                        <div class="counter-control">
+                            <button type="button" class="counter-btn" onclick="adjustLabor('b1', -0.5)">-</button>
+                            <input type="number" id="labor-b1" class="counter-value" value="0" readonly>
+                            <button type="button" class="counter-btn" onclick="adjustLabor('b1', 0.5)">+</button>
+                        </div>
+                    </div>
+                    <!-- Thợ bậc 2 -->
+                    <div class="labor-card">
+                        <label>Thợ Bậc 2</label>
+                        <div class="counter-control">
+                            <button type="button" class="counter-btn" onclick="adjustLabor('b2', -0.5)">-</button>
+                            <input type="number" id="labor-b2" class="counter-value" value="0" readonly>
+                            <button type="button" class="counter-btn" onclick="adjustLabor('b2', 0.5)">+</button>
+                        </div>
+                    </div>
+                    <!-- Thợ bậc 3 -->
+                    <div class="labor-card">
+                        <label>Thợ Bậc 3</label>
+                        <div class="counter-control">
+                            <button type="button" class="counter-btn" onclick="adjustLabor('b3', -0.5)">-</button>
+                            <input type="number" id="labor-b3" class="counter-value" value="0" readonly>
+                            <button type="button" class="counter-btn" onclick="adjustLabor('b3', 0.5)">+</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="labor-grid" style="grid-template-columns: 1fr; margin-bottom: 25px;">
+                    <!-- Thợ phụ -->
+                    <div class="labor-card" style="flex-direction: row; justify-content: space-between; align-items: center; padding: 12px 16px;">
+                        <label style="margin-bottom: 0;">Thợ Phụ tham gia</label>
+                        <div class="counter-control" style="width: 120px;">
+                            <button type="button" class="counter-btn" onclick="adjustLabor('phu', -0.5)">-</button>
+                            <input type="number" id="labor-phu" class="counter-value" value="0" readonly>
+                            <button type="button" class="counter-btn" onclick="adjustLabor('phu', 0.5)">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn" id="report-submit-btn">
+                    <span>Gửi Báo Cáo Sản Lượng</span>
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <!-- LỊCH SỬ BÁO CÁO -->
+        <div class="card history-card">
+            <div class="history-header">
+                <span>Lịch sử báo cáo gần đây</span>
+                <span style="font-size: 11px; text-transform: none; font-weight: normal; color: var(--text-muted)">(5 ngày gần nhất)</span>
+            </div>
+            <div class="history-list" id="history-list-container">
+                <div class="history-item" style="justify-content: center; color: var(--text-muted); font-size: 13px; font-style: italic;">
+                    Chưa có lịch sử nhập liệu nào.
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-back-container" style="margin-top: 20px;">
+            <a href="index.html" class="nav-back-link">🏠 Quay lại Trang chủ</a>
+            <span style="color: var(--panel-border)">|</span>
+            <a href="kpi.html" class="nav-back-link">📊 Quản lý KPI</a>
+        </div>
+    </div>
+</div>
+
+<!-- SUCCESS OVERLAY -->
+<div id="success-overlay" class="overlay">
+    <div class="success-checkmark">
+        <svg width="40" height="40" fill="none" stroke="white" stroke-width="4" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+    </div>
+    <div style="font-size: 20px; font-weight: 600; text-align: center; margin-top: 10px;" id="success-message">Gửi Báo Cáo Thành Công!</div>
+    <div style="font-size: 13px; color: var(--text-muted);">Đã lưu vào tệp Excel trên hệ thống</div>
+</div>
+
+<!-- LOADING OVERLAY -->
+<div id="loading-overlay" class="overlay">
+    <div class="spinner"></div>
+    <div style="font-size: 15px; font-weight: 500; margin-top: 10px;" id="loading-text">Đang kết nối...</div>
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div id="toast" class="toast">Lỗi hệ thống</div>
+
+<script>
+    // Global State
+    let currentUser = null; // { to_thi_cong, to_truong, trung_doi_truong }
+    let categoryData = {};  // { Cấp 1: [ {name, unit}, ... ] }
+
+    // Run on Page Load
+    document.addEventListener("DOMContentLoaded", () => {
+        // Set Default Date as today
+        const dateInput = document.getElementById("report-date");
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const dd = String(today.getDate()).padStart(2, '0');
+        dateInput.value = `${yyyy}-${mm}-${dd}`;
+
+        // Check if user session exists in local storage
+        const savedSession = localStorage.getItem("vincons_to_truong_session");
+        if (savedSession) {
+            try {
+                currentUser = JSON.parse(savedSession);
+                showFormScreen();
+            } catch (e) {
+                localStorage.removeItem("vincons_to_truong_session");
+            }
+        }
+    });
+
+    // Show/Hide Overlays & Toasts
+    function showLoading(text) {
+        document.getElementById("loading-text").innerText = text;
+        document.getElementById("loading-overlay").classList.add("active");
+    }
+
+    // Delay-friendly close loading
+    function hideLoading() {
+        document.getElementById("loading-overlay").classList.remove("active");
+    }
+
+    function showSuccess(msg) {
+        document.getElementById("success-message").innerText = msg;
+        const overlay = document.getElementById("success-overlay");
+        overlay.classList.add("active");
+        setTimeout(() => {
+            overlay.classList.remove("active");
+        }, 2000);
+    }
+
+    function showToast(msg, isSuccess = false) {
+        const toast = document.getElementById("toast");
+        toast.innerText = msg;
+        toast.className = "toast";
+        if (isSuccess) {
+            toast.classList.add("success");
+        }
+        toast.classList.add("active");
+        setTimeout(() => {
+            toast.classList.remove("active");
+        }, 3500);
+    }
+
+    // Labor input helpers
+    function adjustLabor(type, amount) {
+        const input = document.getElementById(`labor-${type}`);
+        let val = parseFloat(input.value) || 0;
+        val += amount;
+        if (val < 0) val = 0;
+        input.value = val;
+    }
+
+    // Normalize phone number (digits matching)
+    function normalizePhone(val) {
+        if (val === undefined || val === null) return "";
+        let pStr = String(val).trim();
+        if (pStr.endsWith('.0')) {
+            pStr = pStr.substring(0, pStr.length - 2);
+        }
+        let pDigits = pStr.replace(/\D/g, '');
+        if (pDigits.startsWith('0')) {
+            pDigits = pDigits.substring(1);
+        }
+        return pDigits;
+    }
+
+    // Form screens toggle
+    function showFormScreen() {
+        document.getElementById("login-screen").style.display = "none";
+        document.getElementById("form-screen").style.display = "block";
+        document.getElementById("user-display-name").innerText = currentUser.to_truong;
+        document.getElementById("user-display-team").innerText = `Tổ: ${currentUser.to_thi_cong}`;
+        
+        // Fetch categories & history
+        loadCategories();
+        loadHistory();
+    }
+
+    // Handle Login API
+    async function handleLogin(e) {
+        e.preventDefault();
+        const phoneInputVal = document.getElementById("phone-input").value.trim();
+        const mnvInputVal = document.getElementById("mnv-input").value.trim();
+        if (!phoneInputVal || !mnvInputVal) {
+            showToast("Vui lòng nhập đầy đủ Số điện thoại và Mã nhân viên!");
+            return;
+        }
+
+        showLoading("Đang xác thực thông tin tổ trưởng...");
+        
+        try {
+            // Fetch the sheet danh_muc_to
+            const res = await CONFIG.apiCall('/api/kpi/sheet?name=danh_muc_to');
+            const data = await res.json();
+            hideLoading();
+
+            const normalizedInput = normalizePhone(phoneInputVal);
+            const mnvInputLower = mnvInputVal.toLowerCase();
+            let matchedRow = null;
+
+            if (Array.isArray(data)) {
+                for (let row of data) {
+                    const sdtKey = Object.keys(row).find(k => k.toLowerCase().includes('sđt') || k.toLowerCase().includes('số điện thoại'));
+                    const mnvKey = Object.keys(row).find(k => k.toLowerCase() === 'mnv' || k.toLowerCase().includes('mã nhân viên') || k.toLowerCase().includes('mã nv'));
+                    
+                    if (sdtKey && mnvKey) {
+                        const rowPhone = normalizePhone(row[sdtKey]);
+                        const rowMnv = String(row[mnvKey]).trim().toLowerCase();
+                        
+                        if (rowPhone && rowPhone === normalizedInput && rowMnv === mnvInputLower) {
+                            matchedRow = row;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (matchedRow) {
+                const teamNameKey = Object.keys(matchedRow).find(k => k.replace(/\s+/g, ' ').toLowerCase().includes('tên tổ'));
+                const leaderNameKey = Object.keys(matchedRow).find(k => k.replace(/\s+/g, ' ').toLowerCase().includes('tổ trưởng'));
+                const supervisorKey = Object.keys(matchedRow).find(k => k.replace(/\s+/g, ' ').toLowerCase().includes('trung đội trưởng'));
+
+                currentUser = {
+                    to_thi_cong: matchedRow[teamNameKey] || "",
+                    to_truong: matchedRow[leaderNameKey] || "",
+                    trung_doi_truong: matchedRow[supervisorKey] || ""
+                };
+
+                localStorage.setItem("vincons_to_truong_session", JSON.stringify(currentUser));
+                showToast("Đăng nhập thành công!", true);
+                showFormScreen();
+            } else {
+                showToast("Số điện thoại hoặc Mã nhân viên không khớp!");
+            }
+        } catch (err) {
+            hideLoading();
+            showToast("Lỗi khi kết nối hệ thống lấy dữ liệu danh mục tổ!");
+            console.error(err);
+        }
+    }
+
+    // Handle Logout
+    function handleLogout() {
+        localStorage.removeItem("vincons_to_truong_session");
+        currentUser = null;
+        document.getElementById("form-screen").style.display = "none";
+        document.getElementById("login-screen").style.display = "block";
+        document.getElementById("phone-input").value = "";
+        document.getElementById("mnv-input").value = "";
+    }
+
+    // Load Categories from API
+    async function loadCategories() {
+        try {
+            const res = await CONFIG.apiCall('/api/kpi/sheet?name=don_gia_vincons');
+            const data = await res.json();
+            
+            if (Array.isArray(data)) {
+                categoryData = {};
+                data.forEach(row => {
+                    const c1Key = Object.keys(row).find(k => k.replace(/\s+/g, ' ').toLowerCase().includes('hạng mục thi công') && !k.toLowerCase().includes('nội dung'));
+                    const c2Key = Object.keys(row).find(k => k.replace(/\s+/g, ' ').toLowerCase().includes('nội dung công việc') || k.replace(/\s+/g, ' ').toLowerCase().includes('hạng mục thi công (nội dung công việc)'));
+                    const unitKey = Object.keys(row).find(k => k.toLowerCase().includes('đơn vị'));
+                    
+                    const c1 = row[c1Key];
+                    const c2 = row[c2Key];
+                    const unit = unitKey ? row[unitKey] : "";
+                    
+                    if (c1 && c2) {
+                        const c1Str = String(c1).trim();
+                        const c2Str = String(c2).trim();
+                        const unitStr = unit ? String(unit).trim() : "";
+                        
+                        if (!categoryData[c1Str]) {
+                            categoryData[c1Str] = [];
+                        }
+                        // Avoid duplicates
+                        if (!categoryData[c1Str].some(i => i.name === c2Str)) {
+                            categoryData[c1Str].push({ name: c2Str, unit: unitStr });
+                        }
+                    }
+                });
+
+                populateCategoryC1();
+            } else {
+                showToast("Dữ liệu đơn giá không đúng định dạng!");
+            }
+        } catch (err) {
+            showToast("Không thể kết nối máy chủ để tải đơn giá!");
+            console.error(err);
+        }
+    }
+
+    // Populate Level 1 Category Dropdown
+    function populateCategoryC1() {
+        const select = document.getElementById("category-c1");
+        select.innerHTML = '<option value="">-- Chọn Hạng mục Cấp 1 --</option>';
+        
+        Object.keys(categoryData).sort().forEach(c1 => {
+            const option = document.createElement("option");
+            option.value = c1;
+            option.textContent = c1;
+            select.appendChild(option);
+        });
+    }
+
+    // Populate Level 2 Category Dropdown on Level 1 Change
+    function onCategoryC1Change() {
+        const c1Val = document.getElementById("category-c1").value;
+        const selectC2 = document.getElementById("category-c2");
+        const unitBadge = document.getElementById("unit-badge");
+        
+        selectC2.innerHTML = '<option value="">-- Chọn Nội dung công việc --</option>';
+        unitBadge.style.display = "none";
+        
+        if (!c1Val || !categoryData[c1Val]) {
+            selectC2.disabled = true;
+            return;
+        }
+
+        selectC2.disabled = false;
+        categoryData[c1Val].forEach(item => {
+            const option = document.createElement("option");
+            option.value = item.name;
+            option.textContent = item.name;
+            option.dataset.unit = item.unit;
+            selectC2.appendChild(option);
+        });
+    }
+
+    // Show Unit Badge on Level 2 Change
+    function onCategoryC2Change() {
+        const selectC2 = document.getElementById("category-c2");
+        const unitBadge = document.getElementById("unit-badge");
+        const selectedOption = selectC2.options[selectC2.selectedIndex];
+        
+        if (selectedOption && selectedOption.value && selectedOption.dataset.unit) {
+            unitBadge.textContent = selectedOption.dataset.unit;
+            unitBadge.style.display = "inline-block";
+        } else {
+            unitBadge.style.display = "none";
+        }
+    }
+
+    // Simple date display formatting helper
+    function formatDateDisplay(dateStr) {
+        if (!dateStr) return "";
+        const cleanStr = String(dateStr).split(" ")[0]; // remove time if any
+        if (cleanStr.includes("-")) {
+            const parts = cleanStr.split("-");
+            if (parts.length === 3) {
+                if (parts[0].length === 4) {
+                    return `${parts[2]}/${parts[1]}/${parts[0]}`;
+                }
+                return `${parts[0]}/${parts[1]}/${parts[2]}`;
+            }
+        }
+        return cleanStr;
+    }
+
+    // Load History list from API
+    async function loadHistory() {
+        if (!currentUser) return;
+        const container = document.getElementById("history-list-container");
+        
+        try {
+            const res = await CONFIG.apiCall('/api/kpi/sheet?name=bao_cao_san_luong_ngay');
+            const data = await res.json();
+            
+            if (Array.isArray(data)) {
+                // Filter by Tổ thi công
+                const filtered = data.filter(row => {
+                    const toKey = Object.keys(row).find(k => k.toLowerCase().includes('tổ thi công'));
+                    return toKey && String(row[toKey]).trim() === currentUser.to_thi_cong.trim();
+                });
+
+                if (filtered.length > 0) {
+                    // Show latest 5 items
+                    const recent = filtered.slice(-5).reverse();
+                    container.innerHTML = "";
+                    
+                    recent.forEach(item => {
+                        const cap2Key = Object.keys(item).find(k => k.toLowerCase().includes('cấp 2'));
+                        const dateKey = Object.keys(item).find(k => k.toLowerCase().includes('ngày bắt đầu') || k.toLowerCase().includes('ngày'));
+                        const posKey = Object.keys(item).find(k => k.toLowerCase().includes('vị trí'));
+                        const qtyKey = Object.keys(item).find(k => k.toLowerCase().includes('khối lượng thực hiện'));
+
+                        const div = document.createElement("div");
+                        div.className = "history-item";
+                        div.innerHTML = `
+                            <div class="history-details">
+                                <div class="history-task">${item[cap2Key] || "Sản lượng mới"}</div>
+                                <div class="history-meta">${formatDateDisplay(item[dateKey])} • Vị trí: ${item[posKey] || "Chưa xác định"}</div>
+                            </div>
+                            <div class="history-value">${item[qtyKey] || 0}</div>
+                        `;
+                        container.appendChild(div);
+                    });
+                } else {
+                    container.innerHTML = `
+                        <div class="history-item" style="justify-content: center; color: var(--text-muted); font-size: 13px; font-style: italic;">
+                            Chưa có lịch sử nhập liệu nào.
+                        </div>
+                    `;
+                }
+            }
+        } catch (err) {
+            console.error("Lỗi khi tải lịch sử:", err);
+        }
+    }
+
+    // Handle report form submit
+    async function handleReportSubmit(e) {
+        e.preventDefault();
+        
+        if (!currentUser) {
+            showToast("Hết phiên làm việc. Vui lòng đăng nhập lại!");
+            handleLogout();
+            return;
+        }
+
+        const date = document.getElementById("report-date").value;
+        const c1 = document.getElementById("category-c1").value;
+        const c2 = document.getElementById("category-c2").value;
+        const location = document.getElementById("location-input").value.trim();
+        const quantity = parseFloat(document.getElementById("quantity-input").value) || 0;
+        
+        const sl_to_truong = parseFloat(document.getElementById("labor-to-truong").value) || 0;
+        const sl_tho_b1 = parseFloat(document.getElementById("labor-b1").value) || 0;
+        const sl_tho_b2 = parseFloat(document.getElementById("labor-b2").value) || 0;
+        const sl_tho_b3 = parseFloat(document.getElementById("labor-b3").value) || 0;
+        const sl_tho_phu = parseFloat(document.getElementById("labor-phu").value) || 0;
+
+        if (!date || !c1 || !c2 || !location || quantity <= 0) {
+            showToast("Vui lòng điền đầy đủ và chính xác tất cả thông tin!");
+            return;
+        }
+
+        showLoading("Đang ghi dữ liệu báo cáo...");
+
+        // Setup payload mapping exactly with Excel column names
+        const recordData = {
+            "Trung đội trưởng QL": currentUser.trung_doi_truong,
+            "Tổ thi công": currentUser.to_thi_cong,
+            "Ngày bắt đầu": date,
+            "Ngày kết thúc": date,
+            "Hạng mục thi công (Cấp 1)": c1,
+            "Hạng mục thi công (Cấp 2)": c2,
+            "Vị trí thi công": location,
+            "Tổng khối lượng thực hiện": quantity,
+            "SL Tổ trưởng tham gia": sl_to_truong,
+            "SL Thợ bậc 1 tham gia": sl_tho_b1,
+            "SL Thợ bậc 2 tham gia": sl_tho_b2,
+            "SL Thợ bậc 3 tham gia": sl_tho_b3,
+            "SL Thợ phụ tham gia": sl_tho_phu
+        };
+
+        try {
+            const res = await CONFIG.apiCall('/api/kpi/save-record', {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    sheet: "bao_cao_san_luong_ngay",
+                    rowIndex: -1,
+                    record: recordData
+                })
+            });
+            const data = await res.json();
+            hideLoading();
+
+            if (data.status === "success" || data.success) {
+                showSuccess("Đã gửi báo cáo thành công!");
+                
+                // Reset input fields
+                document.getElementById("location-input").value = "";
+                document.getElementById("quantity-input").value = "";
+                document.getElementById("labor-to-truong").value = "1";
+                document.getElementById("labor-b1").value = "0";
+                document.getElementById("labor-b2").value = "0";
+                document.getElementById("labor-b3").value = "0";
+                document.getElementById("labor-phu").value = "0";
+                
+                // Reload history
+                loadHistory();
+            } else {
+                showToast("Lỗi hệ thống: " + (data.message || "Không xác định"));
+            }
+        } catch (err) {
+            hideLoading();
+            showToast("Không thể kết nối máy chủ để ghi báo cáo!");
+            console.error(err);
+        }
+    }
+</script>
+</body>
+</html>

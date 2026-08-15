@@ -25,8 +25,11 @@
         </div>
         <div class="header-nav" style="display: flex; align-items: center; gap: 15px;">
             <span id="userInfoDisplay" style="font-size: 13px; font-weight: 700; color: var(--primary);"></span>
+            <a href="kpi.html" class="nav-link">📊 Quản lý KPI</a>
+            <a href="bao_cao_san_luong.html" class="nav-link">✍️ Báo cáo sản lượng</a>
             <a href="history.html" class="nav-link">📋 Lịch sử bài thi</a>
-            <button onclick="handleLogout()" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Đăng xuất</button>
+            <a href="login.html" class="nav-link" id="navLoginLink">🔑 Đăng nhập Giám thị/Admin</a>
+            <button onclick="handleLogout()" id="btnLogout" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Đăng xuất</button>
         </div>
     </header>
 
@@ -58,10 +61,22 @@
 
                 <div class="form-group">
                     <label for="examType">Phần thi đăng ký (*)</label>
-                    <select id="examType" class="form-control" required>
+                    <select id="examType" class="form-control" required onchange="toggleExamSetGroup(this.value)">
                         <option value="" disabled selected>-- Chọn phần thi --</option>
-                        <option value="Lý thuyết">Thi Lý thuyết (Thời gian: 30 phút)</option>
+                        <option value="Lý thuyết">Thi Lý thuyết (Thời gian: 30 phút - 30 câu)</option>
                         <option value="Thực hành">Thi Thực hành (Thời gian: 60 phút)</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="examSetGroup" style="display: none;">
+                    <label for="examSet">Bộ đề thi Lý thuyết (*)</label>
+                    <select id="examSet" class="form-control">
+                        <option value="all">Ngẫu nhiên 30 câu (Từ ngân hàng 150 câu 5 bộ đề)</option>
+                        <option value="Đề số 01">Đề số 01 - Đề thi trắc nghiệm điện (30 câu)</option>
+                        <option value="Đề số 02">Đề số 02 - Đề thi trắc nghiệm điện (30 câu)</option>
+                        <option value="Đề số 03">Đề số 03 - Đề thi trắc nghiệm điện (30 câu)</option>
+                        <option value="Đề số 04">Đề số 04 - Đề thi trắc nghiệm điện (30 câu)</option>
+                        <option value="Đề số 05">Đề số 05 - Đề thi trắc nghiệm điện (30 câu)</option>
                     </select>
                 </div>
 
@@ -85,6 +100,19 @@
             if (loggedInUser.username) {
                 document.getElementById('candidateId').value = loggedInUser.username;
             }
+            
+            // Toggle login/logout view
+            if (loggedInUser.username && loggedInUser.username !== "thi_sinh") {
+                const loginLink = document.getElementById('navLoginLink');
+                if (loginLink) loginLink.style.display = 'none';
+                const logoutBtn = document.getElementById('btnLogout');
+                if (logoutBtn) logoutBtn.style.display = 'block';
+            } else {
+                const loginLink = document.getElementById('navLoginLink');
+                if (loginLink) loginLink.style.display = 'block';
+                const logoutBtn = document.getElementById('btnLogout');
+                if (logoutBtn) logoutBtn.style.display = 'none';
+            }
         }
  
         function handleLogout() {
@@ -94,7 +122,14 @@
                 localStorage.removeItem('vincons_answers');
                 localStorage.removeItem('vincons_time_left');
                 localStorage.removeItem('vincons_active_questions');
-                window.location.href = 'index.html';
+                window.location.href = 'login.html';
+            }
+        }
+
+        function toggleExamSetGroup(val) {
+            const group = document.getElementById('examSetGroup');
+            if (group) {
+                group.style.display = (val === 'Lý thuyết') ? 'block' : 'none';
             }
         }
 
@@ -105,6 +140,7 @@
             const id = document.getElementById('candidateId').value.trim();
             const job = document.getElementById('candidateJob').value;
             const examType = document.getElementById('examType').value;
+            const examSet = document.getElementById('examSet') ? document.getElementById('examSet').value : 'all';
             
             if (!name || !id || !job || !examType) {
                 alert('Vui lòng điền đầy đủ các thông tin bắt buộc.');
@@ -122,6 +158,7 @@
                 id: id,
                 job: job,
                 examType: examType,
+                examSet: examSet,
                 startTime: new Date().getTime()
             };
             

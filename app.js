@@ -33,20 +33,16 @@ function initExam() {
         <strong>Vị trí:</strong> ${job}
     `;
 
-    // Filter questions based on candidate job and exam type
+    // Filter questions based on candidate job, exam type, and selected set
     if (examType === 'Lý thuyết') {
-        if (job.includes('M&E') || job.includes('Điện')) {
-            activeQuestions = QUESTIONS.filter(q => q.category === 'Lý thuyết - Thợ điện');
-        } else if (job.includes('Giám sát')) {
-            // Combine B2 and B3 for supervisors
-            activeQuestions = QUESTIONS.filter(q => q.category.includes('Lý thuyết - Bậc'));
+        const selectedSet = candidateInfo.examSet || 'all';
+        if (selectedSet !== 'all') {
+            activeQuestions = QUESTIONS.filter(q => q.category.includes('Lý thuyết') && q.exam_set === selectedSet);
         } else {
-            activeQuestions = QUESTIONS.filter(q => q.category === 'Lý thuyết - Bậc 2');
-        }
-        
-        // Randomly select 30 questions if there are more
-        if (activeQuestions.length > 30) {
-            activeQuestions = shuffle(activeQuestions).slice(0, 30);
+            activeQuestions = QUESTIONS.filter(q => q.category.includes('Lý thuyết'));
+            if (activeQuestions.length > 30) {
+                activeQuestions = shuffle(activeQuestions).slice(0, 30);
+            }
         }
         
         // Set timer to 30 minutes if not already set
@@ -54,11 +50,7 @@ function initExam() {
             timeLeft = 30 * 60; 
         }
     } else { // Thực hành
-        if (job.includes('M&E') || job.includes('Điện')) {
-            activeQuestions = QUESTIONS.filter(q => q.category.includes('Thực hành - Điện'));
-        } else {
-            activeQuestions = QUESTIONS.filter(q => q.category.includes('Thực hành - Xây dựng'));
-        }
+        activeQuestions = QUESTIONS.filter(q => q.category.includes('Thực hành CNCH'));
         
         // Set timer to 60 minutes if not already set
         if (isNaN(timeLeft) || timeLeft <= 0) {
@@ -103,8 +95,21 @@ function renderGrid() {
         item.textContent = index + 1;
         item.onclick = () => showQuestion(index);
         
-        if (answers[index] !== undefined) {
-            item.classList.add('answered');
+        if (answers[index] !== undefined && Object.keys(answers[index]).length > 0) {
+            // For input_group, check if all sub-questions are answered
+            if (activeQuestions[index].type === 'input_group') {
+                const subQs = activeQuestions[index].sub_questions;
+                let allAnswered = true;
+                for (let subQ of subQs) {
+                    if (answers[index][subQ.id] === undefined || answers[index][subQ.id] === "") {
+                        allAnswered = false;
+                        break;
+                    }
+                }
+                if (allAnswered) item.classList.add('answered');
+            } else {
+                item.classList.add('answered');
+            }
         }
         
         grid.appendChild(item);
@@ -124,6 +129,19 @@ function showQuestion(index) {
     
     currentQuestionIndex = index;
     const q = activeQuestions[index];
+    // Update image
+    const imageEl = document.getElementById('questionImage');
+    const imagePanel = document.getElementById('imagePanel');
+    if (imageEl && q.image) {
+        imageEl.src = q.image;
+        if (imagePanel) imagePanel.style.display = 'block';
+    } else if (imagePanel) {
+        if (candidateInfo && candidateInfo.examType === 'Thực hành') {
+            imagePanel.style.display = 'block';
+        } else {
+            imagePanel.style.display = 'none';
+        }
+    }
     
     // Set question headers and text
     document.getElementById('questionNumLabel').textContent = `Câu hỏi ${index + 1}/${activeQuestions.length} (${q.category})`;
@@ -133,22 +151,47 @@ function showQuestion(index) {
     const container = document.getElementById('optionsContainer');
     container.innerHTML = '';
     
-    q.options.forEach((opt, optIdx) => {
-        const item = document.createElement('div');
-        item.className = 'option-item';
-        if (answers[index] === optIdx) {
-            item.classList.add('active');
-        }
+    if (q.type === 'multiple_choice') {
+        q.options.forEach((opt, optIdx) => {
+            const item = document.createElement('div');
+            item.className = 'option-item';
+            if (answers[index] === optIdx) {
+                item.classList.add('active');
+            }
+            
+            item.onclick = () => selectOption(index, optIdx);
+            
+            item.innerHTML = `
+                <div class="option-radio"></div>
+                <div class="option-label">${String.fromCharCode(65 + optIdx)}. ${opt}</div>
+            `;
+            
+            container.appendChild(item);
+        });
+    } else if (q.type === 'input_group') {
+        if (answers[index] === undefined) answers[index] = {};
         
-        item.onclick = () => selectOption(index, optIdx);
-        
-        item.innerHTML = `
-            <div class="option-radio"></div>
-            <div class="option-label">${String.fromCharCode(65 + optIdx)}. ${opt}</div>
-        `;
-        
-        container.appendChild(item);
-    });
+        q.sub_questions.forEach((subQ) => {
+            const item = document.createElement('div');
+            item.className = 'input-group-item';
+            item.style.display = 'flex';
+            item.style.justifyContent = 'space-between';
+            item.style.alignItems = 'center';
+            item.style.marginBottom = '10px';
+            item.style.padding = '10px';
+            item.style.background = '#f8fafc';
+            item.style.borderRadius = '8px';
+            
+            const currentValue = answers[index][subQ.id] || '';
+            
+            item.innerHTML = `
+                <div class="input-label" style="flex: 1; font-weight: 500;">${subQ.label}</div>
+                <input type="number" class="form-control" style="width: 100px;" value="${currentValue}" oninput="updateInputAnswer(${index}, '${subQ.id}', this.value)" placeholder="SL">
+            `;
+            
+            container.appendChild(item);
+        });
+    }
     
     // Handle Navigation buttons state
     document.getElementById('btnPrev').disabled = (index === 0);
@@ -174,6 +217,28 @@ function selectOption(qIndex, optIndex) {
             item.classList.remove('active');
         }
     });
+}
+
+function updateInputAnswer(qIndex, subQId, value) {
+    if (answers[qIndex] === undefined) answers[qIndex] = {};
+    answers[qIndex][subQId] = value;
+    localStorage.setItem('vincons_answers', JSON.stringify(answers));
+    
+    // Mark grid item as answered if all sub-questions are answered
+    const q = activeQuestions[qIndex];
+    let allAnswered = true;
+    for (let subQ of q.sub_questions) {
+        if (answers[qIndex][subQ.id] === undefined || answers[qIndex][subQ.id] === "") {
+            allAnswered = false;
+            break;
+        }
+    }
+    
+    const gridItem = document.getElementById(`grid-item-${qIndex}`);
+    if (gridItem) {
+        if (allAnswered) gridItem.classList.add('answered');
+        else gridItem.classList.remove('answered');
+    }
 }
 
 // Navigation Functions
@@ -254,7 +319,7 @@ function initBlueprintViewer() {
     examContainer.classList.add('has-blueprint');
     
     // Load available PDF files list from server API
-    fetch(CONFIG.API_BASE_URL + '/api/list-pdfs')
+    CONFIG.apiCall('/api/list-pdfs')
         .then(res => res.json())
         .then(pdfFiles => {
             populatePdfDropdown(pdfFiles);

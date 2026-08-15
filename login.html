@@ -274,7 +274,7 @@
             }
 
             // Call API
-            fetch(CONFIG.API_BASE_URL + '/api/auth/login', {
+            CONFIG.apiCall('/api/auth/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password })
@@ -334,7 +334,7 @@
             }
 
             // Call API
-            fetch(CONFIG.API_BASE_URL + '/api/auth/register', {
+            CONFIG.apiCall('/api/auth/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -371,7 +371,7 @@
         // Check if already logged in
         window.addEventListener('DOMContentLoaded', () => {
             const user = JSON.parse(localStorage.getItem('vincons_logged_in_user'));
-            if (user) {
+            if (user && user.username && user.username !== "thi_sinh") {
                 if (user.role === 'admin') {
                     window.location.href = 'history.html';
                 } else {
