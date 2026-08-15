@@ -6,11 +6,11 @@
     <title>Đánh Giá Trình Độ Bậc Thợ - Vincons</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        // Check login immediately
+        // Check login immediately - Mandatory Authentication Guard
         let loggedInUser = JSON.parse(localStorage.getItem('vincons_logged_in_user'));
-        if (!loggedInUser) {
-            loggedInUser = { name: "", username: "", role: "candidate" };
-            localStorage.setItem('vincons_logged_in_user', JSON.stringify(loggedInUser));
+        if (!loggedInUser || !loggedInUser.username || loggedInUser.username === "thi_sinh") {
+            alert('⚠️ Vui lòng đăng nhập tài khoản đã được cấp quyền để khai báo và thực hiện bài thi!');
+            window.location.href = 'login.html';
         }
     </script>
 </head>

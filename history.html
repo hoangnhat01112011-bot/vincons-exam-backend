@@ -49,6 +49,7 @@
                     </p>
                 </div>
                 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <button class="btn btn-primary btn-sm" id="btnManageUsers" onclick="openUserManagementModal()" style="display: none; align-items: center; gap: 4px;">👥 Quản lý cấp quyền tài khoản</button>
                     <a href="https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit" target="_blank" class="btn btn-accent btn-sm" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">📊 Google Sheets Cloud (Tự động)</a>
                     <button class="btn btn-primary btn-sm" onclick="exportData()">📥 Xuất Excel / CSV</button>
                     <button class="btn btn-secondary btn-sm" onclick="window.print()">🖨️ In báo cáo</button>
@@ -141,6 +142,73 @@
         </div>
     </div>
 
+    <!-- Modal for User Management & Approval -->
+    <div id="userManagementModal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 850px;">
+            <div class="modal-header">
+                <h3>👥 QUẢN LÝ & CẤP QUYỀN TÀI KHOẢN ĐĂNG NHẬP</h3>
+                <button class="modal-close" onclick="closeUserManagementModal()">&times;</button>
+            </div>
+            <div class="modal-body" style="max-height: 80vh; overflow-y: auto;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                    <div style="font-size: 13px; color: #7f8c8d; font-weight: 600;">
+                        Chỉ những tài khoản ở trạng thái <strong style="color: var(--success);">ĐÃ CẤP QUYỀN</strong> mới được phép đăng nhập làm bài thi.
+                    </div>
+                    <button class="btn btn-accent btn-sm" onclick="toggleAddUserForm()">➕ Cấp tài khoản mới trực tiếp</button>
+                </div>
+
+                <!-- Add user form (Hidden by default) -->
+                <div id="addUserBox" style="display: none; background: rgba(11, 60, 93, 0.05); padding: 15px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 20px;">
+                    <h4 style="font-size: 14px; color: var(--primary); margin-bottom: 10px;">Thêm / Cấp Quyền Tài Khoản Mới Trực Tiếp</h4>
+                    <form onsubmit="handleAdminCreateUser(event)" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div>
+                            <label style="font-size: 12px; font-weight: 700;">Họ và tên (*)</label>
+                            <input type="text" id="newUserName" class="form-control" placeholder="Nhập họ tên đầy đủ" required style="padding: 6px 10px; font-size: 13px;">
+                        </div>
+                        <div>
+                            <label style="font-size: 12px; font-weight: 700;">SĐT / Gmail (*)</label>
+                            <input type="text" id="newUserUsername" class="form-control" placeholder="Nhập SĐT hoặc Gmail" required style="padding: 6px 10px; font-size: 13px;">
+                        </div>
+                        <div>
+                            <label style="font-size: 12px; font-weight: 700;">Mật khẩu (*)</label>
+                            <input type="password" id="newUserPassword" class="form-control" placeholder="Tối thiểu 6 ký tự" required minlength="6" style="padding: 6px 10px; font-size: 13px;">
+                        </div>
+                        <div>
+                            <label style="font-size: 12px; font-weight: 700;">Vai trò (*)</label>
+                            <select id="newUserRole" class="form-control" style="padding: 6px 10px; font-size: 13px;">
+                                <option value="candidate">Thí sinh dự thi</option>
+                                <option value="admin">Giám thị / Quản lý</option>
+                            </select>
+                        </div>
+                        <div style="grid-column: span 2; display: flex; justify-content: flex-end; gap: 10px; margin-top: 5px;">
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="toggleAddUserForm()">Hủy</button>
+                            <button type="submit" class="btn btn-success btn-sm">✅ Tạo & Cấp quyền ngay</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Users Table -->
+                <div class="table-responsive">
+                    <table class="history-table" style="font-size: 13px;">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Họ và tên</th>
+                                <th>SĐT / Gmail</th>
+                                <th>Vai trò</th>
+                                <th>Trạng thái quyền</th>
+                                <th style="text-align: center;">Thao tác cấp quyền</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            <tr><td colspan="6" style="text-align: center; padding: 20px;">Đang tải danh sách tài khoản...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         &copy; 2026 Vincons - Ban Chỉ Huy Dự Án Hạ Long Xanh. All rights reserved.
     </footer>
@@ -173,9 +241,11 @@
                     const titleText = document.querySelector("h2");
                     if (titleText) titleText.textContent = "KẾT QUẢ BÀI THI CỦA BẠN";
                 } else {
-                    // Admins don't take tests - hide "Trang chủ"
+                    // Admins don't take tests - hide "Trang chủ" and show Manage Users button
                     const homeLink = document.getElementById('navHomeLink');
                     if (homeLink) homeLink.style.display = 'none';
+                    const manageBtn = document.getElementById('btnManageUsers');
+                    if (manageBtn) manageBtn.style.display = 'inline-flex';
                 }
                 
                 // Toggle login/logout view
@@ -541,6 +611,141 @@
             const role = encodeURIComponent(loggedInUser.role);
             // Trigger server CSV download with role authorization
             window.location.href = CONFIG.API_BASE_URL + `/api/export-csv?userId=${userId}&role=${role}`;
+        }
+
+        /* =========================================================
+           USER MANAGEMENT & APPROVAL LOGIC (FOR ADMIN)
+           ========================================================= */
+        function openUserManagementModal() {
+            document.getElementById('userManagementModal').classList.add('active');
+            loadUsersList();
+        }
+
+        function closeUserManagementModal() {
+            document.getElementById('userManagementModal').classList.remove('active');
+        }
+
+        function toggleAddUserForm() {
+            const box = document.getElementById('addUserBox');
+            box.style.display = (box.style.display === 'none' || !box.style.display) ? 'block' : 'none';
+        }
+
+        function loadUsersList() {
+            const tbody = document.getElementById('userTableBody');
+            tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 20px;">Đang tải dữ liệu tài khoản...</td></tr>';
+
+            CONFIG.apiCall('/api/auth/list-users')
+                .then(res => res.json())
+                .then(res => {
+                    const users = res.data || res || [];
+                    renderUsersTable(users);
+                })
+                .catch(err => {
+                    console.error('List users error:', err);
+                    tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: var(--danger); padding: 20px;">Không thể tải danh sách tài khoản từ server.</td></tr>';
+                });
+        }
+
+        function renderUsersTable(users) {
+            const tbody = document.getElementById('userTableBody');
+            tbody.innerHTML = '';
+
+            if (!users || users.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 20px;">Chưa có tài khoản nào.</td></tr>';
+                return;
+            }
+
+            users.forEach((u, idx) => {
+                const tr = document.createElement('tr');
+                const status = u.status || 'active';
+                
+                let statusBadge = '';
+                if (status === 'active') {
+                    statusBadge = '<span class="review-badge correct">ĐÃ CẤP QUYỀN</span>';
+                } else if (status === 'pending') {
+                    statusBadge = '<span class="review-badge" style="background: rgba(241, 196, 15, 0.2); color: #d35400; border: 1px solid #f39c12;">CHỜ DUYỆT</span>';
+                } else {
+                    statusBadge = '<span class="review-badge incorrect">BỊ KHÓA</span>';
+                }
+
+                const roleBadge = u.role === 'admin' 
+                    ? '<strong style="color: var(--primary);">Giám thị</strong>' 
+                    : '<span style="color: #555;">Thí sinh</span>';
+
+                let actionBtns = '';
+                if (status !== 'active') {
+                    actionBtns += `<button class="btn btn-success btn-sm" onclick="changeUserStatus('${u.username}', 'active')" style="margin-right: 4px; padding: 4px 8px; font-size: 11px;">✅ Cấp quyền</button>`;
+                }
+                if (status !== 'blocked') {
+                    actionBtns += `<button class="btn btn-secondary btn-sm" onclick="changeUserStatus('${u.username}', 'blocked')" style="margin-right: 4px; padding: 4px 8px; font-size: 11px;">🔒 Khóa</button>`;
+                }
+                actionBtns += `<button class="btn btn-danger btn-sm" onclick="deleteUserAccount('${u.username}')" style="padding: 4px 8px; font-size: 11px;">🗑️ Xóa</button>`;
+
+                tr.innerHTML = `
+                    <td style="font-weight: 700;">${idx + 1}</td>
+                    <td style="font-weight: 700;">${u.name || '-'}</td>
+                    <td><code>${u.username || '-'}</code></td>
+                    <td>${roleBadge}</td>
+                    <td>${statusBadge}</td>
+                    <td style="text-align: center; white-space: nowrap;">${actionBtns}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function changeUserStatus(targetUsername, newStatus) {
+            CONFIG.apiCall('/api/auth/update-status', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ targetUsername, newStatus })
+            })
+            .then(res => res.json())
+            .then(data => {
+                showToast(data.message || 'Đã cập nhật trạng thái!', data.status === 'success' ? 'success' : 'danger');
+                loadUsersList();
+            })
+            .catch(err => showToast(`❌ ${err.message}`, 'danger'));
+        }
+
+        function deleteUserAccount(targetUsername) {
+            if (!confirm(`Bạn có chắc chắn muốn XÓA tài khoản ${targetUsername} khỏi hệ thống?`)) return;
+
+            CONFIG.apiCall('/api/auth/delete-user', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ targetUsername })
+            })
+            .then(res => res.json())
+            .then(data => {
+                showToast(data.message || 'Đã xóa tài khoản!', data.status === 'success' ? 'success' : 'danger');
+                loadUsersList();
+            })
+            .catch(err => showToast(`❌ ${err.message}`, 'danger'));
+        }
+
+        function handleAdminCreateUser(event) {
+            event.preventDefault();
+            const name = document.getElementById('newUserName').value.trim();
+            const username = document.getElementById('newUserUsername').value.trim();
+            const password = document.getElementById('newUserPassword').value;
+            const role = document.getElementById('newUserRole').value;
+
+            CONFIG.apiCall('/api/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, username, password, role, status: 'active' })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'error') {
+                    showToast(`❌ ${data.message}`, 'danger');
+                } else {
+                    showToast('✅ Đã tạo và cấp quyền thành công cho tài khoản mới!');
+                    toggleAddUserForm();
+                    loadUsersList();
+                }
+            })
+            .catch(err => showToast(`❌ ${err.message}`, 'danger'));
         }
     </script>
 </body>

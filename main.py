@@ -364,6 +364,19 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self.send_json({"status": "error", "message": f"Lỗi đọc sheet {mapped_sheet}: {str(e)}"}, code=500)
             return
 
+        elif parsed.path == '/api/auth/list-users':
+            users = load_users()
+            sanitized = []
+            for u in users:
+                sanitized.append({
+                    "username": u.get("username", ""),
+                    "name": u.get("name", ""),
+                    "role": u.get("role", "candidate"),
+                    "status": u.get("status", "active")
+                })
+            self.send_json({"status": "success", "data": sanitized})
+            return
+
         elif parsed.path == '/api/results':
             results = load_results()
             user_id = query.get('userId', [None])[0]
@@ -470,6 +483,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 name = data.get('name', '').strip()
                 role = data.get('role', 'candidate').strip()
                 admin_code = data.get('adminCode', '').strip()
+                status = data.get('status', 'active' if role == 'admin' else 'pending')
                 
                 if not username or not password or not name:
                     self.send_json({"status": "error", "message": "Vui lòng nhập đầy đủ thông tin bắt buộc!"}, code=400)
@@ -491,11 +505,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                     "username": username,
                     "password": hashed_pw,
                     "name": name,
-                    "role": role
+                    "role": role,
+                    "status": status
                 }
                 users.append(new_user)
                 save_users(users)
-                self.send_json({"status": "success", "message": "Đăng ký tài khoản thành công!"})
+                msg = "Đăng ký và cấp quyền tài khoản thành công!" if status == 'active' else "Đăng ký thành công! Tài khoản của bạn đang ở trạng thái CHỜ DUYỆT. Vui lòng báo Giám thị/Admin cấp quyền đăng nhập."
+                self.send_json({"status": "success", "message": msg})
             except Exception as e:
                 self.send_json({"status": "error", "message": str(e)}, code=400)
             return
@@ -522,17 +538,67 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                         break
                 
                 if found_user:
+                    user_status = found_user.get('status', 'active')
+                    if user_status == 'pending':
+                        self.send_json({"status": "error", "message": "Tài khoản của bạn đang ở trạng thái CHỜ DUYỆT. Vui lòng liên hệ Admin/Giám thị để cấp quyền đăng nhập!"}, code=403)
+                        return
+                    if user_status == 'blocked':
+                        self.send_json({"status": "error", "message": "Tài khoản của bạn đã bị khóa quyền truy cập!"}, code=403)
+                        return
+
                     self.send_json({
                         "status": "success",
                         "message": "Đăng nhập thành công!",
                         "user": {
                             "username": found_user["username"],
                             "name": found_user["name"],
-                            "role": found_user["role"]
+                            "role": found_user["role"],
+                            "status": user_status
                         }
                     })
                 else:
                     self.send_json({"status": "error", "message": "Số điện thoại/Gmail hoặc mật khẩu không đúng!"}, code=400)
+            except Exception as e:
+                self.send_json({"status": "error", "message": str(e)}, code=400)
+            return
+
+        elif parsed.path == '/api/auth/update-status':
+            content_length = int(self.headers.get('Content-Length', 0))
+            body = self.rfile.read(content_length)
+            try:
+                data = json.loads(body.decode('utf-8'))
+                target_username = data.get('targetUsername', '').strip()
+                new_status = data.get('newStatus', '').strip()
+                new_role = data.get('newRole', '').strip()
+                
+                users = load_users()
+                found = False
+                for u in users:
+                    if u.get('username', '').lower() == target_username.lower():
+                        if new_status: u['status'] = new_status
+                        if new_role: u['role'] = new_role
+                        found = True
+                        break
+                
+                if found:
+                    save_users(users)
+                    self.send_json({"status": "success", "message": "Đã cập nhật trạng thái cấp quyền thành công!"})
+                else:
+                    self.send_json({"status": "error", "message": "Không tìm thấy tài khoản!"}, code=404)
+            except Exception as e:
+                self.send_json({"status": "error", "message": str(e)}, code=400)
+            return
+
+        elif parsed.path == '/api/auth/delete-user':
+            content_length = int(self.headers.get('Content-Length', 0))
+            body = self.rfile.read(content_length)
+            try:
+                data = json.loads(body.decode('utf-8'))
+                target_username = data.get('targetUsername', '').strip()
+                users = load_users()
+                filtered = [u for u in users if u.get('username', '').lower() != target_username.lower()]
+                save_users(filtered)
+                self.send_json({"status": "success", "message": "Đã xóa tài khoản thành công!"})
             except Exception as e:
                 self.send_json({"status": "error", "message": str(e)}, code=400)
             return

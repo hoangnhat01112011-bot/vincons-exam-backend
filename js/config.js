@@ -90,6 +90,12 @@ const CONFIG = {
                 gasAction = 'login';
             } else if (path === '/api/auth/register') {
                 gasAction = 'register';
+            } else if (path === '/api/auth/list-users') {
+                gasAction = 'listUsers';
+            } else if (path === '/api/auth/update-status') {
+                gasAction = 'updateUserStatus';
+            } else if (path === '/api/auth/delete-user') {
+                gasAction = 'deleteUser';
             } else if (path === '/api/save-result') {
                 gasAction = 'saveResult';
             }

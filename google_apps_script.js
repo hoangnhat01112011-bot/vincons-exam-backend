@@ -232,18 +232,30 @@ function doPost(e) {
     if (action === "login") {
       var username = postData.username;
       var password = postData.password;
-      var sheet = getOrCreateSheet("users", ["username", "password", "name", "role"]);
+      var sheet = getOrCreateSheet("users", ["username", "password", "name", "role", "status"]);
       var users = getSheetData(sheet);
       var found = false;
       for (var i = 0; i < users.length; i++) {
-        if (users[i].username.toLowerCase() === username.toLowerCase() && users[i].password === password) {
+        if (String(users[i].username).toLowerCase() === String(username).toLowerCase() && String(users[i].password) === String(password)) {
+          var userStatus = users[i].status || "active";
+          if (userStatus === "pending") {
+            responseData = { status: "error", message: "Tài khoản của bạn đang ở trạng thái CHỜ DUYỆT. Vui lòng liên hệ Admin/Giám thị để cấp quyền đăng nhập!" };
+            found = true;
+            break;
+          }
+          if (userStatus === "blocked") {
+            responseData = { status: "error", message: "Tài khoản của bạn đã bị khóa quyền truy cập!" };
+            found = true;
+            break;
+          }
           responseData = {
             status: "success",
             message: "Đăng nhập thành công!",
             user: {
               username: users[i].username,
               name: users[i].name,
-              role: users[i].role
+              role: users[i].role,
+              status: userStatus
             }
           };
           found = true;
@@ -258,12 +270,13 @@ function doPost(e) {
       var username = postData.username;
       var password = postData.password;
       var name = postData.name;
-      var role = postData.role;
-      var sheet = getOrCreateSheet("users", ["username", "password", "name", "role"]);
+      var role = postData.role || "candidate";
+      var status = postData.status || (role === "admin" ? "active" : "pending");
+      var sheet = getOrCreateSheet("users", ["username", "password", "name", "role", "status"]);
       var users = getSheetData(sheet);
       var exists = false;
       for (var i = 0; i < users.length; i++) {
-        if (users[i].username.toLowerCase() === username.toLowerCase()) {
+        if (String(users[i].username).toLowerCase() === String(username).toLowerCase()) {
           exists = true;
           break;
         }
@@ -271,8 +284,64 @@ function doPost(e) {
       if (exists) {
         responseData = { status: "error", message: "Số điện thoại hoặc Gmail này đã được đăng ký!" };
       } else {
-        sheet.appendRow([username, password, name, role]);
-        responseData = { status: "success", message: "Đăng ký tài khoản thành công!" };
+        sheet.appendRow([username, password, name, role, status]);
+        var msg = (status === 'active')
+          ? "Đăng ký và cấp quyền tài khoản thành công!"
+          : "Đăng ký thành công! Tài khoản của bạn đang ở trạng thái CHỜ DUYỆT. Vui lòng báo Giám thị/Admin cấp quyền đăng nhập.";
+        responseData = { status: "success", message: msg };
+      }
+    }
+    else if (action === "listUsers") {
+      var sheet = getOrCreateSheet("users", ["username", "password", "name", "role", "status"]);
+      var users = getSheetData(sheet);
+      var list = [];
+      for (var i = 0; i < users.length; i++) {
+        list.push({
+          username: users[i].username,
+          name: users[i].name,
+          role: users[i].role,
+          status: users[i].status || "active"
+        });
+      }
+      responseData = { status: "success", data: list };
+    }
+    else if (action === "updateUserStatus") {
+      var targetUsername = postData.targetUsername;
+      var newStatus = postData.newStatus;
+      var newRole = postData.newRole;
+      var sheet = getOrCreateSheet("users", ["username", "password", "name", "role", "status"]);
+      var rows = sheet.getDataRange().getValues();
+      var updated = false;
+      for (var i = 1; i < rows.length; i++) {
+        if (String(rows[i][0]).toLowerCase() === String(targetUsername).toLowerCase()) {
+          if (newStatus) sheet.getRange(i + 1, 5).setValue(newStatus);
+          if (newRole) sheet.getRange(i + 1, 4).setValue(newRole);
+          updated = true;
+          break;
+        }
+      }
+      if (updated) {
+        responseData = { status: "success", message: "Đã cập nhật trạng thái cấp quyền tài khoản thành công!" };
+      } else {
+        responseData = { status: "error", message: "Không tìm thấy tài khoản!" };
+      }
+    }
+    else if (action === "deleteUser") {
+      var targetUsername = postData.targetUsername;
+      var sheet = getOrCreateSheet("users", ["username", "password", "name", "role", "status"]);
+      var rows = sheet.getDataRange().getValues();
+      var deleted = false;
+      for (var i = 1; i < rows.length; i++) {
+        if (String(rows[i][0]).toLowerCase() === String(targetUsername).toLowerCase()) {
+          sheet.deleteRow(i + 1);
+          deleted = true;
+          break;
+        }
+      }
+      if (deleted) {
+        responseData = { status: "success", message: "Đã xóa tài khoản thành công!" };
+      } else {
+        responseData = { status: "error", message: "Không tìm thấy tài khoản!" };
       }
     }
     else if (action === "saveResult") {
