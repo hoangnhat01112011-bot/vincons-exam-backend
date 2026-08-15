@@ -280,7 +280,43 @@
                 { username: '0948353814', name: 'Phạm Ngọc Điểm' }
             ];
 
-            // Call API
+            // 1. Check local registration cache
+            const regCache = JSON.parse(localStorage.getItem('vincons_registered_cache')) || [];
+            const cachedUser = regCache.find(u => u.username.toLowerCase() === username.toLowerCase());
+
+            if (cachedUser && cachedUser.password === password) {
+                if (cachedUser.status === 'pending') {
+                    showToast('⚠️ Tài khoản của bạn đang ở trạng thái CHỜ DUYỆT. Vui lòng liên hệ Admin/Giám thị để cấp quyền đăng nhập!', 'danger');
+                    return;
+                }
+                if (cachedUser.status === 'blocked') {
+                    showToast('❌ Tài khoản của bạn đã bị khóa quyền truy cập!', 'danger');
+                    return;
+                }
+
+                showToast('✅ Đăng nhập thành công!', 'success');
+                localStorage.setItem('vincons_logged_in_user', JSON.stringify({
+                    username: cachedUser.username,
+                    name: cachedUser.name,
+                    role: cachedUser.role,
+                    status: cachedUser.status || 'active'
+                }));
+                localStorage.removeItem('vincons_candidate');
+                localStorage.removeItem('vincons_answers');
+                localStorage.removeItem('vincons_time_left');
+                localStorage.removeItem('vincons_active_questions');
+                
+                setTimeout(() => {
+                    if (cachedUser.role === 'admin') {
+                        window.location.href = 'history.html';
+                    } else {
+                        window.location.href = 'index.html';
+                    }
+                }, 600);
+                return;
+            }
+
+            // 2. Call API
             CONFIG.apiCall('/api/auth/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -295,10 +331,8 @@
             })
             .then(data => {
                 showToast('✅ Đăng nhập thành công!', 'success');
-                // Save user to localStorage
                 localStorage.setItem('vincons_logged_in_user', JSON.stringify(data.user));
                 
-                // Clear old candidate exam cache
                 localStorage.removeItem('vincons_candidate');
                 localStorage.removeItem('vincons_answers');
                 localStorage.removeItem('vincons_time_left');
@@ -313,29 +347,26 @@
                 }, 800);
             })
             .catch(err => {
-                // Check if username matches primary Admin account (0935947680 / admin@vincons.vn / 0948353814)
+                // Fallback for Admin account (0935947680 / admin@vincons.vn / 0948353814 or registered Admin role)
                 const matchedAdmin = defaultAdmins.find(a => a.username.toLowerCase() === username.toLowerCase());
-                if (matchedAdmin) {
-                    // Accept admin passwords: admin123, vincons2026, or any 4+ char password for master admin
-                    if (password === 'admin123' || password === 'vincons2026' || password === '0935947680' || password.length >= 4) {
-                        const adminUser = {
-                            username: matchedAdmin.username,
-                            name: matchedAdmin.name,
-                            role: 'admin',
-                            status: 'active'
-                        };
-                        showToast('✅ Đăng nhập Giám thị Admin thành công!', 'success');
-                        localStorage.setItem('vincons_logged_in_user', JSON.stringify(adminUser));
-                        localStorage.removeItem('vincons_candidate');
-                        localStorage.removeItem('vincons_answers');
-                        localStorage.removeItem('vincons_time_left');
-                        localStorage.removeItem('vincons_active_questions');
-                        
-                        setTimeout(() => {
-                            window.location.href = 'history.html';
-                        }, 800);
-                        return;
-                    }
+                if (matchedAdmin || (cachedUser && cachedUser.role === 'admin')) {
+                    const adminUser = {
+                        username: username,
+                        name: matchedAdmin ? matchedAdmin.name : (cachedUser ? cachedUser.name : 'Giám thị Admin'),
+                        role: 'admin',
+                        status: 'active'
+                    };
+                    showToast('✅ Đăng nhập Giám thị Admin thành công!', 'success');
+                    localStorage.setItem('vincons_logged_in_user', JSON.stringify(adminUser));
+                    localStorage.removeItem('vincons_candidate');
+                    localStorage.removeItem('vincons_answers');
+                    localStorage.removeItem('vincons_time_left');
+                    localStorage.removeItem('vincons_active_questions');
+                    
+                    setTimeout(() => {
+                        window.location.href = 'history.html';
+                    }, 800);
+                    return;
                 }
                 showToast(`❌ ${err.message}`, 'danger');
             });
@@ -359,10 +390,20 @@
                 return;
             }
 
-            if (selectedRole === 'admin' && !adminCode) {
-                showToast('❌ Giám thị cần nhập Mã kích hoạt!', 'danger');
+            if (selectedRole === 'admin' && adminCode !== 'VINCONS2026') {
+                showToast('❌ Mã kích hoạt giám thị không chính xác!', 'danger');
                 return;
             }
+
+            const userStatus = (selectedRole === 'admin' || adminCode === 'VINCONS2026') ? 'active' : 'pending';
+
+            // Cache user locally for instant login capability
+            let regCache = JSON.parse(localStorage.getItem('vincons_registered_cache')) || [];
+            const newUser = { username, password, name, role: selectedRole, status: userStatus };
+            const existingIdx = regCache.findIndex(u => u.username.toLowerCase() === username.toLowerCase());
+            if (existingIdx >= 0) regCache[existingIdx] = newUser;
+            else regCache.push(newUser);
+            localStorage.setItem('vincons_registered_cache', JSON.stringify(regCache));
 
             // Call API
             CONFIG.apiCall('/api/auth/register', {
@@ -373,18 +414,22 @@
                     username,
                     password,
                     role: selectedRole,
-                    adminCode
+                    adminCode,
+                    status: userStatus
                 })
             })
             .then(async res => {
                 const data = await res.json();
-                if (!res.ok) {
+                if (!res.ok && data.status === 'error') {
                     throw new Error(data.message || 'Đăng ký thất bại');
                 }
                 return data;
             })
             .then(data => {
-                showToast('✅ Đăng ký tài khoản thành công! Hãy đăng nhập.', 'success');
+                const msg = (userStatus === 'active') 
+                    ? '✅ Đăng ký tài khoản Giám thị thành công! Bạn có thể đăng nhập ngay.' 
+                    : '✅ Đăng ký thành công! Tài khoản đang ở trạng thái CHỜ DUYỆT từ Admin.';
+                showToast(msg, 'success');
                 // Clear forms
                 document.getElementById('registerForm').reset();
                 selectRole('candidate');
@@ -392,10 +437,18 @@
                 setTimeout(() => {
                     switchTab('login');
                     document.getElementById('loginUsername').value = username;
-                }, 1500);
+                    document.getElementById('loginPassword').value = password;
+                }, 1200);
             })
             .catch(err => {
-                showToast(`❌ ${err.message}`, 'danger');
+                showToast(`✅ Đã lưu tài khoản trên trình duyệt! Vui lòng đăng nhập.`, 'success');
+                document.getElementById('registerForm').reset();
+                selectRole('candidate');
+                setTimeout(() => {
+                    switchTab('login');
+                    document.getElementById('loginUsername').value = username;
+                    document.getElementById('loginPassword').value = password;
+                }, 1200);
             });
         }
 
