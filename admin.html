@@ -58,37 +58,6 @@
 
                 <button type="submit" id="btnUpdate" class="btn btn-primary btn-block">Lưu Mã Ca Thi</button>
             </form>
-
-            <div style="margin-top: 40px; border-top: 2px solid #3498db; padding-top: 20px;">
-                <h3 style="color: #2980b9; margin-top: 0; margin-bottom: 15px; font-size: 16px;">🤖 TẠO CÂU HỎI BẰNG AI (QWEN 2.5)</h3>
-                <form id="aiGenerateForm" onsubmit="handleGenerateQuestions(event)">
-                    <div class="form-group">
-                        <label for="aiTopic">Chủ đề / Yêu cầu</label>
-                        <input type="text" id="aiTopic" class="form-control" placeholder="Ví dụ: Quy tắc an toàn điện" required>
-                    </div>
-                    <div class="form-group" style="display: flex; gap: 10px;">
-                        <div style="flex: 1;">
-                            <label for="aiCount">Số lượng câu</label>
-                            <input type="number" id="aiCount" class="form-control" placeholder="5" min="1" max="20" required value="5">
-                        </div>
-                        <div style="flex: 2;">
-                            <label for="aiCategory">Danh mục</label>
-                            <input type="text" id="aiCategory" class="form-control" placeholder="Lý thuyết - Thợ điện" required>
-                        </div>
-                        <div style="flex: 2;">
-                            <label for="aiExamSet">Mã đề</label>
-                            <input type="text" id="aiExamSet" class="form-control" placeholder="Đề số 01" required>
-                        </div>
-                    </div>
-                    <button type="submit" id="btnGenerate" class="btn btn-primary btn-block" style="background: #27ae60; border-color: #27ae60;">Tạo câu hỏi</button>
-                </form>
-
-                <div id="aiPreview" style="display: none; margin-top: 20px;">
-                    <h4 style="color: #d35400; margin-bottom: 10px;">Xem trước câu hỏi:</h4>
-                    <div id="aiPreviewContent" style="background: #f9f9f9; padding: 15px; border-radius: 5px; font-size: 13px; max-height: 300px; overflow-y: auto; border: 1px solid #ddd; margin-bottom: 15px; text-align: left;"></div>
-                    <button id="btnSaveQuestions" onclick="handleSaveQuestions()" class="btn btn-primary btn-block" style="background: #e67e22; border-color: #e67e22;">Lưu vào Ngân hàng câu hỏi</button>
-                </div>
-            </div>
         </div>
     </main>
 
@@ -163,84 +132,6 @@
 
         // Init
         loadSettings();
-
-        // --- AI Question Generation Logic ---
-        let generatedQuestions = [];
-
-        function handleGenerateQuestions(e) {
-            e.preventDefault();
-            const topic = document.getElementById('aiTopic').value.trim();
-            const count = parseInt(document.getElementById('aiCount').value) || 5;
-            const category = document.getElementById('aiCategory').value.trim();
-            const examSet = document.getElementById('aiExamSet').value.trim();
-
-            const btn = document.getElementById('btnGenerate');
-            btn.disabled = true;
-            btn.textContent = "Đang tạo... (Vui lòng chờ AI khoảng 10-30s)";
-            document.getElementById('aiPreview').style.display = 'none';
-
-            CONFIG.apiCall('/api/admin/generate-questions', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ topic, count, category, examSet })
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.status === 'success' && data.questions) {
-                    generatedQuestions = data.questions;
-                    document.getElementById('aiPreviewContent').innerHTML = generatedQuestions.map((q, i) => 
-                        `<div style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #ccc;">
-                            <strong style="color: #2980b9;">Câu ${i+1}:</strong> ${q.question}<br>
-                            <div style="margin-top: 5px;">
-                                ${q.options.map((opt, j) => `<div style="${j === q.correct_index ? 'color:green;font-weight:bold;' : 'color:#555;'}">- ${opt} ${j === q.correct_index ? '✓' : ''}</div>`).join('')}
-                            </div>
-                        </div>`
-                    ).join('');
-                    document.getElementById('aiPreview').style.display = 'block';
-                } else {
-                    alert('❌ Lỗi: ' + (data.message || 'Không tạo được câu hỏi. Kiểm tra Ollama.'));
-                }
-            })
-            .catch(err => {
-                alert('❌ Lỗi kết nối hệ thống khi gọi AI.');
-            })
-            .finally(() => {
-                btn.disabled = false;
-                btn.textContent = "Tạo câu hỏi";
-            });
-        }
-
-        function handleSaveQuestions() {
-            if (!generatedQuestions.length) return;
-            const adminPin = prompt('Nhập mã Giám thị (VINCONS2026) để xác nhận lưu:');
-            if (!adminPin) return;
-
-            const btn = document.getElementById('btnSaveQuestions');
-            btn.disabled = true;
-            btn.textContent = "Đang lưu...";
-
-            CONFIG.apiCall('/api/admin/save-questions', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ admin_pin: adminPin.toUpperCase(), questions: generatedQuestions })
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    alert('✅ Đã lưu ' + generatedQuestions.length + ' câu hỏi vào ngân hàng!');
-                    generatedQuestions = [];
-                    document.getElementById('aiPreview').style.display = 'none';
-                    document.getElementById('aiGenerateForm').reset();
-                } else {
-                    alert('❌ ' + (data.message || 'Lỗi: Mã Giám thị không đúng!'));
-                }
-            })
-            .catch(err => alert('❌ Lỗi kết nối hệ thống khi lưu câu hỏi.'))
-            .finally(() => {
-                btn.disabled = false;
-                btn.textContent = "Lưu vào Ngân hàng câu hỏi";
-            });
-        }
     </script>
 </body>
 </html>

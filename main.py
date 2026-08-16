@@ -4,8 +4,6 @@ import json
 import os
 import urllib.parse
 from datetime import datetime
-import urllib.request
-import re
 
 PORT = 8000
 DATA_DIR = "data"
@@ -127,82 +125,6 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
             self.send_json({"status": "success", "message": "Đã lưu kết quả"})
             return
 
-        elif parsed.path == '/api/admin/generate-questions':
-            topic = data.get('topic', '')
-            count = data.get('count', 5)
-            category = data.get('category', '')
-            exam_set = data.get('examSet', '')
-
-            prompt = f"Bạn là một chuyên gia ra đề thi trắc nghiệm. Hãy tạo {count} câu hỏi trắc nghiệm về chủ đề: '{topic}'.\n"
-            prompt += "Yêu cầu BẮT BUỘC:\n- Trả về ĐÚNG MỘT MẢNG JSON hợp lệ.\n"
-            prompt += "Mỗi phần tử trong mảng có cấu trúc chính xác sau:\n"
-            prompt += "{\n  \"type\": \"multiple_choice\",\n  \"category\": \"" + category + "\",\n  \"exam_set\": \"" + exam_set + "\",\n  \"stt\": 1,\n  \"question\": \"Nội dung câu hỏi\",\n  \"options\": [\"Đáp án A\", \"Đáp án B\", \"Đáp án C\", \"Đáp án D\"],\n  \"correct_index\": 0\n}\n"
-
-            req_data = json.dumps({
-                "model": "qwen2.5:7b",
-                "prompt": prompt,
-                "stream": False,
-                "format": "json"
-            }).encode('utf-8')
-            
-            try:
-                req = urllib.request.Request("http://localhost:11434/api/generate", data=req_data, headers={'Content-Type': 'application/json'})
-                with urllib.request.urlopen(req, timeout=120) as response:
-                    res_body = response.read().decode('utf-8')
-                    res_json = json.loads(res_body)
-                    generated_text = res_json.get('response', '')
-                    
-                    if "```" in generated_text:
-                        match = re.search(r'```(?:json)?(.*?)```', generated_text, re.DOTALL)
-                        if match:
-                            generated_text = match.group(1).strip()
-                            
-                    questions_arr = json.loads(generated_text)
-                    self.send_json({"status": "success", "questions": questions_arr})
-            except Exception as e:
-                print("Ollama Error:", e)
-                self.send_json({"status": "error", "message": str(e)}, 500)
-            return
-
-        elif parsed.path == '/api/admin/save-questions':
-            admin_pin = data.get('admin_pin', '')
-            if admin_pin != ADMIN_PIN:
-                self.send_json({"status": "error", "message": "Unauthorized"}, 401)
-                return
-
-            new_questions = data.get('questions', [])
-            if not new_questions:
-                self.send_json({"status": "error", "message": "No questions to save"}, 400)
-                return
-
-            questions_file = "questions.js"
-            try:
-                with open(questions_file, 'r', encoding='utf-8') as f:
-                    content = f.read()
-
-                match = re.search(r'const\s+QUESTIONS\s*=\s*(\[.*\])\s*;', content, re.DOTALL)
-                if match:
-                    json_str = match.group(1)
-                    existing_questions = json.loads(json_str)
-                    
-                    max_id = max([q.get('id', 0) for q in existing_questions]) if existing_questions else 0
-                    
-                    for i, nq in enumerate(new_questions):
-                        nq['id'] = max_id + i + 1
-                    
-                    existing_questions.extend(new_questions)
-                    
-                    new_content = "const QUESTIONS = " + json.dumps(existing_questions, ensure_ascii=False, indent=2) + ";\n"
-                    
-                    with open(questions_file, 'w', encoding='utf-8') as f:
-                        f.write(new_content)
-                        
-                    self.send_json({"status": "success", "message": "Saved successfully"})
-                else:
-                    self.send_json({"status": "error", "message": "Could not parse questions.js"}, 500)
-            except Exception as e:
-                self.send_json({"status": "error", "message": str(e)}, 500)
-            return
 
         self.send_json({"status": "error", "message": "Endpoint not found"}, 404)
 
