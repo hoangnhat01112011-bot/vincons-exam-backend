@@ -51,7 +51,18 @@
                     <input type="number" id="reviewLimit" class="form-control" placeholder="Mặc định: 10" min="1" max="150">
                 </div>
 
+                <div class="form-group" style="margin-top: 20px; border-top: 1px dashed #ccc; padding-top: 20px;">
+                    <h3 style="color: #2980b9; margin-top: 0; margin-bottom: 15px; font-size: 16px;">🤖 TÍCH HỢP GIA SƯ AI</h3>
+                    <label for="aiApiKey">API Key (OpenRouter / Together AI)</label>
+                    <input type="password" id="aiApiKey" class="form-control" placeholder="Nhập API Key để kích hoạt tính năng giải thích">
+                </div>
+
                 <div class="form-group">
+                    <label for="aiModel">Tên Mô Hình AI</label>
+                    <input type="text" id="aiModel" class="form-control" placeholder="Mặc định: nousresearch/nous-coder-14b">
+                </div>
+
+                <div class="form-group" style="margin-top: 20px; border-top: 1px dashed #ccc; padding-top: 20px;">
                     <label for="adminConfirmPin">Xác nhận PIN Giám thị (*)</label>
                     <input type="password" id="adminConfirmPin" class="form-control" placeholder="Nhập mã Giám thị (VINCONS2026) để lưu thay đổi" required>
                 </div>
@@ -91,6 +102,8 @@
             e.preventDefault();
             const newPin = document.getElementById('newExamPin').value.trim();
             const reviewLimit = document.getElementById('reviewLimit').value.trim();
+            const aiApiKey = document.getElementById('aiApiKey').value.trim();
+            const aiModel = document.getElementById('aiModel').value.trim();
             const adminPin = document.getElementById('adminConfirmPin').value.trim().toUpperCase();
 
             if (!adminPin) {
@@ -105,6 +118,8 @@
             const payload = { admin_pin: adminPin };
             if (newPin) payload.exam_pin = newPin;
             if (reviewLimit) payload.review_limit = parseInt(reviewLimit);
+            if (aiApiKey) payload.ai_api_key = aiApiKey;
+            if (aiModel) payload.ai_model = aiModel;
 
             CONFIG.apiCall('/api/auth/set-settings', {
                 method: 'POST',

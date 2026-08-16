@@ -33,12 +33,16 @@ function getSheetData(sheet) {
 function getSettings() {
   var sheet = getOrCreateSheet("settings", ["key", "value"]);
   var data = getSheetData(sheet);
-  var settings = { exam_pin: "6868", review_limit: 10 };
+  var settings = { exam_pin: "6868", review_limit: 10, ai_api_key: "", ai_model: "nousresearch/nous-coder-14b" };
   for (var i = 0; i < data.length; i++) {
     if (data[i].key === "exam_pin") {
       settings.exam_pin = String(data[i].value);
     } else if (data[i].key === "review_limit") {
       settings.review_limit = parseInt(data[i].value) || 10;
+    } else if (data[i].key === "ai_api_key") {
+      settings.ai_api_key = String(data[i].value);
+    } else if (data[i].key === "ai_model") {
+      settings.ai_model = String(data[i].value);
     }
   }
   return settings;
@@ -62,6 +66,8 @@ function saveSettings(settingsObj) {
   
   if (settingsObj.exam_pin !== undefined) updateOrAdd("exam_pin", settingsObj.exam_pin);
   if (settingsObj.review_limit !== undefined) updateOrAdd("review_limit", settingsObj.review_limit);
+  if (settingsObj.ai_api_key !== undefined) updateOrAdd("ai_api_key", settingsObj.ai_api_key);
+  if (settingsObj.ai_model !== undefined) updateOrAdd("ai_model", settingsObj.ai_model);
 }
 
 function doGet(e) {
@@ -79,7 +85,11 @@ function doGet(e) {
       }
     } 
     else if (action === "getSettings") {
-      responseData = { status: "success", data: getSettings() };
+      var settings = getSettings();
+      // Remove sensitive keys before returning to client
+      delete settings.ai_api_key;
+      delete settings.ai_model;
+      responseData = { status: "success", data: settings };
     }
     else if (action === "getResults") {
       var sheet = getOrCreateSheet("results", [
@@ -153,6 +163,47 @@ function doPost(e) {
       if (postData.admin_pin !== ADMIN_PIN) throw new Error("Unauthorized");
       saveSettings(postData);
       responseData = { status: "success", message: "Cập nhật thành công" };
+    }
+    else if (action === "askAITutor") {
+      var settings = getSettings();
+      if (!settings.ai_api_key) {
+        throw new Error("Chưa cấu hình API Key cho Gia sư AI trong trang Admin.");
+      }
+      
+      var prompt = "Bạn là một chuyên gia (Gia sư) về kỹ thuật xây dựng và cơ điện. Một học viên đã làm sai câu hỏi sau:\n" +
+                   "Câu hỏi: " + postData.question + "\n" +
+                   "Học viên chọn: " + postData.userAnswer + "\n" +
+                   "Đáp án đúng là: " + postData.correctAnswer + "\n\n" +
+                   "Hãy giải thích ngắn gọn, dễ hiểu, logic (khoảng 3-4 câu) tại sao đáp án đúng lại như vậy, và tại sao học viên sai. Ngôn ngữ: Tiếng Việt.";
+                   
+      var payload = {
+        "model": settings.ai_model || "nousresearch/nous-coder-14b",
+        "messages": [
+          {"role": "user", "content": prompt}
+        ]
+      };
+      
+      var options = {
+        "method": "post",
+        "headers": {
+          "Authorization": "Bearer " + settings.ai_api_key,
+          "Content-Type": "application/json",
+          "HTTP-Referer": "https://vincons.com",
+          "X-Title": "Vincons Exam AI Tutor"
+        },
+        "payload": JSON.stringify(payload),
+        "muteHttpExceptions": true
+      };
+      
+      var response = UrlFetchApp.fetch("https://openrouter.ai/api/v1/chat/completions", options);
+      var json = JSON.parse(response.getContentText());
+      
+      if (json.error) {
+        throw new Error(json.error.message || "Lỗi từ OpenRouter API");
+      }
+      
+      var explanation = json.choices[0].message.content;
+      responseData = { status: "success", explanation: explanation };
     }
     else if (action === "saveResult") {
       var sheet = getOrCreateSheet("results", [

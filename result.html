@@ -239,6 +239,14 @@
                     `;
                 });
             }
+            let aiBtnHTML = '';
+            if (candidate.examMode === 'Ôn tập' && !isCorrect) {
+                aiBtnHTML = `
+                <div style="margin-top: 15px;">
+                    <button class="btn btn-secondary btn-sm" onclick="askAITutor(this, ${index})" style="background: var(--accent); color: white; border: none;">🤖 AI Giải thích (NousCoder)</button>
+                    <div class="ai-explanation" style="display:none; margin-top:10px; padding:12px; background:#e8f4fd; border-left:4px solid var(--accent); border-radius:4px; font-size:14px; line-height:1.6; color:#2c3e50;"></div>
+                </div>`;
+            }
             
             item.innerHTML = `
                 <div class="review-question-header">
@@ -253,9 +261,58 @@
                 <div class="review-options">
                     ${optionsHTML}
                 </div>
+                ${aiBtnHTML}
             `;
             reviewContainer.appendChild(item);
         });
+
+        function askAITutor(btn, index) {
+            const q = activeQuestions[index];
+            const userAnswer = answers[index];
+            
+            let userAnsStr = 'Chưa trả lời';
+            let correctAnsStr = '';
+            if (q.type === 'multiple_choice') {
+                if (userAnswer !== undefined) userAnsStr = q.options[userAnswer];
+                correctAnsStr = q.options[q.correct_index];
+            } else {
+                userAnsStr = JSON.stringify(userAnswer);
+                correctAnsStr = "Xem chi tiết đáp án";
+            }
+            
+            btn.disabled = true;
+            btn.textContent = "⏳ Đang kết nối Gia sư AI...";
+            const explanationDiv = btn.nextElementSibling;
+            explanationDiv.style.display = 'block';
+            explanationDiv.innerHTML = "<em>Đang phân tích câu trả lời...</em>";
+            
+            CONFIG.apiCall('/api/ai-tutor', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    action: 'askAITutor',
+                    question: q.question,
+                    userAnswer: userAnsStr,
+                    correctAnswer: correctAnsStr
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    explanationDiv.innerHTML = "<strong>🤖 Gia sư giải thích:</strong><br>" + data.explanation.replace(/\\n/g, '<br>');
+                    btn.style.display = 'none';
+                } else {
+                    explanationDiv.innerHTML = `<span style="color:red">Lỗi: ${data.message}</span>`;
+                    btn.disabled = false;
+                    btn.textContent = "🤖 Thử lại (Gia sư NousCoder)";
+                }
+            })
+            .catch(err => {
+                explanationDiv.innerHTML = `<span style="color:red">Lỗi kết nối.</span>`;
+                btn.disabled = false;
+                btn.textContent = "🤖 Thử lại (Gia sư NousCoder)";
+            });
+        }
 
         // AUTO-SAVE EXAM RESULT DATA
         const recordId = `res_${candidate.id}_${candidate.startTime || Date.now()}`;
