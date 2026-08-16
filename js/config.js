@@ -19,6 +19,12 @@ const CONFIG = {
     },
 
     async apiCall(path, options = {}) {
+        // Luôn gọi thẳng máy chủ cục bộ (Python backend) cho các tính năng AI vì yêu cầu phần cứng/Ollama tại local
+        if (path.startsWith('/api/admin/generate-questions') || path.startsWith('/api/admin/save-questions')) {
+            let finalUrl = this.DEFAULT_API_BASE_URL + path;
+            return fetch(finalUrl, options);
+        }
+
         if (this.USE_GOOGLE_SHEETS) {
             let url = this.GOOGLE_SCRIPT_URL;
             let method = options.method || 'GET';
