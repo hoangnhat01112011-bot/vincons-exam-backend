@@ -78,7 +78,7 @@
 
         function handleLogin(e) {
             e.preventDefault();
-            const pin = document.getElementById('adminPin').value.trim();
+            const pin = document.getElementById('adminPin').value.trim().toUpperCase();
             if (!pin) return;
 
             const btn = document.getElementById('btnLogin');

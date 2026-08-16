@@ -82,7 +82,7 @@
         function handleUpdatePin(e) {
             e.preventDefault();
             const newPin = document.getElementById('newExamPin').value.trim();
-            const adminPin = document.getElementById('adminConfirmPin').value.trim();
+            const adminPin = document.getElementById('adminConfirmPin').value.trim().toUpperCase();
 
             if (!newPin || !adminPin) return;
 
