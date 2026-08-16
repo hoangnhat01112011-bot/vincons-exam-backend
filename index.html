@@ -55,6 +55,17 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="discipline">Bộ môn thi (*)</label>
+                    <select id="discipline" class="form-control" required onchange="toggleDiscipline(this.value)">
+                        <option value="" disabled selected>-- Chọn bộ môn --</option>
+                        <option value="Điện">Điện</option>
+                        <option value="Cấp thoát nước">Cấp thoát nước</option>
+                        <option value="Điều hòa thông gió">Điều hòa thông gió</option>
+                        <option value="Phòng cháy chữa cháy">Phòng cháy chữa cháy</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label for="examType">Phần thi đăng ký (*)</label>
                     <select id="examType" class="form-control" required onchange="toggleExamSetGroup(this.value)">
                         <option value="" disabled selected>-- Chọn phần thi --</option>
@@ -130,17 +141,38 @@
             }
         }
 
+        function toggleDiscipline(val) {
+            const examSet = document.getElementById('examSet');
+            if (val === 'Điện') {
+                examSet.innerHTML = `
+                    <option value="all">Ngẫu nhiên 30 câu (Từ ngân hàng 150 câu 5 bộ đề)</option>
+                    <option value="Đề số 01">Đề số 01 - Đề thi trắc nghiệm điện (30 câu)</option>
+                    <option value="Đề số 02">Đề số 02 - Đề thi trắc nghiệm điện (30 câu)</option>
+                    <option value="Đề số 03">Đề số 03 - Đề thi trắc nghiệm điện (30 câu)</option>
+                    <option value="Đề số 04">Đề số 04 - Đề thi trắc nghiệm điện (30 câu)</option>
+                    <option value="Đề số 05">Đề số 05 - Đề thi trắc nghiệm điện (30 câu)</option>
+                `;
+                examSet.disabled = false;
+            } else {
+                examSet.innerHTML = `
+                    <option value="">-- Hệ thống đang cập nhật đề thi --</option>
+                `;
+                // Vẫn cho phép chọn nhưng sẽ không có câu hỏi hiển thị
+            }
+        }
+
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const name = document.getElementById('candidateName').value.trim();
             const id = document.getElementById('candidateId').value.trim();
             const job = document.getElementById('candidateJob').value;
+            const discipline = document.getElementById('discipline').value;
             const examType = document.getElementById('examType').value;
             const examSet = document.getElementById('examSet') ? document.getElementById('examSet').value : 'all';
             const examPin = document.getElementById('examPin').value.trim();
             
-            if (!name || !id || !job || !examType || !examPin) {
+            if (!name || !id || !job || !discipline || !examType || !examPin) {
                 alert('Vui lòng điền đầy đủ các thông tin bắt buộc.');
                 return;
             }
@@ -160,6 +192,7 @@
                             name: name,
                             id: id,
                             job: job,
+                            discipline: discipline,
                             examType: examType,
                             examSet: examSet,
                             startTime: new Date().getTime()

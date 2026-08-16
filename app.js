@@ -36,10 +36,19 @@ function initExam() {
     // Filter questions based on candidate job, exam type, and selected set
     if (examType === 'Lý thuyết') {
         const selectedSet = candidateInfo.examSet || 'all';
-        if (selectedSet !== 'all') {
-            activeQuestions = QUESTIONS.filter(q => q.category.includes('Lý thuyết') && q.exam_set === selectedSet);
+        const discipline = candidateInfo.discipline || 'Điện';
+        
+        let disciplineKeyword = 'Thợ điện';
+        if (discipline === 'Cấp thoát nước') disciplineKeyword = 'Cấp thoát nước';
+        else if (discipline === 'Điều hòa thông gió') disciplineKeyword = 'Điều hòa';
+        else if (discipline === 'Phòng cháy chữa cháy') disciplineKeyword = 'PCCC';
+
+        let theoryQuestions = QUESTIONS.filter(q => q.category.includes('Lý thuyết') && q.category.includes(disciplineKeyword));
+
+        if (selectedSet !== 'all' && selectedSet !== '') {
+            activeQuestions = theoryQuestions.filter(q => q.exam_set === selectedSet);
         } else {
-            activeQuestions = QUESTIONS.filter(q => q.category.includes('Lý thuyết'));
+            activeQuestions = theoryQuestions;
             if (activeQuestions.length > 30) {
                 activeQuestions = shuffle(activeQuestions).slice(0, 30);
             }
