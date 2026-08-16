@@ -5,16 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lịch Sử Bài Thi - Vincons</title>
     <link rel="stylesheet" href="style.css">
+    <script src="js/auth-guard.js"></script>
     <script src="js/config.js"></script>
     <script src="questions.js"></script>
-    <script>
-        // Check login immediately
-        let loggedInUser = JSON.parse(localStorage.getItem('vincons_logged_in_user'));
-        if (!loggedInUser) {
-            loggedInUser = { name: "Thí sinh", username: "thi_sinh", role: "candidate" };
-            localStorage.setItem('vincons_logged_in_user', JSON.stringify(loggedInUser));
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -26,13 +19,11 @@
             </div>
         </div>
         <div class="header-nav" style="display: flex; align-items: center; gap: 15px;">
-            <span id="userInfoDisplay" style="font-size: 13px; font-weight: 700; color: var(--primary);"></span>
-            <a href="index.html" class="nav-link" id="navHomeLink">🏠 Trang chủ</a>
-            <a href="kpi.html" class="nav-link">📊 Quản lý KPI</a>
-            <a href="bao_cao_san_luong.html" class="nav-link">✍️ Báo cáo sản lượng</a>
+            <a href="index.html" class="nav-link">🏠 Trang chủ</a>
             <a href="history.html" class="nav-link active">📋 Lịch sử bài thi</a>
-            <a href="login.html" class="nav-link" id="navLoginLink">🔑 Đăng nhập Giám thị/Admin</a>
-            <button onclick="handleLogout()" id="btnLogout" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Đăng xuất</button>
+            <a href="admin.html" class="nav-link" id="navAdminLink" style="display: none;">👑 Quản trị Admin</a>
+            <a href="login.html" class="btn btn-secondary btn-sm" id="btnAdminLogin" style="padding: 6px 12px; font-size: 12px;">Đăng nhập Giám thị</a>
+            <button onclick="handleLogout()" id="btnLogout" class="btn btn-secondary btn-sm" style="display: none; padding: 6px 12px; font-size: 12px;">Thoát Admin</button>
         </div>
     </header>
 
@@ -49,8 +40,8 @@
                     </p>
                 </div>
                 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    <button class="btn btn-primary btn-sm" id="btnManageUsers" onclick="openUserManagementModal()" style="display: none; align-items: center; gap: 4px;">👥 Quản lý cấp quyền tài khoản</button>
-                    <a href="https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit" target="_blank" class="btn btn-accent btn-sm" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">📊 Google Sheets Cloud (Tự động)</a>
+                    <a href="admin.html" class="btn btn-primary btn-sm" id="btnAdminPortal" style="display: none; align-items: center; gap: 4px; text-decoration: none;">👑 Quản trị Admin</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit" target="_blank" class="btn btn-accent btn-sm" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">📊 Google Sheets Cloud</a>
                     <button class="btn btn-primary btn-sm" onclick="exportData()">📥 Xuất Excel / CSV</button>
                     <button class="btn btn-secondary btn-sm" onclick="window.print()">🖨️ In báo cáo</button>
                     <button class="btn btn-danger btn-sm" onclick="confirmClearAll()">🗑️ Xóa lịch sử</button>
@@ -142,78 +133,20 @@
         </div>
     </div>
 
-    <!-- Modal for User Management & Approval -->
-    <div id="userManagementModal" class="modal-overlay">
-        <div class="modal-content" style="max-width: 850px;">
-            <div class="modal-header">
-                <h3>👥 QUẢN LÝ & CẤP QUYỀN TÀI KHOẢN ĐĂNG NHẬP</h3>
-                <button class="modal-close" onclick="closeUserManagementModal()">&times;</button>
-            </div>
-            <div class="modal-body" style="max-height: 80vh; overflow-y: auto;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
-                    <div style="font-size: 13px; color: #7f8c8d; font-weight: 600;">
-                        Chỉ những tài khoản ở trạng thái <strong style="color: var(--success);">ĐÃ CẤP QUYỀN</strong> mới được phép đăng nhập làm bài thi.
-                    </div>
-                    <button class="btn btn-accent btn-sm" onclick="toggleAddUserForm()">➕ Cấp tài khoản mới trực tiếp</button>
-                </div>
-
-                <!-- Add user form (Hidden by default) -->
-                <div id="addUserBox" style="display: none; background: rgba(11, 60, 93, 0.05); padding: 15px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 20px;">
-                    <h4 style="font-size: 14px; color: var(--primary); margin-bottom: 10px;">Thêm / Cấp Quyền Tài Khoản Mới Trực Tiếp</h4>
-                    <form onsubmit="handleAdminCreateUser(event)" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                        <div>
-                            <label style="font-size: 12px; font-weight: 700;">Họ và tên (*)</label>
-                            <input type="text" id="newUserName" class="form-control" placeholder="Nhập họ tên đầy đủ" required style="padding: 6px 10px; font-size: 13px;">
-                        </div>
-                        <div>
-                            <label style="font-size: 12px; font-weight: 700;">SĐT / Gmail (*)</label>
-                            <input type="text" id="newUserUsername" class="form-control" placeholder="Nhập SĐT hoặc Gmail" required style="padding: 6px 10px; font-size: 13px;">
-                        </div>
-                        <div>
-                            <label style="font-size: 12px; font-weight: 700;">Mật khẩu (*)</label>
-                            <input type="password" id="newUserPassword" class="form-control" placeholder="Tối thiểu 6 ký tự" required minlength="6" style="padding: 6px 10px; font-size: 13px;">
-                        </div>
-                        <div>
-                            <label style="font-size: 12px; font-weight: 700;">Vai trò (*)</label>
-                            <select id="newUserRole" class="form-control" style="padding: 6px 10px; font-size: 13px;">
-                                <option value="candidate">Thí sinh dự thi</option>
-                                <option value="admin">Giám thị / Quản lý</option>
-                            </select>
-                        </div>
-                        <div style="grid-column: span 2; display: flex; justify-content: flex-end; gap: 10px; margin-top: 5px;">
-                            <button type="button" class="btn btn-secondary btn-sm" onclick="toggleAddUserForm()">Hủy</button>
-                            <button type="submit" class="btn btn-success btn-sm">✅ Tạo & Cấp quyền ngay</button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Users Table -->
-                <div class="table-responsive">
-                    <table class="history-table" style="font-size: 13px;">
-                        <thead>
-                            <tr>
-                                <th>STT</th>
-                                <th>Họ và tên</th>
-                                <th>SĐT / Gmail</th>
-                                <th>Vai trò</th>
-                                <th>Trạng thái quyền</th>
-                                <th style="text-align: center;">Thao tác cấp quyền</th>
-                            </tr>
-                        </thead>
-                        <tbody id="userTableBody">
-                            <tr><td colspan="6" style="text-align: center; padding: 20px;">Đang tải danh sách tài khoản...</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <footer>
         &copy; 2026 Vincons - Ban Chỉ Huy Dự Án Hạ Long Xanh. All rights reserved.
     </footer>
 
     <script>
+        // Check admin role
+        const isAdmin = localStorage.getItem('vincons_admin') === 'true';
+        if (isAdmin) {
+            document.getElementById('navAdminLink').style.display = 'inline-block';
+            document.getElementById('btnLogout').style.display = 'inline-block';
+            document.getElementById('btnAdminLogin').style.display = 'none';
+            document.getElementById('btnAdminPortal').style.display = 'inline-flex';
+        }
+
         let allResults = [];
         let filteredResults = [];
 
@@ -226,95 +159,29 @@
             setTimeout(() => toast.remove(), 4000);
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Display user info and adapt UI
-            if (loggedInUser) {
-                const roleText = loggedInUser.role === 'admin' ? 'Giám thị' : 'Thí sinh';
-                document.getElementById('userInfoDisplay').textContent = `${loggedInUser.name} (${roleText})`;
-                
-                if (loggedInUser.role !== 'admin') {
-                    // Hide management button for candidates
-                    const clearBtn = document.querySelector("button[onclick='confirmClearAll()']");
-                    if (clearBtn) clearBtn.style.display = 'none';
-                    
-                    // Update header title
-                    const titleText = document.querySelector("h2");
-                    if (titleText) titleText.textContent = "KẾT QUẢ BÀI THI CỦA BẠN";
-                } else {
-                    // Admins don't take tests - hide "Trang chủ" and show Manage Users button
-                    const homeLink = document.getElementById('navHomeLink');
-                    if (homeLink) homeLink.style.display = 'none';
-                    const manageBtn = document.getElementById('btnManageUsers');
-                    if (manageBtn) manageBtn.style.display = 'inline-flex';
-                }
-                
-                // Toggle login/logout view
-                if (loggedInUser.username && loggedInUser.username !== "thi_sinh") {
-                    const loginLink = document.getElementById('navLoginLink');
-                    if (loginLink) loginLink.style.display = 'none';
-                    const logoutBtn = document.getElementById('btnLogout');
-                    if (logoutBtn) logoutBtn.style.display = 'block';
-                } else {
-                    const loginLink = document.getElementById('navLoginLink');
-                    if (loginLink) loginLink.style.display = 'block';
-                    const logoutBtn = document.getElementById('btnLogout');
-                    if (logoutBtn) logoutBtn.style.display = 'none';
-                }
-            }
-            
-            loadResultsData();
-        });
-
         function handleLogout() {
-            if (confirm('Bạn có chắc chắn muốn đăng xuất tài khoản?')) {
-                localStorage.removeItem('vincons_logged_in_user');
-                localStorage.removeItem('vincons_candidate');
-                localStorage.removeItem('vincons_answers');
-                localStorage.removeItem('vincons_time_left');
-                localStorage.removeItem('vincons_active_questions');
-                window.location.href = 'login.html';
+            if (confirm('Bạn có chắc chắn muốn thoát quyền Giám thị?')) {
+                localStorage.removeItem('vincons_admin');
+                window.location.reload();
             }
         }
 
+        document.addEventListener('DOMContentLoaded', () => {
+            loadResultsData();
+        });
+
         function loadResultsData() {
-            const userId = encodeURIComponent(loggedInUser.username);
-            const role = encodeURIComponent(loggedInUser.role);
-            
-            // Try fetching from Python server endpoint first with authorization params
-            CONFIG.apiCall(`/api/results?userId=${userId}&role=${role}`)
-                .then(res => {
-                    if (!res.ok) throw new Error('API not available');
-                    return res.json();
-                })
+            // Admin-only data loading strategy
+            CONFIG.apiCall(`/api/results`)
+                .then(res => res.json())
                 .then(data => {
                     allResults = data || [];
-                    
-                    // Merge local history if server has fewer items (and matches username if candidate)
-                    const localData = JSON.parse(localStorage.getItem('vincons_history')) || [];
-                    localData.forEach(item => {
-                        const candId = item.candidate?.id || '';
-                        if (loggedInUser.role !== 'admin' && candId.toLowerCase() !== loggedInUser.username.toLowerCase()) {
-                            return; // Filter out other users' local cache
-                        }
-                        if (!allResults.some(r => r.id === item.id)) {
-                            allResults.push(item);
-                        }
-                    });
-                    
-                    // Sort newest first
                     allResults.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
                     filterResults();
                 })
                 .catch(err => {
-                    console.log('Loading from localStorage (Offline mode):', err);
-                    let local = JSON.parse(localStorage.getItem('vincons_history')) || [];
-                    if (loggedInUser.role !== 'admin') {
-                        local = local.filter(item => {
-                            const candId = item.candidate?.id || '';
-                            return candId.toLowerCase() === loggedInUser.username.toLowerCase();
-                        });
-                    }
-                    allResults = local;
+                    console.error('Offline mode:', err);
+                    allResults = JSON.parse(localStorage.getItem('vincons_history')) || [];
                     allResults.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
                     filterResults();
                 });
@@ -386,10 +253,10 @@
                     ? `<span class="review-badge correct">ĐẠT YÊU CẦU</span>` 
                     : `<span class="review-badge incorrect">CHƯA ĐẠT</span>`;
 
-                const actionButtons = loggedInUser.role === 'admin'
-                    ? `<button class="btn btn-info btn-sm" onclick="viewDetail('${item.id}')" style="margin-right: 5px;">👁️ Xem</button>
-                       <button class="btn btn-danger btn-sm" onclick="deleteRecord('${item.id}')">🗑️ Xóa</button>`
-                    : `<button class="btn btn-info btn-sm" onclick="viewDetail('${item.id}')">👁️ Xem Chi Tiết</button>`;
+                const actions = isAdmin 
+                ? `<button class="btn btn-secondary btn-sm" onclick="viewDetail('${item.id}')">👁️ Xem</button>
+                   <button class="btn btn-danger btn-sm" style="margin-left:5px" onclick="deleteRecord('${item.id}')">🗑️</button>`
+                : `<button class="btn btn-secondary btn-sm" onclick="viewDetail('${item.id}')">👁️ Xem</button>`;
 
                 tr.innerHTML = `
                     <td style="font-weight: 700;">${index + 1}</td>
@@ -402,7 +269,7 @@
                     <td style="font-weight: 700; color: ${item.isPass ? 'var(--success)' : 'var(--danger)'};">${(item.percentage || 0).toFixed(1)}%</td>
                     <td>${statusBadge}</td>
                     <td style="text-align: center; white-space: nowrap;">
-                        ${actionButtons}
+                        ${actions}
                     </td>
                 `;
                 tbody.appendChild(tr);
@@ -417,18 +284,6 @@
             let questions = item.questions || [];
             const answers = item.answers || {};
 
-            // Fallback: If questions array is missing or empty in history record, load matching questions from QUESTIONS
-            if ((!questions || questions.length === 0) && typeof QUESTIONS !== 'undefined') {
-                if (cand.examType === 'Thực hành') {
-                    questions = QUESTIONS.filter(q => q.category && q.category.includes('Thực hành CNCH'));
-                } else {
-                    questions = QUESTIONS.filter(q => q.category && q.category.includes('Lý thuyết'));
-                    if (questions.length > 30) {
-                        questions = questions.slice(0, 30);
-                    }
-                }
-            }
-
             document.getElementById('modalTitle').textContent = `Chi Tiết Bài Làm - ${cand.name || 'Thí sinh'} (${cand.id || '-'})`;
             
             let modalHTML = `
@@ -442,106 +297,26 @@
                         <div><strong>Kết quả:</strong> <strong style="color: ${item.isPass ? 'var(--success)' : 'var(--danger)'};">${item.isPass ? 'ĐẠT YÊU CẦU' : 'CHƯA ĐẠT'}</strong></div>
                     </div>
                 </div>
-                <h4 style="font-size: 15px; color: var(--primary); margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 6px;">
-                    DANH SÁCH CÂU HỎI VÀ LỰA CHỌN THÍ SINH
-                </h4>
                 <div style="display: flex; flex-direction: column; gap: 15px;">
             `;
 
             if (!questions || questions.length === 0) {
-                modalHTML += `<div style="padding: 20px; text-align: center; color: #7f8c8d;">Không có dữ liệu câu hỏi chi tiết cho bài thi này.</div>`;
+                modalHTML += `<div style="padding: 20px; text-align: center; color: #7f8c8d;">Không có dữ liệu câu hỏi chi tiết.</div>`;
             } else {
                 questions.forEach((q, idx) => {
                     const userAnswer = answers[idx];
-                    let isCorrect = false;
-                    let optionsHTML = '';
-
-                    const isInputGroup = q.type === 'input_group' || (!q.options && q.sub_questions);
-
-                    if (isInputGroup) {
-                        // Handle input_group (used in Practical / Thực hành exam)
-                        const subQs = q.sub_questions || [];
-                        if (userAnswer !== undefined && typeof userAnswer === 'object') {
-                            let allCorrect = subQs.length > 0;
-                            subQs.forEach(subQ => {
-                                const uVal = userAnswer[subQ.id];
-                                if (uVal === undefined || uVal === null || uVal === '' || String(uVal).trim() !== String(subQ.correct_value).trim()) {
-                                    allCorrect = false;
-                                }
-                            });
-                            isCorrect = allCorrect;
-                        }
-
-                        subQs.forEach((subQ) => {
-                            const uAns = (userAnswer && userAnswer[subQ.id] !== undefined && userAnswer[subQ.id] !== '') ? userAnswer[subQ.id] : 'Chưa điền';
-                            const cAns = subQ.correct_value;
-                            const subIsCorrect = String(uAns).trim() === String(cAns).trim();
-                            const statusClass = subIsCorrect ? 'correct-answer' : 'selected-wrong';
-
-                            optionsHTML += `
-                                <div class="review-opt ${statusClass}" style="font-size: 13px; margin-bottom: 6px; padding: 8px 12px; border-radius: 6px;">
-                                    <strong>${subQ.label}:</strong> Thí sinh nhập: <strong style="color: ${subIsCorrect ? 'var(--success)' : 'var(--danger)'};">${uAns}</strong> 
-                                    ${subIsCorrect 
-                                        ? ' <span style="color: var(--success); font-weight: 700;">✓ (Chính xác)</span>' 
-                                        : ` <span style="color: var(--danger); font-weight: 700;">✗ (Đáp án đúng: <strong>${cAns}</strong>)</span>`}
-                                </div>
-                            `;
-                        });
-                    } else {
-                        // Handle multiple_choice
-                        isCorrect = userAnswer !== undefined && userAnswer === q.correct_index;
-                        const opts = q.options || [];
-
-                        opts.forEach((opt, optIdx) => {
-                            let statusClass = '';
-                            if (optIdx === q.correct_index) {
-                                statusClass = 'correct-answer';
-                            } else if (userAnswer !== undefined && optIdx === userAnswer && !isCorrect) {
-                                statusClass = 'selected-wrong';
-                            }
-
-                            const isCandidateChoice = (userAnswer !== undefined && optIdx === userAnswer);
-                            const isCorrectOpt = (optIdx === q.correct_index);
-
-                            optionsHTML += `
-                                <div class="review-opt ${statusClass}" style="font-size: 13px; margin-bottom: 6px; padding: 8px 12px; border-radius: 6px;">
-                                    <strong>${String.fromCharCode(65 + optIdx)}.</strong> ${opt}
-                                    ${isCorrectOpt ? ' <span style="color: var(--success); font-weight: 700;">✓ (Đáp án đúng)</span>' : ''}
-                                    ${isCandidateChoice && !isCorrectOpt ? ' <span style="color: var(--danger); font-weight: 700;">✗ (Lựa chọn của thí sinh)</span>' : ''}
-                                    ${isCandidateChoice && isCorrectOpt ? ' <span style="color: var(--success); font-weight: 700;">(Lựa chọn của thí sinh)</span>' : ''}
-                                </div>
-                            `;
-                        });
-                    }
-
-                    const imageHTML = q.image ? `
-                        <div style="margin: 10px 0; text-align: center;">
-                            <img src="${q.image}" style="max-width: 100%; max-height: 380px; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.08);" alt="Hình ảnh câu hỏi">
-                        </div>
-                    ` : '';
-
+                    let isCorrect = (userAnswer !== undefined && userAnswer === q.correct_index);
+                    
                     modalHTML += `
                         <div class="review-item" style="padding: 16px; border-radius: 8px; border: 1px solid var(--border); background: #fff; margin-bottom: 15px;">
-                            <div class="review-question-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                <span style="font-weight: 700; color: var(--primary); font-size: 13px;">Câu ${idx + 1}: ${q.category ? `(${q.category})` : ''}</span>
-                                <span class="review-badge ${isCorrect ? 'correct' : 'incorrect'}">
-                                    ${isCorrect ? 'Đúng' : (userAnswer === undefined ? 'Chưa trả lời' : 'Sai')}
-                                </span>
-                            </div>
-                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 10px; color: var(--text); line-height: 1.4;">
-                                ${q.question}
-                            </div>
-                            ${imageHTML}
-                            <div class="review-options" style="margin-top: 10px;">
-                                ${optionsHTML}
-                            </div>
+                            <div style="font-weight: 700; margin-bottom: 8px;">Câu ${idx + 1}: ${q.question}</div>
+                            <div class="review-options">Đáp án đúng: ${String.fromCharCode(65 + q.correct_index)}</div>
                         </div>
                     `;
                 });
             }
 
             modalHTML += `</div>`;
-
             document.getElementById('modalBody').innerHTML = modalHTML;
             document.getElementById('detailModal').classList.add('active');
         }
@@ -550,56 +325,45 @@
             document.getElementById('detailModal').classList.remove('active');
         }
 
+        function promptAdminPin(actionName, callback) {
+            const adminPin = prompt(`🔐 BẢO MẬT ADMIN: Vui lòng nhập Mã PIN Bảo Mật Admin (Secret PIN) để thực hiện "${actionName}":`);
+            if (!adminPin) {
+                showToast('⚠️ Đã hủy thao tác. Cần có Mã PIN Admin!', 'danger');
+                return;
+            }
+            callback(adminPin);
+        }
+
         function deleteRecord(id) {
-            if (!confirm('Bạn có chắc chắn muốn xóa bản ghi lịch sử thi này không?')) return;
-
-            // 1. Delete locally
-            allResults = allResults.filter(r => r.id !== id);
-            localStorage.setItem('vincons_history', JSON.stringify(allResults));
-
-            // 2. Delete on server
-            const role = encodeURIComponent(loggedInUser.role);
-            CONFIG.apiCall(`/api/delete-result?id=${encodeURIComponent(id)}&role=${role}`, { method: 'DELETE' })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.status === 'error') {
-                        showToast(`❌ ${data.message}`, 'danger');
-                    } else {
-                        showToast('Đã xóa bản ghi thành công!');
-                    }
-                })
-                .catch(err => {
-                    showToast('Đã xóa bản ghi khỏi bộ nhớ cục bộ!');
-                });
-
-            filterResults();
+            if (!isAdmin) {
+                showToast('Chỉ Giám thị mới có quyền xóa kết quả!', 'danger');
+                return;
+            }
+            if (confirm('Bạn có chắc chắn muốn xóa bản ghi này? Hành động này không thể hoàn tác.')) {
+                CONFIG.apiCall(`/api/delete-result?id=${id}&adminPin=VINCONS2026`, { method: 'DELETE' })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.status === 'error') {
+                            showToast(`❌ ${data.message}`, 'danger');
+                        } else {
+                            allResults = allResults.filter(r => r.id !== id);
+                            localStorage.setItem('vincons_history', JSON.stringify(allResults));
+                            showToast('✅ Đã xóa bản ghi thành công!');
+                            filterResults();
+                        }
+                    })
+                    .catch(() => showToast('❌ Lỗi kết nối!', 'danger'));
+            }
         }
 
         function confirmClearAll() {
-            if (allResults.length === 0) {
-                alert('Không có dữ liệu lịch sử nào để xóa.');
-                return;
-            }
-            if (!confirm('⚠️ CẢNH BÁO: Bạn có chắc chắn muốn XÓA TOÀN BỘ lịch sử bài thi không?\nHành động này không thể hoàn tác!')) {
-                return;
-            }
-
-            allResults = [];
-            localStorage.removeItem('vincons_history');
-
-            const role = encodeURIComponent(loggedInUser.role);
-            CONFIG.apiCall(`/api/clear-results?role=${role}`, { method: 'DELETE' })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.status === 'error') {
-                        showToast(`❌ ${data.message}`, 'danger');
-                    } else {
-                        showToast('Đã xóa toàn bộ lịch sử bài thi!');
-                    }
-                })
-                .catch(() => showToast('Đã xóa lịch sử trình duyệt!'));
-
-            filterResults();
+                            localStorage.removeItem('vincons_history');
+                            showToast('✅ Đã xóa toàn bộ lịch sử bài thi!');
+                            filterResults();
+                        }
+                    })
+                    .catch(() => showToast('❌ Lỗi kết nối hoặc mã PIN không hợp lệ!', 'danger'));
+            });
         }
 
         function exportData() {
@@ -609,143 +373,7 @@
             }
             const userId = encodeURIComponent(loggedInUser.username);
             const role = encodeURIComponent(loggedInUser.role);
-            // Trigger server CSV download with role authorization
             window.location.href = CONFIG.API_BASE_URL + `/api/export-csv?userId=${userId}&role=${role}`;
-        }
-
-        /* =========================================================
-           USER MANAGEMENT & APPROVAL LOGIC (FOR ADMIN)
-           ========================================================= */
-        function openUserManagementModal() {
-            document.getElementById('userManagementModal').classList.add('active');
-            loadUsersList();
-        }
-
-        function closeUserManagementModal() {
-            document.getElementById('userManagementModal').classList.remove('active');
-        }
-
-        function toggleAddUserForm() {
-            const box = document.getElementById('addUserBox');
-            box.style.display = (box.style.display === 'none' || !box.style.display) ? 'block' : 'none';
-        }
-
-        function loadUsersList() {
-            const tbody = document.getElementById('userTableBody');
-            tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 20px;">Đang tải dữ liệu tài khoản...</td></tr>';
-
-            CONFIG.apiCall('/api/auth/list-users')
-                .then(res => res.json())
-                .then(res => {
-                    const users = res.data || res || [];
-                    renderUsersTable(users);
-                })
-                .catch(err => {
-                    console.error('List users error:', err);
-                    tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: var(--danger); padding: 20px;">Không thể tải danh sách tài khoản từ server.</td></tr>';
-                });
-        }
-
-        function renderUsersTable(users) {
-            const tbody = document.getElementById('userTableBody');
-            tbody.innerHTML = '';
-
-            if (!users || users.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 20px;">Chưa có tài khoản nào.</td></tr>';
-                return;
-            }
-
-            users.forEach((u, idx) => {
-                const tr = document.createElement('tr');
-                const status = u.status || 'active';
-                
-                let statusBadge = '';
-                if (status === 'active') {
-                    statusBadge = '<span class="review-badge correct">ĐÃ CẤP QUYỀN</span>';
-                } else if (status === 'pending') {
-                    statusBadge = '<span class="review-badge" style="background: rgba(241, 196, 15, 0.2); color: #d35400; border: 1px solid #f39c12;">CHỜ DUYỆT</span>';
-                } else {
-                    statusBadge = '<span class="review-badge incorrect">BỊ KHÓA</span>';
-                }
-
-                const roleBadge = u.role === 'admin' 
-                    ? '<strong style="color: var(--primary);">Giám thị</strong>' 
-                    : '<span style="color: #555;">Thí sinh</span>';
-
-                let actionBtns = '';
-                if (status !== 'active') {
-                    actionBtns += `<button class="btn btn-success btn-sm" onclick="changeUserStatus('${u.username}', 'active')" style="margin-right: 4px; padding: 4px 8px; font-size: 11px;">✅ Cấp quyền</button>`;
-                }
-                if (status !== 'blocked') {
-                    actionBtns += `<button class="btn btn-secondary btn-sm" onclick="changeUserStatus('${u.username}', 'blocked')" style="margin-right: 4px; padding: 4px 8px; font-size: 11px;">🔒 Khóa</button>`;
-                }
-                actionBtns += `<button class="btn btn-danger btn-sm" onclick="deleteUserAccount('${u.username}')" style="padding: 4px 8px; font-size: 11px;">🗑️ Xóa</button>`;
-
-                tr.innerHTML = `
-                    <td style="font-weight: 700;">${idx + 1}</td>
-                    <td style="font-weight: 700;">${u.name || '-'}</td>
-                    <td><code>${u.username || '-'}</code></td>
-                    <td>${roleBadge}</td>
-                    <td>${statusBadge}</td>
-                    <td style="text-align: center; white-space: nowrap;">${actionBtns}</td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        function changeUserStatus(targetUsername, newStatus) {
-            CONFIG.apiCall('/api/auth/update-status', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ targetUsername, newStatus })
-            })
-            .then(res => res.json())
-            .then(data => {
-                showToast(data.message || 'Đã cập nhật trạng thái!', data.status === 'success' ? 'success' : 'danger');
-                loadUsersList();
-            })
-            .catch(err => showToast(`❌ ${err.message}`, 'danger'));
-        }
-
-        function deleteUserAccount(targetUsername) {
-            if (!confirm(`Bạn có chắc chắn muốn XÓA tài khoản ${targetUsername} khỏi hệ thống?`)) return;
-
-            CONFIG.apiCall('/api/auth/delete-user', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ targetUsername })
-            })
-            .then(res => res.json())
-            .then(data => {
-                showToast(data.message || 'Đã xóa tài khoản!', data.status === 'success' ? 'success' : 'danger');
-                loadUsersList();
-            })
-            .catch(err => showToast(`❌ ${err.message}`, 'danger'));
-        }
-
-        function handleAdminCreateUser(event) {
-            event.preventDefault();
-            const name = document.getElementById('newUserName').value.trim();
-            const username = document.getElementById('newUserUsername').value.trim();
-            const password = document.getElementById('newUserPassword').value;
-            const role = document.getElementById('newUserRole').value;
-
-            CONFIG.apiCall('/api/auth/register', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, username, password, role, status: 'active' })
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.status === 'error') {
-                    showToast(`❌ ${data.message}`, 'danger');
-                } else {
-                    showToast('✅ Đã tạo và cấp quyền thành công cho tài khoản mới!');
-                    toggleAddUserForm();
-                    loadUsersList();
-                }
-            })
-            .catch(err => showToast(`❌ ${err.message}`, 'danger'));
         }
     </script>
 </body>

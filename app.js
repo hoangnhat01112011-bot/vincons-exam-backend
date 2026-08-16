@@ -372,7 +372,11 @@ function changePdfSource(url) {
     let targetUrl = url;
     // If it's a relative server path, prepend the CONFIG.API_BASE_URL
     if (!url.startsWith('http') && !url.startsWith('blob:') && !url.startsWith('data:')) {
-        targetUrl = CONFIG.API_BASE_URL + (url.startsWith('/') ? '' : '/') + url;
+        if (CONFIG.USE_GOOGLE_SHEETS || window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+            targetUrl = url; // Trình duyệt sẽ tự động nối với URL hiện tại (bao gồm cả thư mục con trên Github Pages)
+        } else {
+            targetUrl = CONFIG.API_BASE_URL + (url.startsWith('/') ? '' : '/') + url;
+        }
     }
     
     iframe.src = targetUrl;

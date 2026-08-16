@@ -25,6 +25,11 @@ for root, _, files in os.walk(src_dir):
         os.makedirs(data_dest, exist_ok=True)
         for f in files:
             shutil.copy(os.path.join(root, f), os.path.join(data_dest, f))
+    elif root == os.path.join(src_dir, 'js'):
+        js_dest = os.path.join(dest_dir, 'js')
+        os.makedirs(js_dest, exist_ok=True)
+        for f in files:
+            shutil.copy(os.path.join(root, f), os.path.join(js_dest, f))
 
 meta_inf = os.path.join(unpacked_dir, 'META-INF')
 if os.path.exists(meta_inf):

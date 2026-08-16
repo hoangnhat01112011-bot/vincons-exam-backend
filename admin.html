@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản trị Hệ thống - Vincons</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/config.js"></script>
+    <script src="js/auth-guard.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">VC</div>
+            <div class="logo-text">
+                <h1>Vincons</h1>
+                <p>BCH Hạ Long Xanh</p>
+            </div>
+        </div>
+        <div class="header-nav" style="display: flex; align-items: center; gap: 15px;">
+            <a href="index.html" class="nav-link">🏠 Trang chủ</a>
+            <a href="history.html" class="nav-link">📋 Xem lịch sử thi</a>
+            <a href="admin.html" class="nav-link active">👑 Quản trị Admin</a>
+            <button onclick="handleLogout()" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Đăng xuất</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="card" style="max-width: 600px; margin: 0 auto;">
+            <div class="text-center" style="margin-bottom: 20px;">
+                <h2 style="color: var(--primary);">⚙️ CÀI ĐẶT MÃ CA THI</h2>
+                <p style="color: #7f8c8d; font-size: 14px;">Thiết lập mã PIN bí mật cho ngày thi. Chỉ thí sinh nào biết mã này mới có thể đăng nhập vào làm bài.</p>
+            </div>
+
+            <div style="background: rgba(241, 196, 15, 0.1); border: 1px solid #f1c40f; padding: 20px; border-radius: 8px; margin-bottom: 20px; text-align: center;">
+                <h3 style="color: #d35400; margin-top: 0; margin-bottom: 15px;">MÃ CA THI HIỆN TẠI</h3>
+                <div id="currentExamPin" style="font-size: 48px; font-weight: 900; letter-spacing: 15px; color: var(--accent);">
+                    ----
+                </div>
+            </div>
+
+            <form id="settingsForm" onsubmit="handleUpdatePin(event)" style="border-top: 1px solid #eee; padding-top: 20px;">
+                <div class="form-group">
+                    <label for="newExamPin">Mã Ca Thi Mới (*)</label>
+                    <input type="text" id="newExamPin" class="form-control" placeholder="Nhập mã mới (ví dụ: 1234, 8888)" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="adminConfirmPin">Xác nhận PIN Giám thị (*)</label>
+                    <input type="password" id="adminConfirmPin" class="form-control" placeholder="Nhập mã Giám thị (VINCONS2026) để lưu thay đổi" required>
+                </div>
+
+                <button type="submit" id="btnUpdate" class="btn btn-primary btn-block">Lưu Mã Ca Thi</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        function handleLogout() {
+            if (confirm('Bạn có chắc chắn muốn thoát quyền Giám thị?')) {
+                localStorage.removeItem('vincons_admin');
+                window.location.href = 'index.html';
+            }
+        }
+
+        function loadSettings() {
+            document.getElementById('currentExamPin').textContent = "Đang tải...";
+            CONFIG.apiCall('/api/auth/get-settings')
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === 'success' && data.data.exam_pin) {
+                        document.getElementById('currentExamPin').textContent = data.data.exam_pin;
+                    } else {
+                        document.getElementById('currentExamPin').textContent = "6868";
+                    }
+                })
+                .catch(err => {
+                    document.getElementById('currentExamPin').textContent = "LỖI";
+                });
+        }
+
+        function handleUpdatePin(e) {
+            e.preventDefault();
+            const newPin = document.getElementById('newExamPin').value.trim();
+            const adminPin = document.getElementById('adminConfirmPin').value.trim();
+
+            if (!newPin || !adminPin) return;
+
+            const btn = document.getElementById('btnUpdate');
+            btn.disabled = true;
+            btn.textContent = "Đang lưu...";
+
+            CONFIG.apiCall('/api/auth/set-settings', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ exam_pin: newPin, admin_pin: adminPin })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert('✅ Đã cập nhật Mã Ca Thi thành công!');
+                    document.getElementById('settingsForm').reset();
+                    loadSettings();
+                } else {
+                    alert('❌ ' + (data.message || 'Lỗi: Mã Giám thị không đúng!'));
+                }
+            })
+            .catch(err => {
+                alert('❌ Lỗi kết nối hệ thống.');
+            })
+            .finally(() => {
+                btn.disabled = false;
+                btn.textContent = "Lưu Mã Ca Thi";
+            });
+        }
+
+        // Init
+        loadSettings();
+    </script>
+</body>
+</html>

@@ -5,40 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kết Quả Đánh Giá Bậc Thợ - Vincons</title>
     <link rel="stylesheet" href="style.css">
+    <script src="js/auth-guard.js"></script>
     <script src="js/config.js"></script>
     <script>
-        // Check login immediately
-        let loggedInUser = JSON.parse(localStorage.getItem('vincons_logged_in_user'));
-        if (!loggedInUser) {
-            loggedInUser = { name: "Thí sinh", username: "thi_sinh", role: "candidate" };
-            localStorage.setItem('vincons_logged_in_user', JSON.stringify(loggedInUser));
-        }
-        
+        // Check admin role
+        const isAdmin = localStorage.getItem('vincons_admin') === 'true';
+
         function handleLogout() {
-            if (confirm('Bạn có chắc chắn muốn đăng xuất tài khoản?')) {
-                localStorage.removeItem('vincons_logged_in_user');
-                localStorage.removeItem('vincons_candidate');
-                localStorage.removeItem('vincons_answers');
-                localStorage.removeItem('vincons_time_left');
-                localStorage.removeItem('vincons_active_questions');
-                window.location.href = 'index.html';
+            if (confirm('Bạn có chắc chắn muốn thoát quyền Giám thị?')) {
+                localStorage.removeItem('vincons_admin');
+                window.location.reload();
             }
         }
         
         document.addEventListener('DOMContentLoaded', () => {
-            if (loggedInUser) {
-                const roleText = loggedInUser.role === 'admin' ? 'Giám thị' : 'Thí sinh';
-                const userInfo = document.getElementById('userInfoDisplay');
-                if (userInfo) userInfo.textContent = `${loggedInUser.name} (${roleText})`;
-                
-                // If admin, hide the "🏠 Trang chủ" link since admins don't take tests
-                if (loggedInUser.role === 'admin') {
-                    const homeLink = document.getElementById('navHomeLink');
-                    if (homeLink) homeLink.style.display = 'none';
-                    // Hide bottom return home button
-                    const homeBtn = document.querySelector("a[href='index.html']");
-                    if (homeBtn) homeBtn.style.display = 'none';
-                }
+            const candidate = JSON.parse(localStorage.getItem('vincons_candidate'));
+            if (!candidate) {
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            const userInfo = document.getElementById('userInfoDisplay');
+            if (userInfo) userInfo.textContent = `${candidate.name} - ${candidate.id}`;
+
+            if (isAdmin) {
+                document.getElementById('navAdminLink').style.display = 'inline-block';
+                document.getElementById('btnLogout').style.display = 'inline-block';
             }
         });
     </script>
@@ -53,12 +45,10 @@
             </div>
         </div>
         <div class="header-nav" style="display: flex; align-items: center; gap: 15px;">
-            <span id="userInfoDisplay" style="font-size: 13px; font-weight: 700; color: var(--primary);"></span>
-            <a href="index.html" class="nav-link" id="navHomeLink">🏠 Trang chủ</a>
-            <a href="kpi.html" class="nav-link">📊 Quản lý KPI</a>
-            <a href="bao_cao_san_luong.html" class="nav-link">✍️ Báo cáo sản lượng</a>
+            <a href="index.html" class="nav-link">🏠 Trang chủ</a>
             <a href="history.html" class="nav-link">📋 Lịch sử bài thi</a>
-            <button onclick="handleLogout()" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Đăng xuất</button>
+            <a href="admin.html" class="nav-link" id="navAdminLink" style="display: none;">👑 Quản trị Admin</a>
+            <button onclick="handleLogout()" id="btnLogout" class="btn btn-secondary btn-sm" style="display: none; padding: 6px 12px; font-size: 12px;">Thoát Admin</button>
         </div>
     </header>
 

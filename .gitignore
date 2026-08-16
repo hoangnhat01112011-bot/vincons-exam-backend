@@ -7,3 +7,4 @@ __pycache__/
 *.idsig
 *.keystore
 android_build/
+apk_unpacked/

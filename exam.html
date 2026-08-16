@@ -5,18 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài Thi Sát Hạch Bậc Thợ - Vincons</title>
     <link rel="stylesheet" href="style.css">
+    <script src="js/auth-guard.js"></script>
     <script src="js/config.js"></script>
     <script>
-        // Check login immediately
-        let loggedInUser = JSON.parse(localStorage.getItem('vincons_logged_in_user'));
-        if (!loggedInUser) {
-            loggedInUser = { name: "Thí sinh", username: "thi_sinh", role: "candidate" };
-            localStorage.setItem('vincons_logged_in_user', JSON.stringify(loggedInUser));
-        }
+        let candidateUser = JSON.parse(localStorage.getItem('vincons_candidate'));
         
         function handleLogout() {
-            if (confirm('Bạn có chắc chắn muốn đăng xuất tài khoản và HỦY bài thi đang làm?')) {
-                localStorage.removeItem('vincons_logged_in_user');
+            if (confirm('Bạn có chắc chắn muốn THOÁT HỦY bài thi đang làm?')) {
                 localStorage.removeItem('vincons_candidate');
                 localStorage.removeItem('vincons_answers');
                 localStorage.removeItem('vincons_time_left');
@@ -26,11 +21,12 @@
         }
         
         document.addEventListener('DOMContentLoaded', () => {
-            if (loggedInUser) {
-                const roleText = loggedInUser.role === 'admin' ? 'Giám thị' : 'Thí sinh';
-                const userInfo = document.getElementById('userInfoDisplay');
-                if (userInfo) userInfo.textContent = `${loggedInUser.name} (${roleText})`;
+            if (!candidateUser) {
+                window.location.href = 'index.html';
+                return;
             }
+            const userInfo = document.getElementById('userInfoDisplay');
+            if (userInfo) userInfo.textContent = `${candidateUser.name} - ${candidateUser.id}`;
         });
     </script>
 </head>
@@ -46,7 +42,7 @@
         <div style="display: flex; align-items: center; gap: 15px;">
             <div class="header-meta" id="examTitle">Bài Thi Sát Hạch</div>
             <span id="userInfoDisplay" style="font-size: 13px; font-weight: 700; color: var(--primary);"></span>
-            <button onclick="handleLogout()" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Đăng xuất</button>
+            <button onclick="handleLogout()" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Thoát Bài Thi</button>
         </div>
     </header>
 

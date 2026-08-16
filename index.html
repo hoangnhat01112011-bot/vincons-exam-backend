@@ -5,18 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đánh Giá Trình Độ Bậc Thợ - Vincons</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        // Check login immediately - Mandatory Authentication Guard
-        let loggedInUser = JSON.parse(localStorage.getItem('vincons_logged_in_user'));
-        if (!loggedInUser || !loggedInUser.username || loggedInUser.username === "thi_sinh") {
-            alert('⚠️ Vui lòng đăng nhập tài khoản đã được cấp quyền để khai báo và thực hiện bài thi!');
-            window.location.href = 'login.html';
-        }
-    </script>
+    <script src="js/config.js"></script>
+    <script src="js/auth-guard.js"></script>
 </head>
 <body>
     <header>
-        <div class="logo-container">
+        <div class="logo-container" ondblclick="configureServer()" title="Nhấn đúp để cấu hình máy chủ" style="cursor: pointer;">
             <div class="logo-icon">VC</div>
             <div class="logo-text">
                 <h1>Vincons</h1>
@@ -24,18 +18,19 @@
             </div>
         </div>
         <div class="header-nav" style="display: flex; align-items: center; gap: 15px;">
-            <span id="userInfoDisplay" style="font-size: 13px; font-weight: 700; color: var(--primary);"></span>
-            <a href="kpi.html" class="nav-link">📊 Quản lý KPI</a>
-            <a href="bao_cao_san_luong.html" class="nav-link">✍️ Báo cáo sản lượng</a>
+            <a href="index.html" class="nav-link active">🏠 Trang chủ</a>
             <a href="history.html" class="nav-link">📋 Lịch sử bài thi</a>
-            <a href="login.html" class="nav-link" id="navLoginLink">🔑 Đăng nhập Giám thị/Admin</a>
-            <button onclick="handleLogout()" id="btnLogout" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Đăng xuất</button>
+            <a href="admin.html" class="nav-link" id="navAdminLink" style="display: none;">👑 Quản trị Admin</a>
+            <a href="login.html" class="btn btn-secondary btn-sm" id="btnAdminLogin" style="padding: 6px 12px; font-size: 12px;">Đăng nhập Giám thị</a>
+            <button onclick="handleLogout()" id="btnLogout" class="btn btn-secondary btn-sm" style="display: none; padding: 6px 12px; font-size: 12px;">Thoát Admin</button>
         </div>
     </header>
 
     <main>
         <div class="card">
-            <h2 class="card-title">Đăng Ký Dự Thi</h2>
+            <h2 class="card-title">Đăng Ký Dự Thi Nhập Hệ Thống</h2>
+            <p style="text-align: center; color: #7f8c8d; font-size: 13px; margin-bottom: 20px;">Điền thông tin và Mã ca thi do Giám thị cấp để bắt đầu ngay lập tức.</p>
+            
             <form id="registrationForm">
                 <div class="form-group">
                     <label for="candidateName">Họ và tên thí sinh (*)</label>
@@ -80,7 +75,17 @@
                     </select>
                 </div>
 
-                <button type="submit" class="btn btn-accent btn-block" style="margin-top: 10px;">Bắt đầu làm bài</button>
+                <div class="form-group" style="margin-top: 20px; border-top: 1px dashed #ccc; padding-top: 20px;">
+                    <label for="examPin" style="color: var(--accent); font-weight: bold; font-size: 16px;">Mã Ca Thi (*)</label>
+                    <input type="password" id="examPin" class="form-control" style="border: 2px solid var(--accent); font-size: 16px; font-weight: bold; text-align: center; letter-spacing: 5px;" placeholder="****" required maxlength="10">
+                    <p class="input-info-text" style="color: var(--accent);">Vui lòng hỏi Giám thị để lấy Mã ca thi của ngày hôm nay.</p>
+                </div>
+
+                <div id="loadingStatus" style="display: none; text-align: center; margin-bottom: 15px; color: var(--primary); font-weight: bold;">
+                    ⏳ Đang kiểm tra mã ca thi...
+                </div>
+
+                <button type="submit" id="btnSubmit" class="btn btn-accent btn-block" style="margin-top: 10px; font-size: 16px;">XÁC NHẬN VÀ VÀO THI</button>
             </form>
         </div>
     </main>
@@ -90,39 +95,31 @@
     </footer>
 
     <script>
-        // Display user info and populate fields
-        if (loggedInUser) {
-            const roleText = loggedInUser.role === 'admin' ? 'Giám thị' : 'Thí sinh';
-            document.getElementById('userInfoDisplay').textContent = loggedInUser.name ? `${loggedInUser.name} (${roleText})` : `Thí sinh`;
-            if (loggedInUser.name) {
-                document.getElementById('candidateName').value = loggedInUser.name;
-            }
-            if (loggedInUser.username) {
-                document.getElementById('candidateId').value = loggedInUser.username;
-            }
-            
-            // Toggle login/logout view
-            if (loggedInUser.username && loggedInUser.username !== "thi_sinh") {
-                const loginLink = document.getElementById('navLoginLink');
-                if (loginLink) loginLink.style.display = 'none';
-                const logoutBtn = document.getElementById('btnLogout');
-                if (logoutBtn) logoutBtn.style.display = 'block';
-            } else {
-                const loginLink = document.getElementById('navLoginLink');
-                if (loginLink) loginLink.style.display = 'block';
-                const logoutBtn = document.getElementById('btnLogout');
-                if (logoutBtn) logoutBtn.style.display = 'none';
-            }
+        const isAdmin = localStorage.getItem('vincons_admin') === 'true';
+        if (isAdmin) {
+            document.getElementById('navAdminLink').style.display = 'inline-block';
+            document.getElementById('btnLogout').style.display = 'inline-block';
+            document.getElementById('btnAdminLogin').style.display = 'none';
         }
  
         function handleLogout() {
-            if (confirm('Bạn có chắc chắn muốn đăng xuất tài khoản?')) {
-                localStorage.removeItem('vincons_logged_in_user');
-                localStorage.removeItem('vincons_candidate');
-                localStorage.removeItem('vincons_answers');
-                localStorage.removeItem('vincons_time_left');
-                localStorage.removeItem('vincons_active_questions');
-                window.location.href = 'login.html';
+            if (confirm('Bạn có chắc chắn muốn thoát quyền Giám thị?')) {
+                localStorage.removeItem('vincons_admin');
+                window.location.reload();
+            }
+        }
+
+        function configureServer() {
+            let currentIp = localStorage.getItem('api_base_url') || CONFIG.API_BASE_URL;
+            let newIp = prompt("Cấu hình địa chỉ Máy chủ (VD: http://192.168.1.5:8000). Để trống để dùng mặc định:", currentIp);
+            if (newIp !== null) {
+                if (newIp.trim() === "") {
+                    localStorage.removeItem('api_base_url');
+                } else {
+                    localStorage.setItem('api_base_url', newIp.trim());
+                }
+                alert("Đã cập nhật máy chủ. Vui lòng tải lại trang.");
+                window.location.reload();
             }
         }
 
@@ -141,36 +138,52 @@
             const job = document.getElementById('candidateJob').value;
             const examType = document.getElementById('examType').value;
             const examSet = document.getElementById('examSet') ? document.getElementById('examSet').value : 'all';
+            const examPin = document.getElementById('examPin').value.trim();
             
-            if (!name || !id || !job || !examType) {
+            if (!name || !id || !job || !examType || !examPin) {
                 alert('Vui lòng điền đầy đủ các thông tin bắt buộc.');
                 return;
             }
-            
-            // Sync candidate info to logged in user so that other pages display correctly
-            loggedInUser.name = name;
-            loggedInUser.username = id;
-            localStorage.setItem('vincons_logged_in_user', JSON.stringify(loggedInUser));
 
-            // Save candidate info to localStorage
-            const candidateInfo = {
-                name: name,
-                id: id,
-                job: job,
-                examType: examType,
-                examSet: examSet,
-                startTime: new Date().getTime()
-            };
-            
-            localStorage.setItem('vincons_candidate', JSON.stringify(candidateInfo));
-            
-            // Redirect to exam page
-            window.location.href = 'exam.html';
+            const btnSubmit = document.getElementById('btnSubmit');
+            const loading = document.getElementById('loadingStatus');
+            btnSubmit.disabled = true;
+            loading.style.display = 'block';
+
+            // Gọi API kiểm tra mã ca thi
+            CONFIG.apiCall('/api/auth/verify-pin?pin=' + encodeURIComponent(examPin))
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        // Save candidate info to localStorage
+                        const candidateInfo = {
+                            name: name,
+                            id: id,
+                            job: job,
+                            examType: examType,
+                            examSet: examSet,
+                            startTime: new Date().getTime()
+                        };
+                        
+                        localStorage.setItem('vincons_candidate', JSON.stringify(candidateInfo));
+                        
+                        // Clean up any old exam state on reload
+                        localStorage.removeItem('vincons_answers');
+                        localStorage.removeItem('vincons_time_left');
+                        
+                        window.location.href = 'exam.html';
+                    } else {
+                        alert('❌ ' + (data.message || 'Mã ca thi không chính xác! Vui lòng kiểm tra lại.'));
+                        btnSubmit.disabled = false;
+                        loading.style.display = 'none';
+                    }
+                })
+                .catch(err => {
+                    alert('❌ Lỗi kết nối đến máy chủ. Vui lòng thử lại sau.');
+                    btnSubmit.disabled = false;
+                    loading.style.display = 'none';
+                });
         });
-        
-        // Clean up any old exam state on reload
-        localStorage.removeItem('vincons_answers');
-        localStorage.removeItem('vincons_time_left');
     </script>
 </body>
 </html>
