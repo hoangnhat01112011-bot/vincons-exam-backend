@@ -42,8 +42,13 @@
 
             <form id="settingsForm" onsubmit="handleUpdatePin(event)" style="border-top: 1px solid #eee; padding-top: 20px;">
                 <div class="form-group">
-                    <label for="newExamPin">Mã Ca Thi Mới (*)</label>
-                    <input type="text" id="newExamPin" class="form-control" placeholder="Nhập mã mới (ví dụ: 1234, 8888)" required>
+                    <label for="newExamPin">Mã Ca Thi Mới</label>
+                    <input type="text" id="newExamPin" class="form-control" placeholder="Nhập mã mới (ví dụ: 1234, 8888)">
+                </div>
+
+                <div class="form-group">
+                    <label for="reviewLimit">Số câu hỏi Chế độ Ôn tập</label>
+                    <input type="number" id="reviewLimit" class="form-control" placeholder="Mặc định: 10" min="1" max="150">
                 </div>
 
                 <div class="form-group">
@@ -69,8 +74,10 @@
             CONFIG.apiCall('/api/auth/get-settings')
                 .then(res => res.json())
                 .then(data => {
-                    if (data.status === 'success' && data.data.exam_pin) {
-                        document.getElementById('currentExamPin').textContent = data.data.exam_pin;
+                    if (data.status === 'success' && data.data) {
+                        document.getElementById('currentExamPin').textContent = data.data.exam_pin || "6868";
+                        document.getElementById('newExamPin').value = data.data.exam_pin || "6868";
+                        document.getElementById('reviewLimit').value = data.data.review_limit || 10;
                     } else {
                         document.getElementById('currentExamPin').textContent = "6868";
                     }
@@ -83,18 +90,26 @@
         function handleUpdatePin(e) {
             e.preventDefault();
             const newPin = document.getElementById('newExamPin').value.trim();
+            const reviewLimit = document.getElementById('reviewLimit').value.trim();
             const adminPin = document.getElementById('adminConfirmPin').value.trim().toUpperCase();
 
-            if (!newPin || !adminPin) return;
+            if (!adminPin) {
+                alert('Vui lòng nhập Mã Giám thị để xác nhận.');
+                return;
+            }
 
             const btn = document.getElementById('btnUpdate');
             btn.disabled = true;
             btn.textContent = "Đang lưu...";
+            
+            const payload = { admin_pin: adminPin };
+            if (newPin) payload.exam_pin = newPin;
+            if (reviewLimit) payload.review_limit = parseInt(reviewLimit);
 
             CONFIG.apiCall('/api/auth/set-settings', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ exam_pin: newPin, admin_pin: adminPin })
+                body: JSON.stringify(payload)
             })
             .then(res => res.json())
             .then(data => {

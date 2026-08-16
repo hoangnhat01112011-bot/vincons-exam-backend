@@ -28,6 +28,17 @@
     </header>
 
     <main>
+        <div class="card" style="margin-bottom: 20px;">
+            <h2 class="card-title" style="color: var(--primary); font-size: 18px; border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-bottom: 15px;">📚 TÀI LIỆU ÔN TẬP CHUYÊN NGÀNH</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <a href="https://drive.google.com/drive/folders/YOUR_DRIVE_ID_DIEN" target="_blank" class="btn btn-secondary btn-sm">⚡ Bộ môn Điện</a>
+                <a href="https://drive.google.com/drive/folders/YOUR_DRIVE_ID_NUOC" target="_blank" class="btn btn-secondary btn-sm">💧 Cấp thoát nước</a>
+                <a href="https://drive.google.com/drive/folders/YOUR_DRIVE_ID_HVAC" target="_blank" class="btn btn-secondary btn-sm">❄️ Điều hòa thông gió</a>
+                <a href="https://drive.google.com/drive/folders/YOUR_DRIVE_ID_PCCC" target="_blank" class="btn btn-secondary btn-sm">🔥 PCCC</a>
+            </div>
+            <p style="font-size: 12px; color: #7f8c8d; text-align: center; margin-top: 15px;">(Tài liệu được lưu trữ trên Google Drive. Yêu cầu cấp quyền truy cập từ Admin nếu cần).</p>
+        </div>
+
         <div class="card">
             <h2 class="card-title">Đăng Ký Dự Thi Nhập Hệ Thống</h2>
             <p style="text-align: center; color: #7f8c8d; font-size: 13px; margin-bottom: 20px;">Điền thông tin và Mã ca thi do Giám thị cấp để bắt đầu ngay lập tức.</p>
@@ -72,6 +83,14 @@
                         <option value="" disabled selected>-- Chọn phần thi --</option>
                         <option value="Lý thuyết">Thi Lý thuyết (Thời gian: 30 phút - 30 câu)</option>
                         <option value="Thực hành">Thi Thực hành (Thời gian: 60 phút)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="examMode">Chế độ làm bài (*)</label>
+                    <select id="examMode" class="form-control" required>
+                        <option value="Thi chính thức" selected>Thi chính thức (Lấy điểm chuẩn)</option>
+                        <option value="Ôn tập">Ôn tập trước thi (Rèn luyện - Giới hạn câu hỏi)</option>
                     </select>
                 </div>
 
@@ -170,10 +189,11 @@
             const job = document.getElementById('candidateJob').value;
             const discipline = document.getElementById('discipline').value;
             const examType = document.getElementById('examType').value;
+            const examMode = document.getElementById('examMode').value;
             const examSet = document.getElementById('examSet') ? document.getElementById('examSet').value : 'all';
             const examPin = document.getElementById('examPin').value.trim();
             
-            if (!name || !id || !job || !discipline || !examType || !examPin) {
+            if (!name || !id || !job || !discipline || !examType || !examMode || !examPin) {
                 alert('Vui lòng điền đầy đủ các thông tin bắt buộc.');
                 return;
             }
@@ -195,7 +215,9 @@
                             job: job,
                             discipline: discipline,
                             examType: examType,
+                            examMode: examMode,
                             examSet: examSet,
+                            reviewLimit: data.review_limit || 10,
                             startTime: new Date().getTime()
                         };
                         

@@ -24,7 +24,8 @@ function initExam() {
     const job = candidateInfo.job;
     const examType = candidateInfo.examType;
     
-    document.getElementById('examTitle').textContent = `Phần Thi: ${examType === 'Lý thuyết' ? 'Lý Thuyết' : 'Thực Hành'}`;
+    const modeText = candidateInfo.examMode === 'Ôn tập' ? ' [CHẾ ĐỘ ÔN TẬP]' : '';
+    document.getElementById('examTitle').textContent = `Phần Thi: ${examType === 'Lý thuyết' ? 'Lý Thuyết' : 'Thực Hành'}${modeText}`;
     
     // Display candidate info in sidebar
     document.getElementById('candidateDisplayInfo').innerHTML = `
@@ -49,9 +50,16 @@ function initExam() {
             activeQuestions = theoryQuestions.filter(q => q.exam_set === selectedSet);
         } else {
             activeQuestions = theoryQuestions;
-            if (activeQuestions.length > 30) {
-                activeQuestions = shuffle(activeQuestions).slice(0, 30);
-            }
+        }
+
+        // Apply limits based on Exam Mode
+        let questionLimit = 30; // Default for official exam
+        if (candidateInfo.examMode === 'Ôn tập') {
+            questionLimit = candidateInfo.reviewLimit || 10;
+        }
+        
+        if (activeQuestions.length > questionLimit) {
+            activeQuestions = shuffle(activeQuestions).slice(0, questionLimit);
         }
         
         // Set timer to 30 minutes if not already set

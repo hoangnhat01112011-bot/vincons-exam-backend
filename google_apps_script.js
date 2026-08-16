@@ -33,28 +33,35 @@ function getSheetData(sheet) {
 function getSettings() {
   var sheet = getOrCreateSheet("settings", ["key", "value"]);
   var data = getSheetData(sheet);
+  var settings = { exam_pin: "6868", review_limit: 10 };
   for (var i = 0; i < data.length; i++) {
     if (data[i].key === "exam_pin") {
-      return { exam_pin: String(data[i].value) };
+      settings.exam_pin = String(data[i].value);
+    } else if (data[i].key === "review_limit") {
+      settings.review_limit = parseInt(data[i].value) || 10;
     }
   }
-  return { exam_pin: "6868" };
+  return settings;
 }
 
-function saveSettings(examPin) {
+function saveSettings(settingsObj) {
   var sheet = getOrCreateSheet("settings", ["key", "value"]);
   var data = getSheetData(sheet);
-  var found = false;
-  for (var i = 0; i < data.length; i++) {
-    if (data[i].key === "exam_pin") {
-      sheet.getRange(i + 2, 2).setValue(examPin);
-      found = true;
-      break;
+  
+  function updateOrAdd(k, v) {
+    var found = false;
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].key === k) {
+        sheet.getRange(i + 2, 2).setValue(v);
+        found = true;
+        break;
+      }
     }
+    if (!found) sheet.appendRow([k, v]);
   }
-  if (!found) {
-    sheet.appendRow(["exam_pin", examPin]);
-  }
+  
+  if (settingsObj.exam_pin !== undefined) updateOrAdd("exam_pin", settingsObj.exam_pin);
+  if (settingsObj.review_limit !== undefined) updateOrAdd("review_limit", settingsObj.review_limit);
 }
 
 function doGet(e) {
@@ -66,7 +73,7 @@ function doGet(e) {
       var pin = e.parameter.pin;
       var settings = getSettings();
       if (String(pin) === String(settings.exam_pin)) {
-        responseData = { status: "success", message: "Mã hợp lệ" };
+        responseData = { status: "success", message: "Mã hợp lệ", review_limit: settings.review_limit };
       } else {
         responseData = { status: "error", message: "Mã Ca Thi không hợp lệ!" };
       }
@@ -144,7 +151,7 @@ function doPost(e) {
     }
     else if (action === "setSettings") {
       if (postData.admin_pin !== ADMIN_PIN) throw new Error("Unauthorized");
-      saveSettings(postData.exam_pin);
+      saveSettings(postData);
       responseData = { status: "success", message: "Cập nhật thành công" };
     }
     else if (action === "saveResult") {
