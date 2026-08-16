@@ -230,6 +230,6 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
 
 if __name__ == '__main__':
     ensure_data_dir()
-    with socketserver.TCPServer(("", PORT), CustomHTTPRequestHandler) as httpd:
+    with socketserver.ThreadingTCPServer(("", PORT), CustomHTTPRequestHandler) as httpd:
         print(f"Server is running at http://localhost:{PORT}")
         httpd.serve_forever()
