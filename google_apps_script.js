@@ -65,6 +65,7 @@ function saveSettings(settingsObj) {
   }
   
   if (settingsObj.exam_pin !== undefined) updateOrAdd("exam_pin", settingsObj.exam_pin);
+    if (settingsObj.exam_pin_tuyendung !== undefined) updateOrAdd("exam_pin_tuyendung", settingsObj.exam_pin_tuyendung);
   if (settingsObj.review_limit !== undefined) updateOrAdd("review_limit", settingsObj.review_limit);
   if (settingsObj.ai_api_key !== undefined) updateOrAdd("ai_api_key", settingsObj.ai_api_key);
   if (settingsObj.ai_model !== undefined) updateOrAdd("ai_model", settingsObj.ai_model);

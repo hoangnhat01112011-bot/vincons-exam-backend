@@ -76,10 +76,13 @@
                 .then(data => {
                     if (data.status === 'success' && data.data) {
                         document.getElementById('currentExamPin').textContent = data.data.exam_pin || "68686868";
+                        document.getElementById('currentExamPinTuyendung').textContent = data.data.exam_pin_tuyendung || "88888888";
                         document.getElementById('newExamPin').value = data.data.exam_pin || "68686868";
+                        document.getElementById('newExamPinTuyendung').value = data.data.exam_pin_tuyendung || "88888888";
                         document.getElementById('reviewLimit').value = data.data.review_limit || 10;
                     } else {
                         document.getElementById('currentExamPin').textContent = "68686868";
+                        document.getElementById('currentExamPinTuyendung').textContent = "88888888";
                     }
                 })
                 .catch(err => {
@@ -90,6 +93,7 @@
         function handleUpdatePin(e) {
             e.preventDefault();
             const newPin = document.getElementById('newExamPin').value.trim();
+            const newPinTuyendung = document.getElementById('newExamPinTuyendung').value.trim();
             const reviewLimit = document.getElementById('reviewLimit').value.trim();
             const adminPin = document.getElementById('adminConfirmPin').value.trim().toUpperCase();
 
@@ -104,6 +108,7 @@
             
             const payload = { admin_pin: adminPin };
             if (newPin) payload.exam_pin = newPin;
+            if (newPinTuyendung) payload.exam_pin_tuyendung = newPinTuyendung;
             if (reviewLimit) payload.review_limit = parseInt(reviewLimit);
 
             CONFIG.apiCall('/api/auth/set-settings', {

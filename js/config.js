@@ -33,6 +33,8 @@ const CONFIG = {
                 gasAction = 'verifyExamPin';
                 const match = path.match(/pin=([^&]+)/);
                 if (match) params.pin = decodeURIComponent(match[1]);
+                const catMatch = path.match(/category=([^&]+)/);
+                if (catMatch) params.category = decodeURIComponent(catMatch[1]);
             } else if (path === '/api/auth/get-settings') {
                 gasAction = 'getSettings';
             } else if (path === '/api/auth/set-settings') {

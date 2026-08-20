@@ -236,7 +236,7 @@
             loading.style.display = 'block';
 
             // Gọi API kiểm tra mã ca thi
-            CONFIG.apiCall('/api/auth/verify-pin?pin=' + encodeURIComponent(examPin))
+            CONFIG.apiCall('/api/auth/verify-pin?pin=' + encodeURIComponent(examPin) + '&category=' + encodeURIComponent(examCategory))
                 .then(res => res.json())
                 .then(data => {
                     if (data.status === 'success') {
