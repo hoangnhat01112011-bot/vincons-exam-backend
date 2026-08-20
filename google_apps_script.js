@@ -39,7 +39,6 @@ function getSettings() {
         settings.exam_pin = String(data[i].value);
       } else if (data[i].key === "exam_pin_tuyendung") {
         settings.exam_pin_tuyendung = String(data[i].value);
-      settings.exam_pin = String(data[i].value);
     } else if (data[i].key === "review_limit") {
       settings.review_limit = parseInt(data[i].value) || 10;
     } else if (data[i].key === "ai_api_key") {
