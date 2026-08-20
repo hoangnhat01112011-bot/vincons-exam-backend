@@ -75,6 +75,12 @@ function initExam() {
         }
     }
 
+    if (activeQuestions.length === 0) {
+        alert("Không tìm thấy câu hỏi phù hợp cho lựa chọn của bạn. Vui lòng kiểm tra lại bộ môn và phần thi.");
+        window.location.href = 'index.html';
+        return;
+    }
+
     // Save filtered questions for result page
     // We override QUESTIONS inside localStorage just for this candidate session
     localStorage.setItem('vincons_active_questions', JSON.stringify(activeQuestions));
