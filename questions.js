@@ -2515,7 +2515,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_2_1",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thợ CTN Bậc 2",
     "type": "multiple_choice",
     "question": "Áp lực nước trong nhà ở thường khoảng",
@@ -2529,7 +2529,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_2_2",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thợ CTN Bậc 2",
     "type": "multiple_choice",
     "question": "Khi ren ống thép cần dùng vật liệu gì để làm kín?",
@@ -2543,7 +2543,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_2_3",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thợ CTN Bậc 2",
     "type": "multiple_choice",
     "question": "Đường kính ống càng lớn thì:",
@@ -2557,7 +2557,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_2_4",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thợ CTN Bậc 2",
     "type": "multiple_choice",
     "question": "Hệ thống thoát nước mưa nên",
@@ -2571,7 +2571,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_2_5",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thợ CTN Bậc 2",
     "type": "multiple_choice",
     "question": "Hố ga dùng để:",
@@ -2585,7 +2585,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_2_6",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thợ CTN Bậc 2",
     "type": "multiple_choice",
     "question": "Ống thông hơi trong hệ thống thoát nước có tác dụng",
@@ -2599,7 +2599,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_2_7",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thợ CTN Bậc 2",
     "type": "multiple_choice",
     "question": "Khi thử áp lực hệ thống cần",
@@ -2613,7 +2613,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_2_8",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thợ CTN Bậc 2",
     "type": "multiple_choice",
     "question": "ống PN8 và phụ kiện PN5 có dùng chung với nhau được không",
@@ -2627,7 +2627,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_2_9",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thợ CTN Bậc 2",
     "type": "multiple_choice",
     "question": "ống PN10 và phụ kiện PN16 có dùng chung với nhau được không",
@@ -2641,7 +2641,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_2_10",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thợ CTN Bậc 2",
     "type": "multiple_choice",
     "question": "10.\tCác ống HDPE size bao nhiêu thì có thể dùng phụ kiện ren để kết nối?",
@@ -2655,7 +2655,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_2_11",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thợ CTN Bậc 2",
     "type": "multiple_choice",
     "question": "kích thước ống HDPE bao nhiêu thì phải dùng phương pháp hàn",
@@ -2669,7 +2669,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_2_12",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thợ CTN Bậc 2",
     "type": "multiple_choice",
     "question": "Khi làm việc với máy cắt cần",
@@ -2683,7 +2683,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_2_13",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thợ CTN Bậc 2",
     "type": "multiple_choice",
     "question": "Khi thi công trên cao cần",
@@ -2697,7 +2697,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_2_14",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thợ CTN Bậc 2",
     "type": "multiple_choice",
     "question": "Các điều kiện cần và đủ để triển khai thi công là gì",
@@ -2711,7 +2711,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_2_15",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thợ CTN Bậc 2",
     "type": "multiple_choice",
     "question": "Khi thử áp lực đường ống cấp nước PPR trong quá trình, thử áp lực bằng bao nhiêu để áp dụng công việc\n\nA. 1 lần áp lực làm việc",
@@ -2725,7 +2725,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_1",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Ống PVC thường dùng cho hệ thống nào",
@@ -2739,7 +2739,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_2",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Độ dốc tối thiểu của ống thoát nước sinh hoạt thường là",
@@ -2753,7 +2753,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_3",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Ống PPR thường dùng cho",
@@ -2767,7 +2767,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_4",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Khi lắp ống thoát nước cần tránh điều gì?",
@@ -2781,7 +2781,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_5",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Bẫy nước (P-trap) có tác dụng",
@@ -2795,7 +2795,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_6",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Van một chiều có chức năng",
@@ -2809,7 +2809,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_7",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Đồng hồ nước dùng để",
@@ -2823,7 +2823,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_8",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Khi làm việc với máy cắt cần",
@@ -2837,7 +2837,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_9",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Khi thi công trên cao cần",
@@ -2851,7 +2851,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_10",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Trước khi sửa ống nước cần",
@@ -2865,7 +2865,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_11",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Nguyên nhân phổ biến gây tắc cống",
@@ -2879,7 +2879,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_12",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Khi phát hiện rò rỉ ống cần",
@@ -2893,7 +2893,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_13",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Độ dốc ống thoát quá lớn sẽ gây:",
@@ -2907,7 +2907,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_14",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Ống cấp nước trong nhà thường dùng kích thước",
@@ -2921,7 +2921,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_15",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Bơm tăng áp dùng khi:",
@@ -2935,7 +2935,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_16",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Trong hệ thống cấp nước nhà cao tầng, thiết bị nào dùng để ngăn nước ngược gây ô nhiễm nhiễm nguồn nước ?",
@@ -2949,7 +2949,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_17",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Khi thử áp lực đường ống cấp nước PPR trong quá trình, thử áp lực bằng bao nhiêu để áp dụng công việc?",
@@ -2963,7 +2963,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_18",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Khi nối ống PPR, phương pháp thi công đúng là gì?",
@@ -2977,7 +2977,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_19",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Trong hệ thống thoát nước, bẫy nước (P-trap) được lắp đặt để làm gì?",
@@ -2991,7 +2991,7 @@ const QUESTIONS = [
   },
   {
     "id": "q_ctn_3_20",
-    "category": "Lí thuyẽt - Cấp thoát nước",
+    "category": "Lý thuyết - Cấp thoát nước",
     "exam_set": "Thỏ CTN Bậc 3",
     "type": "multiple_choice",
     "question": "Khi thi công ống thoát nước ngang DN90, độ dốc tối thiểu nên là bao nhiêu",

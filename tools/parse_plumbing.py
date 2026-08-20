@@ -35,7 +35,7 @@ def parse_plumbing():
                 correct_index = {'A': 0, 'B': 1, 'C': 2, 'D': 3}.get(correct_letter, 0)
                 q = {
                     'id': f'q_ctn_{current_level[-1]}_{first_col}',
-                    'category': 'Lí thuyẽt - Cấp thoát nước',
+                    'category': 'Lý thuyết - Cấp thoát nước',
                     'exam_set': current_level,
                     'type': 'multiple_choice',
                     'question': question_text,
