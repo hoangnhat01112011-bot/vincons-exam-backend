@@ -36,6 +36,9 @@ function getSettings() {
   var settings = { exam_pin: "6868", review_limit: 10, ai_api_key: "", ai_model: "nousresearch/nous-coder-14b" };
   for (var i = 0; i < data.length; i++) {
     if (data[i].key === "exam_pin") {
+        settings.exam_pin = String(data[i].value);
+      } else if (data[i].key === "exam_pin_tuyendung") {
+        settings.exam_pin_tuyendung = String(data[i].value);
       settings.exam_pin = String(data[i].value);
     } else if (data[i].key === "review_limit") {
       settings.review_limit = parseInt(data[i].value) || 10;
@@ -77,15 +80,29 @@ function doGet(e) {
   
   try {
     if (action === "verifyExamPin") {
-      var pin = e.parameter.pin;
-      var settings = getSettings();
-      if (String(pin) === String(settings.exam_pin)) {
-        responseData = { status: "success", message: "Mã hợp lệ", review_limit: settings.review_limit };
-      } else {
-        responseData = { status: "error", message: "Mã Ca Thi không hợp lệ!" };
+        var pin = e.parameter.pin;
+        var category = e.parameter.category || "";
+        var settings = getSettings();
+        
+        var targetPin = settings.exam_pin;
+        // Kiem tra xem category co chua tu tuyen dung khong
+        var isTuyendung = false;
+        var catLower = category.toLowerCase();
+        if (catLower.indexOf("tuyển") !== -1 || catLower.indexOf("tuy\u1ec3n") !== -1 || catLower.indexOf("tuyA") !== -1 || catLower.indexOf("tuyen") !== -1) {
+            isTuyendung = true;
+        }
+        
+        if (isTuyendung) {
+            targetPin = settings.exam_pin_tuyendung || settings.exam_pin;
+        }
+        
+        if (String(pin) === String(targetPin)) {
+          responseData = { status: "success", message: "Mã hợp lệ", review_limit: settings.review_limit };
+        } else {
+          responseData = { status: "error", message: "Mã Ca Thi không hợp lệ!" };
+        }
       }
-    } 
-    else if (action === "getSettings") {
+      else if (action === "getSettings") {
       var settings = getSettings();
       // Remove sensitive keys before returning to client
       delete settings.ai_api_key;
