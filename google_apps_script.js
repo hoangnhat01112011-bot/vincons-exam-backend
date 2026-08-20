@@ -99,7 +99,7 @@ function doGet(e) {
         if (String(pin) === String(targetPin)) {
           responseData = { status: "success", message: "Mã hợp lệ", review_limit: settings.review_limit };
         } else {
-          responseData = { status: "error", message: "Mã Ca Thi không hợp lệ!" };
+          responseData = { status: "error", message: "Chi tiết lỗi: category=" + category + " | isTuyendung=" + isTuyendung + " | targetPin=" + targetPin + " | inputPin=" + pin };
         }
       }
       else if (action === "getSettings") {
