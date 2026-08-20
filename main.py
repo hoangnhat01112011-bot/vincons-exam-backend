@@ -19,7 +19,7 @@ def ensure_data_dir():
             json.dump([], f)
     if not os.path.exists(SETTINGS_FILE):
         with open(SETTINGS_FILE, "w", encoding="utf-8") as f:
-            json.dump({"exam_pin": "6868"}, f)
+            json.dump({"exam_pin": "68686868"}, f)
 
 def load_results():
     try:
@@ -37,7 +37,7 @@ def load_settings():
         with open(SETTINGS_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     except:
-        return {"exam_pin": "6868"}
+        return {"exam_pin": "68686868"}
 
 def save_settings(settings):
     with open(SETTINGS_FILE, "w", encoding="utf-8") as f:
@@ -67,7 +67,7 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
             query = urllib.parse.parse_qs(parsed.query)
             pin = query.get('pin', [''])[0]
             settings = load_settings()
-            if pin == settings.get('exam_pin', '6868'):
+            if pin == settings.get('exam_pin', '68686868'):
                 self.send_json({"status": "success", "message": "Mã hợp lệ"})
             else:
                 self.send_json({"status": "error", "message": "Mã Ca Thi không hợp lệ!"}, 400)

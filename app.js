@@ -31,6 +31,7 @@ function initExam() {
     document.getElementById('candidateDisplayInfo').innerHTML = `
         <strong>Họ tên:</strong> ${candidateInfo.name}<br>
         <strong>SBD/SĐT:</strong> ${candidateInfo.id}<br>
+        <strong>Hình thức:</strong> ${candidateInfo.examCategory || 'Thi định kỳ'}<br>
         <strong>Vị trí:</strong> ${job}
     `;
 

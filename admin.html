@@ -75,11 +75,11 @@
                 .then(res => res.json())
                 .then(data => {
                     if (data.status === 'success' && data.data) {
-                        document.getElementById('currentExamPin').textContent = data.data.exam_pin || "6868";
-                        document.getElementById('newExamPin').value = data.data.exam_pin || "6868";
+                        document.getElementById('currentExamPin').textContent = data.data.exam_pin || "68686868";
+                        document.getElementById('newExamPin').value = data.data.exam_pin || "68686868";
                         document.getElementById('reviewLimit').value = data.data.review_limit || 10;
                     } else {
-                        document.getElementById('currentExamPin').textContent = "6868";
+                        document.getElementById('currentExamPin').textContent = "68686868";
                     }
                 })
                 .catch(err => {

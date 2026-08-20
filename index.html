@@ -44,7 +44,25 @@
             <p style="text-align: center; color: #7f8c8d; font-size: 13px; margin-bottom: 20px;">Điền thông tin và Mã ca thi do Giám thị cấp để bắt đầu ngay lập tức.</p>
             
             <form id="registrationForm">
-                <div class="form-group">
+                
+                <div class="form-group" style="text-align: center; margin-bottom: 25px;">
+                    <label style="font-weight: bold; color: var(--primary); font-size: 16px; display: block; margin-bottom: 15px;">VUI LÒNG CHỌN HÌNH THỨC THI:</label>
+                    <div style="display: flex; flex-direction: column; gap: 15px; align-items: flex-start; background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <label style="cursor: pointer; display: flex; align-items: center; gap: 10px; font-weight: 500;">
+                            <input type="radio" name="examCategoryRadio" value="Thi tuyển dụng đầu vào - Thợ Bậc 2" onchange="showMainForm()"> Thi tuyển dụng đầu vào - Thợ Bậc 2
+                        </label>
+                        <label style="cursor: pointer; display: flex; align-items: center; gap: 10px; font-weight: 500;">
+                            <input type="radio" name="examCategoryRadio" value="Thi tuyển dụng đầu vào - Thợ Bậc 3" onchange="showMainForm()"> Thi tuyển dụng đầu vào - Thợ Bậc 3
+                        </label>
+                        <label style="cursor: pointer; display: flex; align-items: center; gap: 10px; font-weight: 500;">
+                            <input type="radio" name="examCategoryRadio" value="Thi nâng bậc" onchange="showMainForm()"> Thi nâng bậc (Định kỳ)
+                        </label>
+                    </div>
+                </div>
+                
+                <div id="mainFormFields" style="display: none;">
+
+                    <div class="form-group">
                     <label for="candidateName">Họ và tên thí sinh (*)</label>
                     <input type="text" id="candidateName" class="form-control" placeholder="Nhập họ và tên đầy đủ" required>
                 </div>
@@ -53,6 +71,8 @@
                     <label for="candidateId">Số báo danh / SĐT (*)</label>
                     <input type="text" id="candidateId" class="form-control" placeholder="Nhập SBD hoặc Số điện thoại" required>
                 </div>
+                
+
 
                 <div class="form-group">
                     <label for="candidateJob">Tổ thợ / Vị trí ứng tuyển (*)</label>
@@ -108,7 +128,7 @@
 
                 <div class="form-group" style="margin-top: 20px; border-top: 1px dashed #ccc; padding-top: 20px;">
                     <label for="examPin" style="color: var(--accent); font-weight: bold; font-size: 16px;">Mã Ca Thi (*)</label>
-                    <input type="password" id="examPin" class="form-control" style="border: 2px solid var(--accent); font-size: 16px; font-weight: bold; text-align: center; letter-spacing: 5px;" placeholder="****" required maxlength="10">
+                    <input type="password" id="examPin" class="form-control" style="border: 2px solid var(--accent); font-size: 16px; font-weight: bold; text-align: center; letter-spacing: 5px;" placeholder="********" required maxlength="8">
                     <p class="input-info-text" style="color: var(--accent);">Vui lòng hỏi Giám thị để lấy Mã ca thi của ngày hôm nay.</p>
                 </div>
 
@@ -117,6 +137,7 @@
                 </div>
 
                 <button type="submit" id="btnSubmit" class="btn btn-accent btn-block" style="margin-top: 10px; font-size: 16px;">XÁC NHẬN VÀ VÀO THI</button>
+            </div>
             </form>
         </div>
     </main>
@@ -152,6 +173,11 @@
                 alert("Đã cập nhật máy chủ. Vui lòng tải lại trang.");
                 window.location.reload();
             }
+        }
+
+        
+        function showMainForm() {
+            document.getElementById('mainFormFields').style.display = 'block';
         }
 
         function toggleExamSetGroup(val) {
@@ -190,6 +216,8 @@
             
             const name = document.getElementById('candidateName').value.trim();
             const id = document.getElementById('candidateId').value.trim();
+            const examCategoryRadio = document.querySelector('input[name="examCategoryRadio"]:checked');
+            const examCategory = examCategoryRadio ? examCategoryRadio.value : '';
             const job = document.getElementById('candidateJob').value;
             const discipline = document.getElementById('discipline').value;
             const examType = document.getElementById('examType').value;
@@ -197,7 +225,7 @@
             const examSet = document.getElementById('examSet') ? document.getElementById('examSet').value : 'all';
             const examPin = document.getElementById('examPin').value.trim();
             
-            if (!name || !id || !job || !discipline || !examType || !examMode || !examPin) {
+            if (!name || !id || !examCategory || !job || !discipline || !examType || !examMode || !examPin) {
                 alert('Vui lòng điền đầy đủ các thông tin bắt buộc.');
                 return;
             }
@@ -216,6 +244,7 @@
                         const candidateInfo = {
                             name: name,
                             id: id,
+                            examCategory: examCategory,
                             job: job,
                             discipline: discipline,
                             examType: examType,
