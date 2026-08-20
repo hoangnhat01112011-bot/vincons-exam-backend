@@ -13,7 +13,7 @@ def parse_plumbing():
             if not row: continue
             first_col = row[0].strip()
             if 'Bậc 3' in first_col or 'bậc 3' in first_col:
-                current_level = 'Thợ CTN Bậc 3'
+                current_level = 'Thỏ CTN Bậc 3'
                 continue
             if 'Bậc 2' in first_col or 'bậc 2' in first_col:
                 current_level = 'Thợ CTN Bậc 2'
@@ -35,7 +35,7 @@ def parse_plumbing():
                 correct_index = {'A': 0, 'B': 1, 'C': 2, 'D': 3}.get(correct_letter, 0)
                 q = {
                     'id': f'q_ctn_{current_level[-1]}_{first_col}',
-                    'category': 'Lý thuyết - Cấp thoát nước',
+                    'category': 'Lí thuyẽt - Cấp thoát nước',
                     'exam_set': current_level,
                     'type': 'multiple_choice',
                     'question': question_text,
@@ -45,7 +45,7 @@ def parse_plumbing():
                 questions.append(q)
     print(f'Parsed {len(questions)} plumbing questions.')
     
-    js_file = '../questions.js'
+    js_file = '../questions_base.js'
     with open(js_file, 'r', encoding='utf-8-sig') as f: js_content = f.read()
     start_idx = js_content.find('[')
     end_idx = js_content.rfind(']')
