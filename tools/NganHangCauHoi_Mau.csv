@@ -1,7 +1,173 @@
-STT,Bộ môn,Phần thi,Bộ đề,Câu hỏi,Đáp án A,Đáp án B,Đáp án C,Đáp án D,Đáp án Đúng (A/B/C/D)
-1,Thợ điện,Lý thuyết,Đề số 01,Dòng điện xoay chiều là gì?,Là dòng điện có chiều thay đổi,Là dòng điện có chiều không đổi,Cả hai đều đúng,Cả hai đều sai,A
-2,Thợ điện,Lý thuyết,Đề số 01,Đơn vị của điện trở là gì?,Ampe,Volt,Ohm,Watt,C
-3,Thợ điện,Lý thuyết,Đề số 01,Công thức tính công suất điện?,P = U * I,P = U / I,P = I / U,P = U + I,A
-4,Cấp thoát nước,Lý thuyết,Đề số 01,Ống uPVC chịu được nhiệt độ tối đa bao nhiêu?,45 độ C,60 độ C,90 độ C,100 độ C,B
-5,Điều hòa,Lý thuyết,Đề số 01,Ga R32 có đặc điểm gì?,Gây thủng tầng ozone,Không bắt lửa,Dễ cháy nhẹ và thân thiện môi trường,Chỉ dùng cho tủ lạnh,C
-6,PCCC,Lý thuyết,Đề số 01,Khoảng cách tối đa giữa các đầu phun Sprinkler là?,2m,3m,4m,Phụ thuộc vào rủi ro cháy,D
+﻿Bộ câu hỏi dành cho thợ CTN bậc 2;;;
+;;;
+I.Câu hỏi trắc nghiệm;;;Đáp án
+1;Áp lực nước trong nhà ở thường khoảng;"A. 0.5 – 3 bar
+B. 10 bar
+C. 20 bar
+D. 50 bar";A
+2;Khi ren ống thép cần dùng vật liệu gì để làm kín?;"A. Băng tan (PTFE)
+B. Keo gỗ
+C. Xi măng
+D. Sơn";A
+3;Đường kính ống càng lớn thì:;"A. Lưu lượng càng lớn
+B. Lưu lượng giảm
+C. Áp lực tăng
+D. Không thay đổi";A
+4;Hệ thống thoát nước mưa nên;"A. Chung với nước thải
+B. Tách riêng
+C. Không cần ống
+D. Đổ trực tiếp vào nhà";B
+5;Hố ga dùng để:;"A. Kiểm tra và vệ sinh đường ống
+B. Tăng áp lực
+C. Lọc nước uống
+D. Trữ nước";A
+6;Ống thông hơi trong hệ thống thoát nước có tác dụng;"A. Thoát khí và cân bằng áp suất
+B. Tăng áp lực
+C. Lọc nước
+D. Làm sạch ống";A
+7;Khi thử áp lực hệ thống cần;"A. Bơm nước áp lực kiểm tra rò rỉ
+B. khóa kín và nén khí để thử kín
+C. kiểm tra rò rỉ ống
+D. Xả hết nước";A
+8;ống PN8 và phụ kiện PN5 có dùng chung với nhau được không;"A. CÓ
+B. KHÔNG";B
+9;ống PN10 và phụ kiện PN16 có dùng chung với nhau được không;"A. CÓ
+B. KHÔNG";A
+10;"10.	Các ống HDPE size bao nhiêu thì có thể dùng phụ kiện ren để kết nối?";"A. D20 đến D90
+B. D50-D110 
+C. D75-D200
+D. D32- D110";A
+11;kích thước ống HDPE bao nhiêu thì phải dùng phương pháp hàn;"A. D20 đến D90 
+B. D50-D110 
+C. D90-D200
+D. D32- D110";C
+12;Khi làm việc với máy cắt cần;"A. Không cần bảo hộ
+B. Đeo kính và găng tay
+C. tháo cover (tấm che của máy) để dễ thi công
+D. lắp dủ cover của máy và đeo đầy đủ bảo hộ (kính, găng tay…)";D
+13;Khi thi công trên cao cần;"A. Không cần dây an toàn
+B. Dây an toàn và giàn giáo chắc chắn
+C. Đứng trên ống nước
+D. Leo trực tiếp tường";B
+14;Các điều kiện cần và đủ để triển khai thi công là gì;"A. Mặt bằng, vật tư, bản vẽ shop
+B. Mặt bằng, vật tư, bản vẽ shop, nhân lực thầu phụ, tiện ích 
+C. Mặt bằng, vật tư, bản vẽ shop, biện pháp thi công, nhân lực thầu phụ, tiện ích 
+D. Mặt bằng, vật tư, bản vẽ shop, biện pháp thi công, tiện ích";C
+15;"Khi thử áp lực đường ống cấp nước PPR trong quá trình, thử áp lực bằng bao nhiêu để áp dụng công việc
+
+A. 1 lần áp lực làm việc";"A. 1 lần áp lực làm việc
+B. 1,25 lần áp lực làm việc
+C. 1,5 lần áp lực làm việc
+D. 2 lần áp lực làm việc";C
+II.Tự luận ;;;
+1;HDPE D200: thời gian hàn ống/ nhiệt độ hàn ống là bao nhiêu?;"1️⃣ Nhiệt độ tấm gia nhiệt
+200 – 220 °C
+Giá trị thường cài đặt: 210 °C ± 10 °C
+2️⃣ Thời gian gia nhiệt (soak time)
+Khoảng 180 – 220 giây
+Thực tế hay dùng: ~200 giây
+3️⃣ Thời gian chuyển tấm gia nhiệt (changeover time)
+≤ 10 giây
+4️⃣ Thời gian ép ban đầu (tạo gờ – bead up time)
+10 – 15 giây để tạo gờ nhựa đều hai bên.
+5️⃣ Thời gian giữ áp làm nguội (cooling time)
+20 – 25 phút trước khi tháo kẹp.";
+2;Phương pháp kiểm tra thử kín  đường ống;Bơm đầy nước vào đường ống, đuổi hết khí ra ngoài, sau đó tăng áp suất lên mức quy định (thường bằng 1.5 lần áp suất thiết kế);
+3;tính toán vật tư, lên kế hoạch CCDC thi công;Chèn 1 hình ảnh bản vẽ CTN bất kì và yêu cầu tính toán vật tư ống/ phụ kiện thi công;
+;;;
+Bộ câu hỏi trắc nghiệm dành cho CNCH CTN bậc 3;;;
+;;;Đáp án
+1;Ống PVC thường dùng cho hệ thống nào;"A. Cấp nước nóng
+B. Cấp nước lạnh và thoát nước
+C. Dẫn gas
+D. Dẫn dầu";B
+2;Độ dốc tối thiểu của ống thoát nước sinh hoạt thường là;"A. 0.5%
+B. 1–2%
+C. 5%
+D. 10%";B
+3;Ống PPR thường dùng cho;"A. Cấp nước nóng lạnh
+B. Thoát nước
+C. Dẫn khí
+D. Tưới cây";A
+4;Khi lắp ống thoát nước cần tránh điều gì?;"A. Nhiều co gấp
+B. Độ dốc phù hợp
+C. Có lỗ thăm
+D. Ống thẳng";A
+5;Bẫy nước (P-trap) có tác dụng;"A. Tăng áp lực nước
+B. Ngăn mùi từ cống
+C. Làm sạch nước
+D. Lọc rác";B
+6;Van một chiều có chức năng;"A. Chặn rác
+B. Cho nước chảy một hướng
+C. Tăng áp
+D. Giảm áp";B
+7;Đồng hồ nước dùng để;"A. Đo áp lực
+B. Đo lưu lượng nước
+C. Lọc nước
+D. Tăng áp";B
+8;Khi làm việc với máy cắt cần;"A. Bỏ mũ chụp máy để tiện thao tác
+B. Đeo kính và găng tay
+C. Mũ chụp máy cắt,te
+D. B,C đều đúng";D
+9;Khi thi công trên cao cần;"A. Không cần dây an toàn
+B. Dây an toàn và giàn giáo chắc chắn
+C. Đứng các hệ thống khác
+D. Dựng dàn giáo";B
+10;Trước khi sửa ống nước cần;"A. Mở nước
+B. Khóa nguồn nước
+C. Đập tường
+D. Tháo van";B
+11;Nguyên nhân phổ biến gây tắc cống;"A. Rác và dầu mỡ
+B. Không có nước
+C. Ống quá to
+D. Áp lực thấp";A
+12;Khi phát hiện rò rỉ ống cần;"A. Bỏ qua
+B. Sửa hoặc thay đoạn ống
+C. Tăng áp nước
+D. Mở nước lớn hơn";B
+13;Độ dốc ống thoát quá lớn sẽ gây:;"A. Nước chảy nhanh, rác đọng lại
+B. Tắc ngay
+C. Nước không chảy
+D. Ống vỡ";A
+14;Ống cấp nước trong nhà thường dùng kích thước;"A. 21–34 mm
+B. 90 mm
+C. 200 mm
+D. 500 mm";A
+15;Bơm tăng áp dùng khi:;"A. Áp lực nước yếu
+B. Nước quá mạnh
+C. Nước bẩn
+D. Nước nóng";A
+16;Trong hệ thống cấp nước nhà cao tầng, thiết bị nào dùng để ngăn nước ngược gây ô nhiễm nhiễm nguồn nước ?;"A. Van cổng
+B. Van giảm áp
+C. Van một chiều
+D. Van xả khí";C
+17;Khi thử áp lực đường ống cấp nước PPR trong quá trình, thử áp lực bằng bao nhiêu để áp dụng công việc?;"A. 1 lần áp lực làm việc
+B. 1,25 lần áp lực làm việc
+C. 1,5 lần áp lực làm việc
+D. 2 lần áp lực làm việc";C
+18;Khi nối ống PPR, phương pháp thi công đúng là gì?;"A. Hàn nhiệt
+B. Dán keo
+C. Hàn điện
+D. Hàn hồ quang";A
+19;Trong hệ thống thoát nước, bẫy nước (P-trap) được lắp đặt để làm gì?;"A. Giữ rác
+B. Ngăn mùi hôi từ ống thoát
+C. Tăng tốc độ thoát nước
+D. Giảm áp lực nước";B
+20;Khi thi công ống thoát nước ngang DN90, độ dốc tối thiểu nên là bao nhiêu;"A. 0.5 %
+B. 1 %
+C. 2 %
+D. 5 %";B
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;

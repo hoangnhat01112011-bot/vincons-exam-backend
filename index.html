@@ -173,6 +173,13 @@
                     <option value="Đề số 05">Đề số 05 - Đề thi trắc nghiệm điện (30 câu)</option>
                 `;
                 examSet.disabled = false;
+            } else if (val === 'Cấp thoát nước') {
+                examSet.innerHTML = `
+                    <option value="all">Ngẫu nhiên 30 câu (Cả Bậc 2 & 3)</option>
+                    <option value="Thợ CTN Bậc 2">Thợ CTN Bậc 2 (30 câu)</option>
+                    <option value="Thợ CTN Bậc 3">Thợ CTN Bậc 3 (30 câu)</option>
+                `;
+                examSet.disabled = false;
             } else {
                 examSet.innerHTML = `
                     <option value="">-- Hệ thống đang cập nhật đề thi --</option>
