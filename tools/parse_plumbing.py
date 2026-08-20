@@ -7,7 +7,7 @@ def parse_plumbing():
     if not os.path.exists(csv_file): return
     questions = []
     current_level = 'Thợ CTN Bậc 2'
-    with open(csv_file, 'r', encoding='utf-8') as f:
+    with open(csv_file, 'r', encoding='utf-8-sig') as f:
         reader = csv.reader(f, delimiter=';')
         for row in reader:
             if not row: continue
@@ -24,7 +24,7 @@ def parse_plumbing():
                 options_raw = row[2].strip()
                 correct_letter = row[3].strip().upper()
                 if correct_letter not in ['A', 'B', 'C', 'D']: continue
-                options_lines = [line.strip() for line in options_raw.split(chr(10)) if line.strip()]
+                options_lines = [line.strip() for line in options_raw.split('\n') if line.strip()]
                 options = []
                 for line in options_lines:
                     if len(line) >= 3 and line[0] in ['A', 'B', 'C', 'D'] and line[1] in ['.', ':', ')']:
@@ -44,16 +44,22 @@ def parse_plumbing():
                 }
                 questions.append(q)
     print(f'Parsed {len(questions)} plumbing questions.')
+    
     js_file = '../questions.js'
-    with open(js_file, 'r', encoding='utf-8') as f: js_content = f.read()
+    with open(js_file, 'r', encoding='utf-8-sig') as f: js_content = f.read()
     start_idx = js_content.find('[')
     end_idx = js_content.rfind(']')
     json_str = js_content[start_idx:end_idx+1]
     existing_questions = json.loads(json_str)
+    
     existing_questions = [q for q in existing_questions if 'Cấp thoát nước' not in q.get('category', '')]
     existing_questions.extend(questions)
+    
     new_js = f'// File này được tạo tự động từ NganHangCauHoi_Mau.csv\nconst QUESTIONS = {json.dumps(existing_questions, ensure_ascii=False, indent=2)};\n'
-    with open(js_file, 'w', encoding='utf-8') as f: f.write(new_js)
+    
+    out_file = '../questions.js'
+    with open(out_file, 'w', encoding='utf-8') as f: 
+        f.write(new_js)
     print(f'Successfully updated questions.js with {len(existing_questions)} total questions.')
 
 if __name__ == '__main__':
