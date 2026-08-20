@@ -88,7 +88,7 @@ function doGet(e) {
         // Kiem tra xem category co chua tu tuyen dung khong
         var isTuyendung = false;
         var catLower = category.toLowerCase();
-        if (catLower.indexOf("tuyển") !== -1 || catLower.indexOf("tuy\u1ec3n") !== -1 || catLower.indexOf("tuyA") !== -1 || catLower.indexOf("tuyen") !== -1) {
+        if (catLower.indexOf("tuy") !== -1) {
             isTuyendung = true;
         }
         
