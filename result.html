@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kết Quả Đánh Giá Bậc Thợ - Vincons</title>
+    <title>Káº¿t Quáº£ ÄÃ¡nh GiÃ¡ Báº­c Thá»£ - Vincons</title>
     <link rel="stylesheet" href="style.css">
     <script src="js/auth-guard.js"></script>
     <script src="js/config.js"></script>
@@ -13,7 +13,7 @@
         const isAdmin = localStorage.getItem('vincons_admin') === 'true';
 
         function handleLogout() {
-            if (confirm('Bạn có chắc chắn muốn thoát quyền Giám thị?')) {
+            if (confirm('Báº¡n cÃ³ cháº¯c cháº¯n muá»‘n thoÃ¡t quyá»n GiÃ¡m thá»‹?')) {
                 localStorage.removeItem('vincons_admin');
                 window.location.reload();
             }
@@ -42,14 +42,14 @@
             <div class="logo-icon">VC</div>
             <div class="logo-text">
                 <h1>Vincons</h1>
-                <p>BCH Hạ Long Xanh</p>
+                <p>BCH Háº¡ Long Xanh</p>
             </div>
         </div>
         <div class="header-nav" style="display: flex; align-items: center; gap: 15px;">
-            <a href="index.html" class="nav-link">🏠 Trang chủ</a>
-            <a href="history.html" class="nav-link">📋 Lịch sử bài thi</a>
-            <a href="admin.html" class="nav-link" id="navAdminLink" style="display: none;">👑 Quản trị Admin</a>
-            <button onclick="handleLogout()" id="btnLogout" class="btn btn-secondary btn-sm" style="display: none; padding: 6px 12px; font-size: 12px;">Thoát Admin</button>
+            <a href="index.html" class="nav-link">ðŸ  Trang chá»§</a>
+            <a href="history.html" class="nav-link">ðŸ“‹ Lá»‹ch sá»­ bÃ i thi</a>
+            <a href="admin.html" class="nav-link" id="navAdminLink" style="display: none;">ðŸ‘‘ Quáº£n trá»‹ Admin</a>
+            <button onclick="handleLogout()" id="btnLogout" class="btn btn-secondary btn-sm" style="display: none; padding: 6px 12px; font-size: 12px;">ThoÃ¡t Admin</button>
         </div>
     </header>
 
@@ -59,26 +59,26 @@
     <main style="flex-direction: column; justify-content: flex-start; gap: 30px;">
         <!-- General Result Summary Card -->
         <div class="card" style="max-width: 900px; padding: 30px;">
-            <h2 class="card-title" style="margin-bottom: 10px;">BÁO CÁO KẾT QUẢ ĐÁNH GIÁ</h2>
+            <h2 class="card-title" style="margin-bottom: 10px;">BÃO CÃO Káº¾T QUáº¢ ÄÃNH GIÃ</h2>
             <p style="text-align: center; color: #7f8c8d; font-size: 13px; font-weight: 600; text-transform: uppercase; margin-bottom: 20px;">
-                Dự án: Khu Đô Thị Phức Hợp Hạ Long Xanh
+                Dá»± Ã¡n: Khu ÄÃ´ Thá»‹ Phá»©c Há»£p Háº¡ Long Xanh
             </p>
             
             <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; border-top: 1.5px solid var(--border); padding-top: 24px;">
                 <!-- Candidate Info Details -->
                 <div style="font-size: 15px; line-height: 1.8; display: flex; flex-direction: column; gap: 10px;">
-                    <div><strong style="color: var(--primary);">Họ và tên:</strong> <span id="resName" style="font-weight: 700;">-</span></div>
-                    <div><strong style="color: var(--primary);">Số báo danh/SĐT:</strong> <span id="resId">-</span></div>
-                    <div><strong style="color: var(--primary);">Vị trí đánh giá:</strong> <span id="resJob" style="font-weight: 600;">-</span></div>
-                    <div><strong style="color: var(--primary);">Phần thi thực hiện:</strong> <span id="resExamType" style="font-weight: 700; color: var(--accent);">-</span></div>
-                    <div><strong style="color: var(--primary);">Thời gian nộp bài:</strong> <span id="resTime">-</span></div>
+                    <div><strong style="color: var(--primary);">Há» vÃ  tÃªn:</strong> <span id="resName" style="font-weight: 700;">-</span></div>
+                    <div><strong style="color: var(--primary);">Sá»‘ bÃ¡o danh/SÄT:</strong> <span id="resId">-</span></div>
+                    <div><strong style="color: var(--primary);">Vá»‹ trÃ­ Ä‘Ã¡nh giÃ¡:</strong> <span id="resJob" style="font-weight: 600;">-</span></div>
+                    <div><strong style="color: var(--primary);">Pháº§n thi thá»±c hiá»‡n:</strong> <span id="resExamType" style="font-weight: 700; color: var(--accent);">-</span></div>
+                    <div><strong style="color: var(--primary);">Thá»i gian ná»™p bÃ i:</strong> <span id="resTime">-</span></div>
                 </div>
 
                 <!-- Score Badges -->
                 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; border-left: 1.5px solid var(--border); padding-left: 20px;">
                     <div class="score-badge">
                         <span class="score-num" id="resScore">0/0</span>
-                        <span class="score-lbl">Câu đúng</span>
+                        <span class="score-lbl">CÃ¢u Ä‘Ãºng</span>
                     </div>
                     
                     <!-- Pass/Fail Badge -->
@@ -88,17 +88,17 @@
             
             <!-- Actions buttons -->
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; border-top: 1.5px solid var(--border); padding-top: 20px;">
-                <button class="btn btn-primary" onclick="window.print()">🖨️ In báo cáo (PDF)</button>
-                <a href="https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit" target="_blank" class="btn btn-accent" style="text-decoration: none;">📊 Google Sheets Cloud (Tự động)</a>
-                <a href="history.html" class="btn btn-secondary">📋 Xem lịch sử thi</a>
-                <a href="index.html" class="btn btn-secondary">Quay lại trang chủ</a>
+                <button class="btn btn-primary" onclick="window.print()">ðŸ–¨ï¸ In bÃ¡o cÃ¡o (PDF)</button>
+                <a href="https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit" target="_blank" class="btn btn-accent" style="text-decoration: none;">ðŸ“Š Google Sheets Cloud (Tá»± Ä‘á»™ng)</a>
+                <a href="history.html" class="btn btn-secondary">ðŸ“‹ Xem lá»‹ch sá»­ thi</a>
+                <a href="index.html" class="btn btn-secondary">Quay láº¡i trang chá»§</a>
             </div>
         </div>
 
         <!-- Detailed Review Section -->
         <div class="result-details-section">
             <h3 class="grid-title" style="font-size: 16px; margin-bottom: 10px; border-bottom: 2px solid var(--primary); padding-bottom: 8px;">
-                CHI TIẾT BÀI LÀM CỦA THÍ SINH
+                CHI TIáº¾T BÃ€I LÃ€M Cá»¦A THÃ SINH
             </h3>
             <div id="reviewContainer" style="display: flex; flex-direction: column; gap: 15px;">
                 <!-- Dynamically generated question reviews -->
@@ -107,10 +107,10 @@
     </main>
 
     <footer>
-        &copy; 2026 Vincons - Ban Chỉ Huy Dự Án Hạ Long Xanh. All rights reserved.
+        &copy; 2026 Vincons - Ban Chá»‰ Huy Dá»± Ãn Háº¡ Long Xanh. All rights reserved.
     </footer>
 
-    <script src="questions.js"></script>
+    <script src="questions.js?v=999"></script>
     <script>
         function showToast(message, type = 'success') {
             const container = document.getElementById('toastContainer');
@@ -128,7 +128,7 @@
         const answers = JSON.parse(localStorage.getItem('vincons_answers')) || {};
         
         if (!candidate) {
-            alert('Không tìm thấy thông tin thí sinh. Vui lòng đăng ký lại.');
+            alert('KhÃ´ng tÃ¬m tháº¥y thÃ´ng tin thÃ­ sinh. Vui lÃ²ng Ä‘Äƒng kÃ½ láº¡i.');
             window.location.href = 'index.html';
         }
         
@@ -166,8 +166,8 @@
         document.getElementById('resName').textContent = candidate.name;
         document.getElementById('resId').textContent = candidate.id;
         document.getElementById('resJob').textContent = candidate.job;
-        const modeLabel = candidate.examMode === 'Ôn tập' ? ' [ÔN TẬP]' : '';
-        document.getElementById('resExamType').textContent = (candidate.examType === 'Lý thuyết' ? 'Thi Lý thuyết' : 'Thi Thực hành') + modeLabel;
+        const modeLabel = candidate.examMode === 'Ã”n táº­p' ? ' [Ã”N Táº¬P]' : '';
+        document.getElementById('resExamType').textContent = (candidate.examType === 'LÃ½ thuyáº¿t' ? 'Thi LÃ½ thuyáº¿t' : 'Thi Thá»±c hÃ nh') + modeLabel;
         
         const submitDate = new Date();
         const formattedTime = submitDate.toLocaleString('vi-VN');
@@ -176,10 +176,10 @@
         
         const badge = document.getElementById('resStatusBadge');
         if (isPass) {
-            badge.textContent = 'ĐẠT YÊU CẦU';
+            badge.textContent = 'Äáº T YÃŠU Cáº¦U';
             badge.className = 'result-badge pass';
         } else {
-            badge.textContent = 'CHƯA ĐẠT';
+            badge.textContent = 'CHÆ¯A Äáº T';
             badge.className = 'result-badge fail';
         }
         
@@ -218,14 +218,14 @@
                     optionsHTML += `
                         <div class="review-opt ${statusClass}">
                             ${optIdx + 1}. ${opt}
-                            ${optIdx === q.correct_index ? ' ✓ (Đáp án đúng)' : ''}
-                            ${userAnswer !== undefined && optIdx === userAnswer && !isCorrect ? ' ✗ (Lựa chọn của bạn)' : ''}
+                            ${optIdx === q.correct_index ? ' âœ“ (ÄÃ¡p Ã¡n Ä‘Ãºng)' : ''}
+                            ${userAnswer !== undefined && optIdx === userAnswer && !isCorrect ? ' âœ— (Lá»±a chá»n cá»§a báº¡n)' : ''}
                         </div>
                     `;
                 });
             } else if (q.type === 'input_group') {
                 q.sub_questions.forEach(subQ => {
-                    const uAns = (userAnswer && userAnswer[subQ.id]) !== undefined ? userAnswer[subQ.id] : 'Chưa điền';
+                    const uAns = (userAnswer && userAnswer[subQ.id]) !== undefined ? userAnswer[subQ.id] : 'ChÆ°a Ä‘iá»n';
                     const cAns = subQ.correct_value;
                     const subIsCorrect = String(uAns) === String(cAns);
                     
@@ -233,26 +233,26 @@
                     
                     optionsHTML += `
                         <div class="review-opt ${statusClass}">
-                            <strong>${subQ.label}:</strong> Bạn nhập: <em>${uAns}</em> 
-                            ${!subIsCorrect ? `(Đáp án đúng: <strong>${cAns}</strong>)` : '✓'}
+                            <strong>${subQ.label}:</strong> Báº¡n nháº­p: <em>${uAns}</em> 
+                            ${!subIsCorrect ? `(ÄÃ¡p Ã¡n Ä‘Ãºng: <strong>${cAns}</strong>)` : 'âœ“'}
                         </div>
                     `;
                 });
             }
             let aiBtnHTML = '';
-            if (candidate.examMode === 'Ôn tập' && !isCorrect) {
+            if (candidate.examMode === 'Ã”n táº­p' && !isCorrect) {
                 aiBtnHTML = `
                 <div style="margin-top: 15px;">
-                    <button class="btn btn-secondary btn-sm" onclick="askAITutor(this, ${index})" style="background: var(--accent); color: white; border: none;">🤖 AI Giải thích (NousCoder)</button>
+                    <button class="btn btn-secondary btn-sm" onclick="askAITutor(this, ${index})" style="background: var(--accent); color: white; border: none;">ðŸ¤– AI Giáº£i thÃ­ch (NousCoder)</button>
                     <div class="ai-explanation" style="display:none; margin-top:10px; padding:12px; background:#e8f4fd; border-left:4px solid var(--accent); border-radius:4px; font-size:14px; line-height:1.6; color:#2c3e50;"></div>
                 </div>`;
             }
             
             item.innerHTML = `
                 <div class="review-question-header">
-                    <span style="font-weight: 700; color: var(--primary);">Câu hỏi ${index + 1}:</span>
+                    <span style="font-weight: 700; color: var(--primary);">CÃ¢u há»i ${index + 1}:</span>
                     <span class="review-badge ${isCorrect ? 'correct' : 'incorrect'}">
-                        ${isCorrect ? 'Đúng' : (userAnswer === undefined ? 'Chưa trả lời' : 'Sai')}
+                        ${isCorrect ? 'ÄÃºng' : (userAnswer === undefined ? 'ChÆ°a tráº£ lá»i' : 'Sai')}
                     </span>
                 </div>
                 <div style="font-size: 15px; font-weight: 700; margin-bottom: 15px; color: var(--text); line-height: 1.4;">
@@ -270,21 +270,21 @@
             const q = activeQuestions[index];
             const userAnswer = answers[index];
             
-            let userAnsStr = 'Chưa trả lời';
+            let userAnsStr = 'ChÆ°a tráº£ lá»i';
             let correctAnsStr = '';
             if (q.type === 'multiple_choice') {
                 if (userAnswer !== undefined) userAnsStr = q.options[userAnswer];
                 correctAnsStr = q.options[q.correct_index];
             } else {
                 userAnsStr = JSON.stringify(userAnswer);
-                correctAnsStr = "Xem chi tiết đáp án";
+                correctAnsStr = "Xem chi tiáº¿t Ä‘Ã¡p Ã¡n";
             }
             
             btn.disabled = true;
-            btn.textContent = "⏳ Đang kết nối Gia sư AI...";
+            btn.textContent = "â³ Äang káº¿t ná»‘i Gia sÆ° AI...";
             const explanationDiv = btn.nextElementSibling;
             explanationDiv.style.display = 'block';
-            explanationDiv.innerHTML = "<em>Đang phân tích câu trả lời...</em>";
+            explanationDiv.innerHTML = "<em>Äang phÃ¢n tÃ­ch cÃ¢u tráº£ lá»i...</em>";
             
             CONFIG.apiCall('/api/ai-tutor', {
                 method: 'POST',
@@ -299,18 +299,18 @@
             .then(res => res.json())
             .then(data => {
                 if (data.status === 'success') {
-                    explanationDiv.innerHTML = "<strong>🤖 Gia sư giải thích:</strong><br>" + data.explanation.replace(/\\n/g, '<br>');
+                    explanationDiv.innerHTML = "<strong>ðŸ¤– Gia sÆ° giáº£i thÃ­ch:</strong><br>" + data.explanation.replace(/\\n/g, '<br>');
                     btn.style.display = 'none';
                 } else {
-                    explanationDiv.innerHTML = `<span style="color:red">Lỗi: ${data.message}</span>`;
+                    explanationDiv.innerHTML = `<span style="color:red">Lá»—i: ${data.message}</span>`;
                     btn.disabled = false;
-                    btn.textContent = "🤖 Thử lại (Gia sư NousCoder)";
+                    btn.textContent = "ðŸ¤– Thá»­ láº¡i (Gia sÆ° NousCoder)";
                 }
             })
             .catch(err => {
-                explanationDiv.innerHTML = `<span style="color:red">Lỗi kết nối.</span>`;
+                explanationDiv.innerHTML = `<span style="color:red">Lá»—i káº¿t ná»‘i.</span>`;
                 btn.disabled = false;
-                btn.textContent = "🤖 Thử lại (Gia sư NousCoder)";
+                btn.textContent = "ðŸ¤– Thá»­ láº¡i (Gia sÆ° NousCoder)";
             });
         }
 
@@ -352,13 +352,13 @@
         .then(res => res.json())
         .then(data => {
             if (data.status === 'success') {
-                showToast('✅ Kết quả đã được tự động lưu vào Server & Bộ nhớ!');
+                showToast('âœ… Káº¿t quáº£ Ä‘Ã£ Ä‘Æ°á»£c tá»± Ä‘á»™ng lÆ°u vÃ o Server & Bá»™ nhá»›!');
             } else {
-                showToast('✅ Đã lưu kết quả bài thi vào bộ nhớ trình duyệt!');
+                showToast('âœ… ÄÃ£ lÆ°u káº¿t quáº£ bÃ i thi vÃ o bá»™ nhá»› trÃ¬nh duyá»‡t!');
             }
         })
         .catch(err => {
-            showToast('✅ Đã lưu kết quả bài thi vào bộ nhớ trình duyệt (Chế độ offline)!');
+            showToast('âœ… ÄÃ£ lÆ°u káº¿t quáº£ bÃ i thi vÃ o bá»™ nhá»› trÃ¬nh duyá»‡t (Cháº¿ Ä‘á»™ offline)!');
         });
     </script>
 </body>

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài Thi Sát Hạch Bậc Thợ - Vincons</title>
+    <title>BÃ i Thi SÃ¡t Háº¡ch Báº­c Thá»£ - Vincons</title>
     <link rel="stylesheet" href="style.css">
     <script src="js/auth-guard.js"></script>
     <script src="js/config.js"></script>
@@ -12,7 +12,7 @@
         let candidateUser = JSON.parse(localStorage.getItem('vincons_candidate'));
         
         function handleLogout() {
-            if (confirm('Bạn có chắc chắn muốn THOÁT HỦY bài thi đang làm?')) {
+            if (confirm('Báº¡n cÃ³ cháº¯c cháº¯n muá»‘n THOÃT Há»¦Y bÃ i thi Ä‘ang lÃ m?')) {
                 localStorage.removeItem('vincons_candidate');
                 localStorage.removeItem('vincons_answers');
                 localStorage.removeItem('vincons_time_left');
@@ -37,13 +37,13 @@
             <div class="logo-icon">VC</div>
             <div class="logo-text">
                 <h1>Vincons</h1>
-                <p>BCH Hạ Long Xanh</p>
+                <p>BCH Háº¡ Long Xanh</p>
             </div>
         </div>
         <div style="display: flex; align-items: center; gap: 15px;">
-            <div class="header-meta" id="examTitle">Bài Thi Sát Hạch</div>
+            <div class="header-meta" id="examTitle">BÃ i Thi SÃ¡t Háº¡ch</div>
             <span id="userInfoDisplay" style="font-size: 13px; font-weight: 700; color: var(--primary);"></span>
-            <button onclick="handleLogout()" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">Thoát Bài Thi</button>
+            <button onclick="handleLogout()" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 12px;">ThoÃ¡t BÃ i Thi</button>
         </div>
     </header>
 
@@ -52,11 +52,11 @@
             <!-- Left Side: Image Viewer Panel -->
             <div class="image-panel" id="imagePanel">
                 <div class="image-header">
-                    <span style="font-size: 16px;">🖼️</span>
-                    <strong id="imageTitleText">Bản vẽ thiết kế kỹ thuật</strong>
+                    <span style="font-size: 16px;">ðŸ–¼ï¸</span>
+                    <strong id="imageTitleText">Báº£n váº½ thiáº¿t káº¿ ká»¹ thuáº­t</strong>
                 </div>
                 <div class="image-viewport" id="imageViewport" style="text-align: center; background: #fff; padding: 10px; border-radius: 8px; overflow: auto; height: calc(100vh - 200px);">
-                    <img id="questionImage" src="" alt="Bản vẽ" style="max-width: 100%; height: auto; border: 1px solid #ddd;">
+                    <img id="questionImage" src="" alt="Báº£n váº½" style="max-width: 100%; height: auto; border: 1px solid #ddd;">
                 </div>
             </div>
 
@@ -66,35 +66,35 @@
             <!-- Left Side: Question Details -->
             <div class="question-panel">
                 <div>
-                    <div class="question-header" id="questionNumLabel">Câu hỏi 1/30</div>
-                    <div class="question-text" id="questionContent">Đang tải câu hỏi...</div>
+                    <div class="question-header" id="questionNumLabel">CÃ¢u há»i 1/30</div>
+                    <div class="question-text" id="questionContent">Äang táº£i cÃ¢u há»i...</div>
                     <div class="options-list" id="optionsContainer">
                         <!-- Options generated dynamically -->
                     </div>
                 </div>
                 
                 <div class="navigation-bar">
-                    <button class="btn btn-secondary" id="btnPrev" onclick="prevQuestion()">&larr; Câu trước</button>
-                    <button class="btn btn-primary" id="btnNext" onclick="nextQuestion()">Câu sau &rarr;</button>
+                    <button class="btn btn-secondary" id="btnPrev" onclick="prevQuestion()">&larr; CÃ¢u trÆ°á»›c</button>
+                    <button class="btn btn-primary" id="btnNext" onclick="nextQuestion()">CÃ¢u sau &rarr;</button>
                 </div>
             </div>
 
             <!-- Right Side: Sidebar Status & Timer -->
             <div class="sidebar-panel">
                 <div>
-                    <div class="grid-title" style="margin-bottom: 12px;">Thí Sinh</div>
+                    <div class="grid-title" style="margin-bottom: 12px;">ThÃ­ Sinh</div>
                     <div id="candidateDisplayInfo" style="font-size: 14px; font-weight: 600; line-height: 1.5; color: var(--primary);">
-                        Đang tải...
+                        Äang táº£i...
                     </div>
                 </div>
 
                 <div class="timer-box" id="timerBox">
-                    <span style="font-size: 16px;">⏱️</span>
+                    <span style="font-size: 16px;">â±ï¸</span>
                     <span id="countdownText">30:00</span>
                 </div>
 
                 <div>
-                    <div class="grid-title" style="margin-bottom: 12px;">Danh Sách Câu Hỏi</div>
+                    <div class="grid-title" style="margin-bottom: 12px;">Danh SÃ¡ch CÃ¢u Há»i</div>
                     <div class="questions-grid" id="questionsGrid">
                         <!-- Grid elements generated dynamically -->
                     </div>
@@ -103,30 +103,30 @@
                 <div class="status-legend">
                     <div class="legend-item">
                         <div class="legend-color" style="background: var(--primary);"></div>
-                        <span>Đã trả lời</span>
+                        <span>ÄÃ£ tráº£ lá»i</span>
                     </div>
                     <div class="legend-item">
                         <div class="legend-color" style="background: var(--white); border: 1px solid rgba(0,0,0,0.15);"></div>
-                        <span>Chưa trả lời</span>
+                        <span>ChÆ°a tráº£ lá»i</span>
                     </div>
                     <div class="legend-item">
                         <div class="legend-color" style="box-shadow: 0 0 0 2px var(--accent); background: var(--white);"></div>
-                        <span>Câu hiện tại</span>
+                        <span>CÃ¢u hiá»‡n táº¡i</span>
                     </div>
                 </div>
 
-                <button class="btn btn-accent btn-block" style="margin-top: 10px;" onclick="confirmSubmit()">Nộp Bài Thi</button>
+                <button class="btn btn-accent btn-block" style="margin-top: 10px;" onclick="confirmSubmit()">Ná»™p BÃ i Thi</button>
             </div>
             </div>
         </div>
     </main>
 
     <footer>
-        &copy; 2026 Vincons - Ban Chỉ Huy Dự Án Hạ Long Xanh. All rights reserved.
+        &copy; 2026 Vincons - Ban Chá»‰ Huy Dá»± Ãn Háº¡ Long Xanh. All rights reserved.
     </footer>
 
     <!-- Converted Questions File -->
-    <script src="questions.js"></script>
+    <script src="questions.js?v=999"></script>
     <!-- Revit BIM MEP Builder Engine -->
     <script src="js/revit-mep-builder.js"></script>
     <!-- 3D Interactive Building Engine -->

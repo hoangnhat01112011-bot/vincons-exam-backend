@@ -1,4 +1,4 @@
-// File này được tạo tự động từ NganHangCauHoi_Mau.csv
+// File này được tạo tự động
 const QUESTIONS = [
   {
     "id": 1,
@@ -253,2263 +253,6 @@ const QUESTIONS = [
       "Động cơ 3 pha đấu nối kiểu tam giác, điện áp làm việc của động cơ Uph = 380V;P= 37Kw; I=41.3A; tốc độ động cơ n=2940 r/min(vòng /phút)",
       "Động cơ 3 pha đấu nối kiểu tam giác, điện áp làm việc của động cơ Uph = 380V; I=78A;P=37Kw; tốc độ động cơ n=1450 r/min(vòng /phút)",
       "Không có đáp án đúng."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 101,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 1,
-    "question": "Yêu cầu điện trở tiếp địa hệ thống tiếp địa trạm biến áp cần đạt được là:",
-    "options": [
-      "≥ 10 Ohm (W)",
-      "≤ 10 Ohm (W)",
-      "≤ 4 Ohm (W)",
-      "≤ 6 Ohm (W)"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 102,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 2,
-    "question": "Nghề điện công nghiệp hoạt động chủ yếu trong các lĩnh vực nào?",
-    "options": [
-      "Sản xuất, truyền tải, phân phối điện.",
-      "Chế tạo vật tư ngành điện.",
-      "Sử dụng điện phục vụ đời sống, điều khiển tự động hóa sản xuất.",
-      "Mua bán vật tư ngành điện."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 103,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 3,
-    "question": "Đóng điện vào máy bơm nước, động cơ điện của bơm không quay là do",
-    "options": [
-      "Mất điện, hở mạch, động cơ bị cháy.",
-      "Mất nước mồi, dây quấn động cơ bị chập.",
-      "Mất điện nguồn, đầu ống hút bị tắc.",
-      "Đầu ống hút bị tắc, nguồn nước đầu hút bị cạn"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 104,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 4,
-    "question": "Tiết diện 1,5mm2 dây điện đồng có thể chịu tối đa bao nhiêu ampe?",
-    "options": [
-      "2A",
-      "30A",
-      "4A",
-      "6A"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 105,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 5,
-    "question": "Chiều cao cột nước bơm của máy bơm được tính",
-    "options": [
-      "Từ vị trí đặt máy đến bề mặt mực nước dưới mà máy có thể hút lên bình thường",
-      "Từ vị trí đặt máy đến vị trí cao nhất mà máy có thể đẩy nước lên được",
-      "Từ miệng ống hút đến vị trí cao nhất mà máy có thể đẩy nước lên được",
-      "Từ miệng ống hút đến vị trí đặt máy"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 106,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 6,
-    "question": "Động cơ điện một pha thường có công suất",
-    "options": [
-      "Dưới 600W.",
-      "Trên 600W.",
-      "Trên 1000W.",
-      "Dưới 6000W"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 107,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 7,
-    "question": "Biện pháp thi công an toàn ngoài trời khi có trời mưa",
-    "options": [
-      "Tiếp tục làm việc bình thường để kịp tiến độ.",
-      "Dùng tay trần thao tác nhanh để tránh bị ướt lâu.",
-      "Ngừng thi công hoặc chỉ làm khi đã cắt nguồn điện, sử dụng dụng cụ và đồ bảo hộ cách điện đầy đủ.",
-      "Đứng trên nền đất ướt và kiểm tra dây điện."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 108,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 8,
-    "question": "Yêu cầu điện trở tiếp địa hệ thống chống sét, tủ điện, motor cần đạt được là:",
-    "options": [
-      "≥ 10 Ohm (W)",
-      "≤ 10 Ohm (W)",
-      "≤ 4 Ohm (W)",
-      "≤ 6 Ohm (W)"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 109,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 9,
-    "question": "Mạch điện có một bóng đèn có thể tắt, mở ở hai vị trí khác nhau là",
-    "options": [
-      "Mạch đèn sợi đốt đơn giản.",
-      "Mạch đèn cầu thang.",
-      "Mạch đèn thay đổi ánh sáng.",
-      "Mạch đèn sáng luân phiên."
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 110,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 10,
-    "question": "Khi bị điện giật cần",
-    "options": [
-      "Tách nạn nhân khỏi nguồn điện",
-      "Dùng tay không kéo nạn nhân khỏi nguồn điện",
-      "Để nằm yên",
-      "Bỏ đi"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 111,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 11,
-    "question": "Khi cuộn dây động cơ bị ẩm ta cần làm như sau :",
-    "options": [
-      "Tháo động cơ, phơi nắng",
-      "Tháo động cơ để trong mát một thời gian",
-      "Tháo động cơ, rửa sạch bằng nước, phơi nắng",
-      "Tháo động cơ, rửa sạch bằng xăng, dùng máy sấy khô"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 112,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 12,
-    "question": "Để đo điện năng tiêu thụ ta dùng",
-    "options": [
-      "Oát kế",
-      "Ampe kế",
-      "Vôn kế",
-      "Công tơ"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 113,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 13,
-    "question": "Để thể hiện rõ mối liên hệ về điện của các phần tử trong mạch điện ta dùng",
-    "options": [
-      "Sơ đồ cấu tạo của mạch điện",
-      "Sơ đồ lắp đặt của mạch điện",
-      "Sơ đồ nguyên lí của mạch điện",
-      "Sơ đồ nguyên lí và cấu tạo của mạch điện"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 114,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 14,
-    "question": "Hình vẽ bên là kí hiệu của:",
-    "options": [
-      "động cơ điện.",
-      "máy phát điện.",
-      "công tơ điện.",
-      "máy biến áp."
-    ],
-    "correct_index": 0,
-    "image": "data/symbol_motor.png"
-  },
-  {
-    "id": 115,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 15,
-    "question": "Số cuộn dây quấn làm việc của động cơ điện 3 pha là",
-    "options": [
-      "Một.",
-      "Hai.",
-      "Ba.",
-      "Bốn."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 116,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 16,
-    "question": "Công suất điện được tính",
-    "options": [
-      "P = U × I",
-      "P = U / I",
-      "P = I / R",
-      "P = R / U"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 117,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 17,
-    "question": "Động cơ điện là loại máy biến đổi",
-    "options": [
-      "Điện năng thành nhiệt năng.",
-      "Điện năng thành quang năng.",
-      "Điện năng thành cơ năng",
-      "Cơ năng thành điện năng."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 118,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 18,
-    "question": "Điện áp nguy hiểm đối với người",
-    "options": [
-      "> 36V",
-      "> 12V",
-      "> 6V",
-      "> 3V"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 119,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 19,
-    "question": "Đây là kí hiệu của các phần tử nào",
-    "options": [
-      "Chuông điện và máy biến áp",
-      "Công tơ điện và máy biến áp",
-      "Chuông điện và trạm biến áp",
-      "Công tơ điện và trạm biến áp"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 120,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 20,
-    "question": "Đồng hồ đo điện vạn năng dùng để đo :",
-    "options": [
-      "Điện áp xoay chiều, điện áp một chiều, điện trở, dòng điện một chiều",
-      "Điện áp một chiều, điện áp xoay chiều, điện trở cách điện máy điện",
-      "Điện áp xoay chiều, dòng điện xoay chiều, điện trở cách điện",
-      "Điện trở, điện áp và  dòng điện máy điện"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 121,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 21,
-    "question": "Rơ le nhiệt dùng để",
-    "options": [
-      "Bảo vệ quá tải động cơ",
-      "Tăng điện áp",
-      "Đo điện",
-      "Giảm dòng"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 122,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 22,
-    "question": "Contactor dùng để",
-    "options": [
-      "Đóng cắt mạch điện công suất lớn",
-      "Đo điện áp",
-      "Đo dòng điện",
-      "Cấp nguồn"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 123,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 23,
-    "question": "Khi đo điện áp xoay chiều cần bắt đầu từ thang đo lớn nhất rồi giảm dần là để",
-    "options": [
-      "tránh gây sai số lớn khi đọc kết quả đo.",
-      "tránh làm hỏng que đo.",
-      "tránh làm hỏng mạch điện của dụng cụ đo.",
-      "tránh không đọc được kết quả đo."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 124,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 24,
-    "question": "Khi khởi động máy bơm nước mà áp tô mát tự động ngắt điện hoặc đứt cầu chì là do",
-    "options": [
-      "Động cơ bị rò điện.",
-      "Dây quấn động cơ bị chập",
-      "Mất điện.",
-      "Không có nguồn nước cấp."
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 125,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 25,
-    "question": "Đại lượng đo ánh sáng nào được quan tâm nhất khi tính toán chiếu sáng",
-    "options": [
-      "Quang thông.",
-      "Độ chói.",
-      "Độ rọi.",
-      "Công suất đèn."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 126,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 26,
-    "question": "Đo điện trở hai đầu của cuộn dây cho giá trị R = ∞ chứng tỏ rằng :",
-    "options": [
-      "Cuộn dây bị ngắn mạch",
-      "Cuộn dây bị ẩm nên điện trở tăng",
-      "Cuộn dây bị đứt",
-      "Cuộn dây bị chập một số vòng"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 127,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 27,
-    "question": "Khi đóng điện vào máy bơm nước, có điện vào, động cơ rung nhẹ nhưng không quay là do",
-    "options": [
-      "Điện áp nguồn quá cao so với định mức",
-      "Mạch cấp điện cho động cơ bị hở mạch do đứt dây",
-      "Tụ điện khởi động bị hỏng",
-      "Dây quấn động cơ bị cháy"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 128,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 28,
-    "question": "Sử dụng thiết bị đo nào để kiểm tra cách điện động cơ, cáp điện",
-    "options": [
-      "Đồng  hồ vạn năng",
-      "Đồng hồ ampe kìm",
-      "Đồng hồ đo điện trở đất Teraohm",
-      "Đồng hồ Megaohm"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 129,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 29,
-    "question": "Sơ đồ cấp điện cho nhà chung cư theo thứ tự thế nào là đú",
-    "options": [
-      "Tủ điện tổng; trạm biến áp; tủ điện tầng; bảng điện; các tải của căn hộ",
-      "Trạm biến áp; tủ điện tổng; tủ điện tầng; bảng điện; các tải của căn hộ",
-      "Tủ điện tầng; trạm biến áp; tủ điện tổng; bảng điện; các tải của căn hộ",
-      "Bảng điện; tủ điện tầng; trạm biến áp; tủ điện tổng; các tải của căn hộ"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 130,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 30,
-    "question": "Động cơ điện có các phần chính là",
-    "options": [
-      "Stato là phần quay và roto là phần tĩnh.",
-      "Stato là phần tĩnh và roto là phần quay.",
-      "Cả A và B đều đúng",
-      "Cả A và B đều sai"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 131,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 1,
-    "question": "Cầu chì là khí cụ dùng để",
-    "options": [
-      "Bảo vệ mạch điện.",
-      "Đóng cắt thiết bị điện.",
-      "Bảo vệ quá tải và ngắn mạch cho thiết bị và đường dây.",
-      "Bảo vệ quá tải cho thiết bị điện và đường dây."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 132,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 2,
-    "question": "Lượng nước máy bơm bơm được trong một đơn vị thời gian gọi là",
-    "options": [
-      "Tốc độ bơm",
-      "Lưu lượng",
-      "Công suất bơm",
-      "Dung lượng máy bơm"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 133,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 3,
-    "question": "Động cơ quạt điện dân dụng là loại động cơ gì?",
-    "options": [
-      "Động cơ điện một chiều công suất nhỏ.",
-      "Động cơ điện xoay chiều một pha công suất nhỏ.",
-      "Động cơ điện xoay chiều ba pha công suất nhỏ",
-      "Động cơ điện một chiều công suất lớn"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 134,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 4,
-    "question": "Một mạch điện gồm nhiều bóng đèn mắc song song, nếu có một bóng bị đứt thì",
-    "options": [
-      "Một số bóng đèn sáng, một số bóng đèn không sáng.",
-      "Các bóng đèn sáng bình thường ngoại trừ bóng đứt.",
-      "Các bóng đèn sáng mờ.",
-      "Tất cả các bóng dèn trong mạch đều không sáng."
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 135,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 5,
-    "question": "Hình vẽ bên là kí hiệu của:",
-    "options": [
-      "động cơ điện.",
-      "máy phát điện.",
-      "công tơ điện.",
-      "máy biến áp."
-    ],
-    "correct_index": 3,
-    "image": "data/symbol_motor.png"
-  },
-  {
-    "id": 136,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 6,
-    "question": "Máy bơm nước gia đình, máy giặt dùng nguồn điện",
-    "options": [
-      "Xoay chiều 220V–50Hz.",
-      "Xoay chiều 380 V.",
-      "Một chiều 220 V-50Hz.",
-      "Một chiều 380V."
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 137,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 7,
-    "question": "Sơ đồ cấp điện cho nhà chung cư theo thứ tự thế nào là đú",
-    "options": [
-      "Tủ điện tổng; trạm biến áp; tủ điện tầng; bảng điện; các tải của căn hộ",
-      "Trạm biến áp; tủ điện tổng; tủ điện tầng; bảng điện; các tải của căn hộ",
-      "Tủ điện tầng; trạm biến áp; tủ điện tổng; bảng điện; các tải của căn hộ",
-      "Bảng điện; tủ điện tầng; trạm biến áp; tủ điện tổng; các tải của căn hộ"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 138,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 8,
-    "question": "Rơ le nhiệt dùng để",
-    "options": [
-      "Bảo vệ quá tải động cơ",
-      "Tăng điện áp",
-      "Đo điện",
-      "Giảm dòng"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 139,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 9,
-    "question": "Đây là kí hiệu của các phần tử nào",
-    "options": [
-      "Chuông điện và máy biến áp",
-      "Công tơ điện và máy biến áp",
-      "Chuông điện và trạm biến áp",
-      "Công tơ điện và trạm biến áp"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 140,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 10,
-    "question": "Để đo điện năng tiêu thụ ta dùng",
-    "options": [
-      "Oát kế",
-      "Ampe kế",
-      "Vôn kế",
-      "Công tơ"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 141,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 11,
-    "question": "Số cuộn dây quấn làm việc của động cơ điện 3 pha là",
-    "options": [
-      "Một.",
-      "Hai.",
-      "Ba.",
-      "Bốn."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 142,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 12,
-    "question": "Động cơ điện có các phần chính là",
-    "options": [
-      "Stato là phần quay và roto là phần tĩnh.",
-      "Stato là phần tĩnh và roto là phần quay.",
-      "Cả A và B đều đúng",
-      "Cả A và B đều sai"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 143,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 13,
-    "question": "Contactor dùng để",
-    "options": [
-      "Đóng cắt mạch điện công suất lớn",
-      "Đo điện áp",
-      "Đo dòng điện",
-      "Cấp nguồn"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 144,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 14,
-    "question": "Mạch điện có một bóng đèn có thể tắt, mở ở hai vị trí khác nhau là",
-    "options": [
-      "Mạch đèn sợi đốt đơn giản.",
-      "Mạch đèn cầu thang.",
-      "Mạch đèn thay đổi ánh sáng.",
-      "Mạch đèn sáng luân phiên."
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 145,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 15,
-    "question": "Khi cuộn dây động cơ bị ẩm ta cần làm như sau :",
-    "options": [
-      "Tháo động cơ, phơi nắng",
-      "Tháo động cơ để trong mát một thời gian",
-      "Tháo động cơ, rửa sạch bằng nước, phơi nắng",
-      "Tháo động cơ, rửa sạch bằng xăng, dùng máy sấy khô"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 146,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 16,
-    "question": "Yêu cầu điện trở tiếp địa hệ thống tiếp địa trạm biến áp cần đạt được là:",
-    "options": [
-      "≥ 10 Ohm (W)",
-      "≤ 10 Ohm (W)",
-      "≤ 4 Ohm (W)",
-      "≤ 6 Ohm (W)"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 147,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 17,
-    "question": "Vị trí và vai trò của điện năng trong sản xuất và đời sống là :",
-    "options": [
-      "Cải tiến máy móc và sản xuất tập trung.",
-      "Sản xuất và xuất khẩu sang nước bạn.",
-      "Tạo sự phát triển ổn định kinh tế xã hội.",
-      "Nâng cao năng suất, cải thiện đời sống."
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 148,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 18,
-    "question": "Đóng điện vào máy bơm nước, động cơ điện của bơm không quay là do",
-    "options": [
-      "Mất điện, hở mạch, động cơ bị cháy.",
-      "Mất nước mồi, dây quấn động cơ bị chập.",
-      "Mất điện nguồn, đầu ống hút bị tắc.",
-      "Đầu ống hút bị tắc, nguồn nước đầu hút bị cạn"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 149,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 19,
-    "question": "Sử dụng thiết bị đo nào để kiểm tra cách điện động cơ, cáp điện",
-    "options": [
-      "Đồng  hồ vạn năng",
-      "Đồng hồ ampe kìm",
-      "Đồng hồ đo điện trở đất Teraohm",
-      "Đồng hồ Megaohm"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 150,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 20,
-    "question": "Khi đo điện áp xoay chiều cần bắt đầu từ thang đo lớn nhất rồi giảm dần là để",
-    "options": [
-      "tránh gây sai số lớn khi đọc kết quả đo.",
-      "tránh làm hỏng que đo.",
-      "tránh làm hỏng mạch điện của dụng cụ đo.",
-      "tránh không đọc được kết quả đo."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 151,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 21,
-    "question": "Dụng cụ kiểm tra thứ tự pha (3pha)",
-    "options": [
-      "Ampe kế",
-      "Vôn Kế",
-      "Oát kế",
-      "Đồng hồ quay pha"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 152,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 22,
-    "question": "Theo quy chuẩn, điện trở tiếp địa của hệ thống điện hạ thế phải đạt?",
-    "options": [
-      "≤ 10 Ω",
-      "≤ 4 Ω",
-      "≤ 1 Ω",
-      "≤ 0.5 Ω"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 153,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 23,
-    "question": "Để thể hiện rõ mối liên hệ về điện của các phần tử trong mạch điện ta dùng",
-    "options": [
-      "Sơ đồ cấu tạo của mạch điện",
-      "Sơ đồ lắp đặt của mạch điện",
-      "Sơ đồ nguyên lí của mạch điện",
-      "Sơ đồ nguyên lí và cấu tạo của mạch điện"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 154,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 24,
-    "question": "Thiết bị đo dòng điện",
-    "options": [
-      "Vôn kế",
-      "Ôm kế",
-      "Ampe kế",
-      "Watt kế"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 155,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 25,
-    "question": "Tiết diện dây dẫn chọn cho đường dây trục chính được tính toán theo",
-    "options": [
-      "Tổng điện áp định mức của các thiết bị điện trong mạng điện",
-      "Cường độ dòng điện sử dụng của mạng điện ( tính theo công suất tổng yêu cầu)",
-      "Cường độ dòng điện sử dụng của thiết bị có công suất lớn nhất trong mạng điện",
-      "Điện áp định mức của thiết bị có công suất lớn nhất trong mạng điện"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 156,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 26,
-    "question": "Đấu sao-tam giác yêu cầu",
-    "options": [
-      "Motor có 6 đầu dây riêng U/V/W - X/Y/Z",
-      "3 đầu dây",
-      "9 đầu dây bắt buộc",
-      "Chỉ cần 2 đầu"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 157,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 27,
-    "question": "Công tắc 3 cực thường được sử dụng phổ biến ở các mạch đèn nào",
-    "options": [
-      "Mạch đèn thay đổi ánh sáng.",
-      "Mạch đèn cầu thang.",
-      "Mạch đèn nhà kho.",
-      "Mạch đèn phòng học."
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 158,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 28,
-    "question": "Điện áp ra của máy biến áp được lấy từ",
-    "options": [
-      "Hai đầu dây quấn stato.",
-      "Hai đầu dây quấn roto.",
-      "Hai đầu dây quấn sơ cấp.",
-      "Hai đầu dây thứ cấp."
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 159,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 29,
-    "question": "Điện một chiều ký hiệu",
-    "options": [
-      "AC",
-      "DC",
-      "V",
-      "A"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 160,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 30,
-    "question": "Đây là kí hiệu của :",
-    "options": [
-      "Động cơ điện.",
-      "Máy biến áp.",
-      "Công tơ  điện.",
-      "Máy phát điện."
-    ],
-    "correct_index": 0,
-    "image": "data/symbol_transformer.png"
-  },
-  {
-    "id": 161,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 1,
-    "question": "Khi đóng điện vào máy bơm nước, có điện vào, động cơ rung nhẹ nhưng không quay là do",
-    "options": [
-      "Điện áp nguồn quá cao so với định mức",
-      "Mạch cấp điện cho động cơ bị hở mạch do đứt dây",
-      "Tụ điện khởi động bị hỏng",
-      "Dây quấn động cơ bị cháy"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 162,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 2,
-    "question": "Trong động cơ chạy tụ, dây quấn phụ mắc nối tiếp với tụ C là để",
-    "options": [
-      "Ngăn cản dòng điện chạy qua dây quấn phụ",
-      "Dòng điện trong hai dây quấn chính và phụ được ổn định",
-      "Tạo sự lệch pha của dòng điện trong cuộn khởi động và cuộn làm việc",
-      "Tích điện, dự trữ điện cung cấp cho mạch khi sụt áp"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 163,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 3,
-    "question": "Hình vẽ bên là kí hiệu của:",
-    "options": [
-      "động cơ điện.",
-      "máy phát điện.",
-      "công tơ điện.",
-      "máy biến áp."
-    ],
-    "correct_index": 0,
-    "image": "data/symbol_motor.png"
-  },
-  {
-    "id": 164,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 4,
-    "question": "Sơ đồ cấp điện cho nhà chung cư theo thứ tự thế nào là đú",
-    "options": [
-      "Tủ điện tổng; trạm biến áp; tủ điện tầng; bảng điện; các tải của căn hộ",
-      "Trạm biến áp; tủ điện tổng; tủ điện tầng; bảng điện; các tải của căn hộ",
-      "Tủ điện tầng; trạm biến áp; tủ điện tổng; bảng điện; các tải của căn hộ",
-      "Bảng điện; tủ điện tầng; trạm biến áp; tủ điện tổng; các tải của căn hộ"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 165,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 5,
-    "question": "Khi thiết bị điện bị rò điện ra vỏ thì có tác hại là",
-    "options": [
-      "Thiết bị không hoạt động được",
-      "Thiết bị không hoạt động được và nguy hiểm cho người sử dụng",
-      "Nguy hiểm cho người sử dụng khi chạm vào vỏ thiết bị",
-      "Gây nguy hiểm cho người sử dụng và thiết bị dễ bị quá tải"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 166,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 6,
-    "question": "Sử dụng thiết bị đo nào để kiểm tra cách điện động cơ, cáp điện",
-    "options": [
-      "Đồng  hồ vạn năng",
-      "Đồng hồ ampe kìm",
-      "Đồng hồ đo điện trở đất Teraohm",
-      "Đồng hồ Megaohm"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 167,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 7,
-    "question": "Công suất điện được tính",
-    "options": [
-      "P = U × I",
-      "P = U / I",
-      "P = I / R",
-      "P = R / U"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 168,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 8,
-    "question": "Để thể hiện rõ mối liên hệ về điện của các phần tử trong mạch điện ta dùng",
-    "options": [
-      "Sơ đồ cấu tạo của mạch điện",
-      "Sơ đồ lắp đặt của mạch điện",
-      "Sơ đồ nguyên lí của mạch điện",
-      "Sơ đồ nguyên lí và cấu tạo của mạch điện"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 169,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 9,
-    "question": "Vị trí và vai trò của điện năng trong sản xuất và đời sống là :",
-    "options": [
-      "Cải tiến máy móc và sản xuất tập trung.",
-      "Sản xuất và xuất khẩu sang nước bạn.",
-      "Tạo sự phát triển ổn định kinh tế xã hội.",
-      "Nâng cao năng suất, cải thiện đời sống."
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 170,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 10,
-    "question": "Tiết diện 1,5mm2 dây điện đồng có thể chịu tối đa bao nhiêu ampe?",
-    "options": [
-      "2A",
-      "30A",
-      "4A",
-      "6A"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 171,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 11,
-    "question": "Đơn vị đo công suất tiêu thụ điện",
-    "options": [
-      "V",
-      "A",
-      "Ω",
-      "W"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 172,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 12,
-    "question": "Đo dòng điện đầu ra của một ổn áp 10A bằng ampe kế được 11A, ta kết luận",
-    "options": [
-      "Ổn áp đang hoạt động bình thường",
-      "Ổn áp đã bị cháy",
-      "Ổn áp đang bị quá tải",
-      "Ổn áp bị giảm công suất"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 173,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 13,
-    "question": "Điện áp ra của máy biến áp được lấy từ",
-    "options": [
-      "Hai đầu dây quấn stato.",
-      "Hai đầu dây quấn roto.",
-      "Hai đầu dây quấn sơ cấp.",
-      "Hai đầu dây thứ cấp."
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 174,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 14,
-    "question": "Mạch song song có",
-    "options": [
-      "Dòng điện bằng nhau",
-      "Điện áp bằng nhau",
-      "Điện trở bằng nhau",
-      "Công suất bằng nhau"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 175,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 15,
-    "question": "Rơ le nhiệt dùng để",
-    "options": [
-      "Bảo vệ quá tải động cơ",
-      "Tăng điện áp",
-      "Đo điện",
-      "Giảm dòng"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 176,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 16,
-    "question": "Cầu chì là khí cụ dùng để",
-    "options": [
-      "Bảo vệ mạch điện.",
-      "Đóng cắt thiết bị điện.",
-      "Bảo vệ quá tải và ngắn mạch cho thiết bị và đường dây.",
-      "Bảo vệ quá tải cho thiết bị điện và đường dây."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 177,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 17,
-    "question": "Số cuộn dây quấn làm việc của động cơ điện 3 pha là",
-    "options": [
-      "Một.",
-      "Hai.",
-      "Ba.",
-      "Bốn."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 178,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 18,
-    "question": "Một mạch điện gồm nhiều bóng đèn mắc nối tiếp, nếu có một bóng bị đứt thì",
-    "options": [
-      "Một số bóng đèn sáng, một số bóng đèn không sáng.",
-      "Các bóng đèn sáng bình thường ngoại trừ bóng đứt.",
-      "Các bóng đèn sáng mờ.",
-      "Tất cả các bóng dèn trong mạch đều không sáng"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 179,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 19,
-    "question": "Để đo điện năng tiêu thụ ta dùng",
-    "options": [
-      "Oát kế",
-      "Ampe kế",
-      "Vôn kế",
-      "Công tơ"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 180,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 20,
-    "question": "Mục tiêu của nghề điện công nghiệp là sau khi học xong chương trình người học cần phải đạt được về",
-    "options": [
-      "Kĩ năng, thái độ.",
-      "Kiến thức, kĩ năng, thái độ.",
-      "Kiến thức, kĩ năng.",
-      "Kiến thức, thái độ."
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 181,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 21,
-    "question": "Giải thoát nạn nhân bị điện giật khỏi nguồn điện hạ áp bằng cách",
-    "options": [
-      "Dùng tay kéo ngay nạn nhân ra khỏi nguồn điện.",
-      "Báo cho điện lực cắt điện rồi mới kéo nạn nhân ra khỏi nguồn điện.",
-      "Cắt cầu dao hoặc gỡ cầu chì rồi lót tay khô ráo để kéo nạn nhân khỏi nguồn điện.",
-      "Cả 3 cách trên đều đúng."
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 182,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 22,
-    "question": "Khi bị điện giật cần",
-    "options": [
-      "Tách nạn nhân khỏi nguồn điện",
-      "Dùng tay không kéo nạn nhân khỏi nguồn điện",
-      "Để nằm yên",
-      "Bỏ đi"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 183,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 23,
-    "question": "Mạch nối tiếp có đặc điểm",
-    "options": [
-      "Dòng điện bằng nhau",
-      "Điện áp bằng nhau",
-      "Công suất bằng nhau",
-      "Điện trở bằng nhau"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 184,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 24,
-    "question": "Tiết diện 1,5mm2 dây điện đồng có thể chịu tải công suất tối đa bao nhiêu?",
-    "options": [
-      "1.5 - 2 kW",
-      "0.5 - 1 kW",
-      "3 - 4 kW",
-      "5 - 6,5 kW"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 185,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 25,
-    "question": "Thiết bị đo dòng điện",
-    "options": [
-      "Vôn kế",
-      "Ôm kế",
-      "Ampe kế",
-      "Watt kế"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 186,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 26,
-    "question": "Khi sử dụng đồng hồ đo điện vạn năng dạng hiện số cần chú ý",
-    "options": [
-      "Xác định đại lượng cần đo, chọn thang đo thích hợp",
-      "Kiểm tra pin, xác định đại lượng cần đo, chọn thang đo thích hợp",
-      "Xác định đại lượng cần đo và chỉnh về thang đo lớn nhất rồi giảm dần",
-      "Kiểm tra pin, xác định đại lượng cần đo, chỉnh thang đo nhỏ nhất rồi tăng dầ"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 187,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 27,
-    "question": "Đại lượng đo ánh sáng nào được quan tâm nhất khi tính toán chiếu sáng",
-    "options": [
-      "Quang thông.",
-      "Độ chói.",
-      "Độ rọi.",
-      "Công suất đèn."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 188,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 28,
-    "question": "Mạch điện có hai công tắc được bố trí ở hai vị trí khác nhau để điều khiển một đèn, đó là",
-    "options": [
-      "Mạch đèn đơn giản dạng độc lập.",
-      "Mạch đèn cầu thang.",
-      "Mạch đèn sáng luân phiên.",
-      "Mạch đèn thay đổi ánh sáng."
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 189,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 29,
-    "question": "Đơn vị của cảm dung (điện cảm/dung kháng)",
-    "options": [
-      "H",
-      "F",
-      "R",
-      "K"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 190,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 2",
-    "stt": 30,
-    "question": "Đây là kí hiệu của các phần tử nào",
-    "options": [
-      "Chuông điện và máy biến áp",
-      "Công tơ điện và máy biến áp",
-      "Chuông điện và trạm biến áp",
-      "Công tơ điện và trạm biến áp"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 191,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 1,
-    "question": "Điện áp ra của máy biến áp được lấy từ",
-    "options": [
-      "Hai đầu dây quấn stato.",
-      "Hai đầu dây quấn roto.",
-      "Hai đầu dây quấn sơ cấp.",
-      "Hai đầu dây thứ cấp."
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 192,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 2,
-    "question": "Đơn vị đo công suất điện",
-    "options": [
-      "V",
-      "A",
-      "Ω",
-      "W"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 193,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 3,
-    "question": "Theo quy chuẩn, điện trở tiếp địa của hệ thống điện hạ thế phải đạt?",
-    "options": [
-      "≤ 10 Ω",
-      "≤ 4 Ω",
-      "≤ 1 Ω",
-      "≤ 0.5 Ω"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 194,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 4,
-    "question": "Nghề điện công nghiệp hoạt động chủ yếu trong các lĩnh vực nào?",
-    "options": [
-      "Sản xuất, truyền tải, phân phối điện.",
-      "Chế tạo vật tư ngành điện.",
-      "Sử dụng điện phục vụ đời sống, điều khiển tự động hóa sản xuất.",
-      "Mua bán vật tư ngành điện."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 195,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 5,
-    "question": "Động cơ 3 pha quay ngược trong trường hợp nào",
-    "options": [
-      "Khi sử dụng điện 220V",
-      "Khi sử dụng điện 380V",
-      "Khi đấu sai thứ tự pha",
-      "Khi đấu sai tiếp điểm"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 196,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 6,
-    "question": "Chọn câu sai. Các biện pháp chủ động phòng tránh tai nạn điện là",
-    "options": [
-      "Đảm bảo tốt cách điện các thiết bị điện.",
-      "Sử dụng điện áp cao.",
-      "Sử dụng những biển báo, tín hiệu nguy hiểm.",
-      "Sử dụng các phương tiện phòng hộ, an toàn."
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 197,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 7,
-    "question": "Đồng hồ đo điện vạn năng dùng để đo :",
-    "options": [
-      "Điện áp xoay chiều, điện áp một chiều, điện trở, dòng điện một chiều",
-      "Điện áp một chiều, điện áp xoay chiều, điện trở cách điện máy điện",
-      "Điện áp xoay chiều, dòng điện xoay chiều, điện trở cách điện",
-      "Điện trở, điện áp và  dòng điện máy điện"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 198,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 8,
-    "question": "Tiết diện 1,5mm2 dây điện đồng có thể chịu tải công suất tối đa bao nhiêu?",
-    "options": [
-      "1.5 - 2 kW",
-      "0.5 - 1 kW",
-      "3 - 4 kW",
-      "5 - 6,5 kW"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 199,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 9,
-    "question": "Khi bị điện giật cần",
-    "options": [
-      "Tách nạn nhân khỏi nguồn điện",
-      "Dùng tay không kéo nạn nhân khỏi nguồn điện",
-      "Để nằm yên",
-      "Bỏ đi"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 200,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 10,
-    "question": "Yêu cầu điện trở tiếp địa hệ thống tiếp địa trạm biến áp cần đạt được là:",
-    "options": [
-      "≥ 10 Ohm (W)",
-      "≤ 10 Ohm (W)",
-      "≤ 4 Ohm (W)",
-      "≤ 6 Ohm (W)"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 201,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 11,
-    "question": "Đơn vị đo cường độ dòng điện xoay chiều",
-    "options": [
-      "Ampe (A)",
-      "Ohm (W)",
-      "Volt (V)",
-      "Hec (Hz)"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 202,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 12,
-    "question": "Khi đo điện áp xoay chiều cần bắt đầu từ thang đo lớn nhất rồi giảm dần là để",
-    "options": [
-      "tránh gây sai số lớn khi đọc kết quả đo.",
-      "tránh làm hỏng que đo.",
-      "tránh làm hỏng mạch điện của dụng cụ đo.",
-      "tránh không đọc được kết quả đo."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 203,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 13,
-    "question": "Rơ le nhiệt dùng để",
-    "options": [
-      "Bảo vệ quá tải động cơ",
-      "Tăng điện áp",
-      "Đo điện",
-      "Giảm dòng"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 204,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 14,
-    "question": "Đại lượng đo ánh sáng nào được quan tâm nhất khi tính toán chiếu sáng",
-    "options": [
-      "Quang thông.",
-      "Độ chói.",
-      "Độ rọi.",
-      "Công suất đèn."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 205,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 15,
-    "question": "Yêu cầu điện trở tiếp địa hệ thống chống sét, tủ điện, motor cần đạt được là:",
-    "options": [
-      "≥ 10 Ohm (W)",
-      "≤ 10 Ohm (W)",
-      "≤ 4 Ohm (W)",
-      "≤ 6 Ohm (W)"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 206,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 16,
-    "question": "Máy bơm nước gia đình, máy giặt dùng nguồn điện",
-    "options": [
-      "Xoay chiều 220V–50Hz.",
-      "Xoay chiều 380 V.",
-      "Một chiều 220 V-50Hz.",
-      "Một chiều 380V."
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 207,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 17,
-    "question": "Đo dòng điện đầu ra của một ổn áp 10A bằng ampe kế được 11A, ta kết luận",
-    "options": [
-      "Ổn áp đang hoạt động bình thường",
-      "Ổn áp đã bị cháy",
-      "Ổn áp đang bị quá tải",
-      "Ổn áp bị giảm công suất"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 208,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 18,
-    "question": "Chiều cao cột nước bơm của máy bơm được tính",
-    "options": [
-      "Từ vị trí đặt máy đến bề mặt mực nước dưới mà máy có thể hút lên bình thường",
-      "Từ vị trí đặt máy đến vị trí cao nhất mà máy có thể đẩy nước lên được",
-      "Từ miệng ống hút đến vị trí cao nhất mà máy có thể đẩy nước lên được",
-      "Từ miệng ống hút đến vị trí đặt máy"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 209,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 19,
-    "question": "Khi sử dụng đồng hồ đo điện vạn năng dạng hiện số cần chú ý",
-    "options": [
-      "Xác định đại lượng cần đo, chọn thang đo thích hợp",
-      "Kiểm tra pin, xác định đại lượng cần đo, chọn thang đo thích hợp",
-      "Xác định đại lượng cần đo và chỉnh về thang đo lớn nhất rồi giảm dần",
-      "Kiểm tra pin, xác định đại lượng cần đo, chỉnh thang đo nhỏ nhất rồi tăng dần"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 210,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 20,
-    "question": "Đây là kí hiệu của :",
-    "options": [
-      "Động cơ điện.",
-      "Máy biến áp.",
-      "Công tơ  điện.",
-      "Máy phát điện."
-    ],
-    "correct_index": 0,
-    "image": "data/symbol_transformer.png"
-  },
-  {
-    "id": 211,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 21,
-    "question": "Thiết bị đo điện cách điện",
-    "options": [
-      "Mega ôm (Megômmét)",
-      "Ampe kìm",
-      "Ampe ôm",
-      "Megger"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 212,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 22,
-    "question": "Mạch song song có",
-    "options": [
-      "Dòng điện bằng nhau",
-      "Điện áp bằng nhau",
-      "Điện trở bằng nhau",
-      "Công suất bằng nhau"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 213,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 23,
-    "question": "Cọc nối đất để tránh “chạm vỏ” thường  được dùng bảo vệ thiết bị điện như:",
-    "options": [
-      "Các loại đèn chiếu sáng.",
-      "Động cơ điện, tủ lạnh, máy hàn.",
-      "Các bóng đèn, quạt gió.",
-      "Quạt gió, máy sấy tóc, bếp điện."
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 214,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 24,
-    "question": "Đấu sao-tam giác yêu cầu",
-    "options": [
-      "Motor có 6 đầu dây riêng U/V/W - X/Y/Z",
-      "3 đầu dây",
-      "9 đầu dây bắt buộc",
-      "Chỉ cần 2 đầu"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 215,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 25,
-    "question": "Số cuộn dây quấn làm việc của động cơ điện 3 pha là",
-    "options": [
-      "Một.",
-      "Hai.",
-      "Ba.",
-      "Bốn."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 216,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 26,
-    "question": "Để thể hiện rõ mối liên hệ về điện của các phần tử trong mạch điện ta dùng",
-    "options": [
-      "Sơ đồ cấu tạo của mạch điện",
-      "Sơ đồ lắp đặt của mạch điện",
-      "Sơ đồ nguyên lí của mạch điện",
-      "Sơ đồ nguyên lí và cấu tạo của mạch điện"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 217,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 27,
-    "question": "Điện áp nguy hiểm đối với người",
-    "options": [
-      "> 36V",
-      "> 12V",
-      "> 6V",
-      "> 3V"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 218,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 28,
-    "question": "Sơ đồ cấp điện cho nhà chung cư theo thứ tự thế nào là đú",
-    "options": [
-      "Tủ điện tổng; trạm biến áp; tủ điện tầng; bảng điện; các tải của căn hộ",
-      "Trạm biến áp; tủ điện tổng; tủ điện tầng; bảng điện; các tải của căn hộ",
-      "Tủ điện tầng; trạm biến áp; tủ điện tổng; bảng điện; các tải của căn hộ",
-      "Bảng điện; tủ điện tầng; trạm biến áp; tủ điện tổng; các tải của căn hộ"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 219,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 29,
-    "question": "Đo điện trở hai đầu của cuộn dây cho giá trị R = ∞ chứng tỏ rằng :",
-    "options": [
-      "Cuộn dây bị ngắn mạch",
-      "Cuộn dây bị ẩm nên điện trở tăng",
-      "Cuộn dây bị đứt",
-      "Cuộn dây bị chập một số vòng"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 220,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 30,
-    "question": "Đơn vị của cảm dung (điện cảm/dung kháng)",
-    "options": [
-      "H",
-      "F",
-      "R",
-      "K"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 221,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 1,
-    "question": "Tiết diện 1,5mm2 dây điện đồng có thể chịu tối đa bao nhiêu ampe?",
-    "options": [
-      "2A",
-      "30A",
-      "4A",
-      "6A"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 222,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 2,
-    "question": "Đóng điện vào máy bơm nước, động cơ điện của bơm không quay là do",
-    "options": [
-      "Mất điện, hở mạch, động cơ bị cháy.",
-      "Mất nước mồi, dây quấn động cơ bị chập.",
-      "Mất điện nguồn, đầu ống hút bị tắc.",
-      "Đầu ống hút bị tắc, nguồn nước đầu hút bị cạn"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 223,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 3,
-    "question": "Sử dụng thiết bị đo nào để kiểm tra cách điện động cơ, cáp điện",
-    "options": [
-      "Đồng  hồ vạn năng",
-      "Đồng hồ ampe kìm",
-      "Đồng hồ đo điện trở đất Teraohm",
-      "Đồng hồ Megaohm"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 224,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 4,
-    "question": "Biện pháp thi công an toàn ngoài trời khi có trời mưa",
-    "options": [
-      "Tiếp tục làm việc bình thường để kịp tiến độ.",
-      "Dùng tay trần thao tác nhanh để tránh bị ướt lâu.",
-      "Ngừng thi công hoặc chỉ làm khi đã cắt nguồn điện, sử dụng dụng cụ và đồ bảo hộ cách điện đầy đủ.",
-      "Đứng trên nền đất ướt và kiểm tra dây điện."
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 225,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 5,
-    "question": "Đây là kí hiệu của :",
-    "options": [
-      "Động cơ điện.",
-      "Máy biến áp.",
-      "Công tơ  điện.",
-      "Máy phát điện."
-    ],
-    "correct_index": 0,
-    "image": "data/symbol_transformer.png"
-  },
-  {
-    "id": 226,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 6,
-    "question": "Điện áp nguy hiểm đối với người",
-    "options": [
-      "> 36V",
-      "> 12V",
-      "> 6V",
-      "> 3V"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 227,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 7,
-    "question": "Đo dòng điện đầu ra của một ổn áp 10A bằng ampe kế được 11A, ta kết luận",
-    "options": [
-      "Ổn áp đang hoạt động bình thường",
-      "Ổn áp đã bị cháy",
-      "Ổn áp đang bị quá tải",
-      "Ổn áp bị giảm công suất"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 228,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 8,
-    "question": "Khi đóng điện vào máy bơm nước, có điện vào, động cơ rung nhẹ nhưng không quay là do",
-    "options": [
-      "Điện áp nguồn quá cao so với định mức",
-      "Mạch cấp điện cho động cơ bị hở mạch do đứt dây",
-      "Tụ điện khởi động bị hỏng",
-      "Dây quấn động cơ bị cháy"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 229,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 9,
-    "question": "Khi khởi động máy bơm nước mà áp tô mát tự động ngắt điện hoặc đứt cầu chì là do",
-    "options": [
-      "Động cơ bị rò điện.",
-      "Dây quấn động cơ bị chập",
-      "Mất điện.",
-      "Không có nguồn nước cấp."
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 230,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 10,
-    "question": "Khi cuộn dây động cơ bị ẩm ta cần làm như sau :",
-    "options": [
-      "Tháo động cơ, phơi nắng",
-      "Tháo động cơ để trong mát một thời gian",
-      "Tháo động cơ, rửa sạch bằng nước, phơi nắng",
-      "Tháo động cơ, rửa sạch bằng xăng, dùng máy sấy khô"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 231,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 11,
-    "question": "Máy bơm nước gia đình, máy giặt dùng nguồn điện",
-    "options": [
-      "Xoay chiều 220V–50Hz.",
-      "Xoay chiều 380 V.",
-      "Một chiều 220 V-50Hz.",
-      "Một chiều 380V."
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 232,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 12,
-    "question": "Động cơ 3 pha có mấy kiểu đấu dây cơ bản",
-    "options": [
-      "1 Kiểu",
-      "2 Kiểu",
-      "3 Kiểu",
-      "4 Kiểu"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 233,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 13,
-    "question": "Tiết diện 1,5mm2 dây điện đồng có thể chịu tải công suất tối đa bao nhiêu?",
-    "options": [
-      "1.5 - 2 kW",
-      "0.5 - 1 kW",
-      "3 - 4 kW",
-      "5 - 6,5 kW"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 234,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 14,
-    "question": "Thiết bị đo điện cách điện",
-    "options": [
-      "Mega ôm (Megômmét)",
-      "Ampe kìm",
-      "Ampe ôm",
-      "Megger"
-    ],
-    "correct_index": 0
-  },
-  {
-    "id": 235,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 15,
-    "question": "Để thể hiện rõ mối liên hệ về điện của các phần tử trong mạch điện ta dùng",
-    "options": [
-      "Sơ đồ cấu tạo của mạch điện",
-      "Sơ đồ lắp đặt của mạch điện",
-      "Sơ đồ nguyên lí của mạch điện",
-      "Sơ đồ nguyên lí và cấu tạo của mạch điện"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 236,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 16,
-    "question": "Đây là kí hiệu của :",
-    "options": [
-      "Động cơ điện.",
-      "Máy biến áp.",
-      "Công tơ điện.",
-      "Máy phát điện."
-    ],
-    "correct_index": 1,
-    "image": "data/symbol_transformer.png"
-  },
-  {
-    "id": 237,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 17,
-    "question": "Lượng nước máy bơm bơm được trong một đơn vị thời gian gọi là",
-    "options": [
-      "Tốc độ bơm",
-      "Lưu lượng",
-      "Công suất bơm",
-      "Dung lượng máy bơm"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 238,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 18,
-    "question": "Đo điện trở hai đầu của cuộn dây cho giá trị R = ∞ chứng tỏ rằng :",
-    "options": [
-      "Cuộn dây bị ngắn mạch",
-      "Cuộn dây bị ẩm nên điện trở tăng",
-      "Cuộn dây bị đứt",
-      "Cuộn dây bị chập một số vòng"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 239,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 19,
-    "question": "Chiều cao cột nước bơm của máy bơm được tính",
-    "options": [
-      "Từ vị trí đặt máy đến bề mặt mực nước dưới mà máy có thể hút lên bình thường",
-      "Từ vị trí đặt máy đến vị trí cao nhất mà máy có thể đẩy nước lên được",
-      "Từ miệng ống hút đến vị trí cao nhất mà máy có thể đẩy nước lên được",
-      "Từ miệng ống hút đến vị trí đặt máy"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 240,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 20,
-    "question": "Yêu cầu điện trở tiếp địa hệ thống chống sét, tủ điện, motor cần đạt được là:",
-    "options": [
-      "≥ 10 Ohm (W)",
-      "≤ 10 Ohm (W)",
-      "≤ 4 Ohm (W)",
-      "≤ 6 Ohm (W)"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 241,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 21,
-    "question": "Giải thoát nạn nhân bị điện giật khỏi nguồn điện hạ áp bằng cách",
-    "options": [
-      "Dùng tay kéo ngay nạn nhân ra khỏi nguồn điện.",
-      "Báo cho điện lực cắt điện rồi mới kéo nạn nhân ra khỏi nguồn điện.",
-      "Cắt cầu dao hoặc gỡ cầu chì rồi lót tay khô ráo để kéo nạn nhân khỏi nguồn điện.",
-      "Cả 3 cách trên đều đúng."
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 242,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 22,
-    "question": "Yêu cầu điện trở tiếp địa hệ thống tiếp địa trạm biến áp cần đạt được là:",
-    "options": [
-      "≥ 10 Ohm (W)",
-      "≤ 10 Ohm (W)",
-      "≤ 4 Ohm (W)",
-      "≤ 6 Ohm (W)"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 243,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 23,
-    "question": "Cọc nối đất để tránh “chạm vỏ” thường  được dùng bảo vệ thiết bị điện như:",
-    "options": [
-      "Các loại đèn chiếu sáng.",
-      "Động cơ điện, tủ lạnh, máy hàn.",
-      "Các bóng đèn, quạt gió.",
-      "Quạt gió, máy sấy tóc, bếp điện."
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 244,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 24,
-    "question": "Một mạch điện gồm nhiều bóng đèn mắc song song, nếu có một bóng bị đứt thì",
-    "options": [
-      "Một số bóng đèn sáng, một số bóng đèn không sáng.",
-      "Các bóng đèn sáng bình thường ngoại trừ bóng đứt.",
-      "Các bóng đèn sáng mờ.",
-      "Tất cả các bóng dèn trong mạch đều không sáng."
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 245,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 25,
-    "question": "Chọn câu đúng trong các câu sau",
-    "options": [
-      "Nhờ ampe kế mắc nối tiếp với mạng điện trong nhà để xác định trị số điện áp.",
-      "Nhờ dụng cụ đo lường điện mà ta có thể phát hiện được hư hỏng trong thiết bị hay trong mạch điện.",
-      "Nhờ vôn kế mắc nối tiếp với mạng điện trong nhà để xác định trị số điện áp.",
-      "Nhờ ampe kế mắc song song với mạng điện trong nhà để xác định điện áp."
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 246,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 26,
-    "question": "Khi thiết bị điện bị rò điện ra vỏ thì có tác hại là",
-    "options": [
-      "Thiết bị không hoạt động được",
-      "Thiết bị không hoạt động được và nguy hiểm cho người sử dụng",
-      "Nguy hiểm cho người sử dụng khi chạm vào vỏ thiết bị",
-      "Gây nguy hiểm cho người sử dụng và thiết bị dễ bị quá tải"
-    ],
-    "correct_index": 2
-  },
-  {
-    "id": 247,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 27,
-    "question": "Để đo điện năng tiêu thụ ta dùng",
-    "options": [
-      "Oát kế",
-      "Ampe kế",
-      "Vôn kế",
-      "Công tơ"
-    ],
-    "correct_index": 3
-  },
-  {
-    "id": 248,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 28,
-    "question": "Mạch song song có",
-    "options": [
-      "Dòng điện bằng nhau",
-      "Điện áp bằng nhau",
-      "Điện trở bằng nhau",
-      "Công suất bằng nhau"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 249,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 29,
-    "question": "Tiết diện dây dẫn chọn cho đường dây trục chính được tính toán theo",
-    "options": [
-      "Tổng điện áp định mức của các thiết bị điện trong mạng điện",
-      "Cường độ dòng điện sử dụng của mạng điện ( tính theo công suất tổng yêu cầu)",
-      "Cường độ dòng điện sử dụng của thiết bị có công suất lớn nhất trong mạng điện",
-      "Điện áp định mức của thiết bị có công suất lớn nhất trong mạng điện"
-    ],
-    "correct_index": 1
-  },
-  {
-    "id": 250,
-    "type": "multiple_choice",
-    "category": "Lý thuyết - Thợ điện",
-    "exam_set": "Thợ Điện Bậc 3",
-    "stt": 30,
-    "question": "Số cuộn dây quấn làm việc của động cơ điện 3 pha là",
-    "options": [
-      "Một.",
-      "Hai.",
-      "Ba.",
-      "Bốn."
     ],
     "correct_index": 2
   },
@@ -3002,5 +745,2805 @@ const QUESTIONS = [
       "5 %"
     ],
     "correct_index": 1
+  },
+  {
+    "id": "q_el3_01_37",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Tuyến có từ 2 ống điện trở lên khoảng cách giữa 2 cạnh ống tối thiểu là bao nhiêu?",
+    "options": [
+      "5mm",
+      "10mm",
+      "15mm",
+      "20mm"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_01_7",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Điện trở của dây dẫn phụ thuộc chủ yếu vào:",
+    "options": [
+      "Nhiệt độ",
+      "Đường kính",
+      "Chiều dài",
+      "Cả A, B, C"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_01_24",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Dây trung tính (N) nên có tiết diện bao nhiêu so với dây pha?",
+    "options": [
+      "1/3",
+      "≤ 1/2",
+      "= 1",
+      "≤ 1/4"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_01_5",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Tụ bù có tác dụng:",
+    "options": [
+      "Tăng hệ số công suất",
+      "Giảm dòng ngắn mạch",
+      "Tăng điện áp",
+      "Tăng tổn hao"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_01_6",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Khi đóng điện thử tải, cầm kiểm tra thứ tự pha bằng:",
+    "options": [
+      "Bút thử điện",
+      "Đồng hồ vạn năng",
+      "Thiết bị kiểm tra pha",
+      "Ampe kìm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_01_80",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Đo điện trở hai đầu của cuộn dây cho giá trị R = ∞ chứng tỏ rằng :",
+    "options": [
+      "Cuộn dây bị ngắn mạch",
+      "Cuộn dây bị ẩm nên điện trở tăng",
+      "Cuộn dây bị đứt",
+      "Cuộn dây bị chập một số vòng"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_01_67",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Khi bị điện giật cần",
+    "options": [
+      "Tách nạn nhân khỏi nguồn điện",
+      "Dùng tay không kéo nạn nhân khỏi nguồn điện",
+      "Để nằm yên",
+      "Bỏ đi"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_01_61",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Đóng điện vào máy bơm nước, động cơ điện của bơm không quay là do",
+    "options": [
+      "Mất điện, hở mạch, động cơ bị cháy.",
+      "Mất nước mồi, dây quấn động cơ bị chập.",
+      "Mất điện nguồn, đầu ống hút bị tắc.",
+      "Đầu ống hút bị tắc, nguồn nước đầu hút bị cạn"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_01_84",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Động cơ điện có các phần chính là",
+    "options": [
+      "Stato là phần quay và roto là phần tĩnh.",
+      "Stato là phần tĩnh và roto là phần quay.",
+      "",
+      ""
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_01_10",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Khi tăng điện áp cấp nguồn, công suất tiêu thụ:",
+    "options": [
+      "Tăng",
+      "Giảm",
+      "Không đổi",
+      "Tùy tải"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_01_50",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Theo tiêu chuẩn quy định khi nghiệm thu tủ cấp điện, thì các khe hở của nắp đậy đều và không vượt quá bao nhiêu mm?",
+    "options": [
+      "1 mm",
+      "2 mm",
+      "3 mm",
+      "4 mm"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_01_78",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Khi khởi động máy bơm nước mà áp tô mát tự động ngắt điện hoặc đứt cầu chì là do",
+    "options": [
+      "Động cơ bị rò điện.",
+      "Dây quấn động cơ bị chập",
+      "Mất điện.",
+      "Không có nguồn nước cấp."
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_01_53",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Đối với dây dẫn có tiết diện từ  từ bao nhiêu mm2 trở lên phải được ép đầu cos khi kết nối với tủ điện và thiết bị?",
+    "options": [
+      "2.5 mm2",
+      "4 mm2",
+      "6 mm2",
+      "10 mm2"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_01_1",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Thiết bị nào dùng để bảo vệ quá dòng cho mạch điện?",
+    "options": [
+      "Contactor",
+      "Rơ-le nhiệt",
+      "CB (Circuit Breaker)",
+      "Aptomat"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_01_47",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Cấp bảo vệ IP tối thiểu cho ổ cắm khu vực ẩm ướt?",
+    "options": [
+      "IP20",
+      "IP33",
+      "IP44",
+      "IP55"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_01_18",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Thiết bị đóng cắt trong tủ điện tổng phải lắp ở độ cao bao nhiêu tính từ sàn?",
+    "options": [
+      "1.2 - 1.5 m",
+      "1.5 - 1.7 m",
+      "0.8 - 1.0 m",
+      "Trên 2.0 m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_01_44",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Công tắc, ổ cắm nên cách mép cửa  bao nhiêu?",
+    "options": [
+      "5cm",
+      "15 - 20cm",
+      "30 cm",
+      "40 cm"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_01_74",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Điện áp nguy hiểm đối với người",
+    "options": [
+      "> 36V",
+      "> 12V",
+      "> 6V",
+      "> 3V"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_01_63",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Chiều cao cột nước bơm của máy bơm được tính",
+    "options": [
+      "Từ vị trí đặt máy đến bề mặt mực nước dưới mà máy có thể hút lên bình thường",
+      "Từ vị trí đặt máy đến vị trí cao nhất mà máy có thể đẩy nước lên được",
+      "Từ miệng ống hút đến vị trí cao nhất mà máy có thể đẩy nước lên được",
+      "Từ miệng ống hút đến vị trí đặt máy"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_01_82",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 01",
+    "type": "multiple_choice",
+    "question": "Sử dụng thiết bị đo nào để kiểm tra cách điện động cơ, cáp điện",
+    "options": [
+      "Đồng  hồ vạn năng",
+      "Đồng hồ ampe kìm",
+      "Đồng hồ đo điện trở đất Teraohm",
+      "Đồng hồ Megaohm"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_02_43",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Cáp ngầm 22kV cách mép móng tối thiểu?",
+    "options": [
+      "0,5m",
+      "0,3m",
+      "0,7m",
+      "1,0m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_02_74",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Điện áp nguy hiểm đối với người",
+    "options": [
+      "> 36V",
+      "> 12V",
+      "> 6V",
+      "> 3V"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_02_60",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Yêu cầu điện trở tiếp địa hệ thống tiếp địa trạm biến áp cần đạt được là:",
+    "options": [
+      "≥ 10 Ohm (W)",
+      "≤ 10 Ohm (W)",
+      "≤ 4 Ohm (W)",
+      "≤ 6 Ohm (W)"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_02_5",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Tụ bù có tác dụng:",
+    "options": [
+      "Tăng hệ số công suất",
+      "Giảm dòng ngắn mạch",
+      "Tăng điện áp",
+      "Tăng tổn hao"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_02_52",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Đối với các thiết bị thông tin liên lạc, truyền hình cáp thì khi lắp đặt, độ dài đầu chờ phải dài tối thiểu bao nhiêu mm?",
+    "options": [
+      "100 mm",
+      "200 mm",
+      "300 mm",
+      "400 mm"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_02_36",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Khe hở tối thiểu giữa hai ống luồn dây nối cần:",
+    "options": [
+      "0.5mm",
+      "1mm",
+      "Không có khoảng hở",
+      "5mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_02_32",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Hộp nối dây trong trần chống cháy phải chịu lửa bao lâu?",
+    "options": [
+      "1h",
+      "2h",
+      "3h",
+      "4h"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_02_40",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Khi lắp máng cáp chồng tầng, khoảng cách tối thiểu giữa hai tầng máng là?",
+    "options": [
+      "100mm",
+      "150m",
+      "200mm",
+      "300mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_02_75",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Rơ le nhiệt dùng để",
+    "options": [
+      "Bảo vệ quá tải động cơ",
+      "Tăng điện áp",
+      "Đo điện",
+      "Giảm dòng"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_02_9",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Rơ-le trung gian thường dùng để:",
+    "options": [
+      "Đóng cắt tải",
+      "Truyền tín hiệu điều khiển",
+      "Bảo vệ chạm đất",
+      "Giảm dòng khởi động"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_02_41",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Khi thi công ống luồn dây âm tường, khoảng cách giữa các điểm cố định ống là bao nhiêu?",
+    "options": [
+      "≤ 0,8m",
+      "≤ 1,2m",
+      "≤ 1,5m",
+      "≤ 2,0m"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_02_35",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Khi kiểm tra sụt áp đường dây, giá trị sụt áp cho phép thường không quá:",
+    "options": [
+      "3%",
+      "5%",
+      "10%",
+      "15%"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_02_25",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Số lượng dây trong ống luồn không vượt quá bao nhiêu % tiết diện ống?",
+    "options": [
+      "30%",
+      "50%",
+      "40%",
+      "60%"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_02_77",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Khi đo điện áp xoay chiều cần bắt đầu từ thang đo lớn nhất rồi giảm dần là để",
+    "options": [
+      "tránh gây sai số lớn khi đọc kết quả đo.",
+      "tránh làm hỏng que đo.",
+      "tránh làm hỏng mạch điện của dụng cụ đo.",
+      "tránh không đọc được kết quả đo."
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_02_11",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Khi kiểm tra tụ điện, dụng cụ phù hợp là:",
+    "options": [
+      "Ohm kế",
+      "Ampe kế",
+      "Đồng hồ vạn năng (thang điện dung)",
+      "Volt kế"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_02_80",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Đo điện trở hai đầu của cuộn dây cho giá trị R = ∞ chứng tỏ rằng :",
+    "options": [
+      "Cuộn dây bị ngắn mạch",
+      "Cuộn dây bị ẩm nên điện trở tăng",
+      "Cuộn dây bị đứt",
+      "Cuộn dây bị chập một số vòng"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_02_38",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Dây đi âm vách tường phải cách sàn tối thiểu bao nhiêu?",
+    "options": [
+      "100mm",
+      "150m",
+      "200mm",
+      "250mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_02_10",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Khi tăng điện áp cấp nguồn, công suất tiêu thụ:",
+    "options": [
+      "Tăng",
+      "Giảm",
+      "Không đổi",
+      "Tùy tải"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_02_56",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Theo tiêu chuẩn bàn giao các hạng mục xây dựng và kỹ thuật đối với  công tắc phải lắp đặt thế nào để đảm bảo yêu cầu kỹ thuật?",
+    "options": [
+      "Các hạt bật tắt - tắt phải theo hướng lắp đặt, cùng hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp",
+      "Các hạt bật tắt - tắt phải theo hướng lắp đặt, theo hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp",
+      "Các hạt bật tắt - tắt phải cùng hướng lắp đặt, cùng hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp",
+      "Các hạt bật tắt - tắt phải cùng hướng lắp đặt, theo hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_02_62",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 02",
+    "type": "multiple_choice",
+    "question": "Tiết diện 1,5mm2 dây điện đồng có thể chịu tối đa bao nhiêu ampe?",
+    "options": [
+      "2A",
+      "30A",
+      "4A",
+      "6A"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_03_67",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Khi bị điện giật cần",
+    "options": [
+      "Tách nạn nhân khỏi nguồn điện",
+      "Dùng tay không kéo nạn nhân khỏi nguồn điện",
+      "Để nằm yên",
+      "Bỏ đi"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_03_62",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Tiết diện 1,5mm2 dây điện đồng có thể chịu tối đa bao nhiêu ampe?",
+    "options": [
+      "2A",
+      "30A",
+      "4A",
+      "6A"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_03_5",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Tụ bù có tác dụng:",
+    "options": [
+      "Tăng hệ số công suất",
+      "Giảm dòng ngắn mạch",
+      "Tăng điện áp",
+      "Tăng tổn hao"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_03_61",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Đóng điện vào máy bơm nước, động cơ điện của bơm không quay là do",
+    "options": [
+      "Mất điện, hở mạch, động cơ bị cháy.",
+      "Mất nước mồi, dây quấn động cơ bị chập.",
+      "Mất điện nguồn, đầu ống hút bị tắc.",
+      "Đầu ống hút bị tắc, nguồn nước đầu hút bị cạn"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_03_57",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Khoảng cách giữa các kẹp C giữ ống diện, điện nhẹ PVC nổi trên trần là bao nhiêu?",
+    "options": [
+      "< 1200mm",
+      "< 1100mm",
+      "< 1000mm",
+      "< 900mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_03_33",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Điện trở tiếp xúc thanh cái ≤ bao nhiêu?",
+    "options": [
+      "10µΩ",
+      "50µΩ",
+      "100µΩ",
+      "200µΩ"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_03_55",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Theo tiêu chuẩn bàn giao các hạng mục xây dựng và kỹ thuật đối với đèn hắt trần được lắp đặt như thế nào?",
+    "options": [
+      "Đèn hắt trần và các thiết bị kèm theo không bị nhìn thầu khi đứng tại mọi vị trí trong căn hộ, ánh sáng đảm bảo, không bị ngắt quãng",
+      "Đèn hắt trần và các thiết bị kèm theo không bị nhìn thấy khi đứng tại mọi vị trí trong căn hộ, ánh sáng đồng màu, không bị ngắt quãng",
+      "Đèn hắt trần và các thiết bị kèm theo sẽ bị nhìn thấy khi đứng tại mọi vị trí trong căn hộ, ánh sáng đồng màu, không bị ngắt quãng",
+      "Đèn hắt trần và các thiết bị kèm theo không bị nhìn thấy khi đứng tại mọi vị trí trong căn hộ, đèn phải có ánh sáng tốt, ánh sáng đồng màu, không bị ngắt quãng"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_03_83",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Sơ đồ cấp điện cho nhà chung cư theo thứ tự thế nào là đú",
+    "options": [
+      "Tủ điện tổng; trạm biến áp; tủ điện tầng; bảng điện; các tải của căn hộ",
+      "Trạm biến áp; tủ điện tổng; tủ điện tầng; bảng điện; các tải của căn hộ",
+      "Tủ điện tầng; trạm biến áp; tủ điện tổng; bảng điện; các tải của căn hộ",
+      "Bảng điện; tủ điện tầng; trạm biến áp; tủ điện tổng; các tải của căn hộ"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_03_18",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Thiết bị đóng cắt trong tủ điện tổng phải lắp ở độ cao bao nhiêu tính từ sàn?",
+    "options": [
+      "1.2 - 1.5 m",
+      "1.5 - 1.7 m",
+      "0.8 - 1.0 m",
+      "Trên 2.0 m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_03_63",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Chiều cao cột nước bơm của máy bơm được tính",
+    "options": [
+      "Từ vị trí đặt máy đến bề mặt mực nước dưới mà máy có thể hút lên bình thường",
+      "Từ vị trí đặt máy đến vị trí cao nhất mà máy có thể đẩy nước lên được",
+      "Từ miệng ống hút đến vị trí cao nhất mà máy có thể đẩy nước lên được",
+      "Từ miệng ống hút đến vị trí đặt máy"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_03_10",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Khi tăng điện áp cấp nguồn, công suất tiêu thụ:",
+    "options": [
+      "Tăng",
+      "Giảm",
+      "Không đổi",
+      "Tùy tải"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_03_4",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Thiết bị điều khiển đóng cắt cơ điện là:",
+    "options": [
+      "CB",
+      "Contactor",
+      "Cầu dao",
+      "Cầu chì"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_03_43",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Cáp ngầm 22kV cách mép móng tối thiểu?",
+    "options": [
+      "0,5m",
+      "0,3m",
+      "0,7m",
+      "1,0m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_03_11",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Khi kiểm tra tụ điện, dụng cụ phù hợp là:",
+    "options": [
+      "Ohm kế",
+      "Ampe kế",
+      "Đồng hồ vạn năng (thang điện dung)",
+      "Volt kế"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_03_32",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Hộp nối dây trong trần chống cháy phải chịu lửa bao lâu?",
+    "options": [
+      "1h",
+      "2h",
+      "3h",
+      "4h"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_03_12",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Trong sơ đồ điện, ký hiệu \"NO\" nghĩa là:",
+    "options": [
+      "Thường mở",
+      "Thường đóng",
+      "Không hoạt động",
+      "Không nối đất"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_03_41",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Khi thi công ống luồn dây âm tường, khoảng cách giữa các điểm cố định ống là bao nhiêu?",
+    "options": [
+      "≤ 0,8m",
+      "≤ 1,2m",
+      "≤ 1,5m",
+      "≤ 2,0m"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_03_14",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Đối với hệ thống điện hạ thế, điện trở nối đất cho hệ thống chống sét yêu cầu ≤ bao nhiêu?",
+    "options": [
+      "1 Ω",
+      "4 Ω",
+      "10 Ω",
+      "20 Ω"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_03_23",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Khi tủ điện có 2 nguồn cấp (lưới và máy phát), cần lắp thiết bị gì để tránh xung đột?",
+    "options": [
+      "MMCB",
+      "ELCB",
+      "ATS",
+      "Contactor đơn"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_03_78",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 03",
+    "type": "multiple_choice",
+    "question": "Khi khởi động máy bơm nước mà áp tô mát tự động ngắt điện hoặc đứt cầu chì là do",
+    "options": [
+      "Động cơ bị rò điện.",
+      "Dây quấn động cơ bị chập",
+      "Mất điện.",
+      "Không có nguồn nước cấp."
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_04_54",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Hệ thống báo cháy phải đảm bảo liên động với những hệ nào?",
+    "options": [
+      "Quạt hút khói, quạt tăng áp cầu thang",
+      "Thang máy, thang cuốn",
+      "Chữa cháy tự động, hệ cấp gas",
+      "Tất cả đều đúng"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_04_28",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Ổ cắm trong WC cần bảo vệ bằng gì?",
+    "options": [
+      "CB chống dòng rò (ELCB)",
+      "CB tép thông thường",
+      "Cầu chì",
+      "Không yêu cầu"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_04_26",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Thanh N và PE trong tủ điện có được nối chung không?",
+    "options": [
+      "Có",
+      "Có ở mọi tủ",
+      "Không",
+      "Tùy theo tải"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_04_82",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Sử dụng thiết bị đo nào để kiểm tra cách điện động cơ, cáp điện",
+    "options": [
+      "Đồng  hồ vạn năng",
+      "Đồng hồ ampe kìm",
+      "Đồng hồ đo điện trở đất Teraohm",
+      "Đồng hồ Megaohm"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_04_42",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Độ cao lắp công tắc chiếu sáng chuẩn là?",
+    "options": [
+      "1,0  - 1,1 m",
+      "1,2 - 1,4 m",
+      "1,5 - 1,6 m",
+      "1,8 m"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_04_56",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Theo tiêu chuẩn bàn giao các hạng mục xây dựng và kỹ thuật đối với  công tắc phải lắp đặt thế nào để đảm bảo yêu cầu kỹ thuật?",
+    "options": [
+      "Các hạt bật tắt - tắt phải theo hướng lắp đặt, cùng hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp",
+      "Các hạt bật tắt - tắt phải theo hướng lắp đặt, theo hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp",
+      "Các hạt bật tắt - tắt phải cùng hướng lắp đặt, cùng hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp",
+      "Các hạt bật tắt - tắt phải cùng hướng lắp đặt, theo hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_04_66",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Mạch điện có một bóng đèn có thể tắt, mở ở hai vị trí khác nhau là",
+    "options": [
+      "Mạch đèn sợi đốt đơn giản.",
+      "Mạch đèn cầu thang.",
+      "Mạch đèn thay đổi ánh sáng.",
+      "Mạch đèn sáng luân phiên."
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_04_35",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Khi kiểm tra sụt áp đường dây, giá trị sụt áp cho phép thường không quá:",
+    "options": [
+      "3%",
+      "5%",
+      "10%",
+      "15%"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_04_19",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Độ rọi tiêu chuẩn khu vực văn phòng là bao nhiêu lux theo TCVN 7114?",
+    "options": [
+      "200",
+      "300",
+      "500",
+      "700"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_04_12",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Trong sơ đồ điện, ký hiệu \"NO\" nghĩa là:",
+    "options": [
+      "Thường mở",
+      "Thường đóng",
+      "Không hoạt động",
+      "Không nối đất"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_04_8",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Dòng rò lớn nhất cho phép của mạch điện dân dụng là:",
+    "options": [
+      "10 mA",
+      "30 mA",
+      "50 mA",
+      "100 mA"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_04_34",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Dây đồng trần trong chống sét nên chôn sâu tối thiểu:",
+    "options": [
+      "0.3m",
+      "0.5m",
+      "0.8m",
+      "1.0m"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_04_78",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Khi khởi động máy bơm nước mà áp tô mát tự động ngắt điện hoặc đứt cầu chì là do",
+    "options": [
+      "Động cơ bị rò điện.",
+      "Dây quấn động cơ bị chập",
+      "Mất điện.",
+      "Không có nguồn nước cấp."
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_04_14",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Đối với hệ thống điện hạ thế, điện trở nối đất cho hệ thống chống sét yêu cầu ≤ bao nhiêu?",
+    "options": [
+      "1 Ω",
+      "4 Ω",
+      "10 Ω",
+      "20 Ω"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_04_3",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Dụng cụ đo điện trở cách điện là:",
+    "options": [
+      "Ampe kìm",
+      "Đồng hồ vạn năng",
+      "Megger",
+      "Ohm kế"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_04_41",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Khi thi công ống luồn dây âm tường, khoảng cách giữa các điểm cố định ống là bao nhiêu?",
+    "options": [
+      "≤ 0,8m",
+      "≤ 1,2m",
+      "≤ 1,5m",
+      "≤ 2,0m"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_04_36",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Khe hở tối thiểu giữa hai ống luồn dây nối cần:",
+    "options": [
+      "0.5mm",
+      "1mm",
+      "Không có khoảng hở",
+      "5mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_04_24",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Dây trung tính (N) nên có tiết diện bao nhiêu so với dây pha?",
+    "options": [
+      "1/3",
+      "≤ 1/2",
+      "= 1",
+      "≤ 1/4"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_04_25",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Số lượng dây trong ống luồn không vượt quá bao nhiêu % tiết diện ống?",
+    "options": [
+      "30%",
+      "50%",
+      "40%",
+      "60%"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_04_9",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 04",
+    "type": "multiple_choice",
+    "question": "Rơ-le trung gian thường dùng để:",
+    "options": [
+      "Đóng cắt tải",
+      "Truyền tín hiệu điều khiển",
+      "Bảo vệ chạm đất",
+      "Giảm dòng khởi động"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_05_42",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Độ cao lắp công tắc chiếu sáng chuẩn là?",
+    "options": [
+      "1,0  - 1,1 m",
+      "1,2 - 1,4 m",
+      "1,5 - 1,6 m",
+      "1,8 m"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_05_56",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Theo tiêu chuẩn bàn giao các hạng mục xây dựng và kỹ thuật đối với  công tắc phải lắp đặt thế nào để đảm bảo yêu cầu kỹ thuật?",
+    "options": [
+      "Các hạt bật tắt - tắt phải theo hướng lắp đặt, cùng hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp",
+      "Các hạt bật tắt - tắt phải theo hướng lắp đặt, theo hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp",
+      "Các hạt bật tắt - tắt phải cùng hướng lắp đặt, cùng hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp",
+      "Các hạt bật tắt - tắt phải cùng hướng lắp đặt, theo hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_05_49",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Khi lắp đặt cáp điện trên máng, khoảng cách giữa các thanh chống đỡ máng là?",
+    "options": [
+      "1,0 - 1,2m",
+      "1,2 - 1,5m",
+      "1,5 - 2,0m",
+      "2,0 - 2,5m"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_05_29",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Cáp động lực đi trong máng chung với cáp điều khiển có được không?",
+    "options": [
+      "Có",
+      "Không",
+      "Tùy tải",
+      "Khi có vách ngăn"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_05_59",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Khi mắc song song thì khoảng cách giữa đường điện chiếu sáng và động lực với cáp báo cháy không được nhỏ hơn ?",
+    "options": [
+      "0.3m",
+      "0.4m",
+      "0.5m",
+      "0.6m"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_05_30",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Khi dòng khởi động motor cao, có thể dùng biện pháp nào?",
+    "options": [
+      "Giảm điện áp",
+      "Sao - tam giác",
+      "Khởi động trực tiếp",
+      "Chỉnh CB"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_05_9",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Rơ-le trung gian thường dùng để:",
+    "options": [
+      "Đóng cắt tải",
+      "Truyền tín hiệu điều khiển",
+      "Bảo vệ chạm đất",
+      "Giảm dòng khởi động"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_05_22",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Khi đo kiểm tra RCD (CB chống giật), dòng thử chuẩn là bao nhiêu?",
+    "options": [
+      "15mA",
+      "20mA",
+      "30mA",
+      "50mA"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_05_41",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Khi thi công ống luồn dây âm tường, khoảng cách giữa các điểm cố định ống là bao nhiêu?",
+    "options": [
+      "≤ 0,8m",
+      "≤ 1,2m",
+      "≤ 1,5m",
+      "≤ 2,0m"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_05_10",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Khi tăng điện áp cấp nguồn, công suất tiêu thụ:",
+    "options": [
+      "Tăng",
+      "Giảm",
+      "Không đổi",
+      "Tùy tải"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_05_8",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Dòng rò lớn nhất cho phép của mạch điện dân dụng là:",
+    "options": [
+      "10 mA",
+      "30 mA",
+      "50 mA",
+      "100 mA"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_05_43",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Cáp ngầm 22kV cách mép móng tối thiểu?",
+    "options": [
+      "0,5m",
+      "0,3m",
+      "0,7m",
+      "1,0m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_05_20",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Khi nối đất an toàn, điện trở nối đất cho thiết bị điện phải ≤ bao nhiêu Ohm?",
+    "options": [
+      "1",
+      "2",
+      "4",
+      "10"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_05_44",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Công tắc, ổ cắm nên cách mép cửa  bao nhiêu?",
+    "options": [
+      "5cm",
+      "15 - 20cm",
+      "30 cm",
+      "40 cm"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_05_15",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Trong hệ thống điện công trình, dây trung tính (N) có nhiệm vụ chính là gì?",
+    "options": [
+      "Dẫn dòng sự cố",
+      "Dẫn dòng tải mất cân bằng",
+      "Dẫn dòng ngắn mạch",
+      "Tăng công suất pha"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_05_23",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Khi tủ điện có 2 nguồn cấp (lưới và máy phát), cần lắp thiết bị gì để tránh xung đột?",
+    "options": [
+      "MMCB",
+      "ELCB",
+      "ATS",
+      "Contactor đơn"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_05_5",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Tụ bù có tác dụng:",
+    "options": [
+      "Tăng hệ số công suất",
+      "Giảm dòng ngắn mạch",
+      "Tăng điện áp",
+      "Tăng tổn hao"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_05_27",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Dây điều khiển 1.5mm2 cho tín hiệu sensor kéo dài tối đa bao nhiêu mét?",
+    "options": [
+      "50m",
+      "100m",
+      "150m",
+      "200m"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_05_64",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Biện pháp thi công an toàn ngoài trời khi có trời mưa",
+    "options": [
+      "Tiếp tục làm việc bình thường để kịp tiến độ.",
+      "Dùng tay trần thao tác nhanh để tránh bị ướt lâu.",
+      "Ngừng thi công hoặc chỉ làm khi đã cắt nguồn điện, sử dụng dụng cụ và đồ bảo hộ cách điện đầy đủ.",
+      "Đứng trên nền đất ướt và kiểm tra dây điện."
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_05_84",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 05",
+    "type": "multiple_choice",
+    "question": "Động cơ điện có các phần chính là",
+    "options": [
+      "Stato là phần quay và roto là phần tĩnh.",
+      "Stato là phần tĩnh và roto là phần quay.",
+      "",
+      ""
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_06_54",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Hệ thống báo cháy phải đảm bảo liên động với những hệ nào?",
+    "options": [
+      "Quạt hút khói, quạt tăng áp cầu thang",
+      "Thang máy, thang cuốn",
+      "Chữa cháy tự động, hệ cấp gas",
+      "Tất cả đều đúng"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_06_7",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Điện trở của dây dẫn phụ thuộc chủ yếu vào:",
+    "options": [
+      "Nhiệt độ",
+      "Đường kính",
+      "Chiều dài",
+      "Cả A, B, C"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_06_37",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Tuyến có từ 2 ống điện trở lên khoảng cách giữa 2 cạnh ống tối thiểu là bao nhiêu?",
+    "options": [
+      "5mm",
+      "10mm",
+      "15mm",
+      "20mm"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_06_2",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Trong bản vẽ điện, ký hiệu MCB thể hiện thiết bị gì?",
+    "options": [
+      "Cầu chì",
+      "Aptomat tép",
+      "Tụ bù",
+      "Máy biến áp"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_06_74",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Điện áp nguy hiểm đối với người",
+    "options": [
+      "> 36V",
+      "> 12V",
+      "> 6V",
+      "> 3V"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_06_73",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Động cơ điện là loại máy biến đổi",
+    "options": [
+      "Điện năng thành nhiệt năng.",
+      "Điện năng thành quang năng.",
+      "Điện năng thành cơ năng",
+      "Cơ năng thành điện năng."
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_06_38",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Dây đi âm vách tường phải cách sàn tối thiểu bao nhiêu?",
+    "options": [
+      "100mm",
+      "150m",
+      "200mm",
+      "250mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_06_51",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Tiêu chuẩn quy định về nghiệm thu Đèn Downlight với sai số lệch tim đèn nhỏ hơn?",
+    "options": [
+      "2 mm",
+      "3 mm",
+      "4 mm",
+      "5 mm"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_06_52",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Đối với các thiết bị thông tin liên lạc, truyền hình cáp thì khi lắp đặt, độ dài đầu chờ phải dài tối thiểu bao nhiêu mm?",
+    "options": [
+      "100 mm",
+      "200 mm",
+      "300 mm",
+      "400 mm"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_06_40",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Khi lắp máng cáp chồng tầng, khoảng cách tối thiểu giữa hai tầng máng là?",
+    "options": [
+      "100mm",
+      "150m",
+      "200mm",
+      "300mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_06_70",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Để thể hiện rõ mối liên hệ về điện của các phần tử trong mạch điện ta dùng",
+    "options": [
+      "Sơ đồ cấu tạo của mạch điện",
+      "Sơ đồ lắp đặt của mạch điện",
+      "Sơ đồ nguyên lí của mạch điện",
+      "Sơ đồ nguyên lí và cấu tạo của mạch điện"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_06_82",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Sử dụng thiết bị đo nào để kiểm tra cách điện động cơ, cáp điện",
+    "options": [
+      "Đồng  hồ vạn năng",
+      "Đồng hồ ampe kìm",
+      "Đồng hồ đo điện trở đất Teraohm",
+      "Đồng hồ Megaohm"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_06_47",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Cấp bảo vệ IP tối thiểu cho ổ cắm khu vực ẩm ướt?",
+    "options": [
+      "IP20",
+      "IP33",
+      "IP44",
+      "IP55"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_06_43",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Cáp ngầm 22kV cách mép móng tối thiểu?",
+    "options": [
+      "0,5m",
+      "0,3m",
+      "0,7m",
+      "1,0m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_06_34",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Dây đồng trần trong chống sét nên chôn sâu tối thiểu:",
+    "options": [
+      "0.3m",
+      "0.5m",
+      "0.8m",
+      "1.0m"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_06_23",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Khi tủ điện có 2 nguồn cấp (lưới và máy phát), cần lắp thiết bị gì để tránh xung đột?",
+    "options": [
+      "MMCB",
+      "ELCB",
+      "ATS",
+      "Contactor đơn"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_06_78",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Khi khởi động máy bơm nước mà áp tô mát tự động ngắt điện hoặc đứt cầu chì là do",
+    "options": [
+      "Động cơ bị rò điện.",
+      "Dây quấn động cơ bị chập",
+      "Mất điện.",
+      "Không có nguồn nước cấp."
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_06_8",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Dòng rò lớn nhất cho phép của mạch điện dân dụng là:",
+    "options": [
+      "10 mA",
+      "30 mA",
+      "50 mA",
+      "100 mA"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_06_62",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Tiết diện 1,5mm2 dây điện đồng có thể chịu tối đa bao nhiêu ampe?",
+    "options": [
+      "2A",
+      "30A",
+      "4A",
+      "6A"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_06_63",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 06",
+    "type": "multiple_choice",
+    "question": "Chiều cao cột nước bơm của máy bơm được tính",
+    "options": [
+      "Từ vị trí đặt máy đến bề mặt mực nước dưới mà máy có thể hút lên bình thường",
+      "Từ vị trí đặt máy đến vị trí cao nhất mà máy có thể đẩy nước lên được",
+      "Từ miệng ống hút đến vị trí cao nhất mà máy có thể đẩy nước lên được",
+      "Từ miệng ống hút đến vị trí đặt máy"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_07_71",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Số cuộn dây quấn làm việc của động cơ điện 3 pha là",
+    "options": [
+      "Một.",
+      "Hai.",
+      "Ba.",
+      "Bốn."
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_07_9",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Rơ-le trung gian thường dùng để:",
+    "options": [
+      "Đóng cắt tải",
+      "Truyền tín hiệu điều khiển",
+      "Bảo vệ chạm đất",
+      "Giảm dòng khởi động"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_07_43",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Cáp ngầm 22kV cách mép móng tối thiểu?",
+    "options": [
+      "0,5m",
+      "0,3m",
+      "0,7m",
+      "1,0m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_07_77",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Khi đo điện áp xoay chiều cần bắt đầu từ thang đo lớn nhất rồi giảm dần là để",
+    "options": [
+      "tránh gây sai số lớn khi đọc kết quả đo.",
+      "tránh làm hỏng que đo.",
+      "tránh làm hỏng mạch điện của dụng cụ đo.",
+      "tránh không đọc được kết quả đo."
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_07_76",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Contactor dùng để",
+    "options": [
+      "Đóng cắt mạch điện công suất lớn",
+      "Đo điện áp",
+      "Đo dòng điện",
+      "Cấp nguồn"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_07_68",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Khi cuộn dây động cơ bị ẩm ta cần làm như sau :",
+    "options": [
+      "Tháo động cơ, phơi nắng",
+      "Tháo động cơ để trong mát một thời gian",
+      "Tháo động cơ, rửa sạch bằng nước, phơi nắng",
+      "Tháo động cơ, rửa sạch bằng xăng, dùng máy sấy khô"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_07_49",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Khi lắp đặt cáp điện trên máng, khoảng cách giữa các thanh chống đỡ máng là?",
+    "options": [
+      "1,0 - 1,2m",
+      "1,2 - 1,5m",
+      "1,5 - 2,0m",
+      "2,0 - 2,5m"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_07_37",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Tuyến có từ 2 ống điện trở lên khoảng cách giữa 2 cạnh ống tối thiểu là bao nhiêu?",
+    "options": [
+      "5mm",
+      "10mm",
+      "15mm",
+      "20mm"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_07_45",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Khoảng cách tối thiểu dây điện - ống nước song song:",
+    "options": [
+      "1cm",
+      "3cm",
+      "5cm",
+      "10cm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_07_64",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Biện pháp thi công an toàn ngoài trời khi có trời mưa",
+    "options": [
+      "Tiếp tục làm việc bình thường để kịp tiến độ.",
+      "Dùng tay trần thao tác nhanh để tránh bị ướt lâu.",
+      "Ngừng thi công hoặc chỉ làm khi đã cắt nguồn điện, sử dụng dụng cụ và đồ bảo hộ cách điện đầy đủ.",
+      "Đứng trên nền đất ướt và kiểm tra dây điện."
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_07_27",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Dây điều khiển 1.5mm2 cho tín hiệu sensor kéo dài tối đa bao nhiêu mét?",
+    "options": [
+      "50m",
+      "100m",
+      "150m",
+      "200m"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_07_81",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Khi đóng điện vào máy bơm nước, có điện vào, động cơ rung nhẹ nhưng không quay là do",
+    "options": [
+      "Điện áp nguồn quá cao so với định mức",
+      "Mạch cấp điện cho động cơ bị hở mạch do đứt dây",
+      "Tụ điện khởi động bị hỏng",
+      "Dây quấn động cơ bị cháy"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_07_24",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Dây trung tính (N) nên có tiết diện bao nhiêu so với dây pha?",
+    "options": [
+      "1/3",
+      "≤ 1/2",
+      "= 1",
+      "≤ 1/4"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_07_38",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Dây đi âm vách tường phải cách sàn tối thiểu bao nhiêu?",
+    "options": [
+      "100mm",
+      "150m",
+      "200mm",
+      "250mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_07_30",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Khi dòng khởi động motor cao, có thể dùng biện pháp nào?",
+    "options": [
+      "Giảm điện áp",
+      "Sao - tam giác",
+      "Khởi động trực tiếp",
+      "Chỉnh CB"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_07_4",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Thiết bị điều khiển đóng cắt cơ điện là:",
+    "options": [
+      "CB",
+      "Contactor",
+      "Cầu dao",
+      "Cầu chì"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_07_8",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Dòng rò lớn nhất cho phép của mạch điện dân dụng là:",
+    "options": [
+      "10 mA",
+      "30 mA",
+      "50 mA",
+      "100 mA"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_07_11",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Khi kiểm tra tụ điện, dụng cụ phù hợp là:",
+    "options": [
+      "Ohm kế",
+      "Ampe kế",
+      "Đồng hồ vạn năng (thang điện dung)",
+      "Volt kế"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_07_32",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Hộp nối dây trong trần chống cháy phải chịu lửa bao lâu?",
+    "options": [
+      "1h",
+      "2h",
+      "3h",
+      "4h"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_07_67",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 07",
+    "type": "multiple_choice",
+    "question": "Khi bị điện giật cần",
+    "options": [
+      "Tách nạn nhân khỏi nguồn điện",
+      "Dùng tay không kéo nạn nhân khỏi nguồn điện",
+      "Để nằm yên",
+      "Bỏ đi"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_08_36",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Khe hở tối thiểu giữa hai ống luồn dây nối cần:",
+    "options": [
+      "0.5mm",
+      "1mm",
+      "Không có khoảng hở",
+      "5mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_08_42",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Độ cao lắp công tắc chiếu sáng chuẩn là?",
+    "options": [
+      "1,0  - 1,1 m",
+      "1,2 - 1,4 m",
+      "1,5 - 1,6 m",
+      "1,8 m"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_08_45",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Khoảng cách tối thiểu dây điện - ống nước song song:",
+    "options": [
+      "1cm",
+      "3cm",
+      "5cm",
+      "10cm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_08_46",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Khi chọn tủ điện ngoài trời, cấp bảo vệ ip tối thiểu là bao nhiêu?",
+    "options": [
+      "IP20",
+      "IP33",
+      "IP54",
+      "IP65"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_08_63",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Chiều cao cột nước bơm của máy bơm được tính",
+    "options": [
+      "Từ vị trí đặt máy đến bề mặt mực nước dưới mà máy có thể hút lên bình thường",
+      "Từ vị trí đặt máy đến vị trí cao nhất mà máy có thể đẩy nước lên được",
+      "Từ miệng ống hút đến vị trí cao nhất mà máy có thể đẩy nước lên được",
+      "Từ miệng ống hút đến vị trí đặt máy"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_08_38",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Dây đi âm vách tường phải cách sàn tối thiểu bao nhiêu?",
+    "options": [
+      "100mm",
+      "150m",
+      "200mm",
+      "250mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_08_13",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Khi kiểm tra điện trở cách điện, giá trị nhỏ nhất được chấp nhận là bao nhiêu?",
+    "options": [
+      "0,1 MΩ",
+      "0,5 MΩ",
+      "1 MΩ",
+      "10 MΩ"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_08_84",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Động cơ điện có các phần chính là",
+    "options": [
+      "Stato là phần quay và roto là phần tĩnh.",
+      "Stato là phần tĩnh và roto là phần quay.",
+      "",
+      ""
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_08_71",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Số cuộn dây quấn làm việc của động cơ điện 3 pha là",
+    "options": [
+      "Một.",
+      "Hai.",
+      "Ba.",
+      "Bốn."
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_08_81",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Khi đóng điện vào máy bơm nước, có điện vào, động cơ rung nhẹ nhưng không quay là do",
+    "options": [
+      "Điện áp nguồn quá cao so với định mức",
+      "Mạch cấp điện cho động cơ bị hở mạch do đứt dây",
+      "Tụ điện khởi động bị hỏng",
+      "Dây quấn động cơ bị cháy"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_08_60",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Yêu cầu điện trở tiếp địa hệ thống tiếp địa trạm biến áp cần đạt được là:",
+    "options": [
+      "≥ 10 Ohm (W)",
+      "≤ 10 Ohm (W)",
+      "≤ 4 Ohm (W)",
+      "≤ 6 Ohm (W)"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_08_66",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Mạch điện có một bóng đèn có thể tắt, mở ở hai vị trí khác nhau là",
+    "options": [
+      "Mạch đèn sợi đốt đơn giản.",
+      "Mạch đèn cầu thang.",
+      "Mạch đèn thay đổi ánh sáng.",
+      "Mạch đèn sáng luân phiên."
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_08_43",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Cáp ngầm 22kV cách mép móng tối thiểu?",
+    "options": [
+      "0,5m",
+      "0,3m",
+      "0,7m",
+      "1,0m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_08_51",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Tiêu chuẩn quy định về nghiệm thu Đèn Downlight với sai số lệch tim đèn nhỏ hơn?",
+    "options": [
+      "2 mm",
+      "3 mm",
+      "4 mm",
+      "5 mm"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_08_10",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Khi tăng điện áp cấp nguồn, công suất tiêu thụ:",
+    "options": [
+      "Tăng",
+      "Giảm",
+      "Không đổi",
+      "Tùy tải"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_08_22",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Khi đo kiểm tra RCD (CB chống giật), dòng thử chuẩn là bao nhiêu?",
+    "options": [
+      "15mA",
+      "20mA",
+      "30mA",
+      "50mA"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_08_77",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Khi đo điện áp xoay chiều cần bắt đầu từ thang đo lớn nhất rồi giảm dần là để",
+    "options": [
+      "tránh gây sai số lớn khi đọc kết quả đo.",
+      "tránh làm hỏng que đo.",
+      "tránh làm hỏng mạch điện của dụng cụ đo.",
+      "tránh không đọc được kết quả đo."
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_08_24",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Dây trung tính (N) nên có tiết diện bao nhiêu so với dây pha?",
+    "options": [
+      "1/3",
+      "≤ 1/2",
+      "= 1",
+      "≤ 1/4"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_08_2",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Trong bản vẽ điện, ký hiệu MCB thể hiện thiết bị gì?",
+    "options": [
+      "Cầu chì",
+      "Aptomat tép",
+      "Tụ bù",
+      "Máy biến áp"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_08_53",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 08",
+    "type": "multiple_choice",
+    "question": "Đối với dây dẫn có tiết diện từ  từ bao nhiêu mm2 trở lên phải được ép đầu cos khi kết nối với tủ điện và thiết bị?",
+    "options": [
+      "2.5 mm2",
+      "4 mm2",
+      "6 mm2",
+      "10 mm2"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_09_51",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Tiêu chuẩn quy định về nghiệm thu Đèn Downlight với sai số lệch tim đèn nhỏ hơn?",
+    "options": [
+      "2 mm",
+      "3 mm",
+      "4 mm",
+      "5 mm"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_09_15",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Trong hệ thống điện công trình, dây trung tính (N) có nhiệm vụ chính là gì?",
+    "options": [
+      "Dẫn dòng sự cố",
+      "Dẫn dòng tải mất cân bằng",
+      "Dẫn dòng ngắn mạch",
+      "Tăng công suất pha"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_09_67",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Khi bị điện giật cần",
+    "options": [
+      "Tách nạn nhân khỏi nguồn điện",
+      "Dùng tay không kéo nạn nhân khỏi nguồn điện",
+      "Để nằm yên",
+      "Bỏ đi"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_09_33",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Điện trở tiếp xúc thanh cái ≤ bao nhiêu?",
+    "options": [
+      "10µΩ",
+      "50µΩ",
+      "100µΩ",
+      "200µΩ"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_09_69",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Để đo điện năng tiêu thụ ta dùng",
+    "options": [
+      "Oát kế",
+      "Ampe kế",
+      "Vôn kế",
+      "Công tơ"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_09_41",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Khi thi công ống luồn dây âm tường, khoảng cách giữa các điểm cố định ống là bao nhiêu?",
+    "options": [
+      "≤ 0,8m",
+      "≤ 1,2m",
+      "≤ 1,5m",
+      "≤ 2,0m"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_09_65",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Yêu cầu điện trở tiếp địa hệ thống chống sét, tủ điện, motor cần đạt được là:",
+    "options": [
+      "≥ 10 Ohm (W)",
+      "≤ 10 Ohm (W)",
+      "≤ 4 Ohm (W)",
+      "≤ 6 Ohm (W)"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_09_73",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Động cơ điện là loại máy biến đổi",
+    "options": [
+      "Điện năng thành nhiệt năng.",
+      "Điện năng thành quang năng.",
+      "Điện năng thành cơ năng",
+      "Cơ năng thành điện năng."
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_09_83",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Sơ đồ cấp điện cho nhà chung cư theo thứ tự thế nào là đú",
+    "options": [
+      "Tủ điện tổng; trạm biến áp; tủ điện tầng; bảng điện; các tải của căn hộ",
+      "Trạm biến áp; tủ điện tổng; tủ điện tầng; bảng điện; các tải của căn hộ",
+      "Tủ điện tầng; trạm biến áp; tủ điện tổng; bảng điện; các tải của căn hộ",
+      "Bảng điện; tủ điện tầng; trạm biến áp; tủ điện tổng; các tải của căn hộ"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_09_37",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Tuyến có từ 2 ống điện trở lên khoảng cách giữa 2 cạnh ống tối thiểu là bao nhiêu?",
+    "options": [
+      "5mm",
+      "10mm",
+      "15mm",
+      "20mm"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_09_77",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Khi đo điện áp xoay chiều cần bắt đầu từ thang đo lớn nhất rồi giảm dần là để",
+    "options": [
+      "tránh gây sai số lớn khi đọc kết quả đo.",
+      "tránh làm hỏng que đo.",
+      "tránh làm hỏng mạch điện của dụng cụ đo.",
+      "tránh không đọc được kết quả đo."
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_09_21",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Khi đo cách điện cáp lực 0.6/1kV, thường dùng megger bao nhiêu VDC?",
+    "options": [
+      "250V",
+      "500V",
+      "1000V",
+      "2500V"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_09_61",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Đóng điện vào máy bơm nước, động cơ điện của bơm không quay là do",
+    "options": [
+      "Mất điện, hở mạch, động cơ bị cháy.",
+      "Mất nước mồi, dây quấn động cơ bị chập.",
+      "Mất điện nguồn, đầu ống hút bị tắc.",
+      "Đầu ống hút bị tắc, nguồn nước đầu hút bị cạn"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_09_29",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Cáp động lực đi trong máng chung với cáp điều khiển có được không?",
+    "options": [
+      "Có",
+      "Không",
+      "Tùy tải",
+      "Khi có vách ngăn"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_09_58",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Mặt công tác, ổ cắm lắp đúng vị trí, thăng bằng ngang, sai lệch cao độ không quá bao nhiêu mm?",
+    "options": [
+      "±2mm",
+      "±3mm",
+      "±4mm",
+      "±5mm"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_09_31",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Độ rọi tiêu chuẩn của phòng kỹ thuật là?",
+    "options": [
+      "100 lux",
+      "150 lux",
+      "200 lux",
+      "300 lux"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_09_14",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Đối với hệ thống điện hạ thế, điện trở nối đất cho hệ thống chống sét yêu cầu ≤ bao nhiêu?",
+    "options": [
+      "1 Ω",
+      "4 Ω",
+      "10 Ω",
+      "20 Ω"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_09_74",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Điện áp nguy hiểm đối với người",
+    "options": [
+      "> 36V",
+      "> 12V",
+      "> 6V",
+      "> 3V"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_09_11",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Khi kiểm tra tụ điện, dụng cụ phù hợp là:",
+    "options": [
+      "Ohm kế",
+      "Ampe kế",
+      "Đồng hồ vạn năng (thang điện dung)",
+      "Volt kế"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_09_36",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 09",
+    "type": "multiple_choice",
+    "question": "Khe hở tối thiểu giữa hai ống luồn dây nối cần:",
+    "options": [
+      "0.5mm",
+      "1mm",
+      "Không có khoảng hở",
+      "5mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_10_34",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Dây đồng trần trong chống sét nên chôn sâu tối thiểu:",
+    "options": [
+      "0.3m",
+      "0.5m",
+      "0.8m",
+      "1.0m"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_10_25",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Số lượng dây trong ống luồn không vượt quá bao nhiêu % tiết diện ống?",
+    "options": [
+      "30%",
+      "50%",
+      "40%",
+      "60%"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_10_72",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Công suất điện được tính",
+    "options": [
+      "P = U × I",
+      "P = U / I",
+      "P = I / R",
+      "P = R / U"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_10_20",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Khi nối đất an toàn, điện trở nối đất cho thiết bị điện phải ≤ bao nhiêu Ohm?",
+    "options": [
+      "1",
+      "2",
+      "4",
+      "10"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_10_11",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Khi kiểm tra tụ điện, dụng cụ phù hợp là:",
+    "options": [
+      "Ohm kế",
+      "Ampe kế",
+      "Đồng hồ vạn năng (thang điện dung)",
+      "Volt kế"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_10_30",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Khi dòng khởi động motor cao, có thể dùng biện pháp nào?",
+    "options": [
+      "Giảm điện áp",
+      "Sao - tam giác",
+      "Khởi động trực tiếp",
+      "Chỉnh CB"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_10_14",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Đối với hệ thống điện hạ thế, điện trở nối đất cho hệ thống chống sét yêu cầu ≤ bao nhiêu?",
+    "options": [
+      "1 Ω",
+      "4 Ω",
+      "10 Ω",
+      "20 Ω"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_10_19",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Độ rọi tiêu chuẩn khu vực văn phòng là bao nhiêu lux theo TCVN 7114?",
+    "options": [
+      "200",
+      "300",
+      "500",
+      "700"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_10_70",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Để thể hiện rõ mối liên hệ về điện của các phần tử trong mạch điện ta dùng",
+    "options": [
+      "Sơ đồ cấu tạo của mạch điện",
+      "Sơ đồ lắp đặt của mạch điện",
+      "Sơ đồ nguyên lí của mạch điện",
+      "Sơ đồ nguyên lí và cấu tạo của mạch điện"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_10_2",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Trong bản vẽ điện, ký hiệu MCB thể hiện thiết bị gì?",
+    "options": [
+      "Cầu chì",
+      "Aptomat tép",
+      "Tụ bù",
+      "Máy biến áp"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_10_5",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Tụ bù có tác dụng:",
+    "options": [
+      "Tăng hệ số công suất",
+      "Giảm dòng ngắn mạch",
+      "Tăng điện áp",
+      "Tăng tổn hao"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_10_39",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Khi lắp tủ điện, khoảng cách tối thiểu giữa tủ và tường phía sau là bao nhiêu?",
+    "options": [
+      "50mm",
+      "100m",
+      "150mm",
+      "200mm"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_10_54",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Hệ thống báo cháy phải đảm bảo liên động với những hệ nào?",
+    "options": [
+      "Quạt hút khói, quạt tăng áp cầu thang",
+      "Thang máy, thang cuốn",
+      "Chữa cháy tự động, hệ cấp gas",
+      "Tất cả đều đúng"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el3_10_17",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Aptomat tổng của công trình nên chọn theo tiêu chí nào?",
+    "options": [
+      "Idm ≥ 1,25 lần tổng tải tính toán",
+      "Idm = tổng tải",
+      "Idm < tải lớn nhất",
+      "Idm theo thiết bị nhỏ nhất"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_10_32",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Hộp nối dây trong trần chống cháy phải chịu lửa bao lâu?",
+    "options": [
+      "1h",
+      "2h",
+      "3h",
+      "4h"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_10_76",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Contactor dùng để",
+    "options": [
+      "Đóng cắt mạch điện công suất lớn",
+      "Đo điện áp",
+      "Đo dòng điện",
+      "Cấp nguồn"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el3_10_47",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Cấp bảo vệ IP tối thiểu cho ổ cắm khu vực ẩm ướt?",
+    "options": [
+      "IP20",
+      "IP33",
+      "IP44",
+      "IP55"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_10_29",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Cáp động lực đi trong máng chung với cáp điều khiển có được không?",
+    "options": [
+      "Có",
+      "Không",
+      "Tùy tải",
+      "Khi có vách ngăn"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el3_10_80",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Đo điện trở hai đầu của cuộn dây cho giá trị R = ∞ chứng tỏ rằng :",
+    "options": [
+      "Cuộn dây bị ngắn mạch",
+      "Cuộn dây bị ẩm nên điện trở tăng",
+      "Cuộn dây bị đứt",
+      "Cuộn dây bị chập một số vòng"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el3_10_73",
+    "category": "Lý thuyết - Thợ Điện Bậc 3",
+    "exam_set": "Đề số 10",
+    "type": "multiple_choice",
+    "question": "Động cơ điện là loại máy biến đổi",
+    "options": [
+      "Điện năng thành nhiệt năng.",
+      "Điện năng thành quang năng.",
+      "Điện năng thành cơ năng",
+      "Cơ năng thành điện năng."
+    ],
+    "correct_index": 2
   }
 ];
