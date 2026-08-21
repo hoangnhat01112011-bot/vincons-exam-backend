@@ -1,0 +1,1 @@
+{"status":"error","message":"Chi tiết lỗi: category=tuyen | isTuyendung=true | targetPin=6868 | inputPin=88888888"}

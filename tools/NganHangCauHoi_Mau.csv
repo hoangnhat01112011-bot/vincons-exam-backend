@@ -1,11 +1,11 @@
-﻿BẢNG CÂU HỎI TRẮC NGHIỆM_ CHUYÊN MÔN KỸ THUẬT ĐIỆN;;;
+﻿BẢNG CÂU HỎI TRẮC NGHIỆM KỸ THUẬT ĐIỆN;;;
 Dành cho Bộ môn Điện;;;
 ;;;
 STT;Câu hỏi;Đáp án;Đáp án đúng
 1;Thiết bị nào dùng để bảo vệ quá dòng cho mạch điện?;"A. Contactor
 B. Rơ-le nhiệt
 C. CB (Circuit Breaker)
-D. Aptomat";C
+D. Aptomat";A
 2;Trong bản vẽ điện, ký hiệu MCB thể hiện thiết bị gì?;"A. Cầu chì
 B. Aptomat tép
 C. Tụ bù
@@ -13,11 +13,11 @@ D. Máy biến áp";B
 3;Dụng cụ đo điện trở cách điện là:;"A. Ampe kìm
 B. Đồng hồ vạn năng
 C. Megger
-D. Ohm kế";C
+D. Ohm kế";A
 4;Thiết bị điều khiển đóng cắt cơ điện là: ;"A. CB
 B. Contactor
 C. Cầu dao
-D. Cầu chì";B
+D. Cầu chì";A
 5;Tụ bù có tác dụng:;"A. Tăng hệ số công suất
 B. Giảm dòng ngắn mạch
 C. Tăng điện áp
@@ -25,11 +25,11 @@ D. Tăng tổn hao";A
 6;Khi đóng điện thử tải, cầm kiểm tra thứ tự pha bằng:;"A. Bút thử điện
 B. Đồng hồ vạn năng
 C. Thiết bị kiểm tra pha
-D. Ampe kìm";C
+D. Ampe kìm";B
 7;Điện trở của dây dẫn phụ thuộc chủ yếu vào:;"A. Nhiệt độ
 B. Đường kính
 C. Chiều dài
-D. Cả A, B, C";D
+D. Cả A, B, C";A
 8;Dòng rò lớn nhất cho phép của mạch điện dân dụng là:;"A. 10 mA
 B. 30 mA
 C. 50 mA
@@ -41,298 +41,166 @@ D. Giảm dòng khởi động";B
 10;Khi tăng điện áp cấp nguồn, công suất tiêu thụ:;"A. Tăng
 B. Giảm 
 C. Không đổi
-D. Tùy tải";D
-11;Khi kiểm tra tụ điện, dụng cụ phù hợp là:;"A. Ohm kế
-B. Ampe kế
-C. Đồng hồ vạn năng (thang điện dung)
-D. Volt kế";C
-12;"Trong sơ đồ điện, ký hiệu ""NO"" nghĩa là:";"A. Thường mở
-B. Thường đóng
-C. Không hoạt động
-D. Không nối đất";A
-13;Khi kiểm tra điện trở cách điện, giá trị nhỏ nhất được chấp nhận là bao nhiêu?;"A. 0,1 MΩ
-B. 0,5 MΩ
-C. 1 MΩ
-D. 10 MΩ";C
-14;Đối với hệ thống điện hạ thế, điện trở nối đất cho hệ thống chống sét yêu cầu ≤ bao nhiêu?;"A. 1 Ω
-B. 4 Ω
-C. 10 Ω
-D. 20 Ω";C
-15;Trong hệ thống điện công trình, dây trung tính (N) có nhiệm vụ chính là gì?;"A. Dẫn dòng sự cố
-B. Dẫn dòng tải mất cân bằng
-C. Dẫn dòng ngắn mạch
-D. Tăng công suất pha";B
-16;Cáp điện ngầm đi trong ống PVC phải được chôn sâu tối thiểu bao nhiêu mét the TCVN?;"A. 0.4 m
-B. 0.5 m
-C. 0.7 m
-D. 1.0 m";C
-17;Aptomat tổng của công trình nên chọn theo tiêu chí nào?;"A. Idm ≥ 1,25 lần tổng tải tính toán
-B. Idm = tổng tải
-C. Idm < tải lớn nhất
-D. Idm theo thiết bị nhỏ nhất";A
-18;Thiết bị đóng cắt trong tủ điện tổng phải lắp ở độ cao bao nhiêu tính từ sàn?;"A. 1.2 - 1.5 m
-B. 1.5 - 1.7 m
-C. 0.8 - 1.0 m 
-D. Trên 2.0 m ";A
-19;Độ rọi tiêu chuẩn khu vực văn phòng là bao nhiêu lux theo TCVN 7114? ;"A. 200
-B. 300
-C. 500
-D. 700";C
-20;Khi nối đất an toàn, điện trở nối đất cho thiết bị điện phải ≤ bao nhiêu Ohm?;"A. 1
-B. 2
-C. 4
-D. 10";C
-21;Khi đo cách điện cáp lực 0.6/1kV, thường dùng megger bao nhiêu VDC?;"A. 250V
-B. 500V
-C. 1000V
-D. 2500V";C
-22;Khi đo kiểm tra RCD (CB chống giật), dòng thử chuẩn là bao nhiêu?;"A. 15mA
-B. 20mA
-C. 30mA
-D. 50mA";C
-23;Khi tủ điện có 2 nguồn cấp (lưới và máy phát), cần lắp thiết bị gì để tránh xung đột? ;"A. MMCB
-B. ELCB
-C. ATS
-D. Contactor đơn";C
-24;Dây trung tính (N) nên có tiết diện bao nhiêu so với dây pha?;"A. 1/3
-B. ≤ 1/2
-C. = 1
-D. ≤ 1/4";B
-25;Số lượng dây trong ống luồn không vượt quá bao nhiêu % tiết diện ống? ;"A. 30%
-B. 50%
-C. 40%
-D. 60%";C
-26;Thanh N và PE trong tủ điện có được nối chung không?;"A. Có
-B. Có ở mọi tủ
-C. Không
-D. Tùy theo tải";C
-27;Dây điều khiển 1.5mm2 cho tín hiệu sensor kéo dài tối đa bao nhiêu mét?;"A. 50m
-B. 100m
-C. 150m
-D. 200m";B
-28;Ổ cắm trong WC cần bảo vệ bằng gì?;"A. CB chống dòng rò (ELCB)
-B. CB tép thông thường
-C. Cầu chì
-D. Không yêu cầu";A
-29;Cáp động lực đi trong máng chung với cáp điều khiển có được không? ;"A. Có
-B. Không
-C. Tùy tải
-D. Khi có vách ngăn";B
-30;Khi dòng khởi động motor cao, có thể dùng biện pháp nào?;"A. Giảm điện áp
-B. Sao - tam giác
-C. Khởi động trực tiếp
-D. Chỉnh CB";B
-31;Độ rọi tiêu chuẩn của phòng kỹ thuật là?;"A. 100 lux
-B. 150 lux
-C. 200 lux
-D. 300 lux";C
-32;Hộp nối dây trong trần chống cháy phải chịu lửa bao lâu?;"A. 1h
-B. 2h
-C. 3h
-D. 4h";C
-33;Điện trở tiếp xúc thanh cái ≤ bao nhiêu?;"A. 10µΩ
-B. 50µΩ
-C. 100µΩ
-D. 200µΩ";B
-34;Dây đồng trần trong chống sét nên chôn sâu tối thiểu: ;"A. 0.3m
-B. 0.5m
-C. 0.8m
-D. 1.0m";C
-35;Khi kiểm tra sụt áp đường dây, giá trị sụt áp cho phép thường không quá: ;"A. 3%
+D. Tùy tải";C
+11;Khi thi công ống luồn dây trong sàn bê tông, nên cố định bằng gì?;"A. Dây thép buộc
+B. Băng keo
+C. Ghim thép hoặc kẹp định vị
+D. Xi măng";C
+12;Khi đấu dây điều khiển trong tủ, đầu cos phải được xử lý thế nào?;"A. Để trần
+B. Bấm đầu cos, siết chặt vít
+C. Dùng keo
+D. Hàn chết";B
+13;Trong hệ thống chống sét, dây thoát sét thường làm bằng vật liệu gì?;"A. Nhôm
+B. Sắt trần
+C. Đồng trần hoặc mạ kẽm
+D. Inox";C
+14;Khi đo điện trở đất bằng phương pháp 3 cực,  cực dòng và cực thế cách nhau tối thiểu bao nhiêu mét?;"A. 2m
+B. 5m
+C. 10m
+D. 20m";D
+15;Khi kiểm tra pha thứ tự bằng bút thử, hiện tượng nào cho thấy sai thứ tự pha?;"A. Bút sáng đỏ
+B. Bút không sáng
+C. Động cơ quay ngược
+D. Có tia lửa";C
+16;Khi đấu cáp 3 pha 4 dây, dây trung tính nên đặt ở vị trí nào?;"A. Bên trái
+B. Bên phải
+C. Ở giữa hoặc dưới cùng
+D. Trên cùng";C
+17;Mạch điều khiển contactor cần dùng điện áp điều khiển thông thường là bao nhiêu?;"A. 12VDC
+B. 24VDC
+C. 110VAC
+D. 220VAC";D
+18;Khi lắp máng cáp tầng kỹ thuật, yêu cầu nghiêng dốc bao nhiêu để thoát nước?;"A. 0⁰
+B. 1⁰
+C. 2⁰
+D. 3⁰";D
+19;Khi kiểm tra tụ bù, điện dung giảm dưới bao nhiêu % thì cần thay thế?;"A. 3%
 B. 5%
 C. 10%
-D. 15%";B
-36;Khe hở tối thiểu giữa hai ống luồn dây nối cần:;"A. 0.5mm
-B. 1mm
-C. Không có khoảng hở
-D. 5mm";C
-37;Tuyến có từ 2 ống điện trở lên khoảng cách giữa 2 cạnh ống tối thiểu là bao nhiêu?;"A. 5mm
-B. 10mm
-C. 15mm
-D. 20mm";B
-38;Dây đi âm vách tường phải cách sàn tối thiểu bao nhiêu?;"A. 100mm
-B. 150m
-C. 200mm
-D. 250mm";C
-39;Khi lắp tủ điện, khoảng cách tối thiểu giữa tủ và tường phía sau là bao nhiêu? ;"A. 50mm
-B. 100m
-C. 150mm
-D. 200mm";B
-40;Khi lắp máng cáp chồng tầng, khoảng cách tối thiểu giữa hai tầng máng là?;"A. 100mm
-B. 150m
-C. 200mm
-D. 300mm";C
-41;Khi thi công ống luồn dây âm tường, khoảng cách giữa các điểm cố định ống là bao nhiêu?;"A. ≤ 0,8m
-B. ≤ 1,2m
-C. ≤ 1,5m
-D. ≤ 2,0m";B
-42;Độ cao lắp công tắc chiếu sáng chuẩn là?;"A. 1,0  - 1,1 m 
-B. 1,2 - 1,4 m
-C. 1,5 - 1,6 m
-D. 1,8 m";B
-43;Cáp ngầm 22kV cách mép móng tối thiểu?;"A. 0,5m
-B. 0,3m
-C. 0,7m
-D. 1,0m";A
-44;Công tắc, ổ cắm nên cách mép cửa  bao nhiêu?;"A. 5cm
-B. 15 - 20cm
-C. 30 cm
-D. 40 cm";B
-45;Khoảng cách tối thiểu dây điện - ống nước song song:;"A. 1cm
-B. 3cm
-C. 5cm
-D. 10cm";C
-46;Khi chọn tủ điện ngoài trời, cấp bảo vệ ip tối thiểu là bao nhiêu?;"A. IP20
-B. IP33
-C. IP54
-D. IP65";C
-47;Cấp bảo vệ IP tối thiểu cho ổ cắm khu vực ẩm ướt?;"A. IP20
-B. IP33
-C. IP44
-D. IP55";C
-48;Khi lắp đặt cáp điện trên máng, khoảng cách giữa các thanh chống đỡ máng là?;"A. 1,0 - 1,2m
-B. 1,2 - 1,5m
-C. 1,5 - 2,0m
-D. 2,0 - 2,5m";C
-49;Khi lắp đặt cáp điện trên máng, khoảng cách giữa các thanh chống đỡ máng là?;"A. 1,0 - 1,2m
-B. 1,2 - 1,5m
-C. 1,5 - 2,0m
-D. 2,0 - 2,5m";C
-50;Theo tiêu chuẩn quy định khi nghiệm thu tủ cấp điện, thì các khe hở của nắp đậy đều và không vượt quá bao nhiêu mm?;"A. 1 mm
-B. 2 mm
-C. 3 mm
-D. 4 mm";A
-51;Tiêu chuẩn quy định về nghiệm thu Đèn Downlight với sai số lệch tim đèn nhỏ hơn?;"A. 2 mm
-B. 3 mm
-C. 4 mm
-D. 5 mm";B
-52;Đối với các thiết bị thông tin liên lạc, truyền hình cáp thì khi lắp đặt, độ dài đầu chờ phải dài tối thiểu bao nhiêu mm?;"A. 100 mm
-B. 200 mm
-C. 300 mm
-D. 400 mm";D
-53;Đối với dây dẫn có tiết diện từ  từ bao nhiêu mm2 trở lên phải được ép đầu cos khi kết nối với tủ điện và thiết bị?;"A. 2.5 mm2
-B. 4 mm2
-C. 6 mm2
-D. 10 mm2";C
-54;Hệ thống báo cháy phải đảm bảo liên động với những hệ nào?;"A. Quạt hút khói, quạt tăng áp cầu thang
-B. Thang máy, thang cuốn
-C. Chữa cháy tự động, hệ cấp gas
-D. Tất cả đều đúng";D
-55;Theo tiêu chuẩn bàn giao các hạng mục xây dựng và kỹ thuật đối với đèn hắt trần được lắp đặt như thế nào?;"A. Đèn hắt trần và các thiết bị kèm theo không bị nhìn thầu khi đứng tại mọi vị trí trong căn hộ, ánh sáng đảm bảo, không bị ngắt quãng
-B. Đèn hắt trần và các thiết bị kèm theo không bị nhìn thấy khi đứng tại mọi vị trí trong căn hộ, ánh sáng đồng màu, không bị ngắt quãng
-C. Đèn hắt trần và các thiết bị kèm theo sẽ bị nhìn thấy khi đứng tại mọi vị trí trong căn hộ, ánh sáng đồng màu, không bị ngắt quãng
-D. Đèn hắt trần và các thiết bị kèm theo không bị nhìn thấy khi đứng tại mọi vị trí trong căn hộ, đèn phải có ánh sáng tốt, ánh sáng đồng màu, không bị ngắt quãng";B
-56;Theo tiêu chuẩn bàn giao các hạng mục xây dựng và kỹ thuật đối với  công tắc phải lắp đặt thế nào để đảm bảo yêu cầu kỹ thuật?;"A. Các hạt bật tắt - tắt phải theo hướng lắp đặt, cùng hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp
-B. Các hạt bật tắt - tắt phải theo hướng lắp đặt, theo hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp
-C. Các hạt bật tắt - tắt phải cùng hướng lắp đặt, cùng hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp
-D. Các hạt bật tắt - tắt phải cùng hướng lắp đặt, theo hướng trạng thái, hoạt động ổn định, công tắt lắp trên mặt gạch ốp phải che kín lỗ cắt gạch và áp sát mặt gạch ốp";C
-57;Khoảng cách giữa các kẹp C giữ ống diện, điện nhẹ PVC nổi trên trần là bao nhiêu?;"A. < 1200mm
-B. < 1100mm
-C. < 1000mm
-D. < 900mm";C
-58;Mặt công tác, ổ cắm lắp đúng vị trí, thăng bằng ngang, sai lệch cao độ không quá bao nhiêu mm?;"A. ±2mm
-B. ±3mm
-C. ±4mm
-D. ±5mm";D
-59;Khi mắc song song thì khoảng cách giữa đường điện chiếu sáng và động lực với cáp báo cháy không được nhỏ hơn ?;"A. 0.3m
-B. 0.4m
-C. 0.5m
-D. 0.6m";C
-60;Yêu cầu điện trở tiếp địa hệ thống tiếp địa trạm biến áp cần đạt được là:;A≥ 10 Ohm (W);
-;;B≤ 10 Ohm (W);
-;;C≤ 4 Ohm (W);C
-;;D≤ 6 Ohm (W);
-61;Đóng điện vào máy bơm nước, động cơ điện của bơm không quay là do;A. Mất điện, hở mạch, động cơ bị cháy.;A
-;;B. Mất nước mồi, dây quấn động cơ bị chập.;
-;;C. Mất điện nguồn, đầu ống hút bị tắc.;
-;;D. Đầu ống hút bị tắc, nguồn nước đầu hút bị cạn;
-62;Tiết diện 1,5mm2 dây điện đồng có thể chịu tối đa bao nhiêu ampe?;"A. 2A
-B. 30A
-C. 4A
-D. 6A";B
-63;Chiều cao cột nước bơm của máy bơm được tính;A. Từ vị trí đặt máy đến bề mặt mực nước dưới mà máy có thể hút lên bình thường;
-;;B. Từ vị trí đặt máy đến vị trí cao nhất mà máy có thể đẩy nước lên được;B
-;;C. Từ miệng ống hút đến vị trí cao nhất mà máy có thể đẩy nước lên được;
-;;D. Từ miệng ống hút đến vị trí đặt máy;
-64;Biện pháp thi công an toàn ngoài trời khi có trời mưa;"A. Tiếp tục làm việc bình thường để kịp tiến độ.
-B. Dùng tay trần thao tác nhanh để tránh bị ướt lâu.
-C. Ngừng thi công hoặc chỉ làm khi đã cắt nguồn điện, sử dụng dụng cụ và đồ bảo hộ cách điện đầy đủ.
-D. Đứng trên nền đất ướt và kiểm tra dây điện.";C
-65;Yêu cầu điện trở tiếp địa hệ thống chống sét, tủ điện, motor cần đạt được là:;A≥ 10 Ohm (W);
-;;B≤ 10 Ohm (W);B
-;;C≤ 4 Ohm (W);
-;;D≤ 6 Ohm (W);
-66;Mạch điện có một bóng đèn có thể tắt, mở ở hai vị trí khác nhau là;A. Mạch đèn sợi đốt đơn giản.;
-;;B. Mạch đèn cầu thang.;B
-;;C. Mạch đèn thay đổi ánh sáng.;
-;;D. Mạch đèn sáng luân phiên.;
-67;Khi bị điện giật cần;"A. Tách nạn nhân khỏi nguồn điện
-B. Dùng tay không kéo nạn nhân khỏi nguồn điện
-C. Để nằm yên
-D. Bỏ đi";A
-68;Khi cuộn dây động cơ bị ẩm ta cần làm như sau :;A. Tháo động cơ, phơi nắng;
-;;B. Tháo động cơ để trong mát một thời gian;
-;;C. Tháo động cơ, rửa sạch bằng nước, phơi nắng;
-;;D. Tháo động cơ, rửa sạch bằng xăng, dùng máy sấy khô;D
-69;Để đo điện năng tiêu thụ ta dùng;A. Oát kế;
-;;B. Ampe kế           ;
-;;C. Vôn kế                       ;
-;;D. Công tơ  ;D
-70;Để thể hiện rõ mối liên hệ về điện của các phần tử trong mạch điện ta dùng;A. Sơ đồ cấu tạo của mạch điện;
-;;B. Sơ đồ lắp đặt của mạch điện;
-;;C. Sơ đồ nguyên lí của mạch điện;C
-;;D. Sơ đồ nguyên lí và cấu tạo của mạch điện;
-71;Số cuộn dây quấn làm việc của động cơ điện 3 pha là;A. Một.;
-;;B. Hai.;
-;;C. Ba.;C
-;;D. Bốn.;
-72;Công suất điện được tính;"A. P = U × I
-B. P = U / I
-C. P = I / R
-D. P = R / U";A
-73;Động cơ điện là loại máy biến đổi;A. Điện năng thành nhiệt năng.;
-;;B. Điện năng thành quang năng.;
-;;C. Điện năng thành cơ năng;C
-;;D. Cơ năng thành điện năng.;
-74;Điện áp nguy hiểm đối với người;"A. > 36V
-B. > 12V
-C. > 6V
-D. > 3V";A
-75;Rơ le nhiệt dùng để;"A. Bảo vệ quá tải động cơ
-B. Tăng điện áp
-C. Đo điện
-D. Giảm dòng";A
-76;Contactor dùng để;"A. Đóng cắt mạch điện công suất lớn
-B. Đo điện áp
-C. Đo dòng điện
-D. Cấp nguồn";A
-77;Khi đo điện áp xoay chiều cần bắt đầu từ thang đo lớn nhất rồi giảm dần là để;A. tránh gây sai số lớn khi đọc kết quả đo.;
-;;B. tránh làm hỏng que đo.;
-;;C. tránh làm hỏng mạch điện của dụng cụ đo.;C
-;;D. tránh không đọc được kết quả đo.;
-78;Khi khởi động máy bơm nước mà áp tô mát tự động ngắt điện hoặc đứt cầu chì là do;A. Động cơ bị rò điện.;
-;;B. Dây quấn động cơ bị chập;B
-;;C. Mất điện.;
-;;D. Không có nguồn nước cấp.;
-79;Đại lượng đo ánh sáng nào được quan tâm nhất khi tính toán chiếu sáng;A. Quang thông.;
-;;B. Độ chói.;
-;;C. Độ rọi.;C
-;;D. Công suất đèn.;
-80;Đo điện trở hai đầu của cuộn dây cho giá trị R = ∞ chứng tỏ rằng :;A. Cuộn dây bị ngắn mạch;
-;;B. Cuộn dây bị ẩm nên điện trở tăng;
-;;C. Cuộn dây bị đứt;
-;;D. Cuộn dây bị chập một số vòng;C
-81;Khi đóng điện vào máy bơm nước, có điện vào, động cơ rung nhẹ nhưng không quay là do;A. Điện áp nguồn quá cao so với định mức;
-;;B. Mạch cấp điện cho động cơ bị hở mạch do đứt dây;
-;;C. Tụ điện khởi động bị hỏng;
-;;D. Dây quấn động cơ bị cháy;
-82;Sử dụng thiết bị đo nào để kiểm tra cách điện động cơ, cáp điện;A. Đồng  hồ vạn năng;
-;;B. Đồng hồ ampe kìm;
-;;C. Đồng hồ đo điện trở đất Teraohm;D
-;;D. Đồng hồ Megaohm;
-83;Sơ đồ cấp điện cho nhà chung cư theo thứ tự thế nào là đú;"A.Tủ điện tổng; trạm biến áp; tủ điện tầng; bảng điện; các tải của căn hộ";
-;;"B. Trạm biến áp; tủ điện tổng; tủ điện tầng; bảng điện; các tải của căn hộ";B
-;;"B. Tủ điện tầng; trạm biến áp; tủ điện tổng; bảng điện; các tải của căn hộ";
-;;"D. Bảng điện; tủ điện tầng; trạm biến áp; tủ điện tổng; các tải của căn hộ";
-84;Động cơ điện có các phần chính là;A. Stato là phần quay và roto là phần tĩnh.;
-;;B. Stato là phần tĩnh và roto là phần quay.;B
+D. 20%";C
+20;Khi lắp đặt thiết bị chiếu sáng tại khu vực ngoài trời, cần chú ý điều gì đầu tiên?;"A. Màu sắc đèn
+B. Nhiệt độ màu
+C. Cấp IP
+D. Độ rọi";C
+21;Khi kiểm tra điện áp pha, nếu một pha bị mất, hiện tượng nào dễ nhận biết nhất?;"A. Điện tắt, động cơ kêu
+B. Dòng tăng nhẹ
+C. Điện áp tang
+D. Tụ bù hỏng";A
+22;Khi nối dây cáp nhôm với đồng, cần dùng phụ kiện gì?;"A. Kẹp inox
+B. Đầu nối trung gian bimetal
+C. Keo dẫn điện
+D. Không cần";B
+23;Khi kiểm tra motor 3 pha bị nhảy CB, nguyên nhân thường gặp nhất là?;"A. CB yếu
+B. Dây nhỏ
+C. Motor chạm vỏ hoặc chạm pha
+D. Điện áp cao";C
+24;Bán kính uốn ống PVC phải ≥ mấy lần đường kính ống?;"A. 6 lần
+B. 4 lần
+C. 8 lần
+D. 10 lần";A
+25;Khi lắp đặt cáp trên khay, chiều cao xếp lớp không quá?;"A. 2 lớp
+B. 3 lớp
+C. 4 lớp
+D. 5 lớp";B
+26;Khi kéo dây trong ống, khoảng cách tối đa giữa 2 hộp kéo là?;"A. 30m
+B. 40m
+C. 25m
+D. 50m";A
+27;Khi thi công tại tầng hầm ẩm ướt, nên dùng loại ống nào?;"A. Óng théo mạ kẽm
+B. Ống PVC
+C. Ống nhựa mềm
+D. Ống ruột gà";A
+28;Khi luồn dây, nên kéo mấy người?;"A. 1 người
+B. 2 người
+C. 3 người
+D. 4 người";B
+29;Khi lắp đèn âm trần, cần phối hợp bộ môn nào trước?;"A. Nước
+B. HVAC & trần
+C. Kết cấu
+D. PCCC";B
+30;Dây tín hiệu BMS cần có đặc điểm gì?;"A. Dây xoắn đôi
+B. Dây trơn
+C. Cáp chống nhiễu
+D. Dây thường";C
+31;Nối đất tạm thời cho thiết bị khi thử điện để làm gì?;"A. Kiểm tra điện áp
+B. Tránh điện rò
+C. Đo trở kháng
+D. Thử dòng";B
+32;Khi lắp ống điện, thang máng cáp xuyên sàn trong PKT, cần xử lý gì?;"A. Không cần
+B. Trám keo
+C. Fill kín chống cháy lan
+D. Dán băng keo";C
+33;Bước đầu tiên khi đóng điện thử là?;"A. Kiểm tra chiều pha
+B. Cho tải chạy
+C. Đo dòng
+D. Bật CB chính";A
+34;Đèn exit & emergency cần cấp nguồn thế nào?;"A. 2 nguồn (AC + DC)
+B. 1 nguồn
+C. 3 nguồn
+D. Không yêu cầu";A
+35;Khi kéo cáp dài >50m, cần thêm gì để giảm lực kéo?;"A. Dầu bôi trơn chuyên dụng
+B. Dây dù
+C. Dây rút
+D. Nước";A
+36;Khi chạy thử hệ thống, MCCB nhảy liên tục do?;"A. Nhiệt độ
+B. Áp thấp
+C. Dòng rò hoặc sai pha hoặc cân bằng tải chưa phù hợp
+D. Dây nhỏ";C
+37;Thiết bị ELCB có chức năng chính:;"A. Bảo vệ quá tải
+B. Cắt điện khi có dòng rò
+C. Cắt khi áp thấp
+D. Cắt khi quá áp";B
+38;Thử cách điện dây dẫn dùng thiết bị:;"A. Megger
+B. Ampe kìm
+C. Đồng hồ vạn năng
+D. Rơ-le";A
+39;Khi N và PE đấu chung, cần:;"A. Giữ nguyên
+B. Cắt PE
+C. Tách riêng
+D. Nối tạm";C
+40;Trước khi nghiệm thu chiếu sáng, kiểm tra:;"A. Công suất bóng
+B. Cường độ sáng
+C. Màu ánh sáng
+D. Chiều cao lắp";B
+41;Hệ công tắc hai chiều điều khiển 1 đèn gồm mấy dây chuyển mạch?;"A. 1
+B. 2
+C. 3
+D. 4";B
+42;Tủ điện phân phối (DB) thường được cấp nguồn từ đâu?;"A. Tủ chiếu sáng
+B. Tủ tổng (MDB)
+C. Tủ ATS 
+D. Tủ bơm";B
+43;Khi kiểm tra hệ thống tiếp địa định kỳ, thời gian đo lại tối thiểu là bao lâu/ lần?;"A. 3 tháng
+B. 6 tháng
+C. 12 tháng
+D. 24 tháng";C
+44;Khi nhập vật tư dây cáp về công trình, bước kiểm tra đầu tiên là gì?;"A. Màu sắc dây
+B. Độ dài cuộn
+C. Nhãn mác, xuất xứ và chứng chỉ CO-CQ
+D. Trọng lượng";C
+45;Khi kiểm tra tụ điện, dụng cụ phù hợp là:;"A. Ohm kế
+B. Ampe kế
+C. Đồng hồ vạn năng (thang điện dung)
+D. Volt kế";B
+46;"Trong sơ đồ điện, ký hiệu ""NO"" nghĩa là:";"A. Thường mở
+B. Thường đóng
+C. Không hoạt động
+D. Không nối đất";C
+47;Khi kiểm tra điện trở cách điện, giá trị nhỏ nhất được chấp nhận là bao nhiêu?;"A. 0,1 MΩ
+B. 0,5 MΩ
+C. 1 MΩ
+D. 10 MΩ";D
+48;Đối với hệ thống điện hạ thế, điện trở nối đất cho hệ thống chống sét yêu cầu ≤ bao nhiêu?;"A. 1 Ω
+B. 4 Ω
+C. 10 Ω
+D. 20 Ω";B
+49;Trong hệ thống điện công trình, dây trung tính (N) có nhiệm vụ chính là gì?;"A. Dẫn dòng sự cố
+B. Dẫn dòng tải mất cân bằng
+C. Dẫn dòng ngắn mạch
+D. Tăng công suất pha";A
+50;Cáp điện ngầm đi trong ống PVC phải được chôn sâu tối thiểu bao nhiêu mét the TCVN?;"A. 0.4 m
+B. 0.5 m
+C. 0.7 m
+D. 1.0 m";D
+;;Hải Phòng, Ngày   tháng   Năm 2026;
+;;BCH VINCONS ME VŨ YÊN - HẢI PHÒNG;

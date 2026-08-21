@@ -3545,5 +3545,705 @@ const QUESTIONS = [
       "Cơ năng thành điện năng."
     ],
     "correct_index": 2
+  },
+  {
+    "id": "q_el2_1",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Thiết bị nào dùng để bảo vệ quá dòng cho mạch điện?",
+    "options": [
+      "Contactor",
+      "Rơ-le nhiệt",
+      "CB (Circuit Breaker)",
+      "Aptomat"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el2_2",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Trong bản vẽ điện, ký hiệu MCB thể hiện thiết bị gì?",
+    "options": [
+      "Cầu chì",
+      "Aptomat tép",
+      "Tụ bù",
+      "Máy biến áp"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_3",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Dụng cụ đo điện trở cách điện là:",
+    "options": [
+      "Ampe kìm",
+      "Đồng hồ vạn năng",
+      "Megger",
+      "Ohm kế"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el2_4",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Thiết bị điều khiển đóng cắt cơ điện là:",
+    "options": [
+      "CB",
+      "Contactor",
+      "Cầu dao",
+      "Cầu chì"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el2_5",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Tụ bù có tác dụng:",
+    "options": [
+      "Tăng hệ số công suất",
+      "Giảm dòng ngắn mạch",
+      "Tăng điện áp",
+      "Tăng tổn hao"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el2_6",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi đóng điện thử tải, cầm kiểm tra thứ tự pha bằng:",
+    "options": [
+      "Bút thử điện",
+      "Đồng hồ vạn năng",
+      "Thiết bị kiểm tra pha",
+      "Ampe kìm"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_7",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Điện trở của dây dẫn phụ thuộc chủ yếu vào:",
+    "options": [
+      "Nhiệt độ",
+      "Đường kính",
+      "Chiều dài",
+      "Cả A, B, C"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el2_8",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Dòng rò lớn nhất cho phép của mạch điện dân dụng là:",
+    "options": [
+      "10 mA",
+      "30 mA",
+      "50 mA",
+      "100 mA"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_9",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Rơ-le trung gian thường dùng để:",
+    "options": [
+      "Đóng cắt tải",
+      "Truyền tín hiệu điều khiển",
+      "Bảo vệ chạm đất",
+      "Giảm dòng khởi động"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_10",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi tăng điện áp cấp nguồn, công suất tiêu thụ:",
+    "options": [
+      "Tăng",
+      "Giảm",
+      "Không đổi",
+      "Tùy tải"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el2_11",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi thi công ống luồn dây trong sàn bê tông, nên cố định bằng gì?",
+    "options": [
+      "Dây thép buộc",
+      "Băng keo",
+      "Ghim thép hoặc kẹp định vị",
+      "Xi măng"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el2_12",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi đấu dây điều khiển trong tủ, đầu cos phải được xử lý thế nào?",
+    "options": [
+      "Để trần",
+      "Bấm đầu cos, siết chặt vít",
+      "Dùng keo",
+      "Hàn chết"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_13",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Trong hệ thống chống sét, dây thoát sét thường làm bằng vật liệu gì?",
+    "options": [
+      "Nhôm",
+      "Sắt trần",
+      "Đồng trần hoặc mạ kẽm",
+      "Inox"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el2_14",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi đo điện trở đất bằng phương pháp 3 cực,  cực dòng và cực thế cách nhau tối thiểu bao nhiêu mét?",
+    "options": [
+      "2m",
+      "5m",
+      "10m",
+      "20m"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el2_15",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi kiểm tra pha thứ tự bằng bút thử, hiện tượng nào cho thấy sai thứ tự pha?",
+    "options": [
+      "Bút sáng đỏ",
+      "Bút không sáng",
+      "Động cơ quay ngược",
+      "Có tia lửa"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el2_16",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi đấu cáp 3 pha 4 dây, dây trung tính nên đặt ở vị trí nào?",
+    "options": [
+      "Bên trái",
+      "Bên phải",
+      "Ở giữa hoặc dưới cùng",
+      "Trên cùng"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el2_17",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Mạch điều khiển contactor cần dùng điện áp điều khiển thông thường là bao nhiêu?",
+    "options": [
+      "12VDC",
+      "24VDC",
+      "110VAC",
+      "220VAC"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el2_18",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi lắp máng cáp tầng kỹ thuật, yêu cầu nghiêng dốc bao nhiêu để thoát nước?",
+    "options": [
+      "0⁰",
+      "1⁰",
+      "2⁰",
+      "3⁰"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el2_19",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi kiểm tra tụ bù, điện dung giảm dưới bao nhiêu % thì cần thay thế?",
+    "options": [
+      "3%",
+      "5%",
+      "10%",
+      "20%"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el2_20",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi lắp đặt thiết bị chiếu sáng tại khu vực ngoài trời, cần chú ý điều gì đầu tiên?",
+    "options": [
+      "Màu sắc đèn",
+      "Nhiệt độ màu",
+      "Cấp IP",
+      "Độ rọi"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el2_21",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi kiểm tra điện áp pha, nếu một pha bị mất, hiện tượng nào dễ nhận biết nhất?",
+    "options": [
+      "Điện tắt, động cơ kêu",
+      "Dòng tăng nhẹ",
+      "Điện áp tang",
+      "Tụ bù hỏng"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el2_22",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi nối dây cáp nhôm với đồng, cần dùng phụ kiện gì?",
+    "options": [
+      "Kẹp inox",
+      "Đầu nối trung gian bimetal",
+      "Keo dẫn điện",
+      "Không cần"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_23",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi kiểm tra motor 3 pha bị nhảy CB, nguyên nhân thường gặp nhất là?",
+    "options": [
+      "CB yếu",
+      "Dây nhỏ",
+      "Motor chạm vỏ hoặc chạm pha",
+      "Điện áp cao"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el2_24",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Bán kính uốn ống PVC phải ≥ mấy lần đường kính ống?",
+    "options": [
+      "6 lần",
+      "4 lần",
+      "8 lần",
+      "10 lần"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el2_25",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi lắp đặt cáp trên khay, chiều cao xếp lớp không quá?",
+    "options": [
+      "2 lớp",
+      "3 lớp",
+      "4 lớp",
+      "5 lớp"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_26",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi kéo dây trong ống, khoảng cách tối đa giữa 2 hộp kéo là?",
+    "options": [
+      "30m",
+      "40m",
+      "25m",
+      "50m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el2_27",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi thi công tại tầng hầm ẩm ướt, nên dùng loại ống nào?",
+    "options": [
+      "Óng théo mạ kẽm",
+      "Ống PVC",
+      "Ống nhựa mềm",
+      "Ống ruột gà"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el2_28",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi luồn dây, nên kéo mấy người?",
+    "options": [
+      "1 người",
+      "2 người",
+      "3 người",
+      "4 người"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_29",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi lắp đèn âm trần, cần phối hợp bộ môn nào trước?",
+    "options": [
+      "Nước",
+      "HVAC & trần",
+      "Kết cấu",
+      "PCCC"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_30",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Dây tín hiệu BMS cần có đặc điểm gì?",
+    "options": [
+      "Dây xoắn đôi",
+      "Dây trơn",
+      "Cáp chống nhiễu",
+      "Dây thường"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el2_31",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Nối đất tạm thời cho thiết bị khi thử điện để làm gì?",
+    "options": [
+      "Kiểm tra điện áp",
+      "Tránh điện rò",
+      "Đo trở kháng",
+      "Thử dòng"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_32",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi lắp ống điện, thang máng cáp xuyên sàn trong PKT, cần xử lý gì?",
+    "options": [
+      "Không cần",
+      "Trám keo",
+      "Fill kín chống cháy lan",
+      "Dán băng keo"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el2_33",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Bước đầu tiên khi đóng điện thử là?",
+    "options": [
+      "Kiểm tra chiều pha",
+      "Cho tải chạy",
+      "Đo dòng",
+      "Bật CB chính"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el2_34",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Đèn exit & emergency cần cấp nguồn thế nào?",
+    "options": [
+      "2 nguồn (AC + DC)",
+      "1 nguồn",
+      "3 nguồn",
+      "Không yêu cầu"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el2_35",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi kéo cáp dài >50m, cần thêm gì để giảm lực kéo?",
+    "options": [
+      "Dầu bôi trơn chuyên dụng",
+      "Dây dù",
+      "Dây rút",
+      "Nước"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el2_36",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi chạy thử hệ thống, MCCB nhảy liên tục do?",
+    "options": [
+      "Nhiệt độ",
+      "Áp thấp",
+      "Dòng rò hoặc sai pha hoặc cân bằng tải chưa phù hợp",
+      "Dây nhỏ"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el2_37",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Thiết bị ELCB có chức năng chính:",
+    "options": [
+      "Bảo vệ quá tải",
+      "Cắt điện khi có dòng rò",
+      "Cắt khi áp thấp",
+      "Cắt khi quá áp"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_38",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Thử cách điện dây dẫn dùng thiết bị:",
+    "options": [
+      "Megger",
+      "Ampe kìm",
+      "Đồng hồ vạn năng",
+      "Rơ-le"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el2_39",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi N và PE đấu chung, cần:",
+    "options": [
+      "Giữ nguyên",
+      "Cắt PE",
+      "Tách riêng",
+      "Nối tạm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el2_40",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Trước khi nghiệm thu chiếu sáng, kiểm tra:",
+    "options": [
+      "Công suất bóng",
+      "Cường độ sáng",
+      "Màu ánh sáng",
+      "Chiều cao lắp"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_41",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Hệ công tắc hai chiều điều khiển 1 đèn gồm mấy dây chuyển mạch?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_42",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Tủ điện phân phối (DB) thường được cấp nguồn từ đâu?",
+    "options": [
+      "Tủ chiếu sáng",
+      "Tủ tổng (MDB)",
+      "Tủ ATS",
+      "Tủ bơm"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_43",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi kiểm tra hệ thống tiếp địa định kỳ, thời gian đo lại tối thiểu là bao lâu/ lần?",
+    "options": [
+      "3 tháng",
+      "6 tháng",
+      "12 tháng",
+      "24 tháng"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el2_44",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi nhập vật tư dây cáp về công trình, bước kiểm tra đầu tiên là gì?",
+    "options": [
+      "Màu sắc dây",
+      "Độ dài cuộn",
+      "Nhãn mác, xuất xứ và chứng chỉ CO-CQ",
+      "Trọng lượng"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el2_45",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi kiểm tra tụ điện, dụng cụ phù hợp là:",
+    "options": [
+      "Ohm kế",
+      "Ampe kế",
+      "Đồng hồ vạn năng (thang điện dung)",
+      "Volt kế"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_46",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Trong sơ đồ điện, ký hiệu \"NO\" nghĩa là:",
+    "options": [
+      "Thường mở",
+      "Thường đóng",
+      "Không hoạt động",
+      "Không nối đất"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_el2_47",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Khi kiểm tra điện trở cách điện, giá trị nhỏ nhất được chấp nhận là bao nhiêu?",
+    "options": [
+      "0,1 MΩ",
+      "0,5 MΩ",
+      "1 MΩ",
+      "10 MΩ"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_el2_48",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Đối với hệ thống điện hạ thế, điện trở nối đất cho hệ thống chống sét yêu cầu ≤ bao nhiêu?",
+    "options": [
+      "1 Ω",
+      "4 Ω",
+      "10 Ω",
+      "20 Ω"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_el2_49",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Trong hệ thống điện công trình, dây trung tính (N) có nhiệm vụ chính là gì?",
+    "options": [
+      "Dẫn dòng sự cố",
+      "Dẫn dòng tải mất cân bằng",
+      "Dẫn dòng ngắn mạch",
+      "Tăng công suất pha"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_el2_50",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Điện Bậc 2",
+    "exam_set": "Thợ Điện Bậc 2",
+    "question": "Cáp điện ngầm đi trong ống PVC phải được chôn sâu tối thiểu bao nhiêu mét the TCVN?",
+    "options": [
+      "0.4 m",
+      "0.5 m",
+      "0.7 m",
+      "1.0 m"
+    ],
+    "correct_index": 3
   }
 ];
