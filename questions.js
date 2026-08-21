@@ -3558,7 +3558,7 @@ const QUESTIONS = [
       "CB (Circuit Breaker)",
       "Aptomat"
     ],
-    "correct_index": 0
+    "correct_index": 2
   },
   {
     "id": "q_el2_2",
@@ -4247,3 +4247,7 @@ const QUESTIONS = [
     "correct_index": 3
   }
 ];
+
+if (typeof window !== 'undefined' && typeof window.applyQuestionOverrides === 'function') {
+  window.applyQuestionOverrides();
+}

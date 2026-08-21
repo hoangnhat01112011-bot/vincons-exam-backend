@@ -437,22 +437,13 @@
 
         // Init
         loadSettings();
-        window.addEventListener('DOMContentLoaded', initQuestionSuite);
-    </script>
-</body>
-</html>searchQuestionInput').value = '';
-                } else {
-                    alert("Lỗi: " + data.message);
-                }
-            })
-            .catch(err => {
-                alert("Đã xảy ra lỗi kết nối.");
-                console.error(err);
-            });
-        }
-
-        // Init
-        loadSettings();
+        window.addEventListener('DOMContentLoaded', () => {
+            if (typeof window.applyQuestionOverrides === 'function') window.applyQuestionOverrides();
+            initQuestionSuite();
+        });
+        window.addEventListener('questions_updated', () => {
+            if (typeof searchQuestions === 'function') searchQuestions();
+        });
     </script>
 </body>
 </html>

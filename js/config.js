@@ -138,6 +138,7 @@ window.syncQuestionOverridesFromCloud = async function() {
             });
             localStorage.setItem('vincons_question_overrides', JSON.stringify(overrides));
             window.applyQuestionOverrides();
+            window.dispatchEvent(new CustomEvent('questions_updated'));
         }
     } catch(e) {}
 };

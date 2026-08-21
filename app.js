@@ -20,6 +20,9 @@ if (window.location.pathname.endsWith('exam.html')) {
 }
 
 function initExam() {
+    if (typeof window.applyQuestionOverrides === 'function') {
+        window.applyQuestionOverrides();
+    }
     // 1. Set exam title and filter questions
     const job = candidateInfo.job;
     const examType = candidateInfo.examType;
