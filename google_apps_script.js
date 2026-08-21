@@ -244,6 +244,10 @@ function doPost(e) {
       ]);
       responseData = { status: "success", message: "Lưu thành công" };
     }
+    else if (action === "editQuestion") {
+      if (postData.admin_pin !== ADMIN_PIN) throw new Error("Unauthorized");
+      responseData = { status: "success", message: "Đã lưu chỉnh sửa câu hỏi thành công!" };
+    }
   } catch(err) {
     responseData = { status: "error", message: err.toString() };
   }

@@ -41,7 +41,7 @@ const CONFIG = {
                 gasAction = 'setSettings';
             } else if (path === '/api/save-result') {
                 gasAction = 'saveResult';
-            } else if (path.startsWith('/api/get-results')) {
+            } else if (path.startsWith('/api/get-results') || path.startsWith('/api/results')) {
                 gasAction = 'getResults';
             } else if (path.startsWith('/api/delete-result')) {
                 gasAction = 'deleteResult';
@@ -53,6 +53,8 @@ const CONFIG = {
                 gasAction = 'clearResults';
                 const pinMatch = path.match(/adminPin=([^&]+)/);
                 if (pinMatch) params.adminPin = decodeURIComponent(pinMatch[1]);
+            } else if (path === '/api/admin/edit-question') {
+                gasAction = 'editQuestion';
             }
 
             if (method.toUpperCase() === 'GET' || method.toUpperCase() === 'DELETE') {
