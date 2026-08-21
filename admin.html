@@ -63,11 +63,35 @@
                     <input type="password" id="adminConfirmPin" class="form-control" placeholder="Nhập mã Giám thị (VINCONS2026) để lưu thay đổi" required>
                 </div>
 
-                <button type="submit" id="btnUpdate" class="btn btn-primary btn-block">Lưu Mã Ca Thi</button>
+                <button type="submit" id="btnUpdate" class="btn btn-primary btn-block">Lưu Cài Đặt</button>
             </form>
+        </div>
+
+        <div class="card" style="max-width: 600px; margin: 20px auto;">
+            <div class="text-center" style="margin-bottom: 20px;">
+                <h2 style="color: var(--primary);">🛠️ SỬA LỖI ĐÁP ÁN CÂU HỎI</h2>
+                <p style="color: #7f8c8d; font-size: 14px;">Tìm kiếm câu hỏi bị sai đáp án và cập nhật lại đáp án đúng.</p>
+            </div>
+            <div class="form-group" style="display: flex; gap: 10px;">
+                <input type="text" id="searchQuestionInput" class="form-control" placeholder="Nhập từ khóa nội dung câu hỏi hoặc mã câu hỏi..." style="flex: 1;">
+                <button onclick="searchQuestion()" class="btn btn-secondary">Tìm</button>
+            </div>
+            
+            <div id="questionEditor" style="display: none; border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px;">
+                <h4 style="color: var(--accent); margin-top: 0;">Kết quả (Câu hỏi ID: <span id="qIdLabel"></span>)</h4>
+                <div id="qContentDisplay" style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin-bottom: 15px; font-weight: 500;"></div>
+                
+                <div class="form-group">
+                    <label>Chọn lại đáp án đúng:</label>
+                    <div id="qOptionsContainer"></div>
+                </div>
+                
+                <button onclick="saveCorrectAnswer()" class="btn btn-accent btn-block">Cập Nhật Đáp Án</button>
+            </div>
         </div>
     </main>
 
+    <script src="questions.js?v=999"></script>
     <script>
         function handleLogout() {
             if (confirm('Bạn có chắc chắn muốn thoát quyền Giám thị?')) {
@@ -139,6 +163,82 @@
             .finally(() => {
                 btn.disabled = false;
                 btn.textContent = "Lưu Mã Ca Thi";
+            });
+        }
+
+        // --- Question Editor Logic ---
+        let currentEditingQuestionId = null;
+
+        function searchQuestion() {
+            const keyword = document.getElementById('searchQuestionInput').value.trim().toLowerCase();
+            if (!keyword) {
+                alert("Vui lòng nhập nội dung để tìm kiếm!");
+                return;
+            }
+
+            // `QUESTIONS` is loaded from questions.js
+            const found = QUESTIONS.find(q => q.id.toLowerCase() === keyword || q.question.toLowerCase().includes(keyword));
+            
+            if (found) {
+                currentEditingQuestionId = found.id;
+                document.getElementById('qIdLabel').textContent = found.id;
+                document.getElementById('qContentDisplay').textContent = found.question;
+                
+                let optionsHtml = '';
+                found.options.forEach((opt, index) => {
+                    const isChecked = (index === found.correct_index) ? 'checked' : '';
+                    optionsHtml += `
+                        <div style="margin-bottom: 8px;">
+                            <label style="cursor: pointer; display: flex; align-items: flex-start; gap: 8px;">
+                                <input type="radio" name="editCorrectAnswer" value="${index}" ${isChecked} style="margin-top: 4px;">
+                                <span>${index + 1}. ${opt}</span>
+                            </label>
+                        </div>
+                    `;
+                });
+                document.getElementById('qOptionsContainer').innerHTML = optionsHtml;
+                document.getElementById('questionEditor').style.display = 'block';
+            } else {
+                alert("Không tìm thấy câu hỏi nào phù hợp với từ khóa này.");
+                document.getElementById('questionEditor').style.display = 'none';
+            }
+        }
+
+        function saveCorrectAnswer() {
+            if (!currentEditingQuestionId) return;
+            const selected = document.querySelector('input[name="editCorrectAnswer"]:checked');
+            if (!selected) {
+                alert("Vui lòng chọn một đáp án đúng!");
+                return;
+            }
+            
+            const adminPin = prompt("Nhập mã Giám thị (VINCONS2026) để xác nhận cập nhật:");
+            if (!adminPin) return;
+
+            const newCorrectIndex = parseInt(selected.value);
+            
+            CONFIG.apiCall('/api/admin/edit-question', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    admin_pin: adminPin,
+                    id: currentEditingQuestionId,
+                    correct_index: newCorrectIndex
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert("Cập nhật đáp án thành công!");
+                    document.getElementById('questionEditor').style.display = 'none';
+                    document.getElementById('searchQuestionInput').value = '';
+                } else {
+                    alert("Lỗi: " + data.message);
+                }
+            })
+            .catch(err => {
+                alert("Đã xảy ra lỗi kết nối.");
+                console.error(err);
             });
         }
 
