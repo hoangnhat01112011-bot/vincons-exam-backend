@@ -45,7 +45,7 @@ function initExam() {
         else if (discipline === 'Điều hòa thông gió') disciplineKeyword = 'Điều hòa';
         else if (discipline === 'Phòng cháy chữa cháy') disciplineKeyword = 'PCCC';
 
-        let theoryQuestions = QUESTIONS.filter(q => q.category.includes('Lý thuyết') && q.category.includes(disciplineKeyword));
+        let theoryQuestions = QUESTIONS.filter(q => q.category.toLowerCase().includes('lý thuyết') && q.category.toLowerCase().includes(disciplineKeyword.toLowerCase()));
 
         if (selectedSet !== 'all' && selectedSet !== '') {
             activeQuestions = theoryQuestions.filter(q => q.exam_set === selectedSet);
