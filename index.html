@@ -108,7 +108,7 @@
 
                 <div class="form-group">
                     <label for="examMode">Chế độ làm bài (*)</label>
-                    <select id="examMode" class="form-control" required>
+                    <select id="examMode" class="form-control" required onchange="togglePinRequirement(this.value)">
                         <option value="Thi chính thức" selected>Thi chính thức (Lấy điểm chuẩn)</option>
                         <option value="Ôn tập">Ôn tập trước thi (Rèn luyện - Giới hạn câu hỏi)</option>
                     </select>
@@ -126,7 +126,7 @@
                     </select>
                 </div>
 
-                <div class="form-group" style="margin-top: 20px; border-top: 1px dashed #ccc; padding-top: 20px;">
+                <div class="form-group" id="pinContainer" style="margin-top: 20px; border-top: 1px dashed #ccc; padding-top: 20px;">
                     <label for="examPin" style="color: var(--accent); font-weight: bold; font-size: 16px;">Mã Ca Thi (*)</label>
                     <input type="password" id="examPin" class="form-control" style="border: 2px solid var(--accent); font-size: 16px; font-weight: bold; text-align: center; letter-spacing: 5px;" placeholder="********" required maxlength="8">
                     <p class="input-info-text" style="color: var(--accent);">Vui lòng hỏi Giám thị để lấy Mã ca thi của ngày hôm nay.</p>
@@ -187,6 +187,18 @@
             }
         }
 
+        function togglePinRequirement(val) {
+            const pinContainer = document.getElementById('pinContainer');
+            const examPin = document.getElementById('examPin');
+            if (val === 'Ôn tập') {
+                pinContainer.style.display = 'none';
+                examPin.required = false;
+            } else {
+                pinContainer.style.display = 'block';
+                examPin.required = true;
+            }
+        }
+
         function toggleDiscipline(val) {
             const examSet = document.getElementById('examSet');
             if (val === 'Điện') {
@@ -236,7 +248,7 @@
             const examSet = document.getElementById('examSet') ? document.getElementById('examSet').value : 'all';
             const examPin = document.getElementById('examPin').value.trim();
             
-            if (!name || !id || !examCategory || !job || !discipline || !examType || !examMode || !examPin) {
+            if (!name || !id || !examCategory || !job || !discipline || !examType || !examMode || (examMode !== 'Ôn tập' && !examPin)) {
                 alert('Vui lòng điền đầy đủ các thông tin bắt buộc.');
                 return;
             }
@@ -246,7 +258,27 @@
             btnSubmit.disabled = true;
             loading.style.display = 'block';
 
-            // Gọi API kiểm tra mã ca thi
+            if (examMode === 'Ôn tập') {
+                const candidateInfo = {
+                    name: name,
+                    id: id,
+                    examCategory: examCategory,
+                    job: job,
+                    discipline: discipline,
+                    examType: examType,
+                    examMode: examMode,
+                    examSet: examSet,
+                    reviewLimit: 10
+                };
+                localStorage.setItem('vincons_candidate', JSON.stringify(candidateInfo));
+                // Clean up any old exam state on reload
+                localStorage.removeItem('vincons_answers');
+                localStorage.removeItem('vincons_time_left');
+                window.location.href = 'exam.html';
+                return;
+            }
+
+            // Gọi API kiểm tra mã ca thi cho Thi chính thức
             CONFIG.apiCall('/api/auth/verify-pin?pin=' + encodeURIComponent(examPin) + '&category=' + encodeURIComponent(examCategory))
                 .then(res => res.json())
                 .then(data => {
