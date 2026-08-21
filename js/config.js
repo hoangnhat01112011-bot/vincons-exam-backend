@@ -55,6 +55,8 @@ const CONFIG = {
                 if (pinMatch) params.adminPin = decodeURIComponent(pinMatch[1]);
             } else if (path === '/api/admin/edit-question') {
                 gasAction = 'editQuestion';
+            } else if (path.startsWith('/api/get-question-overrides')) {
+                gasAction = 'getQuestionOverrides';
             }
 
             if (method.toUpperCase() === 'GET' || method.toUpperCase() === 'DELETE') {
@@ -96,3 +98,57 @@ const CONFIG = {
         }
     }
 };
+
+// Helper to apply question overrides stored in localStorage and Google Sheets
+window.applyQuestionOverrides = function() {
+    if (typeof QUESTIONS === 'undefined' || !Array.isArray(QUESTIONS)) return;
+    try {
+        const overrides = JSON.parse(localStorage.getItem('vincons_question_overrides') || '{}');
+        Object.keys(overrides).forEach(qId => {
+            const qObj = QUESTIONS.find(item => String(item.id) === String(qId));
+            if (qObj) {
+                const item = overrides[qId];
+                if (item.question) qObj.question = item.question;
+                if (item.options) qObj.options = item.options;
+                if (item.correct_index !== undefined) qObj.correct_index = parseInt(item.correct_index);
+            }
+        });
+    } catch(e) {}
+};
+
+window.syncQuestionOverridesFromCloud = async function() {
+    if (typeof CONFIG === 'undefined' || !CONFIG.USE_GOOGLE_SHEETS) return;
+    try {
+        const res = await CONFIG.apiCall('/api/get-question-overrides');
+        const json = await res.json();
+        if (json.status === 'success' && Array.isArray(json.data)) {
+            let overrides = {};
+            try { overrides = JSON.parse(localStorage.getItem('vincons_question_overrides') || '{}'); } catch(e){}
+            json.data.forEach(row => {
+                if (!row.id) return;
+                let opts = row.options_json;
+                if (typeof opts === 'string') {
+                    try { opts = JSON.parse(opts); } catch(e) { opts = []; }
+                }
+                overrides[row.id] = {
+                    question: row.question,
+                    options: opts,
+                    correct_index: parseInt(row.correct_index)
+                };
+            });
+            localStorage.setItem('vincons_question_overrides', JSON.stringify(overrides));
+            window.applyQuestionOverrides();
+        }
+    } catch(e) {}
+};
+
+// Auto apply overrides on load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        window.applyQuestionOverrides();
+        window.syncQuestionOverridesFromCloud();
+    });
+} else {
+    window.applyQuestionOverrides();
+    window.syncQuestionOverridesFromCloud();
+}

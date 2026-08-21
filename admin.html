@@ -79,6 +79,7 @@
                     <input type="text" id="searchQuestionInput" class="form-control" placeholder="Nhập từ khóa, nội dung câu hỏi hoặc số câu..." onkeyup="if(event.key==='Enter') searchQuestions()">
                     <button onclick="searchQuestions()" class="btn btn-primary" style="white-space: nowrap;">🔍 Tìm kiếm</button>
                     <button onclick="resetSearch()" class="btn btn-secondary" style="white-space: nowrap;">Làm mới</button>
+                    <button onclick="downloadUpdatedQuestionsJS()" class="btn" style="white-space: nowrap; background: #e67e22; color: #fff; border: none; border-radius: 6px; padding: 0 12px; cursor: pointer; font-weight: bold;" title="Tải file questions.js đã chỉnh sửa để push lên GitHub">📥 Tải file questions.js mới</button>
                 </div>
             </div>
 
@@ -397,6 +398,17 @@
                         qObj.options = newOptions;
                         qObj.correct_index = newCorrectIndex;
                     }
+                    // Save to localStorage overrides
+                    try {
+                        let overrides = JSON.parse(localStorage.getItem('vincons_question_overrides') || '{}');
+                        overrides[editingQuestionId] = {
+                            question: newText,
+                            options: newOptions,
+                            correct_index: newCorrectIndex
+                        };
+                        localStorage.setItem('vincons_question_overrides', JSON.stringify(overrides));
+                    } catch(e){}
+
                     cancelEditing();
                     searchQuestions();
                 } else {
@@ -407,6 +419,20 @@
                 alert('❌ Lỗi kết nối máy chủ.');
                 console.error(err);
             });
+        }
+
+        function downloadUpdatedQuestionsJS() {
+            if (typeof QUESTIONS === 'undefined') return;
+            const content = '// File này được tạo tự động từ trang Admin\nconst QUESTIONS = ' + JSON.stringify(QUESTIONS, null, 2) + ';\n';
+            const blob = new Blob([content], { type: 'text/javascript' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'questions.js';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
         }
 
         // Init

@@ -154,6 +154,11 @@ function doGet(e) {
       }
       responseData = { status: "success", message: "Đã xóa toàn bộ" };
     }
+    else if (action === "getQuestionOverrides") {
+      var sheet = getOrCreateSheet("question_overrides", ["id", "question", "options_json", "correct_index", "updated_at"]);
+      var allData = getSheetData(sheet);
+      responseData = { status: "success", data: allData };
+    }
   } catch(err) {
     responseData = { status: "error", message: err.toString() };
   }
@@ -246,7 +251,30 @@ function doPost(e) {
     }
     else if (action === "editQuestion") {
       if (postData.admin_pin !== ADMIN_PIN) throw new Error("Unauthorized");
-      responseData = { status: "success", message: "Đã lưu chỉnh sửa câu hỏi thành công!" };
+      
+      var sheet = getOrCreateSheet("question_overrides", ["id", "question", "options_json", "correct_index", "updated_at"]);
+      var allData = getSheetData(sheet);
+      var found = false;
+      for (var i = 0; i < allData.length; i++) {
+        if (String(allData[i].id) === String(postData.id)) {
+          sheet.getRange(i + 2, 2).setValue(postData.question);
+          sheet.getRange(i + 2, 3).setValue(JSON.stringify(postData.options));
+          sheet.getRange(i + 2, 4).setValue(postData.correct_index);
+          sheet.getRange(i + 2, 5).setValue(new Date().toISOString());
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        sheet.appendRow([
+          postData.id,
+          postData.question,
+          JSON.stringify(postData.options),
+          postData.correct_index,
+          new Date().toISOString()
+        ]);
+      }
+      responseData = { status: "success", message: "Đã lưu chỉnh sửa câu hỏi thành công trên toàn hệ thống!" };
     }
   } catch(err) {
     responseData = { status: "error", message: err.toString() };
