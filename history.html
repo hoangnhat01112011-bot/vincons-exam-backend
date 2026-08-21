@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lá»‹ch Sá»­ BÃ i Thi - Vincons</title>
+    <title>Lịch Sử Bài Thi - Vincons</title>
     <link rel="stylesheet" href="style.css">
     <script src="js/auth-guard.js"></script>
     <script src="js/config.js"></script>
@@ -16,15 +16,15 @@
             <div class="logo-icon">VC</div>
             <div class="logo-text">
                 <h1>Vincons</h1>
-                <p>BCH Háº¡ Long Xanh</p>
+                <p>BCH Hạ Long Xanh</p>
             </div>
         </div>
         <div class="header-nav" style="display: flex; align-items: center; gap: 15px;">
-            <a href="index.html" class="nav-link">ðŸ  Trang chá»§</a>
-            <a href="history.html" class="nav-link active">ðŸ“‹ Lá»‹ch sá»­ bÃ i thi</a>
-            <a href="admin.html" class="nav-link" id="navAdminLink" style="display: none;">ðŸ‘‘ Quáº£n trá»‹ Admin</a>
-            <a href="login.html" class="btn btn-secondary btn-sm" id="btnAdminLogin" style="padding: 6px 12px; font-size: 12px;">ÄÄƒng nháº­p GiÃ¡m thá»‹</a>
-            <button onclick="handleLogout()" id="btnLogout" class="btn btn-secondary btn-sm" style="display: none; padding: 6px 12px; font-size: 12px;">ThoÃ¡t Admin</button>
+            <a href="index.html" class="nav-link">🏠 Trang chủ</a>
+            <a href="history.html" class="nav-link active">📋 Lịch sử bài thi</a>
+            <a href="admin.html" class="nav-link" id="navAdminLink" style="display: none;">👑 Quản trị Admin</a>
+            <a href="login.html" class="btn btn-secondary btn-sm" id="btnAdminLogin" style="padding: 6px 12px; font-size: 12px;">Đăng nhập Giám thị</a>
+            <button onclick="handleLogout()" id="btnLogout" class="btn btn-secondary btn-sm" style="display: none; padding: 6px 12px; font-size: 12px;">Thoát Admin</button>
         </div>
     </header>
 
@@ -35,17 +35,17 @@
             <!-- Header title -->
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                 <div>
-                    <h2 style="font-size: 24px; color: var(--primary); font-weight: 800;">QUáº¢N LÃ Lá»ŠCH Sá»¬ BÃ€I THI</h2>
+                    <h2 style="font-size: 24px; color: var(--primary); font-weight: 800;">QUẢN LÝ LỊCH SỬ BÀI THI</h2>
                     <p style="font-size: 13px; color: #7f8c8d; font-weight: 600; text-transform: uppercase;">
-                        Dá»± Ã¡n Khu ÄÃ´ Thá»‹ Phá»©c Há»£p Háº¡ Long Xanh - Danh sÃ¡ch káº¿t quáº£ sÃ¡t háº¡ch
+                        Dự án Khu Đô Thị Phức Hợp Hạ Long Xanh - Danh sách kết quả sát hạch
                     </p>
                 </div>
                 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="admin.html" class="btn btn-primary btn-sm" id="btnAdminPortal" style="display: none; align-items: center; gap: 4px; text-decoration: none;">ðŸ‘‘ Quáº£n trá»‹ Admin</a>
-                    <a href="https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit" target="_blank" class="btn btn-accent btn-sm" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">ðŸ“Š Google Sheets Cloud</a>
-                    <button class="btn btn-primary btn-sm" onclick="exportData()">ðŸ“¥ Xuáº¥t Excel / CSV</button>
-                    <button class="btn btn-secondary btn-sm" onclick="window.print()">ðŸ–¨ï¸ In bÃ¡o cÃ¡o</button>
-                    <button id="btnClearAll" class="btn btn-danger btn-sm" style="display: none;" onclick="confirmClearAll()">ðŸ—‘ï¸ XÃ³a lá»‹ch sá»­</button>
+                    <a href="admin.html" class="btn btn-primary btn-sm" id="btnAdminPortal" style="display: none; align-items: center; gap: 4px; text-decoration: none;">👑 Quản trị Admin</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit" target="_blank" class="btn btn-accent btn-sm" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">📊 Google Sheets Cloud</a>
+                    <button class="btn btn-primary btn-sm" onclick="exportData()">📥 Xuất Excel / CSV</button>
+                    <button class="btn btn-secondary btn-sm" onclick="window.print()">🖨️ In báo cáo</button>
+                    <button id="btnClearAll" class="btn btn-danger btn-sm" style="display: none;" onclick="confirmClearAll()">🗑️ Xóa lịch sử</button>
                 </div>
             </div>
 
@@ -53,44 +53,44 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <span class="stat-value" id="statTotal">0</span>
-                    <span class="stat-label">Tá»•ng sá»‘ bÃ i thi</span>
+                    <span class="stat-label">Tổng số bài thi</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-value" id="statPass" style="color: var(--success);">0</span>
-                    <span class="stat-label">ThÃ­ sinh Äáº¡t</span>
+                    <span class="stat-label">Thí sinh Đạt</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-value" id="statRate" style="color: var(--accent);">0%</span>
-                    <span class="stat-label">Tá»· lá»‡ Äáº¡t</span>
+                    <span class="stat-label">Tỷ lệ Đạt</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-value" id="statAvg">0%</span>
-                    <span class="stat-label">Äiá»ƒm sá»‘ trung bÃ¬nh</span>
+                    <span class="stat-label">Điểm số trung bình</span>
                 </div>
             </div>
 
             <!-- Filter & Search Toolbar -->
             <div class="filter-bar">
                 <div class="filter-group">
-                    <input type="text" id="searchInput" class="form-control search-input" placeholder="ðŸ” TÃ¬m theo Há» tÃªn, SBD / SÄT..." oninput="filterResults()">
+                    <input type="text" id="searchInput" class="form-control search-input" placeholder="🔍 Tìm theo Họ tên, SBD / SĐT..." oninput="filterResults()">
                     
                     <select id="jobFilter" class="form-control" style="width: auto; min-width: 180px;" onchange="filterResults()">
-                        <option value="">-- Táº¥t cáº£ vá»‹ trÃ­ --</option>
-                        <option value="Thá»£ XÃ¢y dá»±ng">Thá»£ XÃ¢y dá»±ng (Ná»)</option>
-                        <option value="Thá»£ Äiá»‡n">Thá»£ Äiá»‡n nÆ°á»›c (M&E)</option>
-                        <option value="Thá»£ Sáº¯t">Thá»£ Sáº¯t cá»‘t thÃ©p</option>
-                        <option value="Thá»£ Má»™c">Thá»£ Má»™c cá»‘p pha</option>
-                        <option value="GiÃ¡m sÃ¡t">Ká»¹ sÆ° GiÃ¡m sÃ¡t</option>
+                        <option value="">-- Tất cả vị trí --</option>
+                        <option value="Thợ Xây dựng">Thợ Xây dựng (Nề)</option>
+                        <option value="Thợ Điện">Thợ Điện nước (M&E)</option>
+                        <option value="Thợ Sắt">Thợ Sắt cốt thép</option>
+                        <option value="Thợ Mộc">Thợ Mộc cốp pha</option>
+                        <option value="Giám sát">Kỹ sư Giám sát</option>
                     </select>
 
                     <select id="statusFilter" class="form-control" style="width: auto; min-width: 150px;" onchange="filterResults()">
-                        <option value="">-- Táº¥t cáº£ káº¿t quáº£ --</option>
-                        <option value="PASS">Äáº T YÃŠU Cáº¦U</option>
-                        <option value="FAIL">CHÆ¯A Äáº T</option>
+                        <option value="">-- Tất cả kết quả --</option>
+                        <option value="PASS">ĐẠT YÊU CẦU</option>
+                        <option value="FAIL">CHƯA ĐẠT</option>
                     </select>
                 </div>
                 <div style="font-size: 13px; font-weight: 700; color: var(--primary);" id="resultCountLabel">
-                    Hiá»ƒn thá»‹ 0 báº£n ghi
+                    Hiển thị 0 bản ghi
                 </div>
             </div>
 
@@ -101,15 +101,15 @@
                         <thead>
                             <tr>
                                 <th>STT</th>
-                                <th>Thá»i gian ná»™p</th>
-                                <th>Há» vÃ  tÃªn</th>
-                                <th>SBD / SÄT</th>
-                                <th>Vá»‹ trÃ­ á»©ng tuyá»ƒn</th>
-                                <th>Pháº§n thi</th>
-                                <th>Äiá»ƒm sá»‘</th>
-                                <th>Tá»· lá»‡</th>
-                                <th>Káº¿t quáº£</th>
-                                <th style="text-align: center;">Thao tÃ¡c</th>
+                                <th>Thời gian nộp</th>
+                                <th>Họ và tên</th>
+                                <th>SBD / SĐT</th>
+                                <th>Vị trí ứng tuyển</th>
+                                <th>Phần thi</th>
+                                <th>Điểm số</th>
+                                <th>Tỷ lệ</th>
+                                <th>Kết quả</th>
+                                <th style="text-align: center;">Thao tác</th>
                             </tr>
                         </thead>
                         <tbody id="historyTableBody">
@@ -125,7 +125,7 @@
     <div id="detailModal" class="modal-overlay">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 id="modalTitle">Chi Tiáº¿t BÃ i LÃ m ThÃ­ Sinh</h3>
+                <h3 id="modalTitle">Chi Tiết Bài Làm Thí Sinh</h3>
                 <button class="modal-close" onclick="closeModal()">&times;</button>
             </div>
             <div class="modal-body" id="modalBody">
@@ -135,7 +135,7 @@
     </div>
 
     <footer>
-        &copy; 2026 Vincons - Ban Chá»‰ Huy Dá»± Ãn Háº¡ Long Xanh. All rights reserved.
+        &copy; 2026 Vincons - Ban Chỉ Huy Dự Án Hạ Long Xanh. All rights reserved.
     </footer>
 
     <script>
@@ -162,7 +162,7 @@
         }
 
         function handleLogout() {
-            if (confirm('Báº¡n cÃ³ cháº¯c cháº¯n muá»‘n thoÃ¡t quyá»n GiÃ¡m thá»‹?')) {
+            if (confirm('Bạn có chắc chắn muốn thoát quyền Giám thị?')) {
                 localStorage.removeItem('vincons_admin');
                 window.location.reload();
             }
@@ -229,7 +229,7 @@
             document.getElementById('statRate').textContent = `${passRate}%`;
             document.getElementById('statAvg').textContent = `${avgScore}%`;
             
-            document.getElementById('resultCountLabel').textContent = `Hiá»ƒn thá»‹ ${filteredResults.length}/${total} báº£n ghi`;
+            document.getElementById('resultCountLabel').textContent = `Hiển thị ${filteredResults.length}/${total} bản ghi`;
         }
 
         function renderTable() {
@@ -240,7 +240,7 @@
                 tbody.innerHTML = `
                     <tr>
                         <td colspan="10" style="text-align: center; padding: 40px; color: #7f8c8d; font-weight: 600;">
-                            ChÆ°a cÃ³ dá»¯ liá»‡u bÃ i thi nÃ o phÃ¹ há»£p.
+                            Chưa có dữ liệu bài thi nào phù hợp.
                         </td>
                     </tr>
                 `;
@@ -252,17 +252,17 @@
                 const tr = document.createElement('tr');
 
                 const statusBadge = item.isPass 
-                    ? `<span class="review-badge correct">Äáº T YÃŠU Cáº¦U</span>` 
-                    : `<span class="review-badge incorrect">CHÆ¯A Äáº T</span>`;
+                    ? `<span class="review-badge correct">ĐẠT YÊU CẦU</span>` 
+                    : `<span class="review-badge incorrect">CHƯA ĐẠT</span>`;
 
-                const modeBadge = (cand.examMode === 'Ã”n táº­p') 
-                    ? `<br><span style="font-size:10px; background:#f39c12; color:#fff; padding:2px 4px; border-radius:3px; display:inline-block; margin-top:2px;">Ã”N Táº¬P</span>` 
+                const modeBadge = (cand.examMode === 'Ôn tập') 
+                    ? `<br><span style="font-size:10px; background:#f39c12; color:#fff; padding:2px 4px; border-radius:3px; display:inline-block; margin-top:2px;">ÔN TẬP</span>` 
                     : '';
 
                 const actions = isAdmin 
-                ? `<button class="btn btn-secondary btn-sm" onclick="viewDetail('${item.id}')">ðŸ‘ï¸ Xem</button>
-                   <button class="btn btn-danger btn-sm" style="margin-left:5px" onclick="deleteRecord('${item.id}')">ðŸ—‘ï¸</button>`
-                : `<button class="btn btn-secondary btn-sm" onclick="viewDetail('${item.id}')">ðŸ‘ï¸ Xem</button>`;
+                ? `<button class="btn btn-secondary btn-sm" onclick="viewDetail('${item.id}')">👁️ Xem</button>
+                   <button class="btn btn-danger btn-sm" style="margin-left:5px" onclick="deleteRecord('${item.id}')">🗑️</button>`
+                : `<button class="btn btn-secondary btn-sm" onclick="viewDetail('${item.id}')">👁️ Xem</button>`;
 
                 tr.innerHTML = `
                     <td style="font-weight: 700;">${index + 1}</td>
@@ -290,24 +290,24 @@
             let questions = item.questions || [];
             const answers = item.answers || {};
 
-            document.getElementById('modalTitle').textContent = `Chi Tiáº¿t BÃ i LÃ m - ${cand.name || 'ThÃ­ sinh'} (${cand.id || '-'})`;
+            document.getElementById('modalTitle').textContent = `Chi Tiết Bài Làm - ${cand.name || 'Thí sinh'} (${cand.id || '-'})`;
             
             let modalHTML = `
                 <div style="background: rgba(11, 60, 93, 0.04); padding: 16px; border-radius: 10px; margin-bottom: 20px; border: 1px solid var(--border);">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 14px;">
-                        <div><strong>Há» vÃ  tÃªn:</strong> ${cand.name || '-'}</div>
-                        <div><strong>SBD / SÄT:</strong> ${cand.id || '-'}</div>
-                        <div><strong>Vá»‹ trÃ­:</strong> ${cand.job || '-'}</div>
-                        <div><strong>Pháº§n thi:</strong> ${cand.examType || '-'}</div>
-                        <div><strong>Sá»‘ cÃ¢u Ä‘Ãºng:</strong> ${item.correctCount}/${item.totalCount} (${(item.percentage || 0).toFixed(1)}%)</div>
-                        <div><strong>Káº¿t quáº£:</strong> <strong style="color: ${item.isPass ? 'var(--success)' : 'var(--danger)'};">${item.isPass ? 'Äáº T YÃŠU Cáº¦U' : 'CHÆ¯A Äáº T'}</strong></div>
+                        <div><strong>Họ và tên:</strong> ${cand.name || '-'}</div>
+                        <div><strong>SBD / SĐT:</strong> ${cand.id || '-'}</div>
+                        <div><strong>Vị trí:</strong> ${cand.job || '-'}</div>
+                        <div><strong>Phần thi:</strong> ${cand.examType || '-'}</div>
+                        <div><strong>Số câu đúng:</strong> ${item.correctCount}/${item.totalCount} (${(item.percentage || 0).toFixed(1)}%)</div>
+                        <div><strong>Kết quả:</strong> <strong style="color: ${item.isPass ? 'var(--success)' : 'var(--danger)'};">${item.isPass ? 'ĐẠT YÊU CẦU' : 'CHƯA ĐẠT'}</strong></div>
                     </div>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 15px;">
             `;
 
             if (!questions || questions.length === 0) {
-                modalHTML += `<div style="padding: 20px; text-align: center; color: #7f8c8d;">KhÃ´ng cÃ³ dá»¯ liá»‡u cÃ¢u há»i chi tiáº¿t.</div>`;
+                modalHTML += `<div style="padding: 20px; text-align: center; color: #7f8c8d;">Không có dữ liệu câu hỏi chi tiết.</div>`;
             } else {
                 questions.forEach((q, idx) => {
                     const userAnswer = answers[idx];
@@ -315,8 +315,8 @@
                     
                     modalHTML += `
                         <div class="review-item" style="padding: 16px; border-radius: 8px; border: 1px solid var(--border); background: #fff; margin-bottom: 15px;">
-                            <div style="font-weight: 700; margin-bottom: 8px;">CÃ¢u ${idx + 1}: ${q.question}</div>
-                            <div class="review-options">ÄÃ¡p Ã¡n Ä‘Ãºng: ${String.fromCharCode(65 + q.correct_index)}</div>
+                            <div style="font-weight: 700; margin-bottom: 8px;">Câu ${idx + 1}: ${q.question}</div>
+                            <div class="review-options">Đáp án đúng: ${String.fromCharCode(65 + q.correct_index)}</div>
                         </div>
                     `;
                 });
@@ -332,9 +332,9 @@
         }
 
         function promptAdminPin(actionName, callback) {
-            const adminPin = prompt(`ðŸ” Báº¢O Máº¬T ADMIN: Vui lÃ²ng nháº­p MÃ£ PIN Báº£o Máº­t Admin (Secret PIN) Ä‘á»ƒ thá»±c hiá»‡n "${actionName}":`);
+            const adminPin = prompt(`🔐 BẢO MẬT ADMIN: Vui lòng nhập Mã PIN Bảo Mật Admin (Secret PIN) để thực hiện "${actionName}":`);
             if (!adminPin) {
-                showToast('âš ï¸ ÄÃ£ há»§y thao tÃ¡c. Cáº§n cÃ³ MÃ£ PIN Admin!', 'danger');
+                showToast('⚠️ Đã hủy thao tác. Cần có Mã PIN Admin!', 'danger');
                 return;
             }
             callback(adminPin);
@@ -342,55 +342,55 @@
 
         function deleteRecord(id) {
             if (!isAdmin) {
-                showToast('Chá»‰ GiÃ¡m thá»‹ má»›i cÃ³ quyá»n xÃ³a káº¿t quáº£!', 'danger');
+                showToast('Chỉ Giám thị mới có quyền xóa kết quả!', 'danger');
                 return;
             }
-            if (confirm('Báº¡n cÃ³ cháº¯c cháº¯n muá»‘n xÃ³a báº£n ghi nÃ y? HÃ nh Ä‘á»™ng nÃ y khÃ´ng thá»ƒ hoÃ n tÃ¡c.')) {
-                promptAdminPin('XÃ“A Báº¢N GHI', function(adminPin) {
+            if (confirm('Bạn có chắc chắn muốn xóa bản ghi này? Hành động này không thể hoàn tác.')) {
+                promptAdminPin('XÓA BẢN GHI', function(adminPin) {
                     CONFIG.apiCall(`/api/delete-result?id=${id}&adminPin=${adminPin.toUpperCase()}`, { method: 'DELETE' })
                         .then(res => res.json())
                         .then(data => {
                             if (data.status === 'error') {
-                                showToast(`âŒ ${data.message}`, 'danger');
+                                showToast(`❌ ${data.message}`, 'danger');
                             } else {
                                 allResults = allResults.filter(r => r.id !== id);
                                 localStorage.setItem('vincons_history', JSON.stringify(allResults));
-                                showToast('âœ… ÄÃ£ xÃ³a báº£n ghi thÃ nh cÃ´ng!');
+                                showToast('✅ Đã xóa bản ghi thành công!');
                                 filterResults();
                             }
                         })
-                        .catch(() => showToast('âŒ Lá»—i káº¿t ná»‘i!', 'danger'));
+                        .catch(() => showToast('❌ Lỗi kết nối!', 'danger'));
                 });
             }
         }
 
         function confirmClearAll() {
             if (!isAdmin) {
-                showToast('Chá»‰ GiÃ¡m thá»‹ má»›i cÃ³ quyá»n xÃ³a káº¿t quáº£!', 'danger');
+                showToast('Chỉ Giám thị mới có quyền xóa kết quả!', 'danger');
                 return;
             }
-            promptAdminPin('XÃ“A TOÃ€N Bá»˜ Lá»ŠCH Sá»¬', function(adminPin) {
-                if (confirm('âš ï¸ Cáº¢NH BÃO NGUY HIá»‚M: Báº¡n cÃ³ cháº¯c cháº¯n muá»‘n XÃ“A TOÃ€N Bá»˜ lá»‹ch sá»­ bÃ i thi khÃ´ng? Dá»¯ liá»‡u khÃ´ng thá»ƒ khÃ´i phá»¥c.')) {
+            promptAdminPin('XÓA TOÀN BỘ LỊCH SỬ', function(adminPin) {
+                if (confirm('⚠️ CẢNH BÁO NGUY HIỂM: Bạn có chắc chắn muốn XÓA TOÀN BỘ lịch sử bài thi không? Dữ liệu không thể khôi phục.')) {
                     CONFIG.apiCall(`/api/clear-results?adminPin=${adminPin.toUpperCase()}`, { method: 'DELETE' })
                         .then(res => res.json())
                         .then(data => {
                             if (data.status === 'error') {
-                                showToast(`âŒ ${data.message}`, 'danger');
+                                showToast(`❌ ${data.message}`, 'danger');
                             } else {
                                 allResults = [];
                                 localStorage.removeItem('vincons_history');
-                                showToast('âœ… ÄÃ£ xÃ³a toÃ n bá»™ lá»‹ch sá»­ bÃ i thi!');
+                                showToast('✅ Đã xóa toàn bộ lịch sử bài thi!');
                                 filterResults();
                             }
                         })
-                        .catch(() => showToast('âŒ Lá»—i káº¿t ná»‘i hoáº·c mÃ£ PIN khÃ´ng há»£p lá»‡!', 'danger'));
+                        .catch(() => showToast('❌ Lỗi kết nối hoặc mã PIN không hợp lệ!', 'danger'));
                 }
             });
         }
 
         function exportData() {
             if (allResults.length === 0) {
-                alert('KhÃ´ng cÃ³ dá»¯ liá»‡u Ä‘á»ƒ xuáº¥t.');
+                alert('Không có dữ liệu để xuất.');
                 return;
             }
             const userId = encodeURIComponent(loggedInUser.username);
