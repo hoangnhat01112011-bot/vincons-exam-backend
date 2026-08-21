@@ -1,6 +1,6 @@
 const CONFIG = {
     DEFAULT_API_BASE_URL: "http://127.0.0.1:8000",
-    GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbw29tgNOEDGZROO5fA6x1F4_oDCI_jlHYUGzQ2Do-ftp5-YwOSElNmFTf0UsxmoqGmJ/exec",
+    GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbz7qQIC81hraoGsaXGkDh-1m5hKtKHvwWbtBjEAdmxy9mq74aEd9BvH5xXK2bv0WmOD/exec",
 
     get API_BASE_URL() {
         let storedUrl = localStorage.getItem('api_base_url');
