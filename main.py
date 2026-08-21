@@ -136,13 +136,16 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         elif parsed.path == '/api/admin/edit-question':
             admin_pin = data.get('admin_pin', '')
             if admin_pin != ADMIN_PIN:
-                self.send_json({"status": "error", "message": "Unauthorized"}, 401)
+                self.send_json({"status": "error", "message": "Mã Giám thị (Admin PIN) không đúng!"}, 401)
                 return
                 
             q_id = data.get('id')
             new_correct_index = data.get('correct_index')
-            if q_id is None or new_correct_index is None:
-                self.send_json({"status": "error", "message": "Thiếu thông tin"}, 400)
+            new_question = data.get('question')
+            new_options = data.get('options')
+            
+            if q_id is None:
+                self.send_json({"status": "error", "message": "Thiếu mã câu hỏi (ID)"}, 400)
                 return
                 
             try:
@@ -152,14 +155,19 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                 start_idx = js_content.find('[')
                 end_idx = js_content.rfind(']')
                 if start_idx == -1 or end_idx == -1:
-                    self.send_json({"status": "error", "message": "File format error"}, 500)
+                    self.send_json({"status": "error", "message": "Lỗi định dạng file questions.js"}, 500)
                     return
                     
                 questions_data = json.loads(js_content[start_idx:end_idx+1])
                 updated = False
                 for q in questions_data:
-                    if q.get('id') == q_id:
-                        q['correct_index'] = int(new_correct_index)
+                    if str(q.get('id')).strip().lower() == str(q_id).strip().lower():
+                        if new_correct_index is not None:
+                            q['correct_index'] = int(new_correct_index)
+                        if new_question:
+                            q['question'] = str(new_question).strip()
+                        if new_options and isinstance(new_options, list):
+                            q['options'] = [str(opt).strip() for opt in new_options]
                         updated = True
                         break
                         
@@ -167,9 +175,9 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                     new_js_content = '// File này được tạo tự động\nconst QUESTIONS = ' + json.dumps(questions_data, ensure_ascii=False, indent=2) + ';\n'
                     with open(js_file_path, 'w', encoding='utf-8') as f:
                         f.write(new_js_content)
-                    self.send_json({"status": "success", "message": "Đã cập nhật đáp án"})
+                    self.send_json({"status": "success", "message": "Đã cập nhật câu hỏi thành công!"})
                 else:
-                    self.send_json({"status": "error", "message": "Không tìm thấy câu hỏi"}, 404)
+                    self.send_json({"status": "error", "message": "Không tìm thấy câu hỏi với ID này!"}, 404)
             except Exception as e:
                 self.send_json({"status": "error", "message": str(e)}, 500)
             return
