@@ -460,17 +460,17 @@
             <button class="sidebar-btn active" onclick="scrollToRegistrationForm()">📝 Thi Tuyển Dụng</button>
             <button class="sidebar-btn" onclick="scrollToRegistrationForm()">📈 Thi Nâng Bậc</button>
             <button class="sidebar-btn" onclick="scrollToRegistrationForm()">🎯 Ôn Tập Tự Do</button>
-            <button class="sidebar-btn" onclick="window.open('https://drive.google.com/drive/project/1YDEhfbR3xpigjAyTODTprNtOkEHS2YKc')">⚡ Bộ môn Điện</button>
-            <button class="sidebar-btn" onclick="window.open('https://drive.google.com/drive/project/1YDEhfbR3xpigjAyTODTprNtOkEHS2YKc')">💧 Cấp thoát nước</button>
-            <button class="sidebar-btn" onclick="window.open('https://drive.google.com/drive/project/1YDEhfbR3xpigjAyTODTprNtOkEHS2YKc')">❄️ Điều hòa thông gió</button>
-            <button class="sidebar-btn" onclick="window.open('https://drive.google.com/drive/project/1YDEhfbR3xpigjAyTODTprNtOkEHS2YKc')">🔥 PCCC</button>
+            <button class="sidebar-btn" onclick="selectDisciplineAndScroll('Điện')">⚡ Bộ môn Điện</button>
+            <button class="sidebar-btn" onclick="selectDisciplineAndScroll('Cấp thoát nước')">💧 Cấp thoát nước</button>
+            <button class="sidebar-btn" onclick="selectDisciplineAndScroll('Điều hòa thông gió')">❄️ Điều hòa thông gió</button>
+            <button class="sidebar-btn" onclick="selectDisciplineAndScroll('Phòng cháy chữa cháy')">🔥 PCCC</button>
         </div>
 
         <!-- Central Workspace -->
         <div class="central-workspace">
             <!-- Quick Shortcuts Section -->
             <div class="section-box">
-                <div class="section-title">📚 TÀI LIỆU & LỐI TẮT HỆ THỐNG</div>
+                <div class="section-title">📚 CHỌN BỘ MÔN VÀO THI NGAY</div>
                 <div class="quick-grid">
                     <div class="shortcut-card" onclick="scrollToRegistrationForm()">
                         <div class="shortcut-icon" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">📝</div>
@@ -480,22 +480,22 @@
                         <div class="shortcut-icon" style="background: linear-gradient(135deg, #10b981, #059669);">📋</div>
                         <div class="shortcut-title">Xem Lịch sử thi</div>
                     </a>
-                    <a href="https://drive.google.com/drive/project/1YDEhfbR3xpigjAyTODTprNtOkEHS2YKc" target="_blank" class="shortcut-card">
+                    <div class="shortcut-card" onclick="selectDisciplineAndScroll('Điện')">
                         <div class="shortcut-icon" style="background: linear-gradient(135deg, #eab308, #ca8a04);">⚡</div>
                         <div class="shortcut-title">Đề thi Điện</div>
-                    </a>
-                    <a href="https://drive.google.com/drive/project/1YDEhfbR3xpigjAyTODTprNtOkEHS2YKc" target="_blank" class="shortcut-card">
+                    </div>
+                    <div class="shortcut-card" onclick="selectDisciplineAndScroll('Cấp thoát nước')">
                         <div class="shortcut-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">💧</div>
                         <div class="shortcut-title">Cấp thoát nước</div>
-                    </a>
-                    <a href="https://drive.google.com/drive/project/1YDEhfbR3xpigjAyTODTprNtOkEHS2YKc" target="_blank" class="shortcut-card">
+                    </div>
+                    <div class="shortcut-card" onclick="selectDisciplineAndScroll('Điều hòa thông gió')">
                         <div class="shortcut-icon" style="background: linear-gradient(135deg, #f97316, #ea580c);">❄️</div>
                         <div class="shortcut-title">Điều hòa (HVAC)</div>
-                    </a>
-                    <a href="https://drive.google.com/drive/project/1YDEhfbR3xpigjAyTODTprNtOkEHS2YKc" target="_blank" class="shortcut-card">
+                    </div>
+                    <div class="shortcut-card" onclick="selectDisciplineAndScroll('Phòng cháy chữa cháy')">
                         <div class="shortcut-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);">🔥</div>
                         <div class="shortcut-title">Hệ thống PCCC</div>
-                    </a>
+                    </div>
                 </div>
             </div>
 
@@ -642,6 +642,39 @@
         showMainForm();
         const el = document.getElementById('registrationSection');
         if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Select discipline automatically and scroll to form with glow effect
+    function selectDisciplineAndScroll(disciplineValue) {
+        showMainForm();
+        
+        // Auto check first radio category if none selected
+        const categoryRadios = document.getElementsByName('examCategoryRadio');
+        let anyChecked = false;
+        for (let r of categoryRadios) {
+            if (r.checked) { anyChecked = true; break; }
+        }
+        if (!anyChecked && categoryRadios.length > 0) {
+            categoryRadios[0].checked = true;
+        }
+
+        // Set discipline dropdown
+        const disciplineSelect = document.getElementById('discipline');
+        if (disciplineSelect) {
+            disciplineSelect.value = disciplineValue;
+            toggleDiscipline(disciplineValue);
+        }
+
+        // Scroll to form with highlight
+        const el = document.getElementById('registrationSection');
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+            el.style.transition = 'all 0.5s ease';
+            el.style.boxShadow = '0 0 30px rgba(56, 189, 248, 0.9)';
+            setTimeout(() => {
+                el.style.boxShadow = 'var(--glass-shadow)';
+            }, 1800);
+        }
     }
 
     // Check Admin State
