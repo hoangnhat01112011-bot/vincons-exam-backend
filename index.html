@@ -296,62 +296,6 @@
             padding: 20px 24px;
         }
 
-        /* Glass Modal Popup */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(11, 19, 43, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            padding: 20px;
-        }
-
-        .modal-content {
-            background: rgba(15, 23, 42, 0.92);
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
-            border-radius: 20px;
-            width: 100%;
-            max-width: 640px;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 24px;
-            position: relative;
-            animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @keyframes modalPop {
-            from { opacity: 0; transform: scale(0.9) translateY(20px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        .modal-close-btn {
-            position: absolute;
-            top: 16px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid var(--glass-border);
-            color: #fff;
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-        }
-
-        .modal-close-btn:hover {
-            background: #ef4444;
-            border-color: #ef4444;
-        }
-
         .glass-form-card {
             background: rgba(0, 0, 0, 0.25);
             border: 1px solid var(--glass-border);
@@ -541,9 +485,9 @@
     <div class="main-dashboard-grid">
         <!-- Left Sidebar Menu -->
         <div class="sidebar-menu">
-            <button class="sidebar-btn active" onclick="openExamModal()">📝 Đăng ký Dự Thi</button>
-            <button class="sidebar-btn" onclick="openExamModal()">📈 Thi Nâng Bậc</button>
-            <button class="sidebar-btn" onclick="openExamModal()">🎯 Ôn Tập Tự Do</button>
+            <button class="sidebar-btn active" onclick="selectDisciplineAndScroll('Điện')">📝 Đăng ký Dự Thi</button>
+            <button class="sidebar-btn" onclick="selectDisciplineAndScroll('Điện')">📈 Thi Nâng Bậc</button>
+            <button class="sidebar-btn" onclick="selectDisciplineAndScroll('Điện')">🎯 Ôn Tập Tự Do</button>
             <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent); margin: 8px 0 2px 4px; letter-spacing: 0.5px;">📖 TÀI LIỆU THAM KHẢO</div>
             <button class="sidebar-btn" onclick="window.open('https://drive.google.com/drive/project/1YDEhfbR3xpigjAyTODTprNtOkEHS2YKc', '_blank')">⚡ Bộ môn Điện ↗️</button>
             <button class="sidebar-btn" onclick="window.open('https://drive.google.com/drive/project/1YDEhfbR3xpigjAyTODTprNtOkEHS2YKc', '_blank')">💧 Cấp thoát nước ↗️</button>
@@ -557,7 +501,7 @@
             <div class="section-box">
                 <div class="section-title">📚 CHỌN BỘ MÔN VÀO THI NGAY</div>
                 <div class="quick-grid">
-                    <div class="shortcut-card" onclick="openExamModal()">
+                    <div class="shortcut-card" onclick="selectDisciplineAndScroll('Điện')">
                         <div class="shortcut-icon" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">📝</div>
                         <div class="shortcut-title">Đăng ký Thi ngay</div>
                     </div>
@@ -565,19 +509,19 @@
                         <div class="shortcut-icon" style="background: linear-gradient(135deg, #10b981, #059669);">📋</div>
                         <div class="shortcut-title">Xem Lịch sử thi</div>
                     </a>
-                    <div class="shortcut-card" onclick="openExamModal('Điện')">
+                    <div class="shortcut-card" onclick="selectDisciplineAndScroll('Điện')">
                         <div class="shortcut-icon" style="background: linear-gradient(135deg, #eab308, #ca8a04);">⚡</div>
                         <div class="shortcut-title">Đề thi Điện</div>
                     </div>
-                    <div class="shortcut-card" onclick="openExamModal('Cấp thoát nước')">
+                    <div class="shortcut-card" onclick="selectDisciplineAndScroll('Cấp thoát nước')">
                         <div class="shortcut-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">💧</div>
                         <div class="shortcut-title">Cấp thoát nước</div>
                     </div>
-                    <div class="shortcut-card" onclick="openExamModal('Điều hòa thông gió')">
+                    <div class="shortcut-card" onclick="selectDisciplineAndScroll('Điều hòa thông gió')">
                         <div class="shortcut-icon" style="background: linear-gradient(135deg, #f97316, #ea580c);">❄️</div>
                         <div class="shortcut-title">Điều hòa (HVAC)</div>
                     </div>
-                    <div class="shortcut-card" onclick="openExamModal('Phòng cháy chữa cháy')">
+                    <div class="shortcut-card" onclick="selectDisciplineAndScroll('Phòng cháy chữa cháy')">
                         <div class="shortcut-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);">🔥</div>
                         <div class="shortcut-title">Hệ thống PCCC</div>
                     </div>
@@ -600,7 +544,7 @@
             <!-- Embedded Exam Form Section -->
             <div class="section-box" id="embeddedRegistrationSection">
                 <div class="section-title">✍️ ĐĂNG KÝ DỰ THI NHẬP HỆ THỐNG</div>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px;">Vui lòng chọn hình thức thi, điền thông tin và nhập Mã ca thi do Giám thị cấp.</p>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px;">Vui lòng chọn hình thức thi, điền thông tin và nhập Mã ca thi do Giám thị cấp để bắt đầu ngay.</p>
 
                 <form id="pageRegistrationForm" class="glass-form-card" onsubmit="handleRegistrationSubmit(event, 'page')">
                     <div class="glass-input-group">
@@ -721,103 +665,6 @@
     </div>
 </div>
 
-<!-- Glass Modal Registration Popup -->
-<div class="modal-overlay" id="examModalOverlay" onclick="if(event.target===this) closeExamModal()">
-    <div class="modal-content">
-        <button class="modal-close-btn" onclick="closeExamModal()" title="Đóng cửa sổ">✕</button>
-        <div class="section-title">✍️ ĐĂNG KÝ DỰ THI NHẬP HỆ THỐNG</div>
-        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px;">Vui lòng chọn hình thức thi, điền thông tin và nhập Mã ca thi do Giám thị cấp.</p>
-
-        <form id="modalRegistrationForm" class="glass-form-card" onsubmit="handleRegistrationSubmit(event, 'modal')">
-            <div class="glass-input-group">
-                <label style="color: var(--accent);">VUI LÒNG CHỌN HÌNH THỨC THI (*):</label>
-                <div class="exam-option-box">
-                    <label class="radio-item">
-                        <input type="radio" name="modalExamCategoryRadio" value="Thi tuyển dụng đầu vào - Thợ Bậc 2" checked>
-                        <span>Thi tuyển dụng đầu vào - Thợ Bậc 2</span>
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="modalExamCategoryRadio" value="Thi tuyển dụng đầu vào - Thợ Bậc 3">
-                        <span>Thi tuyển dụng đầu vào - Thợ Bậc 3</span>
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="modalExamCategoryRadio" value="Thi nâng bậc">
-                        <span>Thi nâng bậc (Định kỳ)</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="glass-input-group">
-                <label for="modalCandidateName">Họ và tên thí sinh (*)</label>
-                <input type="text" id="modalCandidateName" class="glass-control" placeholder="Nhập họ và tên đầy đủ" required>
-            </div>
-
-            <div class="glass-input-group">
-                <label for="modalCandidateId">Số báo danh / SĐT (*)</label>
-                <input type="text" id="modalCandidateId" class="glass-control" placeholder="Nhập SBD hoặc Số điện thoại" required>
-            </div>
-
-            <div class="glass-input-group">
-                <label for="modalCandidateJob">Tổ thợ / Vị trí ứng tuyển (*)</label>
-                <select id="modalCandidateJob" class="glass-control" required>
-                    <option value="" disabled selected>-- Chọn vị trí --</option>
-                    <option value="Thợ Xây dựng (Nề)">Thợ Xây dựng (Nề)</option>
-                    <option value="Thợ Điện nước (M&E)">Thợ Điện nước (M&E)</option>
-                    <option value="Thợ Sắt cốt thép">Thợ Sắt cốt thép</option>
-                    <option value="Thợ Mộc cốp pha">Thợ Mộc cốp pha</option>
-                    <option value="Kỹ sư Giám sát (T7, T8)">Kỹ sư Giám sát (T7, T8)</option>
-                </select>
-            </div>
-
-            <div class="glass-input-group">
-                <label for="modalDiscipline">Bộ môn thi (*)</label>
-                <select id="modalDiscipline" class="glass-control" required onchange="toggleDiscipline(this.value, 'modal')">
-                    <option value="" disabled>-- Chọn bộ môn --</option>
-                    <option value="Điện" selected>Điện</option>
-                    <option value="Cấp thoát nước">Cấp thoát nước</option>
-                    <option value="Điều hòa thông gió">Điều hòa thông gió</option>
-                    <option value="Phòng cháy chữa cháy">Phòng cháy chữa cháy</option>
-                </select>
-            </div>
-
-            <div class="glass-input-group">
-                <label for="modalExamType">Phần thi đăng ký (*)</label>
-                <select id="modalExamType" class="glass-control" required onchange="toggleExamSetGroup(this.value, 'modal')">
-                    <option value="Lý thuyết" selected>Thi Lý thuyết (Thời gian: 30 phút - 30 câu)</option>
-                    <option value="Thực hành">Thi Thực hành (Thời gian: 60 phút)</option>
-                </select>
-            </div>
-
-            <div class="glass-input-group">
-                <label for="modalExamMode">Chế độ làm bài (*)</label>
-                <select id="modalExamMode" class="glass-control" required onchange="togglePinRequirement(this.value, 'modal')">
-                    <option value="Thi chính thức" selected>Thi chính thức (Lấy điểm chuẩn)</option>
-                    <option value="Ôn tập">Ôn tập trước thi (Rèn luyện - Giới hạn câu hỏi)</option>
-                </select>
-            </div>
-
-            <div class="glass-input-group" id="modalExamSetGroup">
-                <label for="modalExamSet">Bộ đề thi Lý thuyết (*)</label>
-                <select id="modalExamSet" class="glass-control">
-                    <option value="all">Ngẫu nhiên 30 câu (Từ ngân hàng 150 câu 5 bộ đề)</option>
-                </select>
-            </div>
-
-            <div class="glass-input-group" id="modalPinContainer" style="margin-top: 20px; border-top: 1px dashed var(--glass-border); padding-top: 16px;">
-                <label for="modalExamPin" style="color: var(--accent); font-weight: bold;">Mã Ca Thi (*)</label>
-                <input type="password" id="modalExamPin" class="glass-control" style="font-size: 1.1rem; font-weight: bold; text-align: center; letter-spacing: 5px;" placeholder="********" required maxlength="8">
-                <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 6px;">* Vui lòng hỏi Giám thị để lấy Mã ca thi của ngày hôm nay.</p>
-            </div>
-
-            <div id="modalLoadingStatus" style="display: none; text-align: center; margin-bottom: 15px; color: var(--accent); font-weight: bold;">
-                ⏳ Đang kiểm tra mã ca thi...
-            </div>
-
-            <button type="submit" id="modalBtnSubmit" class="btn-glass-submit">🚀 XÁC NHẬN VÀ VÀO THI</button>
-        </form>
-    </div>
-</div>
-
 <script>
     // Live Clock Update
     function updateClock() {
@@ -830,42 +677,36 @@
     // Initialize default exam sets on page load
     window.addEventListener('DOMContentLoaded', () => {
         toggleDiscipline('Điện', 'page');
-        toggleDiscipline('Điện', 'modal');
     });
 
-    // Open Glass Modal Registration Form & Auto Expand Discipline Fields
-    function openExamModal(disciplineValue) {
+    // Directly select discipline, auto expand exam set details & scroll to form on page
+    function selectDisciplineAndScroll(disciplineValue) {
         let disc = disciplineValue || 'Điện';
 
-        // Synchronize values into both page & modal forms
-        setFormDiscipline(disc, 'page');
-        setFormDiscipline(disc, 'modal');
-
-        const overlay = document.getElementById('examModalOverlay');
-        if (overlay) overlay.style.display = 'flex';
-
-        // Also scroll to embedded form if preferred
-        const pageSec = document.getElementById('embeddedRegistrationSection');
-        if (pageSec) {
-            pageSec.style.transition = 'all 0.5s ease';
-            pageSec.style.boxShadow = '0 0 30px rgba(56, 189, 248, 0.9)';
-            setTimeout(() => {
-                pageSec.style.boxShadow = 'var(--glass-shadow)';
-            }, 1800);
-        }
-    }
-
-    function setFormDiscipline(disc, prefix) {
-        const discSelect = document.getElementById(prefix + 'Discipline');
+        // 1. Set discipline dropdown in page form
+        const discSelect = document.getElementById('pageDiscipline');
         if (discSelect) {
             discSelect.value = disc;
-            toggleDiscipline(disc, prefix);
+            toggleDiscipline(disc, 'page');
         }
-    }
 
-    function closeExamModal() {
-        const overlay = document.getElementById('examModalOverlay');
-        if (overlay) overlay.style.display = 'none';
+        // 2. Ensure Exam Type is 'Lý thuyết' and ExamSetGroup is visible
+        const examTypeSelect = document.getElementById('pageExamType');
+        if (examTypeSelect) {
+            examTypeSelect.value = 'Lý thuyết';
+            toggleExamSetGroup('Lý thuyết', 'page');
+        }
+
+        // 3. Scroll smoothly to embedded form section with a cyan glow highlight
+        const pageSec = document.getElementById('embeddedRegistrationSection');
+        if (pageSec) {
+            pageSec.scrollIntoView({ behavior: 'smooth' });
+            pageSec.style.transition = 'all 0.5s ease';
+            pageSec.style.boxShadow = '0 0 35px rgba(56, 189, 248, 0.95)';
+            setTimeout(() => {
+                pageSec.style.boxShadow = 'var(--glass-shadow)';
+            }, 2200);
+        }
     }
 
     // Check Admin State
@@ -898,15 +739,17 @@
     }
 
     function toggleExamSetGroup(val, prefix) {
-        const group = document.getElementById(prefix + 'ExamSetGroup');
+        const p = prefix || 'page';
+        const group = document.getElementById(p + 'ExamSetGroup');
         if (group) {
             group.style.display = (val === 'Lý thuyết') ? 'block' : 'none';
         }
     }
 
     function togglePinRequirement(val, prefix) {
-        const pinContainer = document.getElementById(prefix + 'PinContainer');
-        const examPin = document.getElementById(prefix + 'ExamPin');
+        const p = prefix || 'page';
+        const pinContainer = document.getElementById(p + 'PinContainer');
+        const examPin = document.getElementById(p + 'ExamPin');
         if (val === 'Ôn tập') {
             if (pinContainer) pinContainer.style.display = 'none';
             if (examPin) examPin.required = false;
@@ -969,25 +812,26 @@
 
     function handleRegistrationSubmit(e, prefix) {
         e.preventDefault();
-        
-        const name = document.getElementById(prefix + 'CandidateName').value.trim();
-        const id = document.getElementById(prefix + 'CandidateId').value.trim();
-        const examCategoryRadio = document.querySelector(`input[name="${prefix}ExamCategoryRadio"]:checked`);
+        const p = prefix || 'page';
+
+        const name = document.getElementById(p + 'CandidateName').value.trim();
+        const id = document.getElementById(p + 'CandidateId').value.trim();
+        const examCategoryRadio = document.querySelector(`input[name="${p}ExamCategoryRadio"]:checked`);
         const examCategory = examCategoryRadio ? examCategoryRadio.value : '';
-        const job = document.getElementById(prefix + 'CandidateJob').value;
-        const discipline = document.getElementById(prefix + 'Discipline').value;
-        const examType = document.getElementById(prefix + 'ExamType').value;
-        const examMode = document.getElementById(prefix + 'ExamMode').value;
-        const examSet = document.getElementById(prefix + 'ExamSet') ? document.getElementById(prefix + 'ExamSet').value : 'all';
-        const examPin = document.getElementById(prefix + 'ExamPin') ? document.getElementById(prefix + 'ExamPin').value.trim() : '';
+        const job = document.getElementById(p + 'CandidateJob').value;
+        const discipline = document.getElementById(p + 'Discipline').value;
+        const examType = document.getElementById(p + 'ExamType').value;
+        const examMode = document.getElementById(p + 'ExamMode').value;
+        const examSet = document.getElementById(p + 'ExamSet') ? document.getElementById(p + 'ExamSet').value : 'all';
+        const examPin = document.getElementById(p + 'ExamPin') ? document.getElementById(p + 'ExamPin').value.trim() : '';
         
         if (!name || !id || !examCategory || !job || !discipline || !examType || !examMode || (examMode !== 'Ôn tập' && !examPin)) {
             alert('Vui lòng điền đầy đủ các thông tin bắt buộc.');
             return;
         }
 
-        const btnSubmit = document.getElementById(prefix + 'BtnSubmit');
-        const loading = document.getElementById(prefix + 'LoadingStatus');
+        const btnSubmit = document.getElementById(p + 'BtnSubmit');
+        const loading = document.getElementById(p + 'LoadingStatus');
         if (btnSubmit) btnSubmit.disabled = true;
         if (loading) loading.style.display = 'block';
 
