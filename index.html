@@ -465,10 +465,10 @@
         <div class="widget-card">
             <div class="widget-main">
                 <small>📍 Công trường Hạ Long Xanh, Quảng Ninh</small>
-                <h3>29°C | Nắng Đẹp</h3>
-                <p>Độ ẩm 72% • Tốc độ gió 12 km/h • Thời tiết an toàn thi công</p>
+                <h3 id="weatherTemp">⏳ Đang tải...</h3>
+                <p id="weatherDetail">Đang cập nhật dữ liệu thời tiết...</p>
             </div>
-            <div style="font-size: 2.5rem;">🌤️</div>
+            <div style="font-size: 2.5rem;" id="weatherEmoji">🌤️</div>
         </div>
 
         <div class="widget-card">
@@ -677,7 +677,78 @@
     // Initialize default exam sets on page load
     window.addEventListener('DOMContentLoaded', () => {
         toggleDiscipline('Điện', 'page');
+        fetchWeather();
     });
+
+    // ========== LIVE WEATHER - Open-Meteo API (Free, No Key) ==========
+    // Hạ Long, Quảng Ninh coordinates: 20.95°N, 107.08°E
+    async function fetchWeather() {
+        const API_URL = 'https://api.open-meteo.com/v1/forecast?latitude=20.95&longitude=107.08&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=Asia%2FHo_Chi_Minh';
+        try {
+            const res = await fetch(API_URL);
+            const data = await res.json();
+            const c = data.current;
+            const temp = Math.round(c.temperature_2m);
+            const humidity = Math.round(c.relative_humidity_2m);
+            const wind = Math.round(c.wind_speed_10m);
+            const wmoCode = c.weather_code;
+
+            const weatherInfo = getWeatherInfo(wmoCode);
+            const safetyNote = getSafetyNote(wmoCode, wind);
+
+            document.getElementById('weatherTemp').innerText = `${temp}°C | ${weatherInfo.desc}`;
+            document.getElementById('weatherDetail').innerText = `Độ ẩm ${humidity}% • Tốc độ gió ${wind} km/h • ${safetyNote}`;
+            document.getElementById('weatherEmoji').innerText = weatherInfo.emoji;
+        } catch (err) {
+            document.getElementById('weatherTemp').innerText = '⚠️ Không thể tải thời tiết';
+            document.getElementById('weatherDetail').innerText = 'Vui lòng kiểm tra kết nối mạng Internet.';
+            console.error('Weather fetch error:', err);
+        }
+    }
+
+    // WMO Weather Code → Vietnamese description + Emoji
+    function getWeatherInfo(code) {
+        const map = {
+            0:  { desc: 'Trời Quang',       emoji: '☀️' },
+            1:  { desc: 'Chủ yếu Quang',    emoji: '🌤️' },
+            2:  { desc: 'Có Mây Rải Rác',   emoji: '⛅' },
+            3:  { desc: 'U Ám / Nhiều Mây',  emoji: '☁️' },
+            45: { desc: 'Sương Mù',          emoji: '🌫️' },
+            48: { desc: 'Sương Mù Đóng Băng',emoji: '🌫️' },
+            51: { desc: 'Mưa Phùn Nhẹ',     emoji: '🌦️' },
+            53: { desc: 'Mưa Phùn Vừa',     emoji: '🌦️' },
+            55: { desc: 'Mưa Phùn Dày',     emoji: '🌧️' },
+            56: { desc: 'Mưa Phùn Đóng Băng',emoji: '🌧️' },
+            57: { desc: 'Mưa Phùn Đóng Băng Dày',emoji: '🌧️' },
+            61: { desc: 'Mưa Nhẹ',          emoji: '🌦️' },
+            63: { desc: 'Mưa Vừa',          emoji: '🌧️' },
+            65: { desc: 'Mưa To',           emoji: '🌧️' },
+            66: { desc: 'Mưa Đóng Băng Nhẹ',emoji: '🌧️' },
+            67: { desc: 'Mưa Đóng Băng Nặng',emoji: '🌧️' },
+            71: { desc: 'Tuyết Nhẹ',        emoji: '🌨️' },
+            73: { desc: 'Tuyết Vừa',        emoji: '🌨️' },
+            75: { desc: 'Tuyết Dày',        emoji: '❄️' },
+            77: { desc: 'Hạt Tuyết',        emoji: '🌨️' },
+            80: { desc: 'Mưa Rào Nhẹ',      emoji: '🌦️' },
+            81: { desc: 'Mưa Rào Vừa',      emoji: '🌧️' },
+            82: { desc: 'Mưa Rào Lớn',      emoji: '⛈️' },
+            85: { desc: 'Tuyết Rào Nhẹ',    emoji: '🌨️' },
+            86: { desc: 'Tuyết Rào Dày',    emoji: '🌨️' },
+            95: { desc: 'Giông Bão',         emoji: '⛈️' },
+            96: { desc: 'Giông Bão Kèm Mưa Đá Nhẹ', emoji: '⛈️' },
+            99: { desc: 'Giông Bão Kèm Mưa Đá Lớn', emoji: '⛈️' },
+        };
+        return map[code] || { desc: 'Không xác định', emoji: '🌡️' };
+    }
+
+    // Safety note based on weather conditions
+    function getSafetyNote(code, wind) {
+        if (code >= 95) return '⚠️ Nguy hiểm - Tạm dừng thi công ngoài trời';
+        if (code >= 80 || wind >= 40) return '⚠️ Cảnh báo - Cần lưu ý an toàn thi công';
+        if (code >= 61) return '🔶 Mưa - Kiểm tra an toàn lao động';
+        if (code >= 45) return '🔶 Tầm nhìn hạn chế - Cẩn trọng thi công';
+        return '✅ Thời tiết an toàn thi công';
+    }
 
     // Directly select discipline, auto expand exam set details & scroll to form on page
     function selectDisciplineAndScroll(disciplineValue) {
