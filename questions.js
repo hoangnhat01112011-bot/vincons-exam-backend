@@ -4043,9 +4043,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Cao độ ±0.000 là gì?",
     "options": [
-      "Điểm cao nhất công trình"
+      "Điểm cao nhất công trình",
+      "Đỉnh mái",
+      "Mốc chuẩn để đo cao độ",
+      "Đáy móng"
     ],
-    "correct_index": 0
+    "correct_index": 2
   },
   {
     "id": "q_ctn3_22",
@@ -4054,9 +4057,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Kí hiệu sau đây CW-D32; COP= FFL- 350 có nghĩa là:",
     "options": [
-      "Ống nước nóng D32, đáy ống cao hơn cốt sàn hoàn thiện 350 mm"
+      "Ống nước nóng D32, đáy ống cao hơn cốt sàn hoàn thiện 350 mm",
+      "Ống nước lạnh D32, tim ống thấp hơn cốt sàn hoàn thiện 350 mm",
+      "Ống thoát nước thải D32, đáy ống thấp hơn sàn 350 mm",
+      "Ống nước lạnh D32, đỉnh ống thấp hơn sàn hoàn thiện 350 mm"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn3_23",
@@ -4065,9 +4071,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Áp lực làm việc theo TCVN tại thiết bị thường nằm trong dải sau:",
     "options": [
-      "1-2 bar"
+      "1-2 bar",
+      "2-4 bar",
+      "4-6 bar",
+      "6-8 bar"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn3_24",
@@ -4076,7 +4085,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Ống dài 10m cần chênh 15cm → độ dốc là:",
     "options": [
-      "1,5%"
+      "1,5%",
+      "0.15%",
+      "15%",
+      "0.015%"
     ],
     "correct_index": 0
   },
@@ -4087,7 +4099,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Từ cao độ tia laser bằng FL 1550mm, tại điểm cần xác định theo thiết kế bằng TOP = FL 350mm. Hỏi khoảng cách từ điểm đó đến tia laser là bao nhiêu?",
     "options": [
-      "650 mm"
+      "650 mm",
+      "1350 mm",
+      "1200 mm",
+      "1250 mm"
     ],
     "correct_index": 2
   },
@@ -4098,7 +4113,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Trước khi dán ống uPVC, mục đích chính của việc vệ sinh và làm nhám nhẹ bề mặt là gì?",
     "options": [
-      "Làm đẹp bề mặt ống"
+      "Làm đẹp bề mặt ống",
+      "Tăng độ bám dính của keo và loại bỏ lớp bóng, bụi bẩn",
+      "Giảm đường kính ngoài của ống",
+      "Làm khô ống nhanh hơn"
     ],
     "correct_index": 1
   },
@@ -4109,7 +4127,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Thợ gia nhiệt ống D32 trong 15 giây (lớn hơn tiêu chuẩn). Lỗi kỹ thuật nào xảy ra?",
     "options": [
-      "Không ảnh hưởng nếu lắp nhanh"
+      "Không ảnh hưởng nếu lắp nhanh",
+      "Nhựa bị cháy hoặc biến tính → mối hàn giòn, giảm tuổi thọ",
+      "Tăng độ bền mối hàn",
+      "Chỉ ảnh hưởng thẩm mỹ"
     ],
     "correct_index": 1
   },
@@ -4120,7 +4141,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": ". Chức năng quan trọng nhất của ống thông hơi phụ trong hệ thống thoát nước là gì?",
     "options": [
-      "Tăng lưu lượng nước thải"
+      "Tăng lưu lượng nước thải",
+      "Cân bằng áp suất trong ống, bảo vệ bẫy nước (xi phông) không bị hút hoặc đẩy khí ngược",
+      "Giảm độ dốc tuyến ống",
+      "Tăng áp lực trong ống"
     ],
     "correct_index": 1
   },
@@ -4131,7 +4155,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Khi thi công đường ống đẩy của bơm, nếu không lắp khớp nối mềm, hậu quả chính là gì?",
     "options": [
-      "Không ảnh hưởng"
+      "Không ảnh hưởng",
+      "Truyền rung động từ bơm sang đường ống → gây nứt, rò rỉ lâu dài",
+      "Tăng áp lực nước",
+      "Giảm lưu lượng"
     ],
     "correct_index": 1
   },
@@ -4142,7 +4169,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Nếu độ dốc quá lớn sẽ:",
     "options": [
-      "Nước chảy nhanh, cặn đọng"
+      "Nước chảy nhanh, cặn đọng",
+      "Tăng áp",
+      "Không ảnh hưởng",
+      "Tốt hơn"
     ],
     "correct_index": 0
   },
@@ -4153,9 +4183,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Kí hiệu sau đây VP-D60; BOP= FL 2450 có nghĩa là:",
     "options": [
-      "Ống thông hơi D60, đáy ống thấp hơn cốt sàn hoàn thiện 2450 mm"
+      "Ống thông hơi D60, đáy ống thấp hơn cốt sàn hoàn thiện 2450 mm",
+      "Ống thông hơi D60, đáy ống cao hơn cốt sàn hoàn thiện 2450 mm",
+      "Ống thông hơi D60, đáy ống ở cao độ +2450 mm so với cốt sàn (FL)",
+      "Ống thoát nước thải D60, đỉnh ống ở cao độ +2450 mm so với sàn"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn3_32",
@@ -4164,9 +4197,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Nếu áp thử quá thấp sẽ:",
     "options": [
-      "Tốt hơn"
+      "Tốt hơn",
+      "Không phát hiện rò rỉ",
+      "Tăng áp",
+      "Không sao"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn3_33",
@@ -4175,9 +4211,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Nếu độ dốc vượt 0.03 sẽ:",
     "options": [
-      "Tốt hơn"
+      "Tốt hơn",
+      "Nước chảy nhanh, cặn đọng",
+      "Không ảnh hưởng",
+      "Tăng áp"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn3_34",
@@ -4186,7 +4225,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Nếu máy laser bị lệch cân bằng (không tự cân bằng đúng), hậu quả là gì?",
     "options": [
-      "Sai số cao độ trên toàn bộ các điểm đo"
+      "Sai số cao độ trên toàn bộ các điểm đo",
+      "Không ảnh hưởng vì tia laser vẫn nhìn thấy",
+      "Chỉ ảnh hưởng một điểm",
+      "Chỉ làm chậm tiến độ thi công"
     ],
     "correct_index": 0
   },
@@ -4197,9 +4239,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Với ống PPR D32-PN20, thời gian gia nhiệt tiêu chuẩn là bao lâu?",
     "options": [
-      "4 giây"
+      "4 giây",
+      "6 giây",
+      "8 giây",
+      "12 giây"
     ],
-    "correct_index": 0
+    "correct_index": 2
   },
   {
     "id": "q_ctn3_36",
@@ -4208,9 +4253,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Trong quá trình hàn đối đầu HDPE, thông số nào quyết định trực tiếp đến hình dạng và chất lượng gờ hàn?",
     "options": [
-      "Màu sắc ống"
+      "Màu sắc ống",
+      "Áp lực ép và nhiệt độ gia nhiệt",
+      "Chiều dài ống",
+      "Độ dốc tuyến ống"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn3_37",
@@ -4219,9 +4267,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Trong hệ thống cấp nước nhiều tầng, nếu không lắp van giảm áp (PRV) ở các tầng thấp, hậu quả là gì?",
     "options": [
-      "Nước chảy yếu"
+      "Nước chảy yếu",
+      "Không ảnh hưởng",
+      "Áp lực quá cao gây rò rỉ, hỏng thiết bị và giảm tuổi thọ hệ thống",
+      "Tăng độ bền hệ thống"
     ],
-    "correct_index": 0
+    "correct_index": 2
   },
   {
     "id": "q_ctn3_38",
@@ -4230,9 +4281,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Mốc A có cao độ +1,5m. Số đọc mia tại mốc A là 1,25 m. Tại điểm B, số đọc mia là    1,7 m. Hỏi cao độ điểm B là bao nhiêu?",
     "options": [
-      "1.470 m"
+      "1.470 m",
+      "1,05 m",
+      "2,95 m",
+      "1,7 m"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn3_39",
@@ -4241,7 +4295,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Khi đo cao độ bằng máy thuỷ bình, số đọc được trên mia lớn hơn nhiều so với cao độ máy",
     "options": [
-      "Điểm tại vị trí đặt mia cao hơn cao độ máy"
+      "Điểm tại vị trí đặt mia cao hơn cao độ máy",
+      "Kết quả đúng",
+      "Điểm tại vị trí đặt mia thấp hơn cao độ máy",
+      "Điểm tại vị trí đo bằng cao độ máy"
     ],
     "correct_index": 2
   },
@@ -4252,7 +4309,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Nhiệt độ tiêu chuẩn của tấm gia nhiệt (heater plate) khi hàn đối đầu ống HDPE là bao nhiêu?",
     "options": [
-      "180 ± 10°C"
+      "180 ± 10°C",
+      "200 ± 10°C",
+      "220 ± 10°C",
+      "260 ± 10°C"
     ],
     "correct_index": 2
   },
@@ -4263,9 +4323,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Sau khi lắp ống vào phụ kiện, thao tác kỹ thuật đúng là gì?",
     "options": [
-      "Xoay ống nhiều vòng để keo phân bố đều"
+      "Xoay ống nhiều vòng để keo phân bố đều",
+      "Giữ cố định, không xoay và giữ lực ép trong vài giây",
+      "Rút ra kiểm tra rồi lắp lại",
+      "Gõ mạnh để tăng độ kín"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn3_42",
@@ -4274,9 +4337,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Tại các trục đứng cấp nước, yêu cầu kỹ thuật quan trọng nhất để đảm bảo vận hành lâu dài là gì?",
     "options": [
-      "Lắp càng sát tường càng tốt"
+      "Lắp càng sát tường càng tốt",
+      "Dùng ống lớn nhất có thể",
+      "Có biện pháp cố định và bù giãn nở nhiệt cho ống",
+      "Không cần giá đỡ"
     ],
-    "correct_index": 0
+    "correct_index": 2
   },
   {
     "id": "q_ctn3_43",
@@ -4285,9 +4351,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Việc sử dụng 2 cái “lơi (chếch)” tạo thành 1 cái co (cút 90˚) trong thoát nước có ý nghĩa gì?",
     "options": [
-      "Làm tăng áp lực dòng chảy trong ống"
+      "Làm tăng áp lực dòng chảy trong ống",
+      "Giảm tốc độ nước để tránh bắn ngược",
+      "Tạo góc chuyển hướng êm hơn, giảm tắc nghẽn và giảm va đập dòng chảy",
+      "Giảm chi phí vật tư so với dùng co 90°"
     ],
-    "correct_index": 0
+    "correct_index": 2
   },
   {
     "id": "q_ctn3_44",
@@ -4296,9 +4365,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Ống thoát dài 18m, yêu cầu độ dốc 0.004 → chênh cao là:",
     "options": [
-      "7.2cm"
+      "7.2cm",
+      "4cm",
+      "18cm",
+      "72cm"
     ],
-    "correct_index": 0
+    "correct_index": 3
   },
   {
     "id": "q_ctn3_45",
@@ -4307,9 +4379,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Khi cắt rãnh trên tường gạch để đặt ống, yêu cầu nào là đúng nhằm tránh nứt tường sau hoàn thiện?",
     "options": [
-      "Cắt rãnh sâu và rộng tùy ý"
+      "Cắt rãnh sâu và rộng tùy ý",
+      "Cắt liên tục nhiều rãnh sát nhau",
+      "Không cắt quá sâu, không làm gián đoạn kết cấu tường và hạn chế rãnh quá dài liên tục",
+      "Chỉ cần trát lại là không nứt"
     ],
-    "correct_index": 0
+    "correct_index": 2
   },
   {
     "id": "q_ctn3_46",
@@ -4318,9 +4393,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Yêu cầu kỹ thuật nào sau đây là đúng sau khi hoàn thành mối hàn HDPE đạt chuẩn?",
     "options": [
-      "Gờ hàn lệch về một phía để dễ kiểm tra"
+      "Gờ hàn lệch về một phía để dễ kiểm tra",
+      "Gờ hàn đều hai bên, đối xứng, không có khe hở hoặc cháy nhựa",
+      "Không cần gờ hàn nếu áp lực đủ lớn",
+      "Gờ hàn càng nhỏ càng tốt"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn3_47",
@@ -4329,9 +4407,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Sau khi gia nhiệt ống và phụ kiện PPR đúng thời gian, thợ đưa ống vào phụ kiện nhưng có xoay nhẹ để “cho đều”. Hậu quả chính là gì?",
     "options": [
-      "Không ảnh hưởng"
+      "Không ảnh hưởng",
+      "Tăng độ kín",
+      "Phá vỡ lớp nhựa nóng chảy → mối hàn yếu, dễ rò rỉ",
+      "Giúp mối hàn đẹp hơn"
     ],
-    "correct_index": 0
+    "correct_index": 2
   },
   {
     "id": "q_ctn3_48",
@@ -4340,7 +4421,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Đơn vị đo áp suất phổ biến là:",
     "options": [
-      "kg/cm²"
+      "kg/cm²",
+      "bar",
+      "Pa",
+      "Cả 3 ý trên"
     ],
     "correct_index": 3
   },
@@ -4351,7 +4435,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Kí hiệu sau đây TR-D110; BOP= FFL- 750 có nghĩa là:",
     "options": [
-      "Ống thoát nước mưa D110, độ dốc 1%, đáy ống cao hơn cốt sàn hoàn thiện 750 mm"
+      "Ống thoát nước mưa D110, độ dốc 1%, đáy ống cao hơn cốt sàn hoàn thiện 750 mm",
+      "Ống thoát nước thải D110, độ dốc 1%, đáy ống thấp hơn cốt sàn hoàn thiện 750 mm",
+      "Ống thoát nước thải D110, không có độ dốc, đáy ống thấp hơn sàn 750 mm",
+      "Ống cấp nước D110, độ dốc 1%, đỉnh ống thấp hơn sàn 750 mm"
     ],
     "correct_index": 2
   },
@@ -4362,7 +4449,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 3",
     "question": "Thời gian lắp ghép sau khi bôi keo dán uPVC (ở điều kiện bình thường) nên thực hiện trong khoảng nào là tối ưu?",
     "options": [
-      "Trong vòng 60 giây"
+      "Trong vòng 60 giây",
+      "Trong vòng 30 giây",
+      "Trong vòng 10–20 giây",
+      "Có thể để 5 phút rồi lắp"
     ],
     "correct_index": 2
   },
@@ -4579,9 +4669,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Mốc A có cao độ +1,5m. Số đọc mia tại mốc A là 1,25 m. Tại điểm B, số đọc mia là    1,7 m. Hỏi cao độ điểm B là bao nhiêu?",
     "options": [
-      "1.470 m"
+      "1.470 m",
+      "1,05 m",
+      "2,95 m",
+      "1,7 m"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn2_17",
@@ -4590,7 +4683,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Khi đo cao độ bằng máy thuỷ bình, số đọc được trên mia lớn hơn nhiều so với cao độ máy",
     "options": [
-      "Điểm tại vị trí đặt mia cao hơn cao độ máy"
+      "Điểm tại vị trí đặt mia cao hơn cao độ máy",
+      "Kết quả đúng",
+      "Điểm tại vị trí đặt mia thấp hơn cao độ máy",
+      "Điểm tại vị trí đo bằng cao độ máy"
     ],
     "correct_index": 2
   },
@@ -4601,7 +4697,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Nhiệt độ tiêu chuẩn của tấm gia nhiệt (heater plate) khi hàn đối đầu ống HDPE là bao nhiêu?",
     "options": [
-      "180 ± 10°C"
+      "180 ± 10°C",
+      "200 ± 10°C",
+      "220 ± 10°C",
+      "260 ± 10°C"
     ],
     "correct_index": 2
   },
@@ -4612,7 +4711,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Kí hiệu sau đây TR-D110; BOP= FFL- 750 có nghĩa là:",
     "options": [
-      "Ống thoát nước mưa D110, độ dốc 1%, đáy ống cao hơn cốt sàn hoàn thiện 750 mm"
+      "Ống thoát nước mưa D110, độ dốc 1%, đáy ống cao hơn cốt sàn hoàn thiện 750 mm",
+      "Ống thoát nước thải D110, độ dốc 1%, đáy ống thấp hơn cốt sàn hoàn thiện 750 mm",
+      "Ống thoát nước thải D110, không có độ dốc, đáy ống thấp hơn sàn 750 mm",
+      "Ống cấp nước D110, độ dốc 1%, đỉnh ống thấp hơn sàn 750 mm"
     ],
     "correct_index": 2
   },
@@ -4623,7 +4725,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Thời gian lắp ghép sau khi bôi keo dán uPVC (ở điều kiện bình thường) nên thực hiện trong khoảng nào là tối ưu?",
     "options": [
-      "Trong vòng 60 giây"
+      "Trong vòng 60 giây",
+      "Trong vòng 30 giây",
+      "Trong vòng 10–20 giây",
+      "Có thể để 5 phút rồi lắp"
     ],
     "correct_index": 2
   },
@@ -4634,9 +4739,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Yêu cầu kỹ thuật nào sau đây là đúng sau khi hoàn thành mối hàn HDPE đạt chuẩn?",
     "options": [
-      "Gờ hàn lệch về một phía để dễ kiểm tra"
+      "Gờ hàn lệch về một phía để dễ kiểm tra",
+      "Gờ hàn đều hai bên, đối xứng, không có khe hở hoặc cháy nhựa",
+      "Không cần gờ hàn nếu áp lực đủ lớn",
+      "Gờ hàn càng nhỏ càng tốt"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn2_22",
@@ -4645,9 +4753,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Khi cắt rãnh trên tường gạch để đặt ống, yêu cầu nào là đúng nhằm tránh nứt tường sau hoàn thiện?",
     "options": [
-      "Cắt rãnh sâu và rộng tùy ý"
+      "Cắt rãnh sâu và rộng tùy ý",
+      "Cắt liên tục nhiều rãnh sát nhau",
+      "Không cắt quá sâu, không làm gián đoạn kết cấu tường và hạn chế rãnh quá dài liên tục",
+      "Chỉ cần trát lại là không nứt"
     ],
-    "correct_index": 0
+    "correct_index": 2
   },
   {
     "id": "q_ctn2_23",
@@ -4656,9 +4767,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Tại các trục đứng cấp nước, yêu cầu kỹ thuật quan trọng nhất để đảm bảo vận hành lâu dài là gì?",
     "options": [
-      "Lắp càng sát tường càng tốt"
+      "Lắp càng sát tường càng tốt",
+      "Dùng ống lớn nhất có thể",
+      "Có biện pháp cố định và bù giãn nở nhiệt cho ống",
+      "Không cần giá đỡ"
     ],
-    "correct_index": 0
+    "correct_index": 2
   },
   {
     "id": "q_ctn2_24",
@@ -4667,9 +4781,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Trong quá trình hàn đối đầu HDPE, thông số nào quyết định trực tiếp đến hình dạng và chất lượng gờ hàn?",
     "options": [
-      "Màu sắc ống"
+      "Màu sắc ống",
+      "Áp lực ép và nhiệt độ gia nhiệt",
+      "Chiều dài ống",
+      "Độ dốc tuyến ống"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn2_25",
@@ -4678,7 +4795,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Nếu máy laser bị lệch cân bằng (không tự cân bằng đúng), hậu quả là gì?",
     "options": [
-      "Sai số cao độ trên toàn bộ các điểm đo"
+      "Sai số cao độ trên toàn bộ các điểm đo",
+      "Không ảnh hưởng vì tia laser vẫn nhìn thấy",
+      "Chỉ ảnh hưởng một điểm",
+      "Chỉ làm chậm tiến độ thi công"
     ],
     "correct_index": 0
   },
@@ -4689,9 +4809,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Áp lực làm việc theo TCVN tại thiết bị thường nằm trong dải sau:",
     "options": [
-      "1-2 bar"
+      "1-2 bar",
+      "2-4 bar",
+      "4-6 bar",
+      "6-8 bar"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn2_27",
@@ -4700,9 +4823,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Kí hiệu sau đây CW-D32; COP= FFL- 350 có nghĩa là:",
     "options": [
-      "Ống nước nóng D32, đáy ống cao hơn cốt sàn hoàn thiện 350 mm"
+      "Ống nước nóng D32, đáy ống cao hơn cốt sàn hoàn thiện 350 mm",
+      "Ống nước lạnh D32, tim ống thấp hơn cốt sàn hoàn thiện 350 mm",
+      "Ống thoát nước thải D32, đáy ống thấp hơn sàn 350 mm",
+      "Ống nước lạnh D32, đỉnh ống thấp hơn sàn hoàn thiện 350 mm"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn2_28",
@@ -4711,9 +4837,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Cao độ ±0.000 là gì?",
     "options": [
-      "Điểm cao nhất công trình"
+      "Điểm cao nhất công trình",
+      "Đỉnh mái",
+      "Mốc chuẩn để đo cao độ",
+      "Đáy móng"
     ],
-    "correct_index": 0
+    "correct_index": 2
   },
   {
     "id": "q_ctn2_29",
@@ -4722,7 +4851,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Từ cao độ tia laser bằng FL 1550mm, tại điểm cần xác định theo thiết kế bằng TOP = FL 350mm. Hỏi khoảng cách từ điểm đó đến tia laser là bao nhiêu?",
     "options": [
-      "650 mm"
+      "650 mm",
+      "1350 mm",
+      "1200 mm",
+      "1250 mm"
     ],
     "correct_index": 2
   },
@@ -4733,9 +4865,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Yêu cầu kỹ thuật nào sau đây là đúng sau khi hoàn thành mối hàn HDPE đạt chuẩn?",
     "options": [
-      "Gờ hàn lệch về một phía để dễ kiểm tra"
+      "Gờ hàn lệch về một phía để dễ kiểm tra",
+      "Gờ hàn đều hai bên, đối xứng, không có khe hở hoặc cháy nhựa",
+      "Không cần gờ hàn nếu áp lực đủ lớn",
+      "Gờ hàn càng nhỏ càng tốt"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn2_31",
@@ -4744,9 +4879,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Sau khi gia nhiệt ống và phụ kiện PPR đúng thời gian, thợ đưa ống vào phụ kiện nhưng có xoay nhẹ để “cho đều”. Hậu quả chính là gì?",
     "options": [
-      "Không ảnh hưởng"
+      "Không ảnh hưởng",
+      "Tăng độ kín",
+      "Phá vỡ lớp nhựa nóng chảy → mối hàn yếu, dễ rò rỉ",
+      "Giúp mối hàn đẹp hơn"
     ],
-    "correct_index": 0
+    "correct_index": 2
   },
   {
     "id": "q_ctn2_32",
@@ -4755,7 +4893,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Đơn vị đo áp suất phổ biến là:",
     "options": [
-      "kg/cm²"
+      "kg/cm²",
+      "bar",
+      "Pa",
+      "Cả 3 ý trên"
     ],
     "correct_index": 3
   },
@@ -4766,7 +4907,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Kí hiệu sau đây TR-D110; BOP= FFL- 750 có nghĩa là:",
     "options": [
-      "Ống thoát nước mưa D110, độ dốc 1%, đáy ống cao hơn cốt sàn hoàn thiện 750 mm"
+      "Ống thoát nước mưa D110, độ dốc 1%, đáy ống cao hơn cốt sàn hoàn thiện 750 mm",
+      "Ống thoát nước thải D110, độ dốc 1%, đáy ống thấp hơn cốt sàn hoàn thiện 750 mm",
+      "Ống thoát nước thải D110, không có độ dốc, đáy ống thấp hơn sàn 750 mm",
+      "Ống cấp nước D110, độ dốc 1%, đỉnh ống thấp hơn sàn 750 mm"
     ],
     "correct_index": 2
   },
@@ -4777,7 +4921,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Thời gian lắp ghép sau khi bôi keo dán uPVC (ở điều kiện bình thường) nên thực hiện trong khoảng nào là tối ưu?",
     "options": [
-      "Trong vòng 60 giây"
+      "Trong vòng 60 giây",
+      "Trong vòng 30 giây",
+      "Trong vòng 10–20 giây",
+      "Có thể để 5 phút rồi lắp"
     ],
     "correct_index": 2
   },
@@ -4788,7 +4935,10 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Nhiệt độ tiêu chuẩn của tấm gia nhiệt (heater plate) khi hàn đối đầu ống HDPE là bao nhiêu?",
     "options": [
-      "180 ± 10°C"
+      "180 ± 10°C",
+      "200 ± 10°C",
+      "220 ± 10°C",
+      "260 ± 10°C"
     ],
     "correct_index": 2
   },
@@ -4799,9 +4949,12 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Sau khi lắp ống vào phụ kiện, thao tác kỹ thuật đúng là gì?",
     "options": [
-      "Xoay ống nhiều vòng để keo phân bố đều"
+      "Xoay ống nhiều vòng để keo phân bố đều",
+      "Giữ cố định, không xoay và giữ lực ép trong vài giây",
+      "Rút ra kiểm tra rồi lắp lại",
+      "Gõ mạnh để tăng độ kín"
     ],
-    "correct_index": 0
+    "correct_index": 1
   },
   {
     "id": "q_ctn2_42",
@@ -4810,8 +4963,11 @@ const QUESTIONS = [
     "exam_set": "Thợ CTN Bậc 2",
     "question": "Kí hiệu sau đây VP-D60; BOP= FL 2450 có nghĩa là:",
     "options": [
-      "Ống thông hơi D60, đáy ống thấp hơn cốt sàn hoàn thiện 2450 mm"
+      "Ống thông hơi D60, đáy ống thấp hơn cốt sàn hoàn thiện 2450 mm",
+      "Ống thông hơi D60, đáy ống cao hơn cốt sàn hoàn thiện 2450 mm",
+      "Ống thông hơi D60, đáy ống ở cao độ +2450 mm so với cốt sàn (FL)",
+      "Ống thoát nước thải D60, đỉnh ống ở cao độ +2450 mm so với sàn"
     ],
-    "correct_index": 0
+    "correct_index": 1
   }
 ];
