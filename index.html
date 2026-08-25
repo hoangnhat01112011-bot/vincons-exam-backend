@@ -490,7 +490,7 @@
             <button class="sidebar-btn" onclick="selectDisciplineAndScroll('Điện')">🎯 Ôn Tập Tự Do</button>
             <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent); margin: 8px 0 2px 4px; letter-spacing: 0.5px;">📖 TÀI LIỆU THAM KHẢO</div>
             <button class="sidebar-btn" onclick="window.open('https://drive.google.com/drive/project/1YDEhfbR3xpigjAyTODTprNtOkEHS2YKc', '_blank')">⚡ Bộ môn Điện ↗️</button>
-            <button class="sidebar-btn" onclick="window.open('https://drive.google.com/drive/project/1YDEhfbR3xpigjAyTODTprNtOkEHS2YKc', '_blank')">💧 Cấp thoát nước ↗️</button>
+            
             <button class="sidebar-btn" onclick="window.open('https://drive.google.com/drive/project/1YDEhfbR3xpigjAyTODTprNtOkEHS2YKc', '_blank')">❄️ Điều hòa thông gió ↗️</button>
             <button class="sidebar-btn" onclick="window.open('https://drive.google.com/drive/project/1YDEhfbR3xpigjAyTODTprNtOkEHS2YKc', '_blank')">🔥 PCCC ↗️</button>
         </div>
@@ -513,10 +513,7 @@
                         <div class="shortcut-icon" style="background: linear-gradient(135deg, #eab308, #ca8a04);">⚡</div>
                         <div class="shortcut-title">Đề thi Điện</div>
                     </div>
-                    <div class="shortcut-card" onclick="selectDisciplineAndScroll('Cấp thoát nước')">
-                        <div class="shortcut-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">💧</div>
-                        <div class="shortcut-title">Cấp thoát nước</div>
-                    </div>
+
                     <div class="shortcut-card" onclick="selectDisciplineAndScroll('Điều hòa thông gió')">
                         <div class="shortcut-icon" style="background: linear-gradient(135deg, #f97316, #ea580c);">❄️</div>
                         <div class="shortcut-title">Điều hòa (HVAC)</div>
@@ -592,7 +589,7 @@
                         <select id="pageDiscipline" class="glass-control" required onchange="toggleDiscipline(this.value, 'page')">
                             <option value="" disabled>-- Chọn bộ môn --</option>
                             <option value="Điện" selected>Điện</option>
-                            <option value="Cấp thoát nước">Cấp thoát nước</option>
+                            
                             <option value="Điều hòa thông gió">Điều hòa thông gió</option>
                             <option value="Phòng cháy chữa cháy">Phòng cháy chữa cháy</option>
                         </select>
@@ -853,13 +850,7 @@
                 </optgroup>
             `;
             examSet.disabled = false;
-        } else if (val === 'Cấp thoát nước') {
-            examSet.innerHTML = `
-                <option value="all">Ngẫu nhiên 30 câu (Cả Bậc 2 & 3)</option>
-                <option value="Thợ CTN Bậc 2">Thợ CTN Bậc 2 (30 câu)</option>
-                <option value="Thợ CTN Bậc 3">Thợ CTN Bậc 3 (30 câu)</option>
-            `;
-            examSet.disabled = false;
+
         } else if (val === 'Điều hòa thông gió') {
             examSet.innerHTML = `
                 <option value="all">Ngẫu nhiên 30 câu (Điều hòa HVAC)</option>
