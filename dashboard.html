@@ -833,6 +833,15 @@
         }
     }
 
+        function generate30ExamOptions(disciplineName, rankName) {
+        let opts = '';
+        for (let i = 1; i <= 30; i++) {
+            const numStr = String(i).padStart(2, '0');
+            opts += `<option value="Đề số ${numStr}">Đề số ${numStr} - ${disciplineName} ${rankName} (20 câu)</option>`;
+        }
+        return opts;
+    }
+
     function toggleDiscipline(val, prefix) {
         const p = prefix || 'page';
         const examSet = document.getElementById(p + 'ExamSet');
@@ -840,42 +849,47 @@
 
         if (val === 'Điện') {
             examSet.innerHTML = `
-                <option value="all">Ngẫu nhiên 30 câu (Cả Bậc 2 & 3)</option>
-                <option value="Thợ Điện Bậc 2">Thợ Điện Bậc 2</option>
-                <optgroup label="Thợ Điện Bậc 3">
-                    <option value="Đề số 01">Đề số 01 - Thợ Điện Bậc 3 (20 câu)</option>
-                    <option value="Đề số 02">Đề số 02 - Thợ Điện Bậc 3 (20 câu)</option>
-                    <option value="Đề số 03">Đề số 03 - Thợ Điện Bậc 3 (20 câu)</option>
-                    <option value="Đề số 04">Đề số 04 - Thợ Điện Bậc 3 (20 câu)</option>
-                    <option value="Đề số 05">Đề số 05 - Thợ Điện Bậc 3 (20 câu)</option>
-                    <option value="Đề số 06">Đề số 06 - Thợ Điện Bậc 3 (20 câu)</option>
-                    <option value="Đề số 07">Đề số 07 - Thợ Điện Bậc 3 (20 câu)</option>
-                    <option value="Đề số 08">Đề số 08 - Thợ Điện Bậc 3 (20 câu)</option>
-                    <option value="Đề số 09">Đề số 09 - Thợ Điện Bậc 3 (20 câu)</option>
-                    <option value="Đề số 10">Đề số 10 - Thợ Điện Bậc 3 (20 câu)</option>
+                <option value="all">Ngẫu nhiên (Tự động xoay vòng 30 bộ đề - 20 câu/đề)</option>
+                <optgroup label="Thợ Điện Bậc 2 (Xoay vòng 30 bộ đề)">
+                    ${generate30ExamOptions('Thợ Điện', 'Bậc 2')}
+                </optgroup>
+                <optgroup label="Thợ Điện Bậc 3 (Xoay vòng 30 bộ đề)">
+                    ${generate30ExamOptions('Thợ Điện', 'Bậc 3')}
                 </optgroup>
             `;
             examSet.disabled = false;
 
         } else if (val === 'Cấp thoát nước') {
             examSet.innerHTML = `
-                <option value="all">Ngẫu nhiên 30 câu (Cả Bậc 2 & 3)</option>
-                <option value="Thợ CTN Bậc 2">Thợ CTN Bậc 2 (37 câu)</option>
-                <option value="Thợ CTN Bậc 3">Thợ CTN Bậc 3 (50 câu)</option>
+                <option value="all">Ngẫu nhiên (Tự động xoay vòng 30 bộ đề - 20 câu/đề)</option>
+                <optgroup label="Thợ Cấp thoát nước Bậc 2 (Xoay vòng 30 bộ đề)">
+                    ${generate30ExamOptions('Thợ CTN', 'Bậc 2')}
+                </optgroup>
+                <optgroup label="Thợ Cấp thoát nước Bậc 3 (Xoay vòng 30 bộ đề)">
+                    ${generate30ExamOptions('Thợ CTN', 'Bậc 3')}
+                </optgroup>
             `;
             examSet.disabled = false;
         } else if (val === 'Điều hòa thông gió') {
             examSet.innerHTML = `
-                <option value="all">Ngẫu nhiên 30 câu (Điều hòa HVAC)</option>
-                <option value="Thợ ĐHTG Bậc 2">Thợ Điều hòa Bậc 2</option>
-                <option value="Thợ ĐHTG Bậc 3">Thợ Điều hòa Bậc 3</option>
+                <option value="all">Ngẫu nhiên (Tự động xoay vòng 30 bộ đề - 20 câu/đề)</option>
+                <optgroup label="Thợ Điều hòa Bậc 2 (Xoay vòng 30 bộ đề)">
+                    ${generate30ExamOptions('Thợ ĐHTG', 'Bậc 2')}
+                </optgroup>
+                <optgroup label="Thợ Điều hòa Bậc 3 (Xoay vòng 30 bộ đề)">
+                    ${generate30ExamOptions('Thợ ĐHTG', 'Bậc 3')}
+                </optgroup>
             `;
             examSet.disabled = false;
         } else if (val === 'Phòng cháy chữa cháy') {
             examSet.innerHTML = `
-                <option value="all">Ngẫu nhiên 30 câu (Hệ thống PCCC)</option>
-                <option value="Thợ PCCC Bậc 2">Thợ PCCC Bậc 2</option>
-                <option value="Thợ PCCC Bậc 3">Thợ PCCC Bậc 3</option>
+                <option value="all">Ngẫu nhiên (Tự động xoay vòng 30 bộ đề - 20 câu/đề)</option>
+                <optgroup label="Thợ PCCC Bậc 2 (Xoay vòng 30 bộ đề)">
+                    ${generate30ExamOptions('Thợ PCCC', 'Bậc 2')}
+                </optgroup>
+                <optgroup label="Thợ PCCC Bậc 3 (Xoay vòng 30 bộ đề)">
+                    ${generate30ExamOptions('Thợ PCCC', 'Bậc 3')}
+                </optgroup>
             `;
             examSet.disabled = false;
         } else {

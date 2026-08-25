@@ -14,6 +14,25 @@ let answers = JSON.parse(localStorage.getItem('vincons_answers')) || {};
 let timerInterval = null;
 let timeLeft = parseInt(localStorage.getItem('vincons_time_left'));
 
+// Seeded PRNG for 30 Exam Rotation
+function seededRandom(seed) {
+    let x = Math.sin(seed++) * 10000;
+    return x - Math.floor(x);
+}
+
+function seededShuffle(array, seed) {
+    let copy = [...array];
+    let m = copy.length, t, i;
+    let s = seed;
+    while (m) {
+        i = Math.floor(seededRandom(s++) * m--);
+        t = copy[m];
+        copy[m] = copy[i];
+        copy[i] = t;
+    }
+    return copy;
+}
+
 // Initialize Exam
 if (window.location.pathname.endsWith('exam.html')) {
     initExam();
@@ -23,13 +42,87 @@ function initExam() {
     if (typeof window.applyQuestionOverrides === 'function') {
         window.applyQuestionOverrides();
     }
-    // 1. Set exam title and filter questions
-    const job = candidateInfo.job;
-    const examType = candidateInfo.examType;
+
+    const job = candidateInfo.job || '';
+    const examType = candidateInfo.examType || 'Lý thuyết';
+    const selectedSet = candidateInfo.examSet || 'all';
+    const discipline = candidateInfo.discipline || 'Điện';
     
-    const modeText = candidateInfo.examMode === 'Ôn tập' ? ' [CHẾ ĐỘ ÔN TẬP]' : '';
-    document.getElementById('examTitle').textContent = `Phần Thi: ${examType === 'Lý thuyết' ? 'Lý Thuyết' : 'Thực Hành'}${modeText}`;
-    
+    // Filter questions based on candidate job, exam type, and selected set
+    if (examType === 'Lý thuyết') {
+        let disciplineKeyword = 'Thợ điện';
+        if (discipline === 'Cấp thoát nước') disciplineKeyword = 'Cấp thoát nước';
+        else if (discipline === 'Điều hòa thông gió') disciplineKeyword = 'Điều hòa';
+        else if (discipline === 'Phòng cháy chữa cháy') disciplineKeyword = 'PCCC';
+
+        // Filter theory questions for this discipline
+        let theoryQuestions = QUESTIONS.filter(q => 
+            q.category.toLowerCase().includes('lý thuyết') && 
+            (q.category.toLowerCase().includes(disciplineKeyword.toLowerCase()) || 
+             (q.exam_set && q.exam_set.toLowerCase().includes(disciplineKeyword.toLowerCase())))
+        );
+
+        // Filter by Rank (Bậc 2 or Bậc 3) if specified in job or selectedSet
+        if (job.includes('Bậc 2') || selectedSet.includes('Bậc 2')) {
+            let b2 = theoryQuestions.filter(q => q.category.includes('Bậc 2') || (q.exam_set && q.exam_set.includes('Bậc 2')));
+            if (b2.length > 0) theoryQuestions = b2;
+        } else if (job.includes('Bậc 3') || selectedSet.includes('Bậc 3')) {
+            let b3 = theoryQuestions.filter(q => q.category.includes('Bậc 3') || (q.exam_set && q.exam_set.includes('Bậc 3')));
+            if (b3.length > 0) theoryQuestions = b3;
+        }
+
+        // Always 20 questions per exam for official exams
+        let questionLimit = 20;
+        if (candidateInfo.examMode === 'Ôn tập') {
+            questionLimit = candidateInfo.reviewLimit || 10;
+        }
+
+        let examSeed = 1;
+        let examTitleNotice = '';
+
+        if (selectedSet.startsWith('Đề số ')) {
+            const numMatch = selectedSet.match(/\d+/);
+            const num = numMatch ? parseInt(numMatch[0]) : 1;
+            examSeed = num * 1000 + (discipline.length * 17);
+            examTitleNotice = `Đề số ${String(num).padStart(2, '0')}/30`;
+        } else {
+            // Auto rotate random counter from 1 to 30
+            let counter = parseInt(localStorage.getItem('vincons_random_counter') || '0') % 30 + 1;
+            localStorage.setItem('vincons_random_counter', counter.toString());
+            examSeed = counter * 12345 + (discipline.length * 99);
+            examTitleNotice = `Đề ngẫu nhiên số ${String(counter).padStart(2, '0')}/30`;
+        }
+
+        // Apply Seeded Shuffle to guarantee 30 unique 20-question layouts
+        if (theoryQuestions.length > 0) {
+            if (selectedSet.startsWith('Đề số ') && theoryQuestions.filter(q => q.exam_set === selectedSet).length === questionLimit) {
+                activeQuestions = theoryQuestions.filter(q => q.exam_set === selectedSet);
+            } else {
+                activeQuestions = seededShuffle(theoryQuestions, examSeed).slice(0, questionLimit);
+            }
+        } else {
+            activeQuestions = [];
+        }
+
+        // Set display title
+        const modeText = candidateInfo.examMode === 'Ôn tập' ? ' [CHẾ ĐỘ ÔN TẬP]' : '';
+        document.getElementById('examTitle').textContent = `Phần Thi: Lý Thuyết - ${job} (${examTitleNotice})${modeText}`;
+
+        // Set timer to 30 minutes if not already set
+        if (isNaN(timeLeft) || timeLeft <= 0) {
+            timeLeft = 30 * 60; 
+        }
+    } else { // Thực hành
+        activeQuestions = QUESTIONS.filter(q => q.category.includes('Thực hành CNCH'));
+        const modeText = candidateInfo.examMode === 'Ôn tập' ? ' [CHẾ ĐỘ ÔN TẬP]' : '';
+        document.getElementById('examTitle').textContent = `Phần Thi: Thực Hành${modeText}`;
+
+        // Set timer to 60 minutes if not already set
+        if (isNaN(timeLeft) || timeLeft <= 0) {
+            timeLeft = 60 * 60; 
+        }
+    }
+
     // Display candidate info in sidebar
     document.getElementById('candidateDisplayInfo').innerHTML = `
         <strong>Họ tên:</strong> ${candidateInfo.name}<br>
@@ -38,47 +131,6 @@ function initExam() {
         <strong>Vị trí:</strong> ${job}
     `;
 
-    // Filter questions based on candidate job, exam type, and selected set
-    if (examType === 'Lý thuyết') {
-        const selectedSet = candidateInfo.examSet || 'all';
-        const discipline = candidateInfo.discipline || 'Điện';
-        
-        let disciplineKeyword = 'Thợ điện';
-        if (discipline === 'Cấp thoát nước') disciplineKeyword = 'Cấp thoát nước';
-        else if (discipline === 'Điều hòa thông gió') disciplineKeyword = 'Điều hòa';
-        else if (discipline === 'Phòng cháy chữa cháy') disciplineKeyword = 'PCCC';
-
-        let theoryQuestions = QUESTIONS.filter(q => q.category.toLowerCase().includes('lý thuyết') && q.category.toLowerCase().includes(disciplineKeyword.toLowerCase()));
-
-        if (selectedSet !== 'all' && selectedSet !== '') {
-            activeQuestions = theoryQuestions.filter(q => q.exam_set === selectedSet);
-        } else {
-            activeQuestions = theoryQuestions;
-        }
-
-        // Apply limits based on Exam Mode
-        let questionLimit = 30; // Default for official exam
-        if (candidateInfo.examMode === 'Ôn tập') {
-            questionLimit = candidateInfo.reviewLimit || 10;
-        }
-        
-        if (activeQuestions.length > questionLimit) {
-            activeQuestions = shuffle(activeQuestions).slice(0, questionLimit);
-        }
-        
-        // Set timer to 30 minutes if not already set
-        if (isNaN(timeLeft) || timeLeft <= 0) {
-            timeLeft = 30 * 60; 
-        }
-    } else { // Thực hành
-        activeQuestions = QUESTIONS.filter(q => q.category.includes('Thực hành CNCH'));
-        
-        // Set timer to 60 minutes if not already set
-        if (isNaN(timeLeft) || timeLeft <= 0) {
-            timeLeft = 60 * 60; 
-        }
-    }
-
     if (activeQuestions.length === 0) {
         alert("Không tìm thấy câu hỏi phù hợp cho lựa chọn của bạn. Vui lòng kiểm tra lại bộ môn và phần thi.");
         window.location.href = 'index.html';
@@ -86,7 +138,6 @@ function initExam() {
     }
 
     // Save filtered questions for result page
-    // We override QUESTIONS inside localStorage just for this candidate session
     localStorage.setItem('vincons_active_questions', JSON.stringify(activeQuestions));
 
     // 2. Render Question numbers in Sidebar Grid
