@@ -1,4 +1,11 @@
-// Vincons Exam App Engine - 100% Null-Safe & GitHub Pages Ready
+import json
+import os
+import shutil
+
+# 1. Update app.js with 100% Bulletproof Null-Safe Logic
+app_path = r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\app.js'
+
+app_code = '''// Vincons Exam App Engine - 100% Null-Safe & GitHub Pages Ready
 
 // Global State Initializer
 let candidateInfo = {};
@@ -322,3 +329,99 @@ function submitExam() {
     localStorage.removeItem('vincons_time_left');
     window.location.href = 'result.html';
 }
+'''
+
+with open(app_path, 'w', encoding='utf-8') as f:
+    f.write(app_code)
+print(f"✅ Updated {app_path} with 100% null-safe logic.")
+
+# 2. Update auth-guard.js to never wipe sessions
+guard_path = r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\js\auth-guard.js'
+guard_code = '''// Vincons Central Authentication Guard
+(function() {
+    const currentPath = window.location.pathname;
+    const isLoginPage = currentPath.endsWith('login.html');
+    const isAdminPage = currentPath.endsWith('admin.html');
+    const isIndexPage = currentPath === '/' || currentPath.endsWith('index.html');
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
+
+    let isAdmin = false;
+    try {
+        const raw = localStorage.getItem('vincons_admin');
+        if (raw === 'true') isAdmin = true;
+    } catch (e) { isAdmin = false; }
+
+    if (isAdminPage && !isAdmin) {
+        window.location.href = 'login.html';
+        return;
+    }
+    if (isLoginPage && isAdmin) {
+        window.location.href = 'admin.html';
+        return;
+    }
+})();
+'''
+with open(guard_path, 'w', encoding='utf-8') as f:
+    f.write(guard_code)
+print(f"✅ Updated {guard_path}")
+
+# 3. Update exam.html with inline fail-safe watchdog
+exam_path = r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\exam.html'
+with open(exam_path, 'r', encoding='utf-8') as f:
+    html = f.read()
+
+# Make sure exam.html has clean cache buster timestamp
+timestamp = 'v=20260825_final'
+lines = html.splitlines()
+cleaned_lines = []
+for line in lines:
+    if 'questions.js' in line and '<script' in line:
+        cleaned_lines.append(f'    <script src="questions.js?{timestamp}"></script>')
+    elif 'app.js' in line and '<script' in line:
+        cleaned_lines.append(f'    <script src="app.js?{timestamp}"></script>')
+    else:
+        cleaned_lines.append(line)
+
+new_exam_html = '\n'.join(cleaned_lines)
+if 'Fail-Safe Question Watchdog' not in new_exam_html:
+    watchdog = '''
+    <!-- Fail-Safe Question Watchdog -->
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var qContent = document.getElementById('questionContent');
+                if (qContent && (qContent.textContent === 'Đang tải câu hỏi...' || qContent.textContent.trim() === '')) {
+                    console.warn('Watchdog triggered initExam()');
+                    if (typeof initExam === 'function') initExam();
+                }
+            }, 300);
+        });
+    </script>
+    '''
+    new_exam_html = new_exam_html.replace('</body>', watchdog + '\n</body>')
+
+with open(exam_path, 'w', encoding='utf-8') as f:
+    f.write(new_exam_html)
+print(f"✅ Updated {exam_path}")
+
+# 4. Sync across all build directories
+target_dirs = [
+    r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\apk_unpacked\assets\www',
+    r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\android_build\android\app\src\main\assets\public',
+    r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\android_build\www'
+]
+
+for f in ['index.html', 'dashboard.html', 'admin.html', 'exam.html', 'result.html', 'app.js', 'questions.js']:
+    src = os.path.join(r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app', f)
+    if os.path.exists(src):
+        for tdir in target_dirs:
+            if os.path.exists(tdir):
+                shutil.copy(src, os.path.join(tdir, f))
+
+js_src = r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\js'
+for tdir in target_dirs:
+    js_dst = os.path.join(tdir, 'js')
+    if os.path.exists(js_src) and os.path.exists(tdir):
+        os.makedirs(js_dst, exist_ok=True)
+        for f in os.listdir(js_src):
+            shutil.copy(os.path.join(js_src, f), os.path.join(js_dst, f))
