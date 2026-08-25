@@ -3755,5 +3755,1063 @@ const QUESTIONS = [
       "1.0 m"
     ],
     "correct_index": 3
+  },
+  {
+    "id": "q_ctn3_1",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Ống PVC thường dùng cho hệ thống nào",
+    "options": [
+      "Cấp nước nóng",
+      "Cấp nước lạnh và thoát nước",
+      "Dẫn gas",
+      "Dẫn dầu"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn3_2",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Độ dốc tối thiểu của ống thoát nước sinh hoạt thường là",
+    "options": [
+      "0.5%",
+      "1–2%",
+      "5%",
+      "10%"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn3_3",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Ống PPR thường dùng cho",
+    "options": [
+      "Cấp nước nóng lạnh",
+      "Thoát nước",
+      "Dẫn khí",
+      "Tưới cây"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_4",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Khi lắp ống thoát nước cần tránh điều gì?",
+    "options": [
+      "Nhiều co gấp",
+      "Độ dốc phù hợp",
+      "Có lỗ thăm",
+      "Ống thẳng"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_5",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Bẫy nước (P-trap) có tác dụng",
+    "options": [
+      "Tăng áp lực nước",
+      "Ngăn mùi từ cống",
+      "Làm sạch nước",
+      "Lọc rác"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn3_6",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Van một chiều có chức năng",
+    "options": [
+      "Chặn rác",
+      "Cho nước chảy một hướng",
+      "Tăng áp",
+      "Giảm áp"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn3_7",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Đồng hồ nước dùng để",
+    "options": [
+      "Đo áp lực",
+      "Đo lưu lượng nước",
+      "Lọc nước",
+      "Tăng áp"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn3_8",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Khi làm việc với máy cắt cần",
+    "options": [
+      "Bỏ mũ chụp máy để tiện thao tác",
+      "Đeo kính và găng tay",
+      "Mũ chụp máy cắt,te",
+      "B,C đều đúng"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_ctn3_9",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Khi thi công trên cao cần",
+    "options": [
+      "Không cần dây an toàn",
+      "Dây an toàn và giàn giáo chắc chắn",
+      "Đứng các hệ thống khác",
+      "Dựng dàn giáo"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn3_10",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Trước khi sửa ống nước cần",
+    "options": [
+      "Mở nước",
+      "Khóa nguồn nước",
+      "Đập tường",
+      "Tháo van"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn3_11",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Nguyên nhân phổ biến gây tắc cống",
+    "options": [
+      "Rác và dầu mỡ",
+      "Không có nước",
+      "Ống quá to",
+      "Áp lực thấp"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_12",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Khi phát hiện rò rỉ ống cần",
+    "options": [
+      "Bỏ qua",
+      "Sửa hoặc thay đoạn ống",
+      "Tăng áp nước",
+      "Mở nước lớn hơn"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn3_13",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Độ dốc ống thoát quá lớn sẽ gây:",
+    "options": [
+      "Nước chảy nhanh, rác đọng lại",
+      "Tắc ngay",
+      "Nước không chảy",
+      "Ống vỡ"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_14",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Ống cấp nước trong nhà thường dùng kích thước",
+    "options": [
+      "21–34 mm",
+      "90 mm",
+      "200 mm",
+      "500 mm"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_15",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Bơm tăng áp dùng khi:",
+    "options": [
+      "Áp lực nước yếu",
+      "Nước quá mạnh",
+      "Nước bẩn",
+      "Nước nóng"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_16",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Trong hệ thống cấp nước nhà cao tầng, thiết bị nào dùng để ngăn nước ngược gây ô nhiễm nhiễm nguồn nước ?",
+    "options": [
+      "Van cổng",
+      "Van giảm áp",
+      "Van một chiều",
+      "Van xả khí"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn3_17",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Khi thử áp lực đường ống cấp nước PPR trong quá trình, thử áp lực bằng bao nhiêu để áp dụng công việc?",
+    "options": [
+      "1 lần áp lực làm việc",
+      "1,25 lần áp lực làm việc",
+      "1,5 lần áp lực làm việc",
+      "2 lần áp lực làm việc"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn3_18",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Khi nối ống PPR, phương pháp thi công đúng là gì?",
+    "options": [
+      "Hàn nhiệt",
+      "Dán keo",
+      "Hàn điện",
+      "Hàn hồ quang"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_19",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Trong hệ thống thoát nước, bẫy nước (P-trap) được lắp đặt để làm gì?",
+    "options": [
+      "Giữ rác",
+      "Ngăn mùi hôi từ ống thoát",
+      "Tăng tốc độ thoát nước",
+      "Giảm áp lực nước"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn3_20",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Khi thi công ống thoát nước ngang DN90, độ dốc tối thiểu nên là bao nhiêu",
+    "options": [
+      "0.5 %",
+      "1 %",
+      "2 %",
+      "5 %"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn3_21",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Cao độ ±0.000 là gì?",
+    "options": [
+      "Điểm cao nhất công trình"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_22",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Kí hiệu sau đây CW-D32; COP= FFL- 350 có nghĩa là:",
+    "options": [
+      "Ống nước nóng D32, đáy ống cao hơn cốt sàn hoàn thiện 350 mm"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_23",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Áp lực làm việc theo TCVN tại thiết bị thường nằm trong dải sau:",
+    "options": [
+      "1-2 bar"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_24",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Ống dài 10m cần chênh 15cm → độ dốc là:",
+    "options": [
+      "1,5%"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_25",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Từ cao độ tia laser bằng FL 1550mm, tại điểm cần xác định theo thiết kế bằng TOP = FL 350mm. Hỏi khoảng cách từ điểm đó đến tia laser là bao nhiêu?",
+    "options": [
+      "650 mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn3_26",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Trước khi dán ống uPVC, mục đích chính của việc vệ sinh và làm nhám nhẹ bề mặt là gì?",
+    "options": [
+      "Làm đẹp bề mặt ống"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn3_27",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Thợ gia nhiệt ống D32 trong 15 giây (lớn hơn tiêu chuẩn). Lỗi kỹ thuật nào xảy ra?",
+    "options": [
+      "Không ảnh hưởng nếu lắp nhanh"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn3_28",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": ". Chức năng quan trọng nhất của ống thông hơi phụ trong hệ thống thoát nước là gì?",
+    "options": [
+      "Tăng lưu lượng nước thải"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn3_29",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Khi thi công đường ống đẩy của bơm, nếu không lắp khớp nối mềm, hậu quả chính là gì?",
+    "options": [
+      "Không ảnh hưởng"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn3_30",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Nếu độ dốc quá lớn sẽ:",
+    "options": [
+      "Nước chảy nhanh, cặn đọng"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_31",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Kí hiệu sau đây VP-D60; BOP= FL 2450 có nghĩa là:",
+    "options": [
+      "Ống thông hơi D60, đáy ống thấp hơn cốt sàn hoàn thiện 2450 mm"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_32",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Nếu áp thử quá thấp sẽ:",
+    "options": [
+      "Tốt hơn"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_33",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Nếu độ dốc vượt 0.03 sẽ:",
+    "options": [
+      "Tốt hơn"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_34",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Nếu máy laser bị lệch cân bằng (không tự cân bằng đúng), hậu quả là gì?",
+    "options": [
+      "Sai số cao độ trên toàn bộ các điểm đo"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_35",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Với ống PPR D32-PN20, thời gian gia nhiệt tiêu chuẩn là bao lâu?",
+    "options": [
+      "4 giây"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_36",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Trong quá trình hàn đối đầu HDPE, thông số nào quyết định trực tiếp đến hình dạng và chất lượng gờ hàn?",
+    "options": [
+      "Màu sắc ống"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_37",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Trong hệ thống cấp nước nhiều tầng, nếu không lắp van giảm áp (PRV) ở các tầng thấp, hậu quả là gì?",
+    "options": [
+      "Nước chảy yếu"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_38",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Mốc A có cao độ +1,5m. Số đọc mia tại mốc A là 1,25 m. Tại điểm B, số đọc mia là    1,7 m. Hỏi cao độ điểm B là bao nhiêu?",
+    "options": [
+      "1.470 m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_39",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Khi đo cao độ bằng máy thuỷ bình, số đọc được trên mia lớn hơn nhiều so với cao độ máy",
+    "options": [
+      "Điểm tại vị trí đặt mia cao hơn cao độ máy"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn3_40",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Nhiệt độ tiêu chuẩn của tấm gia nhiệt (heater plate) khi hàn đối đầu ống HDPE là bao nhiêu?",
+    "options": [
+      "180 ± 10°C"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn3_41",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Sau khi lắp ống vào phụ kiện, thao tác kỹ thuật đúng là gì?",
+    "options": [
+      "Xoay ống nhiều vòng để keo phân bố đều"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_42",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Tại các trục đứng cấp nước, yêu cầu kỹ thuật quan trọng nhất để đảm bảo vận hành lâu dài là gì?",
+    "options": [
+      "Lắp càng sát tường càng tốt"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_43",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Việc sử dụng 2 cái “lơi (chếch)” tạo thành 1 cái co (cút 90˚) trong thoát nước có ý nghĩa gì?",
+    "options": [
+      "Làm tăng áp lực dòng chảy trong ống"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_44",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Ống thoát dài 18m, yêu cầu độ dốc 0.004 → chênh cao là:",
+    "options": [
+      "7.2cm"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_45",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Khi cắt rãnh trên tường gạch để đặt ống, yêu cầu nào là đúng nhằm tránh nứt tường sau hoàn thiện?",
+    "options": [
+      "Cắt rãnh sâu và rộng tùy ý"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_46",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Yêu cầu kỹ thuật nào sau đây là đúng sau khi hoàn thành mối hàn HDPE đạt chuẩn?",
+    "options": [
+      "Gờ hàn lệch về một phía để dễ kiểm tra"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_47",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Sau khi gia nhiệt ống và phụ kiện PPR đúng thời gian, thợ đưa ống vào phụ kiện nhưng có xoay nhẹ để “cho đều”. Hậu quả chính là gì?",
+    "options": [
+      "Không ảnh hưởng"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn3_48",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Đơn vị đo áp suất phổ biến là:",
+    "options": [
+      "kg/cm²"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_ctn3_49",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Kí hiệu sau đây TR-D110; BOP= FFL- 750 có nghĩa là:",
+    "options": [
+      "Ống thoát nước mưa D110, độ dốc 1%, đáy ống cao hơn cốt sàn hoàn thiện 750 mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn3_50",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 3",
+    "exam_set": "Thợ CTN Bậc 3",
+    "question": "Thời gian lắp ghép sau khi bôi keo dán uPVC (ở điều kiện bình thường) nên thực hiện trong khoảng nào là tối ưu?",
+    "options": [
+      "Trong vòng 60 giây"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn2_1",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Áp lực nước trong nhà ở thường khoảng",
+    "options": [
+      "0.5 – 3 bar",
+      "10 bar",
+      "20 bar",
+      "50 bar"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_2",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Khi ren ống thép cần dùng vật liệu gì để làm kín?",
+    "options": [
+      "Băng tan (PTFE)",
+      "Keo gỗ",
+      "Xi măng",
+      "Sơn"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_3",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Đường kính ống càng lớn thì:",
+    "options": [
+      "Lưu lượng càng lớn",
+      "Lưu lượng giảm",
+      "Áp lực tăng",
+      "Không thay đổi"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_4",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Hệ thống thoát nước mưa nên",
+    "options": [
+      "Chung với nước thải",
+      "Tách riêng",
+      "Không cần ống",
+      "Đổ trực tiếp vào nhà"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn2_5",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Hố ga dùng để:",
+    "options": [
+      "Kiểm tra và vệ sinh đường ống",
+      "Tăng áp lực",
+      "Lọc nước uống",
+      "Trữ nước"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_6",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Ống thông hơi trong hệ thống thoát nước có tác dụng",
+    "options": [
+      "Thoát khí và cân bằng áp suất",
+      "Tăng áp lực",
+      "Lọc nước",
+      "Làm sạch ống"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_7",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Khi thử áp lực hệ thống cần",
+    "options": [
+      "Bơm nước áp lực kiểm tra rò rỉ",
+      "khóa kín và nén khí để thử kín",
+      "kiểm tra rò rỉ ống",
+      "Xả hết nước"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_8",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "ống PN8 và phụ kiện PN5 có dùng chung với nhau được không",
+    "options": [
+      "CÓ",
+      "KHÔNG"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn2_9",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "ống PN10 và phụ kiện PN16 có dùng chung với nhau được không",
+    "options": [
+      "CÓ",
+      "KHÔNG"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_10",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "10.\tCác ống HDPE size bao nhiêu thì có thể dùng phụ kiện ren để kết nối?",
+    "options": [
+      "D20 đến D90",
+      "D50-D110",
+      "D75-D200",
+      "D32- D110"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_11",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "kích thước ống HDPE bao nhiêu thì phải dùng phương pháp hàn",
+    "options": [
+      "D20 đến D90",
+      "D50-D110",
+      "D90-D200",
+      "D32- D110"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn2_12",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Khi làm việc với máy cắt cần",
+    "options": [
+      "Không cần bảo hộ",
+      "Đeo kính và găng tay",
+      "tháo cover (tấm che của máy) để dễ thi công",
+      "lắp dủ cover của máy và đeo đầy đủ bảo hộ (kính, găng tay…)"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_ctn2_13",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Khi thi công trên cao cần",
+    "options": [
+      "Không cần dây an toàn",
+      "Dây an toàn và giàn giáo chắc chắn",
+      "Đứng trên ống nước",
+      "Leo trực tiếp tường"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": "q_ctn2_14",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Các điều kiện cần và đủ để triển khai thi công là gì",
+    "options": [
+      "Mặt bằng, vật tư, bản vẽ shop",
+      "Mặt bằng, vật tư, bản vẽ shop, nhân lực thầu phụ, tiện ích",
+      "Mặt bằng, vật tư, bản vẽ shop, biện pháp thi công, nhân lực thầu phụ, tiện ích",
+      "Mặt bằng, vật tư, bản vẽ shop, biện pháp thi công, tiện ích"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn2_15",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Khi thử áp lực đường ống cấp nước PPR trong quá trình, thử áp lực bằng bao nhiêu để áp dụng công việc\n\nA. 1 lần áp lực làm việc",
+    "options": [
+      "1 lần áp lực làm việc",
+      "1,25 lần áp lực làm việc",
+      "1,5 lần áp lực làm việc",
+      "2 lần áp lực làm việc"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn2_16",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Mốc A có cao độ +1,5m. Số đọc mia tại mốc A là 1,25 m. Tại điểm B, số đọc mia là    1,7 m. Hỏi cao độ điểm B là bao nhiêu?",
+    "options": [
+      "1.470 m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_17",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Khi đo cao độ bằng máy thuỷ bình, số đọc được trên mia lớn hơn nhiều so với cao độ máy",
+    "options": [
+      "Điểm tại vị trí đặt mia cao hơn cao độ máy"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn2_18",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Nhiệt độ tiêu chuẩn của tấm gia nhiệt (heater plate) khi hàn đối đầu ống HDPE là bao nhiêu?",
+    "options": [
+      "180 ± 10°C"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn2_19",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Kí hiệu sau đây TR-D110; BOP= FFL- 750 có nghĩa là:",
+    "options": [
+      "Ống thoát nước mưa D110, độ dốc 1%, đáy ống cao hơn cốt sàn hoàn thiện 750 mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn2_20",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Thời gian lắp ghép sau khi bôi keo dán uPVC (ở điều kiện bình thường) nên thực hiện trong khoảng nào là tối ưu?",
+    "options": [
+      "Trong vòng 60 giây"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn2_21",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Yêu cầu kỹ thuật nào sau đây là đúng sau khi hoàn thành mối hàn HDPE đạt chuẩn?",
+    "options": [
+      "Gờ hàn lệch về một phía để dễ kiểm tra"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_22",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Khi cắt rãnh trên tường gạch để đặt ống, yêu cầu nào là đúng nhằm tránh nứt tường sau hoàn thiện?",
+    "options": [
+      "Cắt rãnh sâu và rộng tùy ý"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_23",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Tại các trục đứng cấp nước, yêu cầu kỹ thuật quan trọng nhất để đảm bảo vận hành lâu dài là gì?",
+    "options": [
+      "Lắp càng sát tường càng tốt"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_24",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Trong quá trình hàn đối đầu HDPE, thông số nào quyết định trực tiếp đến hình dạng và chất lượng gờ hàn?",
+    "options": [
+      "Màu sắc ống"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_25",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Nếu máy laser bị lệch cân bằng (không tự cân bằng đúng), hậu quả là gì?",
+    "options": [
+      "Sai số cao độ trên toàn bộ các điểm đo"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_26",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Áp lực làm việc theo TCVN tại thiết bị thường nằm trong dải sau:",
+    "options": [
+      "1-2 bar"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_27",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Kí hiệu sau đây CW-D32; COP= FFL- 350 có nghĩa là:",
+    "options": [
+      "Ống nước nóng D32, đáy ống cao hơn cốt sàn hoàn thiện 350 mm"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_28",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Cao độ ±0.000 là gì?",
+    "options": [
+      "Điểm cao nhất công trình"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_29",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Từ cao độ tia laser bằng FL 1550mm, tại điểm cần xác định theo thiết kế bằng TOP = FL 350mm. Hỏi khoảng cách từ điểm đó đến tia laser là bao nhiêu?",
+    "options": [
+      "650 mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn2_30",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Yêu cầu kỹ thuật nào sau đây là đúng sau khi hoàn thành mối hàn HDPE đạt chuẩn?",
+    "options": [
+      "Gờ hàn lệch về một phía để dễ kiểm tra"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_31",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Sau khi gia nhiệt ống và phụ kiện PPR đúng thời gian, thợ đưa ống vào phụ kiện nhưng có xoay nhẹ để “cho đều”. Hậu quả chính là gì?",
+    "options": [
+      "Không ảnh hưởng"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_32",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Đơn vị đo áp suất phổ biến là:",
+    "options": [
+      "kg/cm²"
+    ],
+    "correct_index": 3
+  },
+  {
+    "id": "q_ctn2_33",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Kí hiệu sau đây TR-D110; BOP= FFL- 750 có nghĩa là:",
+    "options": [
+      "Ống thoát nước mưa D110, độ dốc 1%, đáy ống cao hơn cốt sàn hoàn thiện 750 mm"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn2_34",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Thời gian lắp ghép sau khi bôi keo dán uPVC (ở điều kiện bình thường) nên thực hiện trong khoảng nào là tối ưu?",
+    "options": [
+      "Trong vòng 60 giây"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn2_40",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Nhiệt độ tiêu chuẩn của tấm gia nhiệt (heater plate) khi hàn đối đầu ống HDPE là bao nhiêu?",
+    "options": [
+      "180 ± 10°C"
+    ],
+    "correct_index": 2
+  },
+  {
+    "id": "q_ctn2_41",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Sau khi lắp ống vào phụ kiện, thao tác kỹ thuật đúng là gì?",
+    "options": [
+      "Xoay ống nhiều vòng để keo phân bố đều"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_ctn2_42",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Thợ Cấp thoát nước Bậc 2",
+    "exam_set": "Thợ CTN Bậc 2",
+    "question": "Kí hiệu sau đây VP-D60; BOP= FL 2450 có nghĩa là:",
+    "options": [
+      "Ống thông hơi D60, đáy ống thấp hơn cốt sàn hoàn thiện 2450 mm"
+    ],
+    "correct_index": 0
   }
 ];
