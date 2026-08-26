@@ -332,7 +332,7 @@ function submitExam() {
     };
 
     localStorage.setItem('vincons_result', JSON.stringify(resultData));
-    localStorage.removeItem('vincons_answers');
+    localStorage.setItem('vincons_answers_backup', JSON.stringify(answers));
     localStorage.removeItem('vincons_time_left');
     window.location.href = 'result.html';
 }
