@@ -471,13 +471,16 @@
             <div style="font-size: 2.5rem;" id="weatherEmoji">🌤️</div>
         </div>
 
-        <div class="widget-card">
+        <div class="widget-card" style="position: relative;">
             <div class="widget-main">
-                <small>📅 Hệ Thống Đánh Giá Bậc Thợ Vincons</small>
-                <h3 id="liveClockDisplay">20:15:00</h3>
-                <p id="liveDateDisplay">Thứ Sáu, Ngày 21 tháng 08 năm 2026</p>
+                <small style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                    <span>📅 Hệ Thống Đánh Giá Bậc Thợ Vincons</span>
+                    <a href="javascript:void(0)" onclick="refreshSystemDateTime()" title="Bấm để cập nhật lại ngày giờ" style="color: #3b82f6; font-weight: 600; text-decoration: none; font-size: 0.8rem; background: rgba(59, 130, 246, 0.1); padding: 2px 8px; border-radius: 4px; transition: all 0.2s;">🔄 Cập nhật ngày giờ</a>
+                </small>
+                <h3 id="liveClockDisplay" style="margin: 4px 0;">--:--:--</h3>
+                <p id="liveDateDisplay" style="font-weight: 500; opacity: 0.9;">Đang cập nhật ngày giờ hệ thống...</p>
             </div>
-            <div style="font-size: 2.5rem;">⏱️</div>
+            <div style="font-size: 2.5rem; cursor: pointer;" onclick="refreshSystemDateTime()" title="Click để đồng bộ ngày giờ">⏱️</div>
         </div>
     </div>
 
@@ -672,7 +675,34 @@
     // Live Clock Update
     function updateClock() {
         const now = new Date();
-        document.getElementById('liveClockDisplay').innerText = now.toLocaleTimeString('vi-VN');
+        const clockEl = document.getElementById('liveClockDisplay');
+        const dateEl = document.getElementById('liveDateDisplay');
+
+        if (clockEl) {
+            clockEl.innerText = now.toLocaleTimeString('vi-VN');
+        }
+
+        if (dateEl) {
+            const days = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+            const dayName = days[now.getDay()];
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            dateEl.innerText = `${dayName}, Ngày ${day} tháng ${month} năm ${year}`;
+        }
+    }
+
+    function refreshSystemDateTime() {
+        updateClock();
+        const now = new Date();
+        const days = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+        const dayName = days[now.getDay()];
+        const day = String(now.getDate()).padStart(2, '0');
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const year = now.getFullYear();
+        const timeStr = now.toLocaleTimeString('vi-VN');
+        
+        alert(`✅ ĐÃ CẬP NHẬT NGÀY GIỜ HỆ THỐNG THÀNH CÔNG!\n\n🕒 Giờ hiện tại: ${timeStr}\n📅 Ngày hiện tại: ${dayName}, Ngày ${day}/${month}/${year}`);
     }
     setInterval(updateClock, 1000);
     updateClock();

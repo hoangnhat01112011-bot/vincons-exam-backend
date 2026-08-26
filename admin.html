@@ -109,7 +109,44 @@
                 </div>
             </div>
         </div>
-    </main>
+    
+        <!-- System Date/Time Sync Widget for Admin -->
+        <div class="card" style="max-width: 600px; margin: 20px auto 0 auto; background: #f8fafc; border: 1px solid #cbd5e1;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <h3 style="margin: 0; color: #1e293b; font-size: 16px; display: flex; align-items: center; gap: 8px;">
+                        <span>🕒</span> QUẢN LÝ & ĐỒNG BỘ THỜI GIAN HỆ THỐNG
+                    </h3>
+                    <p id="adminDateDisplay" style="margin: 4px 0 0 0; color: #64748b; font-size: 13px;">Đang nạp thời gian...</p>
+                </div>
+                <button onclick="syncAdminDateTime()" class="btn btn-primary btn-sm" style="padding: 8px 14px; font-size: 13px; font-weight: 600;">🔄 Cập nhật ngày giờ</button>
+            </div>
+        </div>
+
+        <script>
+            function updateAdminClock() {
+                const now = new Date();
+                const days = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+                const dayName = days[now.getDay()];
+                const day = String(now.getDate()).padStart(2, '0');
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                const year = now.getFullYear();
+                const timeStr = now.toLocaleTimeString('vi-VN');
+
+                const el = document.getElementById('adminDateDisplay');
+                if (el) el.innerText = `${timeStr} | ${dayName}, ${day}/${month}/${year}`;
+            }
+            setInterval(updateAdminClock, 1000);
+            document.addEventListener('DOMContentLoaded', updateAdminClock);
+
+            function syncAdminDateTime() {
+                updateAdminClock();
+                const now = new Date();
+                alert('✅ Đã đồng bộ ngày giờ hệ thống thành công!\nThời gian hiện tại: ' + now.toLocaleString('vi-VN'));
+            }
+        </script>
+
+</main>
 
     <script src="questions.js?v=1008"></script>
     <script>
