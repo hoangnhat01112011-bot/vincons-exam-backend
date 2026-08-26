@@ -8,3 +8,5 @@ __pycache__/
 *.keystore
 android_build/
 apk_unpacked/
+scratch/
+food-cost-calculator/
