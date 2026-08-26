@@ -1,4 +1,4 @@
-// File questions.js - Tích hợp đầy đủ 50 câu hỏi Tự luận - Thực hành ĐHTG đi kèm Bản vẽ CAD Shop Drawing Tailored 1:1
+// File questions.js - Tích hợp đầy đủ 69 câu hỏi Tự luận - Thực hành ĐHTG (50 CAD + 19 Viết hóa hình ảnh gốc)
 const QUESTIONS = [
   {
     "id": 1,
@@ -6419,5 +6419,290 @@ const QUESTIONS = [
     ],
     "correct_index": 0,
     "image": "data/hvac_cad_50.png"
+  },
+  {
+    "id": "q_hvac_viethoa_1",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 1: Chu trình làm lạnh cơ bản] Dựa vào sơ đồ chu trình nén hơi ở trên, môi chất lạnh đi từ Máy nén (Compressor) sang Dàn ngưng tụ (Condenser) ở trạng thái nào?",
+    "options": [
+      "Môi chất lỏng, áp suất thấp, nhiệt độ thấp.",
+      "Môi chất hơi, áp suất cao, nhiệt độ cao.",
+      "Môi chất lỏng, áp suất cao, nhiệt độ thấp.",
+      "Hỗn hợp hơi-lỏng, áp suất thấp."
+    ],
+    "correct_index": 1,
+    "image": "data/hvac_viethoa_1.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_2",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 2: Cấu tạo thiết bị xử lý không khí (AHU)] Quan sát sơ đồ thiết bị AHU (Air Handling Unit) ở trên, bộ phận lọc không khí (Air Filter) thường được đặt ở vị trí nào trong luồng di chuyển của không khí?",
+    "options": [
+      "Đặt ngay sau quạt thổi (Air Blower).",
+      "Đặt trước các cuộn trao đổi nhiệt (Cooling/Heating Coil) để ngăn bụi bẩn.",
+      "Đặt ở đầu ra cuối cùng của đường ống gió cấp.",
+      "Không cần thiết nếu đã có quạt thổi công suất lớn."
+    ],
+    "correct_index": 1,
+    "image": "data/hvac_viethoa_2.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_3",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 3: Hệ thống điều hòa không khí dạng trung tâm] Trong sơ đồ cấu tạo hệ thống điều hòa không khí tổng thể ở trên, thiết bị nào chịu trách nhiệm tiết lưu và hạ áp suất của chất làm lạnh trước khi vào dàn lạnh?",
+    "options": [
+      "Compressor (Máy nén)",
+      "Expansion Valve (Van tiết lưu)",
+      "Controller (Bộ điều khiển)",
+      "Condenser Coils (Dàn ngưng tụ)"
+    ],
+    "correct_index": 1,
+    "image": "data/hvac_viethoa_3.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_4",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 4: Thông số kỹ thuật & Vận hành] Trị số COP (Coefficient of Performance) trong hệ thống HVAC đại diện cho chỉ số nào?",
+    "options": [
+      "Tốc độ gió trung bình qua cửa gió.",
+      "Hệ số hiệu quả năng lượng (Tỷ số giữa công suất lạnh thu được và công suất điện tiêu thụ).",
+      "Tổng tổn thất áp suất trên đường ống gió.",
+      "Độ dốc tiêu chuẩn của đường ống xả nước ngưng."
+    ],
+    "correct_index": 1,
+    "image": "data/hvac_viethoa_4.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_5",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 5: Quan sát bảng thông số ở hình trên, tại dòng Capacity (Cooling) hiển thị 18000 Btu/h (5500~20000). Dải số trong ngoặc (5500~20000) thể hiện đặc tính kỹ thuật gì của máy?]",
+    "options": [
+      "Công suất lạnh dao động biến thiên của công nghệ Inverter từ tối thiểu đến tối đa",
+      "Độ cao lắp đặt cho phép từ 5500mm đến 20000mm",
+      "Điện áp hoạt động trong khoảng 5500V đến 20000V",
+      "Lưu lượng gió cấp từ 5500 m3/h đến 20000 m3/h"
+    ],
+    "correct_index": 0,
+    "image": "data/hvac_viethoa_5.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_6",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 6: Tại dòng thông số Refrigerant/Charge: R410A/0.95Kg trên bảng nhãn máy (Hình 4), thông tin này cung cấp chỉ dẫn gì cho kỹ thuật viên khi bảo dưỡng, nạp gas?]",
+    "options": [
+      "Máy dùng gas R410A và cần nạp thêm 0.95kg gas sau mỗi năm sử dụng",
+      "Loại môi chất lạnh là R410A và lượng nạp tiêu chuẩn định lượng sẵn cho hệ thống là 0.95 kg",
+      "Máy dùng gas R410A và áp suất tĩnh của hệ thống là 0.95 Bar",
+      "Trọng lượng toàn bộ dàn nóng nặng 0.95 kg"
+    ],
+    "correct_index": 1,
+    "image": "data/hvac_viethoa_6.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_7",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 7: Khi chọn aptomat (Aptomat/CB) bảo vệ cho máy điều hòa dựa vào nhãn thông số ở Hình 4, chỉ số dòng điện nào là căn cứ chính để chọn dòng cắt an toàn cho CB?]",
+    "options": [
+      "Current Cooling: 7.3A",
+      "Rated Current (Current Max): 10.2A / 11.1A",
+      "Noise Outdoor: 54 dB(A)",
+      "Rated Frequency: 50Hz"
+    ],
+    "correct_index": 1,
+    "image": "data/hvac_viethoa_7.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_8",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 1: Quan sát sơ đồ nguyên lý trên, thiết bị nào đảm nhận vai trò thải nhiệt từ chất làm lạnh (môi chất) ra môi trường bên ngoài thông qua dòng nước giải nhiệt?]",
+    "options": [
+      "AHU (Air Handling Unit)",
+      "Tháp giải nhiệt (Cooling Tower)",
+      "Bình bốc hơi (Evaporator)",
+      "FCU (Fan Coil Unit)"
+    ],
+    "correct_index": 1,
+    "image": "data/hvac_viethoa_8.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_9",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 2: Trong sơ đồ trên, đường nước lạnh đi cấp tới các thiết bị trao đổi nhiệt cuối (AHU, FCU) thường có nhiệt độ tiêu chuẩn là bao nhiêu?]",
+    "options": [
+      "12°C",
+      "37°C",
+      "7°C",
+      "30°C"
+    ],
+    "correct_index": 2,
+    "image": "data/hvac_viethoa_9.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_10",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 3: Quan sát hình cấu tạo cụm Chiller, bộ phận có nhiệm vụ hút hơi môi chất áp suất thấp từ dàn bốc hơi (Evaporator) và nén lên áp suất cao đẩy sang dàn ngưng (Condenser) là:]",
+    "options": [
+      "Compressor (Máy nén)",
+      "Oil Separator (Bình tách dầu)",
+      "Control Panel (Tủ điều khiển)",
+      "Starter (Tủ khởi động)"
+    ],
+    "correct_index": 0,
+    "image": "data/hvac_viethoa_10.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_11",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 4: Dựa vào hình ảnh cấu tạo trên, hai thiết bị trao đổi nhiệt dạng ống chùm nằm ở phía dưới của máy Chiller là:]",
+    "options": [
+      "Máy nén và Bảng điều khiển",
+      "Bình bốc hơi (Evaporator) và Bình ngưng tụ (Condenser)",
+      "Bơm nước lạnh và Tháp giải nhiệt",
+      "Van tiết lưu và Bình tách dầu"
+    ],
+    "correct_index": 1,
+    "image": "data/hvac_viethoa_1.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_12",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 1: Trong sơ đồ nguyên lý đường đi của gió ở trên, thiết bị xử lý không khí trung tâm đảm nhận chức năng trộn khí tươi và khí hồi, lọc bụi, điều chỉnh nhiệt độ/độ ẩm trước khi đưa \"Khí cấp\" vào phòng là:]",
+    "options": [
+      "FCU (Fan Coil Unit)",
+      "AHU (Air Handling Unit)",
+      "VAV Box (Variable Air Volume)",
+      "Chiller"
+    ],
+    "correct_index": 1,
+    "image": "data/hvac_viethoa_2.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_13",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 2: Dựa vào sơ đồ trên, tại điểm cuối của đường \"Khí cấp\" ngay trước khi vào phòng sạch, loại bộ lọc cao cấp nào thường được sử dụng để lọc tinh vi khuẩn và hạt bụi siêu nhỏ?]",
+    "options": [
+      "Bộ lọc sơ cấp (Pre-filter)",
+      "Bộ lọc túi (Bag filter)",
+      "Bộ lọc HEPA (High Efficiency Particulate Air)",
+      "Bộ lọc than hoạt tính"
+    ],
+    "correct_index": 2,
+    "image": "data/hvac_viethoa_3.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_14",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 3: Quan sát hình dáng vỏ quạt dạng hình xoắn ốc (vỏ sò) ở trên, loại quạt này có đặc điểm luồng khí vào và ra như thế nào?]",
+    "options": [
+      "Gió đi vào song song với trục và đi ra song song với trục",
+      "Gió đi vào theo chiều dọc trục và thổi ra theo phương vuông góc với trục",
+      "Gió đi vào vuông góc với trục và thổi ra theo chiều dọc trục",
+      "Gió đi xoay tròn theo chiều kim đồng hồ không qua đường ống"
+    ],
+    "correct_index": 1,
+    "image": "data/hvac_viethoa_4.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_15",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 4: Loại quạt ly tâm thể hiện trong hình thường được ưu tiên sử dụng trong các trường hợp nào của hệ thống thông gió?]",
+    "options": [
+      "Cần lưu lượng gió cực lớn nhưng cột áp (áp suất) rất thấp",
+      "Cần cột áp (áp suất) cao để đẩy gió đi xa qua đường ống gió dài",
+      "Chỉ dùng để thông gió tự nhiên không qua đường ống",
+      "Dùng gắn trực tiếp lên tường nhà xưởng để hút gió thải"
+    ],
+    "correct_index": 1,
+    "image": "data/hvac_viethoa_5.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_16",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 5: Quan sát cấu tạo quạt dạng hình trụ tròn có cánh quạt lắp trực tiếp trên trục động cơ ở hình trên, đây là loại quạt gì?]",
+    "options": [
+      "Quạt ly tâm (Centrifugal Fan)",
+      "Quạt dòng hỗn hợp (Mixed Flow Fan)",
+      "Quạt hướng trục (Axial Fan)",
+      "Quạt con sóc (Blower)"
+    ],
+    "correct_index": 2,
+    "image": "data/hvac_viethoa_6.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_17",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 6: Ưu điểm chính của quạt hướng trục so với quạt ly tâm trong ứng dụng thông gió nhà xưởng là gì?]",
+    "options": [
+      "Tạo ra áp suất rất cao",
+      "Cho lưu lượng gió lớn, cấu tạo gọn nhẹ và chi phí lắp đặt thấp",
+      "Không gây ra tiếng ồn khi vận hành",
+      "Lọc sạch bụi bẩn trong không khí"
+    ],
+    "correct_index": 1,
+    "image": "data/hvac_viethoa_7.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_18",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 7: Quan sát tuyến ống gió được treo dưới trần ở hình trên, lớp vật liệu bạc bọc ngoài thân ống tôn có tác dụng chính là gì?]",
+    "options": [
+      "Tăng tính thẩm mỹ và chống trầy xước tôn",
+      "Cách nhiệt, ngăn chặn hiện tượng đọng sương (ngưng tụ hơi nước) và giảm thất thoát nhiệt",
+      "Tăng khả năng chịu áp suất nổ bên trong đường ống",
+      "Giảm khối lượng treo của hệ thống đường ống"
+    ],
+    "correct_index": 1,
+    "image": "data/hvac_viethoa_8.jpeg"
+  },
+  {
+    "id": "q_hvac_viethoa_19",
+    "type": "multiple_choice",
+    "category": "Thực hành ĐHTG",
+    "exam_set": "Tự luận - Thực hành ĐHTG",
+    "question": "[Câu 8: Trên tuyến ống gió ở hình 2, các đoạn ống gió mềm (Flexible Duct) thường được giới hạn chiều dài lắp đặt tối đa khoảng bao nhiêu để tránh tổn thất áp suất quá lớn?]",
+    "options": [
+      "Không quá 1.5m - 2.0m",
+      "Tối thiểu 5m",
+      "Dùng tùy thích không giới hạn chiều dài",
+      "Luôn phải dài hơn 10m"
+    ],
+    "correct_index": 0,
+    "image": "data/hvac_viethoa_9.jpeg"
   }
 ];
