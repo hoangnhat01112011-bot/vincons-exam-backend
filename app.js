@@ -131,15 +131,25 @@ function initExam() {
             if (isNaN(timeLeft) || timeLeft <= 0) {
                 timeLeft = 30 * 60;
             }
-        } else { // Thực hành
-            let prac = QUESTIONS.filter(q => {
-                const c = String(q.category || '').toLowerCase();
-                const e = String(q.exam_set || '').toLowerCase();
-                return c.includes('thực hành') || c.includes('tự luận') || e.includes('thực hành');
-            });
+        } else { // Thực hành / Tự Luận - Thực Hành
+            let prac = [];
+            if (discLower.includes('điều hòa') || discLower.includes('đhtg') || discLower.includes('hvac')) {
+                prac = QUESTIONS.filter(q => String(q.category || '').toLowerCase().includes('đhtg') || String(q.category || '').toLowerCase().includes('điều hòa'));
+            } else if (discLower.includes('cấp thoát nước') || discLower.includes('ctn')) {
+                prac = QUESTIONS.filter(q => String(q.category || '').toLowerCase().includes('ctn') || String(q.category || '').toLowerCase().includes('cấp thoát nước'));
+            } else if (discLower.includes('phòng cháy') || discLower.includes('pccc')) {
+                prac = QUESTIONS.filter(q => String(q.category || '').toLowerCase().includes('pccc') || String(q.category || '').toLowerCase().includes('phòng cháy'));
+            } else {
+                prac = QUESTIONS.filter(q => String(q.category || '').toLowerCase().includes('thực hành') || String(q.category || '').toLowerCase().includes('cnch'));
+            }
 
+            if (prac.length === 0) prac = QUESTIONS.filter(q => String(q.category || '').toLowerCase().includes('thực hành'));
             if (prac.length === 0) prac = QUESTIONS;
-            activeQuestions = prac.slice(0, 20);
+
+            let counter = parseInt(localStorage.getItem('vincons_prac_counter') || '0') % 30 + 1;
+            localStorage.setItem('vincons_prac_counter', counter.toString());
+            let seed = counter * 54321 + (discipline.length * 11);
+            activeQuestions = seededShuffle(prac, seed).slice(0, 20);
 
             const titleEl = document.getElementById('examTitle');
             if (titleEl) titleEl.textContent = `Phần thi Tự luận - Thực hành & Bóc Tách Bản Vẽ (${discipline})`;
