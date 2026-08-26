@@ -646,15 +646,15 @@
         <div class="right-panel">
             <div class="status-grid">
                 <div class="stat-card">
-                    <div class="stat-val">150</div>
+                    <div class="stat-val" id="statTotalQuestions">520</div>
                     <div class="stat-lbl">Câu hỏi Ngân hàng</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-val">5</div>
-                    <div class="stat-lbl">Bộ đề Thi Lý thuyết</div>
+                    <div class="stat-val" id="statTotalExamSets">30</div>
+                    <div class="stat-lbl">Bộ đề Xoay vòng</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-val">30</div>
+                    <div class="stat-val">30-60</div>
                     <div class="stat-lbl">Phút / Bài thi</div>
                 </div>
                 <div class="stat-card">
@@ -1008,5 +1008,13 @@
             });
     }
 </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const elQ = document.getElementById('statTotalQuestions');
+            if (elQ && typeof QUESTIONS !== 'undefined' && QUESTIONS.length > 0) {
+                elQ.textContent = QUESTIONS.length;
+            }
+        });
+    </script>
 </body>
 </html>
