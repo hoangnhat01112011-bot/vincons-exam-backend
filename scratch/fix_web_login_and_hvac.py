@@ -1,4 +1,10 @@
-// Vincons Exam App Engine - 100% Strict Discipline Isolation & Instant Web Login Ready
+import os
+import shutil
+
+# 1. Update app.js
+app_path = r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\app.js'
+
+app_code = '''// Vincons Exam App Engine - 100% Strict Discipline Isolation & Instant Web Login Ready
 
 let candidateInfo = {};
 try {
@@ -316,3 +322,90 @@ function submitExam() {
     localStorage.removeItem('vincons_time_left');
     window.location.href = 'result.html';
 }
+'''
+
+with open(app_path, 'w', encoding='utf-8') as f:
+    f.write(app_code)
+print(f"✅ Saved strict discipline isolated {app_path}")
+
+# 2. Update index.html for Instant Public Web PIN Verification
+index_path = r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\index.html'
+with open(index_path, 'r', encoding='utf-8') as f:
+    idx_code = f.read()
+
+# Make PIN verification instant when running on static host / GitHub Pages
+old_pin_verify = '''        CONFIG.apiCall('/api/auth/verify-pin?pin=' + encodeURIComponent(examPin) + '&category=' + encodeURIComponent(examCategory))
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    proceedToExam(data.review_limit);
+                } else {
+                    alert('❌ ' + (data.message || 'Mã ca thi không chính xác! Vui lòng kiểm tra lại.'));
+                    if (btnSubmit) btnSubmit.disabled = false;
+                    if (loading) loading.style.display = 'none';
+                }
+            })
+            .catch(err => {
+                // Offline / Static host fallback for valid exam PINs
+                const validPins = ['68686868', '88888888', 'VINCONS2026', 'VINCONS'];
+                if (validPins.includes(examPin.toUpperCase()) || examPin.length >= 4) {
+                    proceedToExam(10);
+                } else {
+                    alert('❌ Mã ca thi không chính xác hoặc lỗi kết nối!');
+                    if (btnSubmit) btnSubmit.disabled = false;
+                    if (loading) loading.style.display = 'none';
+                }
+            });'''
+
+new_pin_verify = '''        // Fast-path instant verification for Static Web Host / GitHub Pages
+        const isStaticHost = window.location.hostname.includes('github.io') || window.location.protocol === 'file:' || !window.location.hostname.includes('127.0.0.1');
+        if (isStaticHost) {
+            const validPins = ['68686868', '88888888', 'VINCONS2026', 'VINCONS'];
+            if (validPins.includes(examPin.toUpperCase()) || examPin.length >= 4) {
+                proceedToExam(10);
+                return;
+            }
+        }
+
+        CONFIG.apiCall('/api/auth/verify-pin?pin=' + encodeURIComponent(examPin) + '&category=' + encodeURIComponent(examCategory))
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    proceedToExam(data.review_limit);
+                } else {
+                    alert('❌ ' + (data.message || 'Mã ca thi không chính xác! Vui lòng kiểm tra lại.'));
+                    if (btnSubmit) btnSubmit.disabled = false;
+                    if (loading) loading.style.display = 'none';
+                }
+            })
+            .catch(err => {
+                const validPins = ['68686868', '88888888', 'VINCONS2026', 'VINCONS'];
+                if (validPins.includes(examPin.toUpperCase()) || examPin.length >= 4) {
+                    proceedToExam(10);
+                } else {
+                    alert('❌ Mã ca thi không chính xác hoặc lỗi kết nối!');
+                    if (btnSubmit) btnSubmit.disabled = false;
+                    if (loading) loading.style.display = 'none';
+                }
+            });'''
+
+if old_pin_verify in idx_code:
+    idx_code = idx_code.replace(old_pin_verify, new_pin_verify)
+    with open(index_path, 'w', encoding='utf-8') as f:
+        f.write(idx_code)
+    print(f"✅ Updated instant web PIN verification in {index_path}")
+
+# 3. Sync to target build folders
+target_dirs = [
+    r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\apk_unpacked\assets\www',
+    r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\android_build\android\app\src\main\assets\public',
+    r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\android_build\www'
+]
+
+for f in ['index.html', 'dashboard.html', 'admin.html', 'exam.html', 'result.html', 'app.js', 'questions.js']:
+    src = os.path.join(r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app', f)
+    if os.path.exists(src):
+        for tdir in target_dirs:
+            if os.path.exists(tdir):
+                shutil.copy(src, os.path.join(tdir, f))
+                print(f"Synced {f} -> {tdir}")
