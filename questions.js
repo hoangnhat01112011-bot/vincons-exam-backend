@@ -1,4 +1,4 @@
-// File questions.js - Tích hợp đầy đủ 50 câu hỏi Tự luận - Thực hành ĐHTG đi kèm Bản vẽ CAD Shop Drawing
+// File questions.js - Tích hợp đầy đủ 50 câu hỏi Tự luận - Thực hành ĐHTG đi kèm Bản vẽ CAD Shop Drawing (PNG Format 100% Reliable)
 const QUESTIONS = [
   {
     "id": 1,
@@ -5683,7 +5683,7 @@ const QUESTIONS = [
       "Bệ bê tông cao 50mm, không cần thoát nước đọng"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_1.svg"
+    "image": "data/hvac_cad_1.png"
   },
   {
     "id": "q_hvac_prac_2",
@@ -5698,7 +5698,7 @@ const QUESTIONS = [
       "Khoảng cách giữa 2 dàn nóng đơn phải ≥2000mm"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_2.svg"
+    "image": "data/hvac_cad_2.png"
   },
   {
     "id": "q_hvac_prac_3",
@@ -5713,7 +5713,7 @@ const QUESTIONS = [
       "Mỗi 1m dâng đứng phải làm 1 bẫy dầu"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_3.svg"
+    "image": "data/hvac_cad_3.png"
   },
   {
     "id": "q_hvac_prac_4",
@@ -5728,7 +5728,7 @@ const QUESTIONS = [
       "Lắp quạt cây thổi vào dàn nóng"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_4.svg"
+    "image": "data/hvac_cad_4.png"
   },
   {
     "id": "q_hvac_prac_5",
@@ -5743,7 +5743,7 @@ const QUESTIONS = [
       "Không cần lắp Aptomat/Isolator bảo vệ ngoài trời"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_5.svg"
+    "image": "data/hvac_cad_5.png"
   },
   {
     "id": "q_hvac_prac_6",
@@ -5758,7 +5758,7 @@ const QUESTIONS = [
       "Khoan đinh vít nở nhựa vào bê tông"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_6.svg"
+    "image": "data/hvac_cad_6.png"
   },
   {
     "id": "q_hvac_prac_7",
@@ -5773,7 +5773,7 @@ const QUESTIONS = [
       "Dùng băng dính nilon quấn quanh"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_7.svg"
+    "image": "data/hvac_cad_7.png"
   },
   {
     "id": "q_hvac_prac_8",
@@ -5788,7 +5788,7 @@ const QUESTIONS = [
       "Độ sâu bẫy nước chỉ cần 5mm"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_8.svg"
+    "image": "data/hvac_cad_8.png"
   },
   {
     "id": "q_hvac_prac_9",
@@ -5803,7 +5803,7 @@ const QUESTIONS = [
       "Không quan tâm khoảng cách"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_9.svg"
+    "image": "data/hvac_cad_9.png"
   },
   {
     "id": "q_hvac_prac_10",
@@ -5818,7 +5818,7 @@ const QUESTIONS = [
       "Lắp cửa thăm kín không mở được"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_10.svg"
+    "image": "data/hvac_cad_10.png"
   },
   {
     "id": "q_hvac_prac_11",
@@ -5833,7 +5833,7 @@ const QUESTIONS = [
       "Không cần thổi khí Nitơ"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_11.svg"
+    "image": "data/hvac_cad_11.png"
   },
   {
     "id": "q_hvac_prac_12",
@@ -5848,7 +5848,7 @@ const QUESTIONS = [
       "Mối hàn bị cháy thủng ống đồng"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_12.svg"
+    "image": "data/hvac_cad_12.png"
   },
   {
     "id": "q_hvac_prac_13",
@@ -5863,7 +5863,7 @@ const QUESTIONS = [
       "Góc loe 45 độ lệch nón"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_13.svg"
+    "image": "data/hvac_cad_13.png"
   },
   {
     "id": "q_hvac_prac_14",
@@ -5878,7 +5878,7 @@ const QUESTIONS = [
       "Thổi bằng hơi thở người"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_14.svg"
+    "image": "data/hvac_cad_14.png"
   },
   {
     "id": "q_hvac_prac_15",
@@ -5893,7 +5893,7 @@ const QUESTIONS = [
       "Không cần làm mát"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_15.svg"
+    "image": "data/hvac_cad_15.png"
   },
   {
     "id": "q_hvac_prac_16",
@@ -5908,7 +5908,7 @@ const QUESTIONS = [
       "Không cần bọc bảo ôn ống lỏng"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_16.svg"
+    "image": "data/hvac_cad_16.png"
   },
   {
     "id": "q_hvac_prac_17",
@@ -5923,7 +5923,7 @@ const QUESTIONS = [
       "Chỉ lồng bảo ôn vào không dán keo mối nối"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_17.svg"
+    "image": "data/hvac_cad_17.png"
   },
   {
     "id": "q_hvac_prac_18",
@@ -5938,7 +5938,7 @@ const QUESTIONS = [
       "Trát vữa xi măng trực tiếp đè lên bảo ôn"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_18.svg"
+    "image": "data/hvac_cad_18.png"
   },
   {
     "id": "q_hvac_prac_19",
@@ -5953,7 +5953,7 @@ const QUESTIONS = [
       "Trải bao tải đè lên ống"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_19.svg"
+    "image": "data/hvac_cad_19.png"
   },
   {
     "id": "q_hvac_prac_20",
@@ -5968,7 +5968,7 @@ const QUESTIONS = [
       "Thử bằng nước áp lực 0.5 MPa"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_20.svg"
+    "image": "data/hvac_cad_20.png"
   },
   {
     "id": "q_hvac_prac_21",
@@ -5983,7 +5983,7 @@ const QUESTIONS = [
       "1°C thay đổi áp suất 0.5 bar"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_21.svg"
+    "image": "data/hvac_cad_21.png"
   },
   {
     "id": "q_hvac_prac_22",
@@ -5998,7 +5998,7 @@ const QUESTIONS = [
       "Dùng bơm tay xe đạp"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_22.svg"
+    "image": "data/hvac_cad_22.png"
   },
   {
     "id": "q_hvac_prac_23",
@@ -6013,7 +6013,7 @@ const QUESTIONS = [
       "Nhìn màu sơn ống đồng"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_23.svg"
+    "image": "data/hvac_cad_23.png"
   },
   {
     "id": "q_hvac_prac_24",
@@ -6028,7 +6028,7 @@ const QUESTIONS = [
       "Hút chân không ống nước xả"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_24.svg"
+    "image": "data/hvac_cad_24.png"
   },
   {
     "id": "q_hvac_prac_25",
@@ -6043,7 +6043,7 @@ const QUESTIONS = [
       "Chỉ cần mở van xả gas đuổi khí"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_25.svg"
+    "image": "data/hvac_cad_25.png"
   },
   {
     "id": "q_hvac_prac_26",
@@ -6058,7 +6058,7 @@ const QUESTIONS = [
       "Nạp cố định 1kg cho mọi công trình"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_26.svg"
+    "image": "data/hvac_cad_26.png"
   },
   {
     "id": "q_hvac_prac_27",
@@ -6073,7 +6073,7 @@ const QUESTIONS = [
       "Cân bàn quả tạ nông nghiệp"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_27.svg"
+    "image": "data/hvac_cad_27.png"
   },
   {
     "id": "q_hvac_prac_28",
@@ -6088,7 +6088,7 @@ const QUESTIONS = [
       "Tháo bỏ ty van xả gas"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_28.svg"
+    "image": "data/hvac_cad_28.png"
   },
   {
     "id": "q_hvac_prac_29",
@@ -6103,7 +6103,7 @@ const QUESTIONS = [
       "Đổ thêm dầu máy nén vào"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_29.svg"
+    "image": "data/hvac_cad_29.png"
   },
   {
     "id": "q_hvac_prac_30",
@@ -6118,7 +6118,7 @@ const QUESTIONS = [
       "Cáp điện lực 3 pha 10mm²"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_30.svg"
+    "image": "data/hvac_cad_30.png"
   },
   {
     "id": "q_hvac_prac_31",
@@ -6133,7 +6133,7 @@ const QUESTIONS = [
       "Đấu tùy tiện không theo thứ tự"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_31.svg"
+    "image": "data/hvac_cad_31.png"
   },
   {
     "id": "q_hvac_prac_32",
@@ -6148,7 +6148,7 @@ const QUESTIONS = [
       "Khoảng cách 5mm"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_32.svg"
+    "image": "data/hvac_cad_32.png"
   },
   {
     "id": "q_hvac_prac_33",
@@ -6163,7 +6163,7 @@ const QUESTIONS = [
       "Không cần cài đặt địa chỉ dàn lạnh"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_33.svg"
+    "image": "data/hvac_cad_33.png"
   },
   {
     "id": "q_hvac_prac_34",
@@ -6178,7 +6178,7 @@ const QUESTIONS = [
       "Dùng tôn phẳng không mạ kẽm 0.2mm"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_34.svg"
+    "image": "data/hvac_cad_34.png"
   },
   {
     "id": "q_hvac_prac_35",
@@ -6193,7 +6193,7 @@ const QUESTIONS = [
       "Dùng dải băng dính quấn quanh bích"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_35.svg"
+    "image": "data/hvac_cad_35.png"
   },
   {
     "id": "q_hvac_prac_36",
@@ -6208,7 +6208,7 @@ const QUESTIONS = [
       "Không cần thanh V đỡ đáy"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_36.svg"
+    "image": "data/hvac_cad_36.png"
   },
   {
     "id": "q_hvac_prac_37",
@@ -6223,7 +6223,7 @@ const QUESTIONS = [
       "Bắn đinh vít dày đặc"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_37.svg"
+    "image": "data/hvac_cad_37.png"
   },
   {
     "id": "q_hvac_prac_38",
@@ -6238,7 +6238,7 @@ const QUESTIONS = [
       "Tháo bỏ lá van chỉ giữ vỏ"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_38.svg"
+    "image": "data/hvac_cad_38.png"
   },
   {
     "id": "q_hvac_prac_39",
@@ -6253,7 +6253,7 @@ const QUESTIONS = [
       "Bỏ van FD khi đi xuyên tường cháy"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_39.svg"
+    "image": "data/hvac_cad_39.png"
   },
   {
     "id": "q_hvac_prac_40",
@@ -6268,7 +6268,7 @@ const QUESTIONS = [
       "Dùng giấy báo bọc quanh ống tôn"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_40.svg"
+    "image": "data/hvac_cad_40.png"
   },
   {
     "id": "q_hvac_prac_41",
@@ -6283,7 +6283,7 @@ const QUESTIONS = [
       "Miệng gió treo lơ lửng bằng dây cước"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_41.svg"
+    "image": "data/hvac_cad_41.png"
   },
   {
     "id": "q_hvac_prac_42",
@@ -6298,7 +6298,7 @@ const QUESTIONS = [
       "Quạt treo bằng dây xích xe đạp"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_42.svg"
+    "image": "data/hvac_cad_42.png"
   },
   {
     "id": "q_hvac_prac_43",
@@ -6313,7 +6313,7 @@ const QUESTIONS = [
       "Đổi dây trung tính N vào dây pha"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_43.svg"
+    "image": "data/hvac_cad_43.png"
   },
   {
     "id": "q_hvac_prac_44",
@@ -6328,7 +6328,7 @@ const QUESTIONS = [
       "Nối ống mềm bằng dây chun"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_44.svg"
+    "image": "data/hvac_cad_44.png"
   },
   {
     "id": "q_hvac_prac_45",
@@ -6343,7 +6343,7 @@ const QUESTIONS = [
       "Không cần đo độ ồn"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_45.svg"
+    "image": "data/hvac_cad_45.png"
   },
   {
     "id": "q_hvac_prac_46",
@@ -6358,7 +6358,7 @@ const QUESTIONS = [
       "Là bộ gia nhiệt điện"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_46.svg"
+    "image": "data/hvac_cad_46.png"
   },
   {
     "id": "q_hvac_prac_47",
@@ -6373,7 +6373,7 @@ const QUESTIONS = [
       "Thử kín bằng khói thuốc lá"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_47.svg"
+    "image": "data/hvac_cad_47.png"
   },
   {
     "id": "q_hvac_prac_48",
@@ -6388,7 +6388,7 @@ const QUESTIONS = [
       "Thử khói khi quạt gió đang chạy tối đa"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_48.svg"
+    "image": "data/hvac_cad_48.png"
   },
   {
     "id": "q_hvac_prac_49",
@@ -6403,7 +6403,7 @@ const QUESTIONS = [
       "Chỉ thử đoạn ống ngắn 0.5m"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_49.svg"
+    "image": "data/hvac_cad_49.png"
   },
   {
     "id": "q_hvac_prac_50",
@@ -6418,6 +6418,6 @@ const QUESTIONS = [
       "Sai số lưu lượng ±50% vẫn nghiệm thu"
     ],
     "correct_index": 0,
-    "image": "data/hvac_cad_50.svg"
+    "image": "data/hvac_cad_50.png"
   }
 ];

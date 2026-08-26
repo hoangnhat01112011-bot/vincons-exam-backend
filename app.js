@@ -210,7 +210,13 @@ function showQuestion(index) {
     const imgPanel = document.getElementById('imagePanel');
     const imgEl = document.getElementById('questionImage');
     if (q && q.image && imgEl) {
-        imgEl.src = q.image;
+        const imgSrc = q.image.includes('?') ? q.image : q.image + '?v=20260826_v1';
+        imgEl.src = imgSrc;
+        imgEl.onerror = function() {
+            if (imgSrc.endsWith('.png?v=20260826_v1') || imgSrc.endsWith('.png')) {
+                imgEl.src = q.image.replace('.png', '.svg');
+            }
+        };
         if (imgPanel) imgPanel.style.display = 'block';
     } else if (imgPanel) {
         imgPanel.style.display = 'none';
