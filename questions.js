@@ -1,4 +1,4 @@
-// File questions.js - Tích hợp đầy đủ 69 câu hỏi Tự luận - Thực hành ĐHTG (50 CAD + 19 Viết hóa hình ảnh gốc)
+// File questions.js - Tích hợp đầy đủ 50 câu hỏi Lý thuyết PCCC chuẩn TCVN & QCVN hiện hành
 const QUESTIONS = [
   {
     "id": 1,
@@ -6704,5 +6704,705 @@ const QUESTIONS = [
     ],
     "correct_index": 0,
     "image": "data/hvac_viethoa_9.jpeg"
+  },
+  {
+    "id": "q_pccc_theory_1",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Theo TCVN 5738:2021, khoảng cách tối đa từ bất kỳ điểm nào trên trần nhà đến đầu báo khói tự động trong phòng phẳng có chiều cao dưới 3.5m là bao nhiêu?",
+    "options": [
+      "Bán kính bảo vệ r = 6.5m (diện tích bảo vệ đến 85m²)",
+      "Bán kính bảo vệ r = 10m",
+      "Bán kính bảo vệ r = 3m",
+      "Bán kính bảo vệ r = 15m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_2",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Khoảng cách tối thiểu từ đầu báo cháy tự động (khói/nhiệt) đến mép tường nhà hoặc góc tường theo tiêu chuẩn TCVN 5738:2021 là bao nhiêu?",
+    "options": [
+      "Tối thiểu ≥ 0.1m (10cm)",
+      "Tối thiểu ≥ 1.5m",
+      "Phải lắp sát góc tường 0cm",
+      "Tối thiểu ≥ 3.0m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_3",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Khoảng cách lắp đặt tối thiểu từ đầu báo cháy tự động đến miệng thổi của hệ thống thông gió/điều hòa không khí để tránh dòng gió làm lệch khói là bao nhiêu?",
+    "options": [
+      "Tối thiểu ≥ 1.5m",
+      "Tối thiểu ≥ 0.2m",
+      "Có thể lắp trực tiếp sát miệng thổi 0.1m",
+      "Tối thiểu ≥ 5.0m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_4",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Độ cao lắp đặt tiêu chuẩn cho Nút ấn báo cháy bằng tay (Manual Call Point) tính từ mặt sàn hoàn thiện đến tâm nút ấn là bao nhiêu?",
+    "options": [
+      "Độ cao từ 1.3m đến 1.5m",
+      "Độ cao từ 0.5m đến 0.8m",
+      "Độ cao từ 2.0m đến 2.5m",
+      "Độ cao sát mặt sàn 0.2m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_5",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Theo TCVN 5738:2021, dây tín hiệu báo cháy (Loop/Zone) khi đi xuyên qua tường hoặc sàn nhà bắt buộc phải thi công kỹ thuật như thế nào?",
+    "options": [
+      "Phải lồng trong ống bảo vệ (PVC/thép) và chèn kín khe hở bằng vật liệu chống cháy",
+      "Đi dây trần trực tiếp qua lỗ đục gạch",
+      "Dùng băng dính quấn quanh dây",
+      "Kẹp đinh thép trực tiếp vào bê tông"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_6",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Yêu cầu nguồn điện dự phòng (Acquy) cấp cho Trung tâm báo cháy tự động phải duy trì hoạt động tối thiểu bao nhiêu giờ ở chế độ thường trực và chế độ báo cháy?",
+    "options": [
+      "Duy trì tối thiểu 24 giờ ở chế độ thường trực và 1 giờ ở chế độ báo cháy liên tục",
+      "Duy trì 1 giờ thường trực và 5 phút báo cháy",
+      "Duy trì 12 giờ thường trực và 15 phút báo cháy",
+      "Không cần acquy dự phòng"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_7",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Đầu báo cháy nhiệt gia tăng (Rate-of-Rise Heat Detector) kích hoạt phát tín hiệu báo cháy dựa trên nguyên lý nào?",
+    "options": [
+      "Phát hiện tốc độ gia tăng nhiệt độ môi trường vượt quá ngưỡng quy định (thường từ 8°C - 10°C/phút)",
+      "Phát hiện nồng độ khói mờ trong không khí",
+      "Phát hiện tia cực tím từ ngọn lửa",
+      "Phát hiện rò rỉ khí gas"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_8",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC BCCC Bậc 2 & Bậc 3",
+    "question": "Điện áp hoạt động tiêu chuẩn của các thiết bị đầu báo cháy, chuông, còi và đèn chớp trong hệ thống báo cháy tự động kênh/địa chỉ thường là bao nhiêu?",
+    "options": [
+      "24V DC (Điện áp một chiều 24V an toàn)",
+      "220V AC",
+      "380V AC",
+      "12V AC"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_9",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Khoảng cách giữa các Nút ấn báo cháy bằng tay bố trí dọc theo hành lang thoát nạn không được vượt quá bao nhiêu mét?",
+    "options": [
+      "Không vượt quá 50m (hoặc 30m đối với khu vực nguy hiểm cháy cao)",
+      "Không vượt quá 100m",
+      "Không vượt quá 150m",
+      "Chỉ lắp 1 nút duy nhất ở cổng chính"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_10",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Chuông báo cháy và còi/đèn chớp báo cháy lắp đặt tại khu vực hành lang nhà phải đảm bảo độ ồn tối thiểu cao hơn độ ồn môi trường xung quanh là bao nhiêu dBA?",
+    "options": [
+      "Cao hơn độ ồn môi trường ít nhất 15 dBA (hoặc đạt tối thiểu 75 dBA tại khoảng cách 3m)",
+      "Cao hơn 2 dBA",
+      "Đạt tối đa 30 dBA",
+      "Không quy định độ ồn"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_11",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Theo TCVN 7336:2021, nhiệt độ kích hoạt nổ chốt thủy tinh màu ĐỎ của đầu phun Sprinkler tiêu chuẩn (68°C) áp dụng cho môi trường làm việc nào?",
+    "options": [
+      "Môi trường nhiệt độ thường, nhiệt độ môi trường tối đa không vượt quá 38°C",
+      "Khu vực lò hơi 150°C",
+      "Khu vực đông lạnh -20°C",
+      "Khu vực sấy nông sản 100°C"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_12",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Khoảng cách từ tấm định hướng của đầu phun Sprinkler hướng xuống (Pendent) đến trần nhà phẳng tối thiểu và tối đa là bao nhiêu?",
+    "options": [
+      "Từ 0.075m (7.5cm) đến 0.15m (15cm) [hoặc tối đa 0.3m]",
+      "Sát trần 0cm",
+      "Từ 1.0m đến 2.0m",
+      "Từ 0.5m đến 0.8m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_13",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Bán kính bảo vệ hoặc khoảng cách tối đa giữa 2 đầu phun Sprinkler trên cùng một nhánh ống chữa cháy trong không gian nguy hiểm cháy trung bình (Nhóm II) là bao nhiêu?",
+    "options": [
+      "Khoảng cách giữa 2 đầu phun ≤ 3.5m đến 4.0m (bán kính bảo vệ r ≈ 2.0m - 2.1m)",
+      "Khoảng cách ≤ 8.0m",
+      "Khoảng cách ≤ 10.0m",
+      "Khoảng cách 1.0m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_14",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Áp suất làm việc tối thiểu tại đầu phun Sprinkler xa nhất và cao nhất của hệ thống chữa cháy Sprinkler tự động phải đạt bao nhiêu bar (MPa)?",
+    "options": [
+      "Tối thiểu ≥ 0.5 bar (0.05 MPa / 0.5 kg/cm²)",
+      "Tối thiểu ≥ 10.0 bar",
+      "Tối thiểu ≥ 0.01 bar",
+      "Tối thiểu ≥ 20.0 bar"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_15",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Cụm van báo động (Alarm Valve / Alarm Check Valve) trong hệ thống Sprinkler đường ống ướt có chức năng chính là gì?",
+    "options": [
+      "Mở cho nước chảy đến đầu phun khi có cháy, đồng thời kích hoạt chuông nước (Water Motor Gong) và công tắc áp lực báo về tủ trung tâm",
+      "Khóa chặt nước không cho nước chảy",
+      "Giảm áp suất nước xuống 0",
+      "Hút khí vào đường ống"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_16",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Trường hợp khu vực thi công có trần treo thạch cao, quy định lắp đặt đầu phun Sprinkler như thế nào?",
+    "options": [
+      "Lắp đầu phun Sprinkler hướng xuống (Pendent) nhô ra dưới trần thạch cao; nếu khoảng không gian trên trần >0.75m có vật liệu cháy thì phải lắp thêm Sprinkler quay lên trên trần",
+      "Chỉ lắp 1 đầu trên trần bê tông giấu kín",
+      "Không được lắp Sprinkler dưới trần thạch cao",
+      "Cắt thủng trần thạch cao 1m²"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_17",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Hệ thống chữa cháy tràn ngập (Deluge System) sử dụng loại đầu phun nào và nguyên lý kích hoạt xả nước ra sao?",
+    "options": [
+      "Sử dụng đầu phun hở (Open Sprinkler); khi trung tâm báo cháy nhận tín hiệu từ 2 đầu báo cháy sẽ mở van Deluge Valve xả nước đồng loạt qua tất cả các đầu phun",
+      "Sử dụng đầu phun kín chốt thủy tinh 68°C",
+      "Mở từng đầu phun thủ công bằng tay",
+      "Xả bằng bọt foam"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_18",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Đường kính định danh (DN) tối thiểu của đường ống cấp nước chữa cháy chính dẫn tới cụm van Alarm Valve theo tiêu chuẩn TCVN 7336:2021 là bao nhiêu?",
+    "options": [
+      "Tối thiểu DN80 hoặc DN100 (tùy thuộc vào số lượng đầu phun)",
+      "DN15",
+      "DN25",
+      "DN32"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_19",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Quy định về thử kín và thử áp lực thủy lực đối với mạng đường ống chữa cháy Sprinkler trước khi bọc cách nhiệt hoặc đưa vào nghiệm thu là bao nhiêu?",
+    "options": [
+      "Thử áp lực bằng nước với áp suất bằng 1.5 lần áp suất làm việc (tối thiểu 1.0 MPa đến 1.5 MPa) duy trì trong 2 giờ không sụt áp",
+      "Thử áp suất 0.1 MPa trong 5 phút",
+      "Thử nén hơi 0.05 MPa",
+      "Không cần thử áp lực"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_20",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Công tắc dòng chảy (Flow Switch) được lắp đặt trên các nhánh ống chữa cháy Sprinkler tầng nhằm mục đích gì?",
+    "options": [
+      "Phát hiện dòng nước di chuyển khi có đầu phun Sprinkler bị nổ và gửi tín hiệu báo chính xác vị trí tầng đang có cháy về tủ trung tâm",
+      "Khóa đường ống nước khi có sự cố",
+      "Tăng áp suất nước trong ống",
+      "Lọc rác trong đường ống"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_21",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Chiều cao lắp đặt tiêu chuẩn của Hộp chữa cháy vách tường (chứa van họng nước D50/D65, cuộn vòi và lăng phun) tính từ mặt sàn đến tâm van họng nước là bao nhiêu?",
+    "options": [
+      "Độ cao 1.25m (±0.05m)",
+      "Độ cao 2.5m",
+      "Độ cao 0.3m",
+      "Đặt nằm trên sàn nhà"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_22",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Áp suất tự do tối thiểu tại miệng lăng phun chữa cháy vách tường khi hệ thống hoạt động xả nước để đảm bảo chiều cao cột nước chữa cháy đạt hiệu quả là bao nhiêu?",
+    "options": [
+      "Tối thiểu ≥ 2.0 bar (0.2 MPa / cột nước chữa cháy ≥ 6m - 10m)",
+      "Tối thiểu 0.1 bar",
+      "Tối thiểu 20.0 bar",
+      "Tối thiểu 50.0 bar"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_23",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Độ dài tiêu chuẩn của một cuộn vòi chữa cháy dải vải bọc cao su (D50 hoặc D65) trang bị trong tủ PCCC vách tường là bao nhiêu mét?",
+    "options": [
+      "Độ dài 20m (hoặc 30m theo thiết kế)",
+      "Độ dài 5m",
+      "Độ dài 100m",
+      "Độ dài 50m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_24",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Trụ nước chữa cháy ngoài nhà 3 cửa (1 cửa D125/D100 và 2 cửa D65) phải được lắp đặt cách mép đường giao thông tối đa bao nhiêu mét?",
+    "options": [
+      "Cách mép đường không quá 2.5m và cách tường nhà tối thiểu 5.0m",
+      "Cách mép đường 20m",
+      "Lắp giữa lòng đường giao thông",
+      "Cách tường nhà 0.1m"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_25",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Khoảng cách tối đa giữa các Trụ nước chữa cháy ngoài nhà bố trí dọc theo đường giao thông nội bộ công trình là bao nhiêu mét?",
+    "options": [
+      "Khoảng cách giữa 2 trụ nước không vượt quá 150m",
+      "Khoảng cách không vượt quá 500m",
+      "Khoảng cách không vượt quá 30m",
+      "Chỉ lắp 1 trụ cho toàn khu"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_26",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Họng tiếp nước chữa cháy ngoài nhà (Siamese Connection D65x2) dành cho xe chữa cháy bơm cấp nước vào tòa nhà bắt buộc trang bị van một chiều nhằm mục đích gì?",
+    "options": [
+      "Cho phép xe chữa cháy bơm nước một chiều vào mạng đường ống tòa nhà và ngăn nước trong nhà chảy ngược ra ngoài",
+      "Cho nước chảy tự do hai chiều",
+      "Xả bớt áp suất nước ngoài đường",
+      "Hút khí vào tòa nhà"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_27",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Vật liệu chế tạo lăng phun và khớp nối cuộn vòi chữa cháy vách tường D50/D65 tiêu chuẩn PCCC Việt Nam thường là gì?",
+    "options": [
+      "Hợp kim nhôm đúc hoặc đồng thau mạ niken chịu lực va đập và chống ăn mòn",
+      "Nhựa tái chế mỏng",
+      "Thủy tinh mỏng",
+      "Gỗ nén ép"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_28",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Quy trình nghiệm thu kiểm tra thử cuộn vòi chữa cháy trước khi đưa vào trang bị sử dụng:",
+    "options": [
+      "Thử áp lực thủy lực cuộn vòi ở áp suất thử 1.2 - 1.6 MPa trong 2 phút không phồng rách, khớp nối xoay nhẹ khít gioăng",
+      "Chỉ cần mở vòi ra phơi nắng",
+      "Thổi hơi bằng miệng",
+      "Ngâm vòi trong xăng"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_29",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Theo QCVN 02:2020/BCA, cụm bơm chữa cháy chính của tòa nhà bắt buộc phải trang bị các loại bơm nào?",
+    "options": [
+      "Bơm chữa cháy động cơ điện chính + Bơm dự phòng (bơm động cơ Diesel hoặc điện nguồn riêng) + Bơm bù áp Jockey",
+      "Chỉ cần 1 máy bơm nước gia đình 1HP",
+      "Không cần bơm dự phòng",
+      "Chỉ dùng 1 máy bơm tay"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_30",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Chức năng chính của Máy bơm bù áp (Jockey Pump) trong cụm máy bơm chữa cháy tự động là gì?",
+    "options": [
+      "Bù đắp lượng nước rò rỉ nhỏ để duy trì áp suất thường trực trong đường ống ở mức thiết kế mà không làm khởi động bơm chính",
+      "Dùng để chữa cháy chính khi có đám cháy lớn",
+      "Hút kiệt nước trong bể",
+      "Đổi chiều dòng chảy"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_31",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Cơ chế tự động khởi động máy bơm chữa cháy chính khi áp suất đường ống bị sụt giảm do nổ Sprinkler hoặc mở họng nước là nhờ thiết bị nào?",
+    "options": [
+      "Công tắc áp lực (Pressure Switch) lắp trên bình tích áp / cụm ống góp máy bơm",
+      "Bật công tắc bằng tay",
+      "Công tắc hành trình cửa",
+      "Cảm biến nhiệt độ không khí"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_32",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Theo quy chuẩn PCCC, sau khi máy bơm chữa cháy điện chính hoặc bơm Diesel tự động khởi động chạy chữa cháy, quy định dừng máy bơm như thế nào?",
+    "options": [
+      "Máy bơm chữa cháy chính KHÔNG ĐƯỢC TỰ ĐỘNG DỪNG, chỉ được dừng máy thủ công bằng tay tại tủ điều khiển sau khi đã dập tắt cháy",
+      "Tự động dừng sau 1 phút",
+      "Tự động dừng khi áp suất tăng cao",
+      "Dừng khi hết nước bể"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_33",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Yêu cầu dung tích bình nhiên liệu Dầu Diesel cấp cho máy bơm chữa cháy động cơ Diesel dự phòng phải đảm bảo máy chạy liên tục tối thiểu bao nhiêu giờ?",
+    "options": [
+      "Đảm bảo cho máy bơm Diesel vận hành liên tục 100% tải trong thời gian tối thiểu từ 3 đến 4 giờ",
+      "Đảm bảo chạy 10 phút",
+      "Đảm bảo chạy 1 phút",
+      "Dùng bình xăng 2 lít"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_34",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Đường ống hút của máy bơm chữa cháy (Suction Line) bắt buộc phải lắp đặt phụ kiện gì để tránh hiện tượng đọng bọt khí gây sâm thực bơm?",
+    "options": [
+      "Lắp Côn thu lệch tâm (Eccentric Reducer) có mặt phẳng nằm ở phía trên đường ống hút",
+      "Lắp Côn thu đồng tâm",
+      "Lắp van tiết lưu đường kính nhỏ",
+      "Lắp ống uốn cong rủ xuống"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_35",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Tủ điều khiển máy bơm chữa cháy (Fire Pump Controller) phải đáp ứng tiêu chuẩn điện bảo vệ và chế độ khởi động bơm như thế nào?",
+    "options": [
+      "Cấp bảo vệ tối thiểu IP54/IP55, có chế độ TỰ ĐỘNG (Auto) và BẰNG TAY (Manual), khởi động sao/tam giác hoặc biến tần/khởi động mềm",
+      "Dùng cầu dao đảo chiều 2 pha",
+      "Chỉ có chế độ điều khiển bằng tay",
+      "Cấp bảo vệ IP10"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_36",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Thử tải cụm bơm chữa cháy trong nghiệm thu PCCC công trình (Commissioning Fire Pump Test): Yêu cầu thời gian chạy thử tải liên tục là bao nhiêu?",
+    "options": [
+      "Chạy kiểm tra liên tục 2 giờ (bơm điện và bơm Diesel) đạt 100% và 150% lưu lượng thiết kế, thông số áp suất và nhiệt độ động cơ ổn định",
+      "Chạy thử 2 phút",
+      "Chạy thử 10 giây",
+      "Chỉ cần nhấp nháy động cơ"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_37",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Hệ thống chữa cháy bằng khí sạch (FM200 / Novec 1230 / Nitrogen) thường được ưu tiên thiết kế thi công cho các khu vực nào?",
+    "options": [
+      "Phòng máy chủ Data Center, phòng tổng đài, trung tâm điều khiển, phòng lưu trữ hồ sơ tài liệu quý",
+      "Sân thượng ngoài trời",
+      "Bãi xe ô tô ngoài trời",
+      "Nhà bếp nấu ăn"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_38",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Quy trình cảnh báo và trì hoãn thời gian xả khí (Delay Time 30 giây) của hệ thống chữa cháy khí khi có tín hiệu báo cháy kích hoạt nhằm mục đích gì?",
+    "options": [
+      "Cho phép sơ tán toàn bộ người ra khỏi phòng kín và đóng chặt các cửa gió/quạt thông gió trước khi xả khí",
+      "Để khí tự làm mát trong bình",
+      "Để chờ xe chữa cháy đến",
+      "Trì hoãn xả khí 24 giờ"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_39",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Thiết bị Công tắc áp lực xả khí (Discharge Pressure Switch) lắp trên đường ống xả khí chữa cháy FM200 có nhiệm vụ gì?",
+    "options": [
+      "Gửi tín hiệu xác nhận khí ĐÃ XẢ về tủ điều khiển trung tâm để bật Đèn cảnh báo 'KHÍ ĐÃ XẢ - CẤM VÀO' ngoài cửa phòng",
+      "Khóa van gas sinh hoạt",
+      "Bật quạt hút khói",
+      "Tắt toàn bộ đèn chiếu sáng"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_40",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Nguồn kích hoạt xả khí tự động từ tủ trung tâm chữa cháy khí đến van kích hoạt bình chứa khí (Solenoid Valve) sử dụng điện áp bao nhiêu?",
+    "options": [
+      "Điện áp 24V DC",
+      "Điện áp 380V AC",
+      "Điện áp 110V AC",
+      "Điện áp 220V AC"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_41",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Yêu cầu độ kín của phòng (Room Integrity Test) được bảo vệ bằng hệ thống chữa cháy khí FM200/CO2 khi xả khí là gì?",
+    "options": [
+      "Phòng phải kín hoàn toàn, tự động ngắt hệ thống điều hòa thông gió và đóng van ngăn cháy (FD) khi có lệnh xả khí",
+      "Mở toang tất cả các cửa sổ",
+      "Bật quạt hút gió tối đa khi xả khí",
+      "Không cần cửa kín"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_42",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Khi chữa cháy bằng khí CO2 trong không gian kín, nguy hiểm lớn nhất đối với kỹ thuật viên và con người là gì?",
+    "options": [
+      "Khí CO2 làm giảm nồng độ Oxy xuống dưới 15% gây ngạt thở cấp tính dẫn đến tử vong nhanh chóng",
+      "Gây dị ứng da nhẹ",
+      "Gây tiếng ồn nhẹ",
+      "Không có nguy hiểm gì"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_43",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Nút ấn xả khí khẩn cấp bằng tay (Manual Release Button) và Nút ấn tạm dừng xả khí (Abort Button) phải được bố trí ở đâu?",
+    "options": [
+      "Bố trí bên ngoài lối ra vào cửa chính của phòng được bảo vệ, ở độ cao dễ thao tác 1.3m - 1.4m",
+      "Giấu kín trên trần kỹ thuật",
+      "Đặt bên trong két sắt khóa chặt",
+      "Đặt dưới đáy bình khí"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_44",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Bình chữa cháy xách tay dạng bột ABC (như MFZL4, MFZL8) thích hợp dùng để dập tắt các loại đám cháy nào?",
+    "options": [
+      "Đám cháy chất rắn (Class A), chất lỏng (Class B), chất khí (Class C) và thiết bị điện mang điện",
+      "Chỉ dập được cháy kim loại kiềm Na, K",
+      "Chỉ dập cháy nước",
+      "Không dập được cháy điện"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_45",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Đồng hồ đo áp suất (Manometer) trên cổ bình chữa cháy bột ABC chỉ vạch màu XANH (Green) báo hiệu trạng thái gì của bình?",
+    "options": [
+      "Áp suất khí nén trong bình đủ tiêu chuẩn làm việc (bình bình thường sẵn sàng sử dụng)",
+      "Bình bị quá áp nguy hiểm",
+      "Bình bị hết áp khí nén (tụt áp)",
+      "Bình bị hỏng vỏ"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_46",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Bình chữa cháy xách tay bằng khí CO2 (như MT3, MT5) khi phun dập đám cháy cần lưu ý tuyệt đối điều gì để tránh tai nạn lao động?",
+    "options": [
+      "Không cầm trực tiếp tay vào loa phun hoặc ống nối kim loại để tránh bị bỏng lạnh (-79°C)",
+      "Không được đứng đầu hướng gió",
+      "Phải xịt vào mắt",
+      "Không cần lưu ý"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_47",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Khoảng cách di chuyển tối đa từ bất kỳ điểm nào trên mặt bằng công trình đến vị trí đặt bình chữa cháy xách tay nguy hiểm cháy trung bình là bao nhiêu?",
+    "options": [
+      "Không vượt quá 20m (hoặc 15m cho khu vực nguy hiểm cháy cao)",
+      "Không vượt quá 100m",
+      "Không vượt quá 200m",
+      "Chỉ đặt 1 bình ở tầng trệt"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_48",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Nghiệm thu tính liên động tự động của hệ thống PCCC khi có tín hiệu báo cháy từ tủ trung tâm (Fire Alarm Interlock Test):",
+    "options": [
+      "Tự động ngắt hệ thống điện hạ thế/điều hòa, tự động hạ cửa cuốn chống cháy, kích hoạt quạt tăng áp giếng thang & quạt hút khói hành lang, gọi thang máy về tầng trệt",
+      "Không tác động gì đến các hệ thống khác",
+      "Chỉ nháy đèn báo",
+      "Tắt toàn bộ nước tòa nhà"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_49",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Màu sơn tiêu chuẩn quy định cho đường ống cấp nước chữa cháy, bình chữa cháy và các thiết bị PCCC theo TCVN là màu gì?",
+    "options": [
+      "Màu ĐỎ (Red - RAL 3000)",
+      "Màu XANH LÁ CÂY",
+      "Màu VÀNG KẺ ĐEN",
+      "Màu TRẮNG TÍCH ĐIỆN"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": "q_pccc_theory_50",
+    "type": "multiple_choice",
+    "category": "Lý thuyết - Phòng cháy chữa cháy",
+    "exam_set": "Lý thuyết - PCCC Bậc 2 & Bậc 3",
+    "question": "Hồ sơ nghiệm thu hoàn công PCCC công trình đưa vào hoạt động bắt buộc phải có văn bản pháp lý quan trọng nhất nào do cơ quan Cảnh sát PCCC & CNCH cấp?",
+    "options": [
+      "Văn bản Chấp thuận kết quả nghiệm thu về PCCC của cơ quan Cảnh sát PCCC & CNCH thẩm quyền",
+      "Biên bản họp nội bộ thầu phụ",
+      "Giấy bảo hành của nhà sản xuất bình",
+      "Hóa đơn mua bán vật tư"
+    ],
+    "correct_index": 0
   }
 ];
