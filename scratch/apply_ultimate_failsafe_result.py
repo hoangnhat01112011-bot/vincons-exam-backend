@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+import os
+import shutil
+
+# 1. UPDATE RESULT.HTML WITH ULTIMATE FAIL-SAFE ENGINE
+result_path = r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\result.html'
+
+result_html_content = '''<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
@@ -213,4 +219,111 @@
         }
     </script>
 </body>
-</html>
+</html>'''
+
+with open(result_path, 'w', encoding='utf-8') as f:
+    f.write(result_html_content)
+print(f"✅ Saved ultimate fail-safe {result_path}")
+
+# 2. UPDATE APP.JS WITH PERMANENT HISTORY LOGGING
+app_path = r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\app.js'
+with open(app_path, 'r', encoding='utf-8') as f:
+    app_code = f.read()
+
+old_app_submit = '''function submitExam() {
+    if (timerInterval) clearInterval(timerInterval);
+    let correctCount = 0;
+    activeQuestions.forEach((q, index) => {
+        const userAns = (answers && (answers[q.id] !== undefined ? answers[q.id] : answers[index]));
+        if (userAns !== undefined && parseInt(userAns) === parseInt(q.correct_index)) {
+            correctCount++;
+        }
+    });
+
+    const score = Math.round((correctCount / activeQuestions.length) * 100);
+    const resultData = {
+        candidate: candidateInfo,
+        activeQuestions: activeQuestions,
+        answers: answers,
+        score: score,
+        correctCount: correctCount,
+        totalQuestions: activeQuestions.length,
+        submittedAt: new Date().toLocaleString('vi-VN')
+    };
+
+    // Fail-safe persistent storage of candidate result
+    try {
+        localStorage.setItem('vincons_result', JSON.stringify(resultData));
+        localStorage.setItem('vincons_candidate', JSON.stringify(candidateInfo));
+        localStorage.setItem('vincons_active_questions', JSON.stringify(activeQuestions));
+        localStorage.setItem('vincons_answers', JSON.stringify(answers));
+        localStorage.setItem('vincons_answers_backup', JSON.stringify(answers));
+    } catch(e) {
+        console.error("Storage save error:", e);
+    }
+    
+    window.location.href = 'result.html';
+}'''
+
+new_app_submit = '''function submitExam() {
+    if (timerInterval) clearInterval(timerInterval);
+    let correctCount = 0;
+    activeQuestions.forEach((q, index) => {
+        const userAns = (answers && (answers[q.id] !== undefined ? answers[q.id] : answers[index]));
+        if (userAns !== undefined && parseInt(userAns) === parseInt(q.correct_index)) {
+            correctCount++;
+        }
+    });
+
+    const score = Math.round((correctCount / activeQuestions.length) * 100);
+    const resultData = {
+        candidate: candidateInfo,
+        activeQuestions: activeQuestions,
+        answers: answers,
+        score: score,
+        correctCount: correctCount,
+        totalQuestions: activeQuestions.length,
+        submittedAt: new Date().toLocaleString('vi-VN')
+    };
+
+    // Fail-safe persistent storage of candidate result
+    try {
+        localStorage.setItem('vincons_result', JSON.stringify(resultData));
+        localStorage.setItem('vincons_candidate', JSON.stringify(candidateInfo));
+        localStorage.setItem('vincons_active_questions', JSON.stringify(activeQuestions));
+        localStorage.setItem('vincons_answers', JSON.stringify(answers));
+        localStorage.setItem('vincons_answers_backup', JSON.stringify(answers));
+        
+        let history = [];
+        try {
+            history = JSON.parse(localStorage.getItem('vincons_exam_history')) || [];
+        } catch(err) { history = []; }
+        history.push(resultData);
+        localStorage.setItem('vincons_exam_history', JSON.stringify(history));
+    } catch(e) {
+        console.error("Storage save error:", e);
+    }
+    
+    window.location.href = 'result.html';
+}'''
+
+if old_app_submit in app_code:
+    app_code = app_code.replace(old_app_submit, new_app_submit)
+    with open(app_path, 'w', encoding='utf-8') as f:
+        f.write(app_code)
+    print(f"✅ Updated submitExam with permanent history in {app_path}")
+
+# 3. SYNC TO ALL TARGET BUILD DIRS
+target_dirs = [
+    r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\apk_unpacked\assets\www',
+    r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\android_build\android\app\src\main\assets\public',
+    r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app\android_build\www'
+]
+
+for f in ['index.html', 'dashboard.html', 'admin.html', 'exam.html', 'result.html', 'app.js', 'questions.js']:
+    src = os.path.join(r'D:\LINH TINH\AI\PHAN MEM\vincons-test-app', f)
+    if os.path.exists(src):
+        for tdir in target_dirs:
+            if os.path.exists(tdir):
+                shutil.copy(src, os.path.join(tdir, f))
+                print(f"Synced {f} -> {tdir}")

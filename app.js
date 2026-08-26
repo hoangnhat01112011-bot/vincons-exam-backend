@@ -338,6 +338,13 @@ function submitExam() {
         localStorage.setItem('vincons_active_questions', JSON.stringify(activeQuestions));
         localStorage.setItem('vincons_answers', JSON.stringify(answers));
         localStorage.setItem('vincons_answers_backup', JSON.stringify(answers));
+        
+        let history = [];
+        try {
+            history = JSON.parse(localStorage.getItem('vincons_exam_history')) || [];
+        } catch(err) { history = []; }
+        history.push(resultData);
+        localStorage.setItem('vincons_exam_history', JSON.stringify(history));
     } catch(e) {
         console.error("Storage save error:", e);
     }
