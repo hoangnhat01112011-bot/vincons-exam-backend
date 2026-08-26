@@ -327,14 +327,17 @@ function submitExam() {
     const formattedTime = new Date().toLocaleString('vi-VN');
 
     const resultData = {
+        id: `RES_${now}`,
         candidate: candidateInfo,
         activeQuestions: activeQuestions,
         answers: answers,
         score: score,
         percentage: score,
         correctCount: correctCount,
+        totalCount: totalCount,
         totalQuestions: totalCount,
         isPass: isPass,
+        submitTime: formattedTime,
         submittedAt: formattedTime,
         timestamp: now
     };

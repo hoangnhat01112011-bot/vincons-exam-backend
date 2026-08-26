@@ -196,13 +196,16 @@
                 const pct = item.score !== undefined ? item.score : (item.percentage !== undefined ? item.percentage : Math.round((correct / total) * 100));
                 
                 const stdItem = {
+                    id: item.id || key,
                     candidate: cand,
                     correctCount: correct,
+                    totalCount: total,
                     totalQuestions: total,
                     score: pct,
                     percentage: pct,
                     isPass: item.isPass !== undefined ? item.isPass : (pct >= 70),
-                    submittedAt: item.submittedAt || new Date(item.timestamp || Date.now()).toLocaleString('vi-VN'),
+                    submitTime: item.submittedAt || item.submitTime || new Date(item.timestamp || Date.now()).toLocaleString('vi-VN'),
+                    submittedAt: item.submittedAt || item.submitTime || new Date(item.timestamp || Date.now()).toLocaleString('vi-VN'),
                     timestamp: item.timestamp || Date.now(),
                     activeQuestions: item.activeQuestions || [],
                     answers: item.answers || {}
@@ -306,14 +309,20 @@
                    <button class="btn btn-danger btn-sm" style="margin-left:5px" onclick="deleteRecord('${item.id}')">🗑️</button>`
                 : `<button class="btn btn-secondary btn-sm" onclick="viewDetail('${item.id}')">👁️ Xem</button>`;
 
+                const discText = cand.discipline || cand.job || 'Điều hòa thông gió';
+                const examLabel = (cand.examType === 'Lý thuyết' || !cand.examType) ? 'Thi Lý thuyết' : 'Thi Tự Luận - Thực Hành';
+                const fullJobDisplay = `${examLabel} - ${discText}`;
+                const totalQ = item.totalCount || item.totalQuestions || 20;
+                const timeDisp = item.submitTime || item.submittedAt || '-';
+
                 tr.innerHTML = `
                     <td style="font-weight: 700;">${index + 1}</td>
-                    <td style="font-size: 13px; color: #555;">${item.submitTime || '-'}</td>
+                    <td style="font-size: 13px; color: #555;">${timeDisp}</td>
                     <td style="font-weight: 700; color: var(--primary);">${cand.name || '-'}</td>
                     <td><code style="background: rgba(0,0,0,0.05); padding: 2px 6px; border-radius: 4px;">${cand.id || '-'}</code></td>
-                    <td style="font-weight: 600;">${cand.job || '-'}</td>
-                    <td>${cand.examType || '-'}${modeBadge}</td>
-                    <td style="font-weight: 800;">${item.correctCount}/${item.totalCount}</td>
+                    <td style="font-weight: 600; color: #1e3a8a;">${fullJobDisplay}</td>
+                    <td>${examLabel}${modeBadge}</td>
+                    <td style="font-weight: 800; color: var(--primary);">${item.correctCount !== undefined ? item.correctCount : 0}/${totalQ}</td>
                     <td style="font-weight: 700; color: ${item.isPass ? 'var(--success)' : 'var(--danger)'};">${(item.percentage || 0).toFixed(1)}%</td>
                     <td>${statusBadge}</td>
                     <td style="text-align: center; white-space: nowrap;">
