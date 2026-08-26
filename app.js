@@ -331,8 +331,16 @@ function submitExam() {
         submittedAt: new Date().toLocaleString('vi-VN')
     };
 
-    localStorage.setItem('vincons_result', JSON.stringify(resultData));
-    localStorage.setItem('vincons_answers_backup', JSON.stringify(answers));
-    localStorage.removeItem('vincons_time_left');
+    // Fail-safe persistent storage of candidate result
+    try {
+        localStorage.setItem('vincons_result', JSON.stringify(resultData));
+        localStorage.setItem('vincons_candidate', JSON.stringify(candidateInfo));
+        localStorage.setItem('vincons_active_questions', JSON.stringify(activeQuestions));
+        localStorage.setItem('vincons_answers', JSON.stringify(answers));
+        localStorage.setItem('vincons_answers_backup', JSON.stringify(answers));
+    } catch(e) {
+        console.error("Storage save error:", e);
+    }
+    
     window.location.href = 'result.html';
 }
