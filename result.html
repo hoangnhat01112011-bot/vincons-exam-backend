@@ -166,7 +166,7 @@
         document.getElementById('resId').textContent = candidate.id;
         document.getElementById('resJob').textContent = candidate.job;
         const modeLabel = candidate.examMode === 'Ôn tập' ? ' [ÔN TẬP]' : '';
-        document.getElementById('resExamType').textContent = (candidate.examType === 'Lý thuyết' ? 'Thi Lý thuyết' : 'Thi Thực hành') + modeLabel;
+        document.getElementById('resExamType').textContent = (candidate.examType === 'Lý thuyết' ? 'Thi Lý thuyết' : 'Thi Tự Luận - Thực Hành') + modeLabel;
         
         const submitDate = new Date();
         const formattedTime = submitDate.toLocaleString('vi-VN');
