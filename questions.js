@@ -1,4 +1,4 @@
-// File questions.js - Tích hợp đầy đủ 50 câu hỏi Tự luận - Thực hành ĐHTG đi kèm Bản vẽ CAD Shop Drawing (PNG Format 100% Reliable)
+// File questions.js - Tích hợp đầy đủ 50 câu hỏi Tự luận - Thực hành ĐHTG đi kèm Bản vẽ CAD Shop Drawing Tailored 1:1
 const QUESTIONS = [
   {
     "id": 1,

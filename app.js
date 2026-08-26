@@ -210,10 +210,10 @@ function showQuestion(index) {
     const imgPanel = document.getElementById('imagePanel');
     const imgEl = document.getElementById('questionImage');
     if (q && q.image && imgEl) {
-        const imgSrc = q.image.includes('?') ? q.image : q.image + '?v=20260826_v1';
+        const imgSrc = q.image.includes('?') ? q.image : q.image + '?v=20260826_v2';
         imgEl.src = imgSrc;
         imgEl.onerror = function() {
-            if (imgSrc.endsWith('.png?v=20260826_v1') || imgSrc.endsWith('.png')) {
+            if (imgSrc.endsWith('.png?v=20260826_v2') || imgSrc.endsWith('.png')) {
                 imgEl.src = q.image.replace('.png', '.svg');
             }
         };
