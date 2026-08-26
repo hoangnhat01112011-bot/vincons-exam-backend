@@ -320,18 +320,26 @@ function submitExam() {
         }
     });
 
-    const score = Math.round((correctCount / activeQuestions.length) * 100);
+    const totalCount = activeQuestions.length > 0 ? activeQuestions.length : 20;
+    const score = Math.round((correctCount / totalCount) * 100);
+    const isPass = score >= 70;
+    const now = Date.now();
+    const formattedTime = new Date().toLocaleString('vi-VN');
+
     const resultData = {
         candidate: candidateInfo,
         activeQuestions: activeQuestions,
         answers: answers,
         score: score,
+        percentage: score,
         correctCount: correctCount,
-        totalQuestions: activeQuestions.length,
-        submittedAt: new Date().toLocaleString('vi-VN')
+        totalQuestions: totalCount,
+        isPass: isPass,
+        submittedAt: formattedTime,
+        timestamp: now
     };
 
-    // Fail-safe persistent storage of candidate result
+    // Fail-safe persistent storage of candidate result & history
     try {
         localStorage.setItem('vincons_result', JSON.stringify(resultData));
         localStorage.setItem('vincons_candidate', JSON.stringify(candidateInfo));
@@ -341,9 +349,11 @@ function submitExam() {
         
         let history = [];
         try {
-            history = JSON.parse(localStorage.getItem('vincons_exam_history')) || [];
+            history = JSON.parse(localStorage.getItem('vincons_history')) || JSON.parse(localStorage.getItem('vincons_exam_history')) || [];
         } catch(err) { history = []; }
+        
         history.push(resultData);
+        localStorage.setItem('vincons_history', JSON.stringify(history));
         localStorage.setItem('vincons_exam_history', JSON.stringify(history));
     } catch(e) {
         console.error("Storage save error:", e);

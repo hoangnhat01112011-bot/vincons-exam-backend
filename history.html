@@ -173,20 +173,62 @@
         });
 
         function loadResultsData() {
-            // Admin-only data loading strategy
-            CONFIG.apiCall(`/api/results`)
-                .then(res => res.json())
-                .then(data => {
-                    allResults = data || [];
-                    allResults.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
-                    filterResults();
-                })
-                .catch(err => {
-                    console.error('Offline mode:', err);
-                    allResults = JSON.parse(localStorage.getItem('vincons_history')) || [];
-                    allResults.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
-                    filterResults();
-                });
+            let localItems = [];
+            try {
+                const h1 = JSON.parse(localStorage.getItem('vincons_history')) || [];
+                const h2 = JSON.parse(localStorage.getItem('vincons_exam_history')) || [];
+                const resSingle = JSON.parse(localStorage.getItem('vincons_result'));
+
+                localItems = [...h1, ...h2];
+                if (resSingle && resSingle.candidate) {
+                    localItems.push(resSingle);
+                }
+            } catch(e) { localItems = []; }
+
+            const uniqueMap = new Map();
+            localItems.forEach((item, idx) => {
+                if (!item) return;
+                const cand = item.candidate || {};
+                const key = `${cand.id || 'ANON'}_${item.submittedAt || item.timestamp || idx}`;
+                
+                const total = item.totalQuestions || (item.activeQuestions ? item.activeQuestions.length : 20);
+                const correct = item.correctCount !== undefined ? item.correctCount : 0;
+                const pct = item.score !== undefined ? item.score : (item.percentage !== undefined ? item.percentage : Math.round((correct / total) * 100));
+                
+                const stdItem = {
+                    candidate: cand,
+                    correctCount: correct,
+                    totalQuestions: total,
+                    score: pct,
+                    percentage: pct,
+                    isPass: item.isPass !== undefined ? item.isPass : (pct >= 70),
+                    submittedAt: item.submittedAt || new Date(item.timestamp || Date.now()).toLocaleString('vi-VN'),
+                    timestamp: item.timestamp || Date.now(),
+                    activeQuestions: item.activeQuestions || [],
+                    answers: item.answers || {}
+                };
+                uniqueMap.set(key, stdItem);
+            });
+
+            allResults = Array.from(uniqueMap.values());
+            allResults.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+
+            if (typeof CONFIG !== 'undefined' && CONFIG.apiCall) {
+                CONFIG.apiCall(`/api/results`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data && Array.isArray(data) && data.length > 0) {
+                            allResults = data;
+                            allResults.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+                        }
+                        filterResults();
+                    })
+                    .catch(err => {
+                        filterResults();
+                    });
+            } else {
+                filterResults();
+            }
         }
 
         function filterResults() {
