@@ -247,6 +247,7 @@ function showQuestion(index) {
 
             radio.onchange = () => {
                 answers[q.id] = optIndex;
+                answers[index] = optIndex;
                 localStorage.setItem('vincons_answers', JSON.stringify(answers));
                 
                 document.querySelectorAll('.option-item').forEach(el => el.classList.remove('selected'));
@@ -312,8 +313,11 @@ function confirmSubmit() {
 function submitExam() {
     if (timerInterval) clearInterval(timerInterval);
     let correctCount = 0;
-    activeQuestions.forEach(q => {
-        if (answers[q.id] === q.correct_index) correctCount++;
+    activeQuestions.forEach((q, index) => {
+        const userAns = (answers && (answers[q.id] !== undefined ? answers[q.id] : answers[index]));
+        if (userAns !== undefined && parseInt(userAns) === parseInt(q.correct_index)) {
+            correctCount++;
+        }
     });
 
     const score = Math.round((correctCount / activeQuestions.length) * 100);

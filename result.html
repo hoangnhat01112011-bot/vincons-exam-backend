@@ -137,21 +137,10 @@
         // Calculate score
         let correctCount = 0;
         activeQuestions.forEach((q, index) => {
-            const userAnswer = answers[index];
-            if (q.type === 'multiple_choice') {
-                if (userAnswer !== undefined && userAnswer === q.correct_index) {
-                    correctCount++;
-                }
-            } else if (q.type === 'input_group') {
-                if (userAnswer !== undefined) {
-                    let allCorrect = true;
-                    q.sub_questions.forEach(subQ => {
-                        if (String(userAnswer[subQ.id]) !== String(subQ.correct_value)) {
-                            allCorrect = false;
-                        }
-                    });
-                    if (allCorrect) correctCount++;
-                }
+            // Type-safe lookup by both q.id and index
+            const userAnswer = (answers && (answers[q.id] !== undefined ? answers[q.id] : answers[index]));
+            if (userAnswer !== undefined && parseInt(userAnswer) === parseInt(q.correct_index)) {
+                correctCount++;
             }
         });
         
