@@ -131,20 +131,42 @@ function initExam() {
             if (isNaN(timeLeft) || timeLeft <= 0) {
                 timeLeft = 30 * 60;
             }
-        } else { // Thực hành / Tự Luận - Thực Hành
+        } else { // Thực hành / Tự Luận - Thực Hành - Phân tách độc lập 100% theo Bộ môn
             let prac = [];
             if (discLower.includes('điều hòa') || discLower.includes('đhtg') || discLower.includes('hvac')) {
-                prac = QUESTIONS.filter(q => String(q.category || '').toLowerCase().includes('đhtg') || String(q.category || '').toLowerCase().includes('điều hòa'));
+                prac = QUESTIONS.filter(q => {
+                    const c = String(q.category || '').toLowerCase();
+                    const e = String(q.exam_set || '').toLowerCase();
+                    return (c.includes('đhtg') || c.includes('điều hòa') || e.includes('đhtg')) && !c.includes('lý thuyết');
+                });
             } else if (discLower.includes('cấp thoát nước') || discLower.includes('ctn')) {
-                prac = QUESTIONS.filter(q => String(q.category || '').toLowerCase().includes('ctn') || String(q.category || '').toLowerCase().includes('cấp thoát nước'));
+                prac = QUESTIONS.filter(q => {
+                    const c = String(q.category || '').toLowerCase();
+                    const e = String(q.exam_set || '').toLowerCase();
+                    return (c.includes('ctn') || c.includes('cấp thoát nước') || e.includes('ctn')) && !c.includes('lý thuyết');
+                });
             } else if (discLower.includes('phòng cháy') || discLower.includes('pccc')) {
-                prac = QUESTIONS.filter(q => String(q.category || '').toLowerCase().includes('pccc') || String(q.category || '').toLowerCase().includes('phòng cháy'));
-            } else {
-                prac = QUESTIONS.filter(q => String(q.category || '').toLowerCase().includes('thực hành') || String(q.category || '').toLowerCase().includes('cnch'));
+                prac = QUESTIONS.filter(q => {
+                    const c = String(q.category || '').toLowerCase();
+                    const e = String(q.exam_set || '').toLowerCase();
+                    return (c.includes('pccc') || c.includes('phòng cháy') || e.includes('pccc')) && !c.includes('lý thuyết');
+                });
+            } else { // Bộ môn ĐIỆN
+                prac = QUESTIONS.filter(q => {
+                    const c = String(q.category || '').toLowerCase();
+                    const e = String(q.exam_set || '').toLowerCase();
+                    const isHvac = c.includes('đhtg') || c.includes('điều hòa') || e.includes('đhtg');
+                    const isCtn = c.includes('ctn') || c.includes('cấp thoát nước');
+                    const isPccc = c.includes('pccc') || c.includes('phòng cháy');
+                    return (c.includes('thực hành điện') || c.includes('thực hành cnch') || e.includes('thực hành điện') || (c.includes('thực hành') && !isHvac && !isCtn && !isPccc));
+                });
             }
 
-            if (prac.length === 0) prac = QUESTIONS.filter(q => String(q.category || '').toLowerCase().includes('thực hành'));
-            if (prac.length === 0) prac = QUESTIONS;
+            if (prac.length === 0) {
+                alert(`Bộ môn ${discipline} chưa có bộ đề tự luận - thực hành. Vui lòng chọn bộ môn khác.`);
+                window.location.href = 'index.html';
+                return;
+            }
 
             let counter = parseInt(localStorage.getItem('vincons_prac_counter') || '0') % 30 + 1;
             localStorage.setItem('vincons_prac_counter', counter.toString());

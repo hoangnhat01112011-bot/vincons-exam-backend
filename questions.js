@@ -1,9 +1,9 @@
-// File questions.js - Đã xáo trộn ngẫu nhiên đáp án A, B, C, D phân bổ đều giữa các câu hỏi
+// File questions.js - Đã phân tách độc lập Ngân hàng Thực hành Điện (14 câu) & Thực hành ĐHTG (69 câu)
 const QUESTIONS = [
   {
     "id": 1,
     "type": "multiple_choice",
-    "category": "Thực hành CNCH",
+    "category": "Thực hành Điện",
     "image": "data/image1.png",
     "question": "Bạn nhìn thấy những ký hiệu, thiết bị nào trên bản vẽ thuộc bộ môn điện:",
     "options": [
@@ -12,12 +12,13 @@ const QUESTIONS = [
       "Ổ cắm đôi 3 chấu, công tắc 3; box điện; lộ đèn, đèn dowligh, đế âm",
       "Công tắc đôi, công tắc 3; box điện; lộ đèn, đèn dowligh, đế âm"
     ],
-    "correct_index": 1
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành Điện"
   },
   {
     "id": 2,
     "type": "input_group",
-    "category": "Thực hành CNCH",
+    "category": "Thực hành Điện",
     "image": "data/image1.png",
     "question": "Với những ký hiệu điện đã biết, hãy cho tôi biết:",
     "sub_questions": [
@@ -41,12 +42,13 @@ const QUESTIONS = [
         "label": "Có bao nhiêu lộ đèn",
         "correct_value": 1
       }
-    ]
+    ],
+    "exam_set": "Tự luận - Thực hành Điện"
   },
   {
     "id": 3,
     "type": "multiple_choice",
-    "category": "Thực hành CNCH",
+    "category": "Thực hành Điện",
     "image": "data/image2.png",
     "question": "Bạn nhìn thấy những ký hiệu, thiết bị nào trên bản vẽ thuộc bộ môn điện:",
     "options": [
@@ -55,12 +57,13 @@ const QUESTIONS = [
       "Ổ cắm đôi 3 chấu, công tắc 3; box điện; lộ đèn, đèn dowligh, đế âm",
       "Ổ cắm đôi 3 chấu, công tắc 3; box điện; lộ đèn, đèn dowligh, đế âm, đèn led hắt"
     ],
-    "correct_index": 3
+    "correct_index": 3,
+    "exam_set": "Tự luận - Thực hành Điện"
   },
   {
     "id": 4,
     "type": "input_group",
-    "category": "Thực hành CNCH",
+    "category": "Thực hành Điện",
     "image": "data/image2.png",
     "question": "Với những ký hiệu điện đã biết, hãy cho tôi biết:",
     "sub_questions": [
@@ -84,12 +87,13 @@ const QUESTIONS = [
         "label": "Có bao nhiêu lộ đèn",
         "correct_value": 1
       }
-    ]
+    ],
+    "exam_set": "Tự luận - Thực hành Điện"
   },
   {
     "id": 5,
     "type": "multiple_choice",
-    "category": "Thực hành CNCH",
+    "category": "Thực hành Điện",
     "image": "data/image3.png",
     "question": "Bạn nhìn thấy những ký hiệu, thiết bị nào trên bản vẽ thuộc bộ môn điện:",
     "options": [
@@ -98,12 +102,13 @@ const QUESTIONS = [
       "Công tắc đơn, ba 1 chiều, công tắc đôi 2 chiều, công tắc bình nóng lạnh; Bình nóng lạnh",
       "Ổ cắm đôi 3 chấu, công tắc 3, đèn dowlight."
     ],
-    "correct_index": 0
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành Điện"
   },
   {
     "id": 6,
     "type": "input_group",
-    "category": "Thực hành CNCH",
+    "category": "Thực hành Điện",
     "image": "data/image3.png",
     "question": "Với những ký hiệu điện đã biết, hãy cho tôi biết:",
     "sub_questions": [
@@ -127,12 +132,13 @@ const QUESTIONS = [
         "label": "Có bao nhiêu lộ đèn",
         "correct_value": 1
       }
-    ]
+    ],
+    "exam_set": "Tự luận - Thực hành Điện"
   },
   {
     "id": 7,
     "type": "multiple_choice",
-    "category": "Thực hành CNCH",
+    "category": "Thực hành Điện",
     "image": "data/image4.png",
     "question": "Bạn nhìn thấy những ký hiệu, thiết bị nào trên bản vẽ thuộc bộ môn điện:",
     "options": [
@@ -141,12 +147,13 @@ const QUESTIONS = [
       "Ổ cắm đôi 3 chấu, công tắc 3; box điện; lộ cấp nguồn S1,S2, đèn sự cố mắt ếch, đế âm, đèn Exit",
       "Công tắc đơn, đôi 1 chiều, công tắc đơn 2 chiều, Ổ cắm đôi chống nước, ổ cắm chống nổ, remot điều hòa"
     ],
-    "correct_index": 1
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành Điện"
   },
   {
     "id": 8,
     "type": "input_group",
-    "category": "Thực hành CNCH",
+    "category": "Thực hành Điện",
     "image": "data/image4.png",
     "question": "Với những ký hiệu điện đã biết, hãy cho tôi biết:",
     "sub_questions": [
@@ -170,12 +177,13 @@ const QUESTIONS = [
         "label": "Có bao nhiêu lộ cấp nguồn",
         "correct_value": 2
       }
-    ]
+    ],
+    "exam_set": "Tự luận - Thực hành Điện"
   },
   {
     "id": 9,
     "type": "multiple_choice",
-    "category": "Thực hành CNCH",
+    "category": "Thực hành Điện",
     "image": "data/image5.png",
     "question": "Với mạch điều khiển bơm nước tự động dùng phao điện như trên thì động cơ và phao điện sẽ đấu vào chân nào của domino để mạch động lực hoạt động được :",
     "options": [
@@ -184,12 +192,13 @@ const QUESTIONS = [
       "Tất cả dáp án trên đều đúng",
       "Động cơ 1 pha: L,N đấu vào 5-6; phao điện: dây tín hiệu phao đấu vào 8-9;"
     ],
-    "correct_index": 1
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành Điện"
   },
   {
     "id": 10,
     "type": "multiple_choice",
-    "category": "Thực hành CNCH",
+    "category": "Thực hành Điện",
     "image": "data/image6.png",
     "question": "Mạch khởi động sao/tam giác như hình, hãy đấu 1 trong 6 cực của động cơ với các cuộn tương ứng động cơ vào domino để mạch động lực hoạt động được :",
     "options": [
@@ -198,12 +207,13 @@ const QUESTIONS = [
       "Tất cả dáp án trên đều đúng",
       "Động cơ 3 pha: 1-U1,3-V1;2-W1;4-W2;5-U2;6-V2"
     ],
-    "correct_index": 1
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành Điện"
   },
   {
     "id": 11,
     "type": "multiple_choice",
-    "category": "Thực hành CNCH",
+    "category": "Thực hành Điện",
     "image": "data/image7.png",
     "question": "Hình ảnh trên là động cơ điện 3 pha đang được đấu nối vào lưới điện, hãy cho biết dạng đấu trên thuộc loại nào: Sao hay tam giác, điện áp làm việc của động cơ là bao nhiêu(Uph) =? biết điện áp lưới điện đến cực động cơ (Ud) là 380V.",
     "options": [
@@ -212,12 +222,13 @@ const QUESTIONS = [
       "Không có đáp án đúng.",
       "Động cơ 3 pha đấu nối kiểu sao, điện áp làm việc của động cơ Uph = 220V;"
     ],
-    "correct_index": 0
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành Điện"
   },
   {
     "id": 12,
     "type": "multiple_choice",
-    "category": "Thực hành CNCH",
+    "category": "Thực hành Điện",
     "image": "data/image8.png",
     "question": "Hình ảnh trên là động cơ điện 3 pha đang được đấu nối vào lưới điện, hãy cho biết dạng đấu trên thuộc loại nào: Sao hay tam giác, điện áp làm việc của động cơ là bao nhiêu(Uph) =? biết điện áp lưới điện đến cực động cơ (Ud) là 380V.",
     "options": [
@@ -226,12 +237,13 @@ const QUESTIONS = [
       "Động cơ 3 pha đấu nối kiểu tam giác, điện áp làm việc của động cơ Uph = 380V;",
       "Không có đáp án đúng."
     ],
-    "correct_index": 1
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành Điện"
   },
   {
     "id": 13,
     "type": "multiple_choice",
-    "category": "Thực hành CNCH",
+    "category": "Thực hành Điện",
     "image": "data/image9.png",
     "question": "Hình ảnh trên là Catalog của động cơ điện 3 pha , hãy cho biết các thông số Công suất (P); dòng điện(I),điện áp(U),tốc độ(n) và kiểu đấu ứng với tần số lưới điện Việt Nam là 380V; 50Hz?",
     "options": [
@@ -240,12 +252,13 @@ const QUESTIONS = [
       "Động cơ 3 pha đấu nối kiểu sao, điện áp làm việc của động cơ Uph = 660V;I=23.8A; tốc độ động cơ n=2940 r/min(vòng /phút)",
       "Động cơ 3 pha đấu nối kiểu sao, điện áp làm việc của động cơ Uph = 220V;P= 22Kw; I=41.3A; tốc độ động cơ n=2940 r/min(vòng /phút)"
     ],
-    "correct_index": 1
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành Điện"
   },
   {
     "id": 14,
     "type": "multiple_choice",
-    "category": "Thực hành CNCH",
+    "category": "Thực hành Điện",
     "image": "data/image10.png",
     "question": "Hình ảnh trên là Catalog của động cơ điện 3 pha , hãy cho biết các thông số Công suất (P); dòng điện(I),điện áp(U),tốc độ(n) và kiểu đấu ứng với tần số lưới điện Việt Nam là 380V; 50Hz?",
     "options": [
@@ -254,7 +267,8 @@ const QUESTIONS = [
       "Động cơ 3 pha đấu nối kiểu tam giác, điện áp làm việc của động cơ Uph = 380V; I=78A;P=37Kw; tốc độ động cơ n=1450 r/min(vòng /phút)",
       "Không có đáp án đúng."
     ],
-    "correct_index": 2
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành Điện"
   },
   {
     "id": "q_el3_01_37",
