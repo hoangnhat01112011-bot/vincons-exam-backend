@@ -33,12 +33,14 @@ function getSheetData(sheet) {
 function getSettings() {
   var sheet = getOrCreateSheet("settings", ["key", "value"]);
   var data = getSheetData(sheet);
-  var settings = { exam_pin: "6868", review_limit: 10, ai_api_key: "", ai_model: "nousresearch/nous-coder-14b" };
+  var settings = { exam_pin: "6868", review_limit: 10, bch_subtitle: "BCH HẠ LONG XANH - VINCONS", ai_api_key: "", ai_model: "nousresearch/nous-coder-14b" };
   for (var i = 0; i < data.length; i++) {
     if (data[i].key === "exam_pin") {
         settings.exam_pin = String(data[i].value);
       } else if (data[i].key === "exam_pin_tuyendung") {
         settings.exam_pin_tuyendung = String(data[i].value);
+    } else if (data[i].key === "bch_subtitle") {
+        settings.bch_subtitle = String(data[i].value);
     } else if (data[i].key === "review_limit") {
       settings.review_limit = parseInt(data[i].value) || 10;
     } else if (data[i].key === "ai_api_key") {
@@ -68,6 +70,7 @@ function saveSettings(settingsObj) {
   
   if (settingsObj.exam_pin !== undefined) updateOrAdd("exam_pin", settingsObj.exam_pin);
     if (settingsObj.exam_pin_tuyendung !== undefined) updateOrAdd("exam_pin_tuyendung", settingsObj.exam_pin_tuyendung);
+    if (settingsObj.bch_subtitle !== undefined) updateOrAdd("bch_subtitle", settingsObj.bch_subtitle);
   if (settingsObj.review_limit !== undefined) updateOrAdd("review_limit", settingsObj.review_limit);
   if (settingsObj.ai_api_key !== undefined) updateOrAdd("ai_api_key", settingsObj.ai_api_key);
   if (settingsObj.ai_model !== undefined) updateOrAdd("ai_model", settingsObj.ai_model);
