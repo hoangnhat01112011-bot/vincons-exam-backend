@@ -1,4 +1,4 @@
-// File questions.js - Cập nhật 100 câu hỏi Lý thuyết ĐHTG phân bổ ngẫu nhiên thành 50 Bộ đề thi (20 câu/đề)
+// File questions.js - Cập nhật Bộ đề thi Lý thuyết và Tự luận Thực hành ĐHTG theo Bậc thợ & Chuyên ngành con
 const QUESTIONS = [
   {
     "id": 1,
@@ -7083,5 +7083,1048 @@ const QUESTIONS = [
     "category": "Lý thuyết - Điều hòa thông gió",
     "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
     "type": "multiple_choice"
+  },
+  {
+    "id": 15,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công hệ Chiller Bậc 3",
+    "question": "Bản vẽ Shopdrawing là gì",
+    "options": [
+      "Bản vẽ Shopdrawing (bản vẽ thi công chi tiết) là bản vẽ được triển khai cụ thể hóa từ bản vẽ thiết kế nhằm phục vụ trực tiếp cho việc lắp đặt, gia công và thi công thực tế tại công trường",
+      "Bản vẽ Shopdrawing (bản vẽ thi công chi tiết) là bản vẽ được triển khai cụ thể hóa từ bản vẽ thiết kế nhằm phục vụ trực tiếp cho việc lắp đặt, gia công",
+      "Bản vẽ Shopdrawing (bản vẽ thi công chi tiết) là bản vẽ được triển khai cụ thể hóa từ bản vẽ thiết kế nhằm phục vụ trực tiếp cho việc lắp đặt, gia công và thi công thực tế tại công trường"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành Chiller Bậc 3"
+  },
+  {
+    "id": 16,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công hệ Chiller Bậc 3",
+    "question": "Ký hiện BOD Trên bản vẽ nghĩa là gì",
+    "options": [
+      "Cao độ tính đến tim ống (thường dùng trong bản vẽ điều hòa thông gió để kiểm tra khoảng cách va chạm với trần)",
+      "Cao độ tính đến đỉnh ống (thường dùng trong bản vẽ điều hòa thông gió để kiểm tra khoảng cách va chạm với trần)",
+      "Cao độ tính đến đáy ống (thường dùng trong bản vẽ điều hòa thông gió để kiểm tra khoảng cách va chạm với trần)"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành Chiller Bậc 3"
+  },
+  {
+    "id": 17,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công hệ Chiller Bậc 3",
+    "question": "Trên bản vẽ ghi  EAD 700x800-BOD=FFL+7900 nghĩa là gì",
+    "options": [
+      "Ống gió tươi, kích thước 700x800 Cao độ từng đáy xuống sàn hoàn thiện là 7.9M\nB.Ống gió thải, kích thước 700x800 Cao độ từng đáy xuống sàn hoàn thiện là 7.9M",
+      "Ống gió thải, kích thước 700x800 Cao độ từng đỉnh xuống sàn hoàn thiện là 7.9M"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành Chiller Bậc 3"
+  },
+  {
+    "id": 18,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công hệ Chiller Bậc 3",
+    "question": "Ký hiệu Cos +3900 (hoặc Cos +3.900) trên bản vẽ kỹ thuật/kiến trúc có nghĩa là gì",
+    "options": [
+      "Cos: Đại diện cho độ cao  (tương đương ). Trong bản vẽ xây dựng, cao độ luôn quy đổi và tính bằng đơn vị mét (m).",
+      "Cos: Đại diện cho độ dốc",
+      "Cos: Đại diện cho khoảng cách, kích thước"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành Chiller Bậc 3"
+  },
+  {
+    "id": 19,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công hệ Chiller Bậc 3",
+    "question": "Kể tên các thiết bị chính của hệ thống Chiller",
+    "options": [
+      "Chiller, Tháp giải nhiệt, Bơm nước lạnh, Bơm giải nhiệt, Bình tích áp, Bộ trao đổi nhiệt, Hệ thống phụ tải,",
+      "Tháp giải nhiệt, Bơm nước lạnh, Bơm giải nhiệt, Bình tích áp, Bộ trao đổi nhiệt, Hệ thống phụ tải, Hệ thống đường ống, van",
+      "Chiller, Tháp giải nhiệt, Bơm nước lạnh, Bơm giải nhiệt, Bình tích áp, Bộ trao đổi nhiệt, Hệ thống phụ tải, Hệ thống đường ống, van"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành Chiller Bậc 3"
+  },
+  {
+    "id": 20,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công hệ Chiller Bậc 3",
+    "question": "Kể tên các loại van thường dùng trong hệ thống Chiller",
+    "options": [
+      "Nhóm van điều khiển ( Van Cân bằng tự động, Van điều khiển tự động…),",
+      "Nhóm van khóa bảo vệ ( Van cổng, van bướm tay quay, Van an toàn, van xả khí)",
+      "Nhóm van điều khiển ( Van Cân bằng tự động, Van điều khiển tự động…), Nhóm van khóa bảo vệ ( Van cổng, van bướm tay quay, Van an toàn, van xả khí)"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành Chiller Bậc 3"
+  },
+  {
+    "id": 21,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công hệ Chiller Bậc 3",
+    "question": "Trong hệ thống chiller ống giải nhiệt nóng (Cooling Water) , ống nước lạnh (Chilled Water) thường dùng ống vật liệu gì",
+    "options": [
+      "Hệ thống ống nước lạnh (Chilled Water) thường dùng ống thép đen, Hệ thống ống nước giải nhiệt nóng (Cooling Water) thường dùng ống thép mạ kẽm",
+      "Hệ thống ống nước lạnh (Chilled Water) thường dùng ống Inox, Hệ thống ống nước giải nhiệt nóng (Cooling Water) thường dùng ống thép mạ kẽm",
+      "Hệ thống ống nước lạnh (Chilled Water) thường dùng ống thép đen, Hệ thống ống nước giải nhiệt nóng (Cooling Water) thường dùng ống Inox"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành Chiller Bậc 3"
+  },
+  {
+    "id": 22,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công hệ Chiller Bậc 3",
+    "question": "Dự vào sơ đồ nguyên lý dưới đây. Đâu là bộ phận làm lạnh",
+    "options": [
+      "Tháp giải nhiệt,",
+      "AHU",
+      "Water chiller  (Cụm máy lạnh trung tâm chiler)"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành Chiller Bậc 3"
+  },
+  {
+    "id": 23,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công thông gió Bậc 3",
+    "question": "Bản vẽ Shopdrawing là gì",
+    "options": [
+      "Bản vẽ Shopdrawing (bản vẽ thi công chi tiết) là bản vẽ được triển khai cụ thể hóa từ bản vẽ thiết kế nhằm phục vụ trực tiếp cho việc lắp đặt, gia công và thi công thực tế tại công trường",
+      "Bản vẽ Shopdrawing (bản vẽ thi công chi tiết) là bản vẽ được triển khai cụ thể hóa từ bản vẽ thiết kế nhằm phục vụ trực tiếp cho việc lắp đặt, gia công",
+      "Bản vẽ Shopdrawing (bản vẽ thi công chi tiết) là bản vẽ được triển khai cụ thể hóa từ bản vẽ thiết kế nhằm phục vụ trực tiếp cho việc lắp đặt, gia công và thi công thực tế tại công trường"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành Thông gió Bậc 3"
+  },
+  {
+    "id": 24,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công thông gió Bậc 3",
+    "question": "Ký hiện BOD Trên bản vẽ nghĩa là gì",
+    "options": [
+      "Cao độ tính đến tim ống (thường dùng trong bản vẽ điều hòa thông gió để kiểm tra khoảng cách va chạm với trần)",
+      "Cao độ tính đến đỉnh ống (thường dùng trong bản vẽ điều hòa thông gió để kiểm tra khoảng cách va chạm với trần)",
+      "Cao độ tính đến đáy ống (thường dùng trong bản vẽ điều hòa thông gió để kiểm tra khoảng cách va chạm với trần)"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành Thông gió Bậc 3"
+  },
+  {
+    "id": 25,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công thông gió Bậc 3",
+    "question": "Trên bản vẽ ghi  EAD 700x800-BOD=FFL+7900 nghĩa là gì",
+    "options": [
+      "Ống gió tươi, kích thước 700x800 Cao độ từng đáy xuống sàn hoàn thiện là 7.9M\nB.Ống gió thải, kích thước 700x800 Cao độ từng đáy xuống sàn hoàn thiện là 7.9M",
+      "Ống gió thải, kích thước 700x800 Cao độ từng đỉnh xuống sàn hoàn thiện là 7.9M"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành Thông gió Bậc 3"
+  },
+  {
+    "id": 26,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công thông gió Bậc 3",
+    "question": "Ký hiệu Cos +3900 (hoặc Cos +3.900) trên bản vẽ kỹ thuật/kiến trúc có nghĩa là gì",
+    "options": [
+      "Cos: Đại diện cho độ cao  (tương đương ). Trong bản vẽ xây dựng, cao độ luôn quy đổi và tính bằng đơn vị mét (m).",
+      "Cos: Đại diện cho độ dốc",
+      "Cos: Đại diện cho khoảng cách, kích thước"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành Thông gió Bậc 3"
+  },
+  {
+    "id": 27,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công thông gió Bậc 3",
+    "question": "Khi nhận bản vẽ thi công đường ống gió, anh/chị cần kiểm tra những thông số quan trọng nào trước khi tiến hành gia công hoặc lắp đặt",
+    "options": [
+      "Kích thươc, chủng loại ống , kiểu kết nối ống, vị trí phụ kiện lắp đặt;",
+      "Tuyến đi, cao độ đường ống, kích thươc, chủng loại ống , kiểu kết nối ống, vị trí phụ kiện lắp đặt;",
+      "Tuyến đi, cao độ đường ống, kích thươc, chủng loại ống , kiểu kết nối ống."
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành Thông gió Bậc 3"
+  },
+  {
+    "id": 28,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công thông gió Bậc 3",
+    "question": "Kể tên các loại van đường ống gió?",
+    "options": [
+      "OBD (Opposed Blade Damper): Van cánh chỉnh trên miệng gió, NRD (Non Reture Damper): Van 1 chiều, FD/ MFD(Fire Damper/ Motorized Damper): Van ngăn cháy lan, PRD (Pressure Relief Damper): Van xả áp, SD (Smoke Damper): Van ngăn khói.",
+      "VCD (Volume control damper): Van chỉnh gió, OBD (Opposed Blade Damper): Van cánh chỉnh trên miệng gió, NRD (Non Reture Damper): Van 1 chiều, FD/ MFD(Fire Damper/ Motorized Damper): Van ngăn cháy lan, PRD (Pressure Relief Damper): Van xả áp, SD (Smoke Damper): Van ngăn khói.",
+      "VCD (Volume control damper): Van chỉnh gió, OBD (Opposed Blade Damper): Van cánh chỉnh trên miệng gió, NRD (Non Reture Damper): Van 1 chiều, FD/ MFD(Fire Damper/ Motorized Damper): Van ngăn cháy lan, PRD (Pressure Relief Damper): Van xả áp"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành Thông gió Bậc 3"
+  },
+  {
+    "id": 29,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công thông gió Bậc 3",
+    "question": "Kể tên các hệ thống thông gió thường gặp  trong hệ thống cơ điện",
+    "options": [
+      "Ống gió thải, ống gió tươi, ống gió hút khói, ống gió bù khí, ống gió hút mùi bêp, WC",
+      "Ống  gió tươi, ống gió hút khói, ống gió bù khí, ống gió hút mùi bêp, WC",
+      "Ống gió thải, ống gió tươi, ống gió hút khói, ống gió bù khí,"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành Thông gió Bậc 3"
+  },
+  {
+    "id": 30,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công thông gió Bậc 3",
+    "question": "Khớp nối ống gió tôn thông thường gồm loại nào?",
+    "options": [
+      "Nẹp C hoặc TDC",
+      "Nẹp TDC",
+      "Nẹp C"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành Thông gió Bậc 3"
+  },
+  {
+    "id": 31,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công thông gió Bậc 3",
+    "question": "Khoảng cách giữa các giá treo/ty treo ống gió được quy định như thế nào để ống không bị võng",
+    "options": [
+      "Ống kích thước cạnh lớn nhất : Khoảng cách giá treo tối đa từ ,",
+      "Ống kích thước cạnh lớn nhất : Khoảng cách giá treo tối đa từ , Ống kích thước cạnh lớn nhất : Khoảng cách giá treo",
+      "Ống kích thước cạnh lớn nhất : Khoảng cách giá treo tối đa từ ."
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành Thông gió Bậc 3"
+  },
+  {
+    "id": 32,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công thông gió Bậc 3",
+    "question": "Làm thế nào để kiểm tra độ kín của đường ống gió sau khi lắp đặt xong",
+    "options": [
+      "Phương pháp rọi đèn (Light Test): Đặt nguồn sáng mạnh (đèn pin công suất cao) vào bên trong ống gió kín và quan sát từ bên ngoài vào ban đêm hoặc trong tối. Nếu thấy tia sáng lọt ra tại các khớp nối bích, mí ghép hay góc tôn thì chỗ đó bị hở và cần bơm keo bổ sung;",
+      "Phương pháp thử khói  / Thử áp suất : Bịt kín 2 đầu đoạn ống, bơm khói hoặc dùng máy thử rò rỉ áp suất chuyên dụng để xác định độ rò rỉ không vượt quá phần trăm cho phép;",
+      "Không có đáp án đúng;",
+      "Đáp án A,B đúng."
+    ],
+    "correct_index": 3,
+    "exam_set": "Tự luận - Thực hành Thông gió Bậc 3"
+  },
+  {
+    "id": 33,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công thông gió Bậc 3",
+    "question": ": Kể tên một số mối ghép cơ bản giữa 2 ống gió",
+    "options": [
+      "Nẹp C, Nẹp TDC, Bích ,",
+      "Nẹp C, Nẹp TDC , Vít ( Áp dụng cho đường ống gió tròn )",
+      "Nẹp C, Nẹp TDC, Bích , Vít ( Áp dụng cho đường ống gió tròn )"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành Thông gió Bậc 3"
+  },
+  {
+    "id": 34,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công thông gió Bậc 3",
+    "question": ": Ống gió có giới hạn chịu lửa EI 30, EI45, EI60, EI120 thường được áp dụng để lắp đặt các hệ thống nào",
+    "options": [
+      "Các ống gió có giớ hạn chịu lửa  EI 30, EI45, EI60, EI120 thường được áp dụng để lắp đặt các tuyến ống ngoài trục kín các hệ thông thông gió sự cố ( Hút khói, Tăng áp)",
+      "Các ống gió có giớ hạn chịu lửa  EI 30, EI45, EI60, EI120 thường được áp dụng để lắp đặt các tuyến ống ngoài trục kín các hệ thông thông gió sự cố ( Hút khói, Tăng áp, Bù khí )"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành Thông gió Bậc 3"
+  },
+  {
+    "id": 35,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công thông gió Bậc 3",
+    "question": "Lấy những thông tin nào để thi công trên bản vẽ này ?",
+    "options": [
+      "Kích thước ống gió, Cao độ đường ống, độ dài các modun ống, vị trí các phụ kiện đường ống, khoảng cách đường ống tới vách, tường, Khoảng cách giá đỡ",
+      "Vị trí các điểm lắp van, vị trí của gió, ống gió mềm, các điểm chân rẽ xuống cửa, Tham chiếu thêm bản vẽ chi tiết lắp đặt để gia công phần giá đỡ",
+      "Câu  A đúng",
+      "Cả 2 đáp án A và B đền đúng"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành Thông gió Bậc 3"
+  },
+  {
+    "id": 36,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Bản vẽ Shopdrawing là gì",
+    "options": [
+      "Bản vẽ Shopdrawing (bản vẽ thi công chi tiết) là bản vẽ được triển khai cụ thể hóa từ bản vẽ thiết kế nhằm phục vụ trực tiếp cho việc lắp đặt, gia công và thi công thực tế tại công trường",
+      "Bản vẽ Shopdrawing (bản vẽ thi công chi tiết) là bản vẽ được triển khai cụ thể hóa từ bản vẽ thiết kế nhằm phục vụ trực tiếp cho việc lắp đặt, gia công",
+      "Bản vẽ Shopdrawing (bản vẽ thi công chi tiết) là bản vẽ được triển khai cụ thể hóa từ bản vẽ thiết kế nhằm phục vụ trực tiếp cho việc lắp đặt, gia công và thi công thực tế tại công trường"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 37,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Ký hiện BOD Trên bản vẽ nghĩa là gì",
+    "options": [
+      "Cao độ tính đến tim ống (thường dùng trong bản vẽ điều hòa thông gió để kiểm tra khoảng cách va chạm với trần)",
+      "Cao độ tính đến đỉnh ống (thường dùng trong bản vẽ điều hòa thông gió để kiểm tra khoảng cách va chạm với trần)",
+      "Cao độ tính đến đáy ống (thường dùng trong bản vẽ điều hòa thông gió để kiểm tra khoảng cách va chạm với trần)"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 38,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Trên bản vẽ ghi  EAD 700x800-BOD=FFL+7900 nghĩa là gì",
+    "options": [
+      "Ống gió tươi, kích thước 700x800 Cao độ từng đáy xuống sàn hoàn thiện là 7.9M\nB.Ống gió thải, kích thước 700x800 Cao độ từng đáy xuống sàn hoàn thiện là 7.9M",
+      "Ống gió thải, kích thước 700x800 Cao độ từng đỉnh xuống sàn hoàn thiện là 7.9M"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 39,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Ký hiệu Cos +3900 (hoặc Cos +3.900) trên bản vẽ kỹ thuật/kiến trúc có nghĩa là gì",
+    "options": [
+      "Cos: Đại diện cho độ cao  (tương đương ). Trong bản vẽ xây dựng, cao độ luôn quy đổi và tính bằng đơn vị mét (m).",
+      "Cos: Đại diện cho độ dốc",
+      "Cos: Đại diện cho khoảng cách, kích thước"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 40,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Lấy những thông tin nào để thi công trên bản vẽ này ?",
+    "options": [
+      "Kích thước ống đồng, cao độ ống, chiều dài từng Size ống, Mã hiệu bộ chia Gas, Khoảng cách giá đỡ, bộ chia Gas, Khoẳng cách từ ống đến tường, Tham chiếu thêm bản vẽ lắp đặt để có thông tin phần ti treo giá đỡ",
+      "Công suất lạnh dàn lạnh, dàn nóng, Kích thước ống đồng, cao độ ống, chiều dài từng Size ống, Mã hiệu bộ chia Gas, Khoảng cách giá đỡ, bộ chia Gas, Khoẳng cách từ ống đến tường, Tham chiếu thêm bản vẽ lắp đặt để có thông tin phần ti treo giá đỡ",
+      "Công suất lạnh dàn lạnh, dàn nóng, Kích thước ống đồng, cao độ ống, , Khoảng cách giá đỡ, bộ chia Gas, Khoẳng cách từ ống đến tường, Tham chiếu thêm bản vẽ lắp đặt để có thông tin phần ti treo giá đỡ"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 41,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Lấy những thông tin nào để thi công trên bản vẽ này ?",
+    "options": [
+      "Công suất lạnh dàn lạnh, dàn nóng, Kích thước đường ống nước ngưng, phụ kiện trên đường ống, cao độ đường ống, Vị trí thông hơi , thông tắc, Khoảng cách giá đỡ, Khoảng cách đến tường, Tham chiếu bản vẽ chi tiết lắp đặt để có thêm thông tin Ty treo giá đỡ, bẫy nước ngưng",
+      "Công suất lạnh dàn lạnh, dàn nóng, cao độ đường ống, Vị trí thông hơi , thông tắc, Khoảng cách giá đỡ, Khoảng cách đến tường, Tham chiếu bản vẽ chi tiết lắp đặt để có thêm thông tin Ty treo giá đỡ, bẫy nước ngưng",
+      "Công suất lạnh dàn lạnh, dàn nóng, Kích thước đường ống nước ngưng, phụ kiện trên đường ống, cao độ đường ống,  Khoảng cách đến tường, Tham chiếu bản vẽ chi tiết lắp đặt để có thêm thông tin Ty treo giá đỡ, bẫy nước ngưng"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 42,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Các nguyên tắc chính trong thi công ống đồng",
+    "options": [
+      "Khô, Sạch;",
+      "Khô, Kín’",
+      "Khô, Sạch, Kín."
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 43,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Tác hại của ẩm ướt, hơi nước đọng trong đường ống đồng",
+    "options": [
+      "Van Tiết lưu, Dầu bị oxi hóa, biến chất, Hư Hỏng máy nén",
+      "Đóng băng pin lọc, Van Tiết lưu, Dầu bị oxi hóa, biến chất",
+      "Đóng băng pin lọc, Van Tiết lưu, Dầu bị oxi hóa, biến chất, Hư Hỏng máy nén"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 44,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Nguyên Nhân gây ra hơi nước trong đường ống đồng",
+    "options": [
+      "Nước vào đường ống từ đầu, Đọng sương trong ống, Hút chân không chưa đủ thời gian",
+      "Đọng sương trong ống, Hút chân không chưa đủ thời gian",
+      "Nước vào đường ống từ đầu, Đọng sương trong ống,"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 45,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Tác hại của tạp chất và chất bẩn trong đường ống đồng",
+    "options": [
+      "Tắc van tiết lưu và ống mao, Nguyên nhân gây ra sự hư hỏng máy nén, Không làm lạnh và không làm ấm",
+      "Tắc Phin lọc, van tiết lưu và ống mao, Nguyên nhân gây ra sự hư hỏng máy nén, Không làm lạnh và không làm ấm",
+      "Tắc Phin lọc, van tiết lưu và ống mao, Nguyên nhân gây ra sự hư hỏng máy nén,"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 46,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Nguyên nhân gây tạp chất và bụi bẩn",
+    "options": [
+      "Chất bẩn và bụi đi vào đường ống do bảo quản không tốt chua bịt đầu, Xỉ Hàn ( Không bảo vệ bằng Nito), Cặn Bẩn chưa được thổi sạch sau khi hàn",
+      "Xỉ Hàn ( Không bảo vệ bằng Nito), Cặn Bẩn chưa được thổi sạch sau khi hàn",
+      "Chất bẩn và bụi đi vào đường ống do bảo quản không tốt chua bịt đầu, Xỉ Hàn ( Không bảo vệ bằng Nito),"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 47,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Tác hại của việc dò rỉ môi chất lạnh",
+    "options": [
+      "Máy nén bị quá nhiệt, Nguyên nhân gây ra sự hư hỏng máy nén, Không làm lạnh và không làm ấm được",
+      "Hiệu suất làm lạnh kém, Máy nén bị quá nhiệt, Nguyên nhân gây ra sự hư hỏng máy nén,",
+      "Hiệu suất làm lạnh kém, Máy nén bị quá nhiệt, Nguyên nhân gây ra sự hư hỏng máy nén, Không làm lạnh và không làm ấm được"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 48,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Nguyên nhân của rò rỉ",
+    "options": [
+      "Kết nối rắc co không tốt, Kết nối mặt bích không tốt ( Chỉ một số hệ thông kết nối mặt bích)",
+      "Mối hàn không tốt, Kết nối rắc co không tốt, Kết nối mặt bích không tốt ( Chỉ một số hệ thông kết nối mặt bích",
+      "Mối hàn không tốt, Kết nối rắc co không tốt,"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 49,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Nêu một số phương án để đảm bảo ống đồng không bị ẩm ướt và bụi bẩn",
+    "options": [
+      "Dùng băng keo hoặc nắp bị bịt các đầu hở của đường ống hoặc hàn kín bịt đầu",
+      "Dùng băng keo hoặc nắp bị bịt các đầu hở của đường ống",
+      "Hàn kín bịt đầu"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 50,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Quy trình lắp đặt điều hòa cục bộ",
+    "options": [
+      "Chuẩn bị vật tư phụ kiện ( Ống đồng, bảo ôn, dây điện, ống nước ngưng, Máy điều hòa); Lắp đặt dàn lạnh, Lắp đặt dàn nóng; Kết nối giàn nóng dàn lạnh ( Kéo rải ống đống, dây link, đấu nguồn ); Hút chân không và chạy thử\nB. Chuẩn bị vật tư phụ kiện ( Ống đồng, bảo ôn, dây điện, ống nước ngưng, Máy điều hòa); Lắp đặt dàn lạnh, Lắp đặt dàn nóng; Kết nối giàn nóng dàn lạnh ( Kéo rải ống đống, dây link, đấu nguồn ).",
+      "Lắp đặt dàn lạnh, Lắp đặt dàn nóng; Kết nối giàn nóng dàn lạnh ( Kéo rải ống đống, dây link, đấu nguồn ); Hút chân không và chạy thử"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 51,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Các loại gas đang dùng hiện nay?",
+    "options": [
+      "R407C, R410a, R32, R134a",
+      "R22, R407C, R410a, R32, R134a",
+      "R22, R407C, R410a, R32, R134a"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 52,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Phân loại các điều hòa phổ biến hiện nay",
+    "options": [
+      "Điều hòa cục bộ, Điều hòa trung tâm VRV, Hệ thống điều hòa trung tâm Chiller, Điều hòa di động tủ đứng.",
+      "Điều hòa cục bộ, Hệ thống điều hòa trung tâm Chiller, Điều hòa di động tủ đứng",
+      "Điều hòa cục bộ, Điều hòa trung tâm VRV, Hệ thống điều hòa trung tâm Chiller, Điều hòa di động tủ đứng."
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 53,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ thi công ĐHKK Bậc 3",
+    "question": "Quy trình hút chân không đối với điều hòa cục bộ",
+    "options": [
+      "Kết nối hệ thống dây đo→Tiến hành hút chân không  (Mở van xả, bật máy bơm, theo dõi đồng hồ, thời gian hút..) →Khóa van, kiểm tra rò rỉ ( khóa van đồng hồ, tắt máy bơm, thử kín , xả gas)",
+      "Chuẩn bị dụng cụ ( Máy hút chân không, Đồng hồ áp suất, lục giác )→ Kết nối hệ thống dây đo→Tiến hành hút chân không  (Mở van xả, bật máy bơm, theo dõi đồng hồ, thời gian hút..) →Khóa van, kiểm tra rò rỉ ( khóa van đồng hồ, tắt máy bơm, thử kín , xả gas)",
+      "Chuẩn bị dụng cụ ( Máy hút chân không, Đồng hồ áp suất, lục giác )→Tiến hành hút chân không  (Mở van xả, bật máy bơm, theo dõi đồng hồ, thời gian hút..) →Khóa van, kiểm tra rò rỉ ( khóa van đồng hồ, tắt máy bơm, thử kín , xả gas)"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHKK Bậc 3"
+  },
+  {
+    "id": 54,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Bản vẽ Shopdrawing là gì",
+    "options": [
+      "Bản vẽ Shopdrawing (bản vẽ thi công chi tiết) là bản vẽ được triển khai cụ thể hóa từ bản vẽ thiết kế nhằm phục vụ trực tiếp cho việc lắp đặt, gia công và thi công thực tế tại công trường",
+      "Bản vẽ Shopdrawing (bản vẽ thi công chi tiết) là bản vẽ được triển khai cụ thể hóa từ bản vẽ thiết kế nhằm phục vụ trực tiếp cho việc lắp đặt, gia công",
+      "Bản vẽ Shopdrawing (bản vẽ thi công chi tiết) là bản vẽ được triển khai cụ thể hóa từ bản vẽ thiết kế nhằm phục vụ trực tiếp cho việc lắp đặt, gia công và thi công thực tế tại công trường"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 55,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Ký hiện BOD Trên bản vẽ nghĩa là gì",
+    "options": [
+      "Cao độ tính đến tim ống (thường dùng trong bản vẽ điều hòa thông gió để kiểm tra khoảng cách va chạm với trần)",
+      "Cao độ tính đến đỉnh ống (thường dùng trong bản vẽ điều hòa thông gió để kiểm tra khoảng cách va chạm với trần)",
+      "Cao độ tính đến đáy ống (thường dùng trong bản vẽ điều hòa thông gió để kiểm tra khoảng cách va chạm với trần)"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 56,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Trên bản vẽ ghi  EAD 700x800-BOD=FFL+7900 nghĩa là gì",
+    "options": [
+      "Ống gió tươi, kích thước 700x800 Cao độ từng đáy xuống sàn hoàn thiện là 7.9M\nB.Ống gió thải, kích thước 700x800 Cao độ từng đáy xuống sàn hoàn thiện là 7.9M",
+      "Ống gió thải, kích thước 700x800 Cao độ từng đỉnh xuống sàn hoàn thiện là 7.9M"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 57,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Ký hiệu Cos +3900 (hoặc Cos +3.900) trên bản vẽ kỹ thuật/kiến trúc có nghĩa là gì",
+    "options": [
+      "Cos: Đại diện cho độ cao  (tương đương ). Trong bản vẽ xây dựng, cao độ luôn quy đổi và tính bằng đơn vị mét (m).",
+      "Cos: Đại diện cho độ dốc",
+      "Cos: Đại diện cho khoảng cách, kích thước",
+      "CÂU HỎI PHỎNG VẤN THỢ BẬC 1-TIỂU ĐỘI TRƯỞNG ( 1-15)"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 58,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Sự khác nhau giữa điều hòa trung tâm VRV và điều hòa Mutil",
+    "options": [
+      "Số lượng kết nối dàn lạnh (VRV 10-64 dàn, Multi 2-5 dàn), hệ thống đường ống(VRV Chạy trục chính qua bộ chia gas, Multi chạy độc lập); Ứng dụng( VRV Dùng trong các tòa nhà, văn phòng lớn , Multi Các căn hộ 3-5 phòng)",
+      "Công Suất( VRV Lớn hơn Muti); Số lượng kết nối dàn lạnh (VRV 10-64 dàn, Multi 2-5 dàn), hệ thống đường ống(VRV Chạy trục chính qua bộ chia gas, Multi chạy độc lập); Ứng dụng( VRV Dùng trong các tòa nhà, văn phòng lớn , Multi Các căn hộ 3-5 phòng)",
+      "Công Suất( VRV Lớn hơn Muti); Số lượng kết nối dàn lạnh (VRV 10-64 dàn, Multi 2-5 dàn), hệ thống đường ống(VRV Chạy trục chính qua bộ chia gas, Multi chạy độc lập);"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 59,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Khi loe ống đồng, những lỗi nào thường gặp làm cho mối nối bị rò rỉ gas?",
+    "options": [
+      "Loe ống không cạo bavia (sạt phoi kim loại), dẫn đến mép loe bị rách hoặc sần sùi, Đặt ống đồng vào khuôn loe quá cao hoặc quá thấp làm mép loe bị thừa/thiếu rộng Siết giắc co quá tay làm vỡ/nứt mép loe, hoặc siết quá nhẹ làm hở gioăng kim loại",
+      "Đặt ống đồng vào khuôn loe quá cao hoặc quá thấp làm mép loe bị thừa/thiếu rộng Siết giắc co quá tay làm vỡ/nứt mép loe, hoặc siết quá nhẹ làm hở gioăng kim loại, Không làm sạch bụi bẩn, mạt đồng bám vào mặt côn của giắc co trước khi siết.",
+      "Loe ống không cạo bavia (sạt phoi kim loại), dẫn đến mép loe bị rách hoặc sần sùi, Đặt ống đồng vào khuôn loe quá cao hoặc quá thấp làm mép loe bị thừa/thiếu rộng, siết giắc co quá tay làm vỡ/nứt mép loe, hoặc siết quá nhẹ làm hở gioăng kim loại, không làm sạch bụi bẩn, mạt đồng bám vào mặt côn của giắc co trước khi siết."
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 60,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Làm thế nào để phân biệt điều hòa bị thiếu gas và điều hòa bị tắc ẩm/tắc phin lọc",
+    "options": [
+      "Trường hợp thiếu gas:",
+      "Áp suất hút thấp, dòng điện làm việc thấp hơn định mức, Xuất hiện hiện tượng bám tuyết ngay tại đầu ống nhỏ (ống đi) ở dàn nóng;",
+      "Xuất hiện hiện tượng bám tuyết ngay tại đầu ống nhỏ (ống đi) ở dàn nóng, Dàn lạnh mát kém đồng đều, nhiệt độ gió ra không sâu.",
+      "Áp suất hút thấp, dòng điện làm việc thấp hơn định mức, Xuất hiện hiện tượng bám tuyết ngay tại đầu ống nhỏ (ống đi) ở dàn nóng, Dàn lạnh mát kém đồng đều, nhiệt độ gió ra không sâu.",
+      "Trường hợp tắc ẩm / tắc bẩn, áp suất hút tụt rất sâu (có thể tụt về  hoặc âm), máy nén chạy kêu to hoặc bị ngắt do rơ-le nhiệt"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 61,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Hiện tượng dàn lạnh bị chảy nước ngưng ra sàn nguyên nhân do đâu và xử lý thế nào",
+    "options": [
+      "Nguyên nhân:",
+      "Tắc đường ống thoát nước (do bụi bẩn, rêu mốc đọng lâu ngày), Máng hứng nước thải bị nứt, vỡ hoặc lắp dàn lạnh bị nghiêng ngược góc,",
+      "Máy bị thiếu gas làm dàn lạnh bị đóng băng, khi băng tan chảy tràn ra ngoài máng hứng, Quạt dàn lạnh bị yếu/bẩn không thổi được hơi lạnh ra ngoài gây đọng sương vỏ nhựa.",
+      "Tắc đường ống thoát nước (do bụi bẩn, rêu mốc đọng lâu ngày), Máy bị thiếu gas làm dàn lạnh bị đóng băng, khi băng tan chảy tràn ra ngoài máng hứng, Quạt dàn lạnh bị yếu/bẩn không thổi được hơi lạnh ra ngoài gây đọng sương vỏ nhựa",
+      "Thông ống thoát nước bằng máy hút/bơm áp lực, vệ sinh máng nước, căn chỉnh lại độ cân bằng của dàn lạnh, hoặc kiểm tra nạp bổ sung gas nếu thấy bám tuyết"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 62,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Khi thu hồi gas (nhốt gas) để di chuyển điều hòa, quy trình thực hiện như thế nào để an toàn",
+    "options": [
+      "Cho điều hòa chạy ở chế độ Làm lạnh (Cool) để máy nén (Block) hoạt động, Dùng lục giác vặn đóng van ống nhỏ (ống đi) trước, Chờ khoảng  giây (tùy độ dài đường ống) để máy nén hút toàn bộ gas trên đường ống và dàn lạnh về dàn nóng. Lắng nghe tiếng máy nén êm hơn hoặc quan sát đồng hồ áp suất về , Vặn đóng van ống to (ống về), sau đó tắt nguồn điện của máy ngay lập tức;",
+      "Dùng lục giác vặn đóng van ống nhỏ (ống đi) trước, Chờ khoảng  giây (tùy độ dài đường ống) để máy nén hút toàn bộ gas trên đường ống và dàn lạnh về dàn nóng. Lắng nghe tiếng máy nén êm hơn hoặc quan sát đồng hồ áp suất về , Vặn đóng van ống to (ống về), sau đó tắt nguồn điện của máy ngay lập tức;",
+      "Cho điều hòa chạy ở chế độ Làm lạnh (Cool) để máy nén (Block) hoạt động, Dùng lục giác vặn đóng van ống nhỏ (ống đi) trước, Chờ khoảng  giây (tùy độ dài đường ống) để máy nén hút toàn bộ gas trên đường ống và dàn lạnh về dàn nóng. Lắng nghe tiếng máy nén êm hơn hoặc quan sát đồng hồ áp suất về",
+      "CÂU HỎI HỆ THỐNG THÔNG GIÓ",
+      "CÂU HỎI PHỎNG VẤN THỢ BẬC 1 TIỂU ĐỘI TRƯỞNG (1-15)"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 63,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Van FD thường lắp đặt ở vị trí nào",
+    "options": [
+      "Van FD (Fire Damper - van chặn lửa) thường được lắp đặt tại các vị trí ống gió xuyên qua tường, vách ngăn cháy, trần hoặc sàn bê tông giữa các khu vực hoặc vùng cháy khác nhau trong tòa nhà",
+      "Van FD (Fire Damper - van chặn lửa) thường được lắp đặt tại các vị trí ống gió xuyên qua   trần hoặc sàn bê tông giữa các khu vực hoặc vùng cháy khác nhau trong tòa nhà"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 64,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Van VCD thường lắp ở vị trí nào",
+    "options": [
+      "Van VCD (Volume Control Damper - van điều chỉnh lưu lượng gió) thường được lắp đặt tại các vị trí trên hệ thống ống gió nơi cần điều tiết, cân bằng hoặc ngắt dòng khí",
+      "Van VCD (Volume Control Damper - van điều chỉnh lưu lượng gió) thường được lắp đặt tại các vị trí trên hệ thống ống gió nơi cần cân bằng hoặc ngắt dòng khí"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 65,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Quy trình lắp đặt quạt thông gió hướng trục treo trần",
+    "options": [
+      "Khoan trần, lắp ty treo, giá đỡ, Treo và công định quạt, Kết nối ống gió và phụ kiện, Đấu nguồn chạy thử",
+      "Khảo sát đo đạc vị trí treo, Khoan trần, lắp ty treo, giá đỡ, Treo và công định quạt, Kết nối ống gió và phụ kiện, Đấu nguồn chạy thử",
+      "Khảo sát đo đạc vị trí treo, Khoan trần, lắp ty treo, giá đỡ, Treo và công định quạt, Kết nối ống gió và phụ kiện."
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 66,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Nếu khi thi công thực tế, đường ống gió bị vướng/xung đột với dầm bê tông hoặc đường ống nước PCCC lớn mà bản vẽ chưa thể hiện, anh/chị xử lý ra sao?",
+    "options": [
+      "Đề xuất giải pháp với CBKT, Chờ xác nhận thông tin",
+      "Dừng lại và đo đạc: Không tự ý cắt hay bóp móp ống gió. Đo chính xác khoảng cách va chạm và không gian trống xung quanh, Chờ xác nhận thông tin.",
+      "Dừng lại và đo đạc: Không tự ý cắt hay bóp móp ống gió. Đo chính xác khoảng cách va chạm và không gian trống xung quanh, Đề xuất giải pháp với CBKT, Chờ xác nhận thông tin\nĐáp án đúng: C"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 67,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Khi lắp đặt quạt thông gió (Quạt ly tâm, Quạt hướng trục hoặc Quạt Jetfan), cần chú ý những chi tiết kỹ thuật nào để quạt chạy êm và không bị rung lắc?",
+    "options": [
+      "Lắp khớp nối mềm bằng bạt/vải chịu nhiệt nối giữa cổ quạt và đường ống gió để ngăn truyền lực rung từ quạt sang hệ thống ống , Độ cân bằng của quạt, Chiều quay của quạt, Kiểm tra mũi tên chỉ chiều quay của cánh quạt và chiều gió thổi trước khi đấu nối điện chạy thử",
+      "Lắp đặt lò xo chống rung, Lắp khớp nối mềm bằng bạt/vải chịu nhiệt nối giữa cổ quạt và đường ống gió để ngăn truyền lực rung từ quạt sang hệ thống ống , Độ cân bằng của quạt, Chiều quay của quạt, Kiểm tra mũi tên chỉ chiều quay của cánh quạt và chiều gió thổi trước khi đấu nối điện chạy thử",
+      "Lắp đặt lò xo chống rung, Lắp khớp nối mềm bằng bạt/vải chịu nhiệt nối giữa cổ quạt và đường ống gió để ngăn truyền lực rung từ quạt sang hệ thống ống , Độ cân bằng của quạt, Chiều quay của quạt."
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 68,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Sau khi lắp đặt xong toàn bộ hệ thống quạt và ống gió, các bước kiểm tra chạy thử không tải (Test-run) gồm những gì?",
+    "options": [
+      "Kiểm tra cơ học, Kiểm tra van, Kiểm tra điện, Đảm bảo tất cả các van điều chỉnh (VCD), van kiểm soát miệng gió (OBD) và van xả khói đều đang ở trạng thái mở đúng quy định, Đo điện áp nguồn, kiểm tra chiều quay quạt (đúng chiều mũi tên), Chạy thử & Đo đạc,",
+      "Kiểm tra điện, Đảm bảo tất cả các van điều chỉnh (VCD), van kiểm soát miệng gió (OBD) và van xả khói đều đang ở trạng thái mở đúng quy định, Đo điện áp nguồn, kiểm tra chiều quay quạt (đúng chiều mũi tên), Chạy thử & Đo đạc,",
+      "Kiểm tra cơ học, Kiểm tra van, Kiểm tra điện, Đo điện áp nguồn, kiểm tra chiều quay quạt (đúng chiều mũi tên), Chạy thử & Đo đạc,",
+      "CÂU HỎI DÀNH CHO THỢ BẬC 1-TIỂU ĐỘI TRƯỞNG (1-15)"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 69,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Quy trình khởi động hệ thống Chiller",
+    "options": [
+      "Khởi động hệ thống nước giải nhiệt, Khởi động hệ thống nước làm lạnh, Khởi động máy  Chiller;",
+      "Kiểm tra tổng thể hệ thống, Khởi động hệ thống nước giải nhiệt, Khởi động hệ thống nước làm lạnh;",
+      "Kiểm tra tổng thể hệ thống, Khởi động hệ thống nước giải nhiệt, Khởi động hệ thống nước làm lạnh, Khởi động máy  Chiller;"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 70,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Mục đích của quy trình Súc rửa đường ống (Flushing) và Chạy tuần hoàn hóa chất trước khi nghiệm thu là gì?",
+    "options": [
+      "Sục rửa sạch toàn bộ dầu mỡ và rác thi công còn sót lại trong lòng đường ống, Quy trình thường cho nước chạy qua đường ống Bypass (không cho chạy qua Chiller/AHU), qua bộ lọc tạm để xả sạch rác. Sau đó mới châm hóa chất ức chế gỉ sét/chống mảng bám  rồi mới đấu nối chính thức vào thiết bị",
+      "Sục rửa sạch toàn bộ cát, mạt sắt, xỉ hàn, dầu mỡ và rác thi công còn sót lại trong lòng đường ống, Quy trình thường cho nước chạy qua đường ống Bypass (không cho chạy qua Chiller/AHU), qua bộ lọc tạm để xả sạch rác. Sau đó mới châm hóa chất ức chế gỉ sét/chống mảng bám  rồi mới đấu nối chính thức vào thiết bị"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 71,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Gối đỡ ống (Pipe Hanger/Support) cho đường ống Chiller cần lưu ý đặc biệt điều gì so với đường ống nước thông thường?",
+    "options": [
+      "Cần dùng gối đỡ thông thường tránh cầu nhiệt  gây đọng sương và hư hỏng lớp cách nhiệt tại vị trí cùm treo.",
+      "Cần dùng gối đỡ cách nhiệt để tránh cầu nhiệt  gây đọng sương và hư hỏng lớp cách nhiệt tại vị trí cùm treo.",
+      "-"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 72,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": ":Anh/Chị hãy nêu thứ tự lắp đặt các phụ kiện đường ống tại đầu Vào (Inlet) và đầu Ra (Outlet) của bình bay hơi Chiller hoặc Bơm nước",
+    "options": [
+      "Tại đầu VÀO (Inlet - Đường nước về):",
+      "Y-Strainer (Phin lọc rác dạng chữ Y) – Rất quan trọng để bảo vệ bình bay hơi/cánh bơm, Khớp nối mềm chống rung (Flexible Joint), Nhiệt kế & Đồng hồ áp suất (Thermometer & Pressure Gauge), Cảm biến dòng chảy (Flow Switch) – Thường gắn ở đầu ra hoặc đầu vào Chiller",
+      "Van chặn (Butterfly Valve / Gate Valve), Y-Strainer (Phin lọc rác dạng chữ Y) – Rất quan trọng để bảo vệ bình bay hơi/cánh bơm, Khớp nối mềm chống rung (Flexible Joint), Nhiệt kế & Đồng hồ áp suất (Thermometer & Pressure Gauge), Cảm biến dòng chảy (Flow Switch) – Thường gắn ở đầu ra hoặc đầu vào Chiller",
+      "Tại đầu RA (Outlet - Đường nước đi):",
+      "Van một chiều (Check Valve) – Bắt buộc đối với đầu ra của Bơm, Van cân bằng (Balancing Valve) / Van điều khiển (Control Valve), Van chặn, Nhiệt kế & Đồng hồ áp suất",
+      "Khớp nối mềm chống rung, Van một chiều (Check Valve) – Bắt buộc đối với đầu ra của Bơm, Van cân bằng (Balancing Valve) / Van điều khiển (Control Valve), Van chặn, Nhiệt kế & Đồng hồ áp suất",
+      "Câu B và D đúng",
+      "Câu A và C đúng"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 73,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 1",
+    "question": "Dựa vào hình ảnh dưới đây hãy kể tên thiết bị trong cụm bơm nước lạnh từ trái qua phải",
+    "options": [
+      "Đồng hồ đo áp suất=>Van 1 chiều DN150=> Khớp nối mềm DN150=>Bơm nước lạnh=>Khớp nối mềm DN150=> Đồng hồ áp suất=> Y lọc => Đồng hồ áp suất=> Van Bướm DN150;",
+      "Van Bướm DN150=>Đồng hồ đo áp suất=>Van 1 chiều DN150=> Khớp nối mềm DN150=>Bơm nước lạnh=>Khớp nối mềm DN150=> Đồng hồ áp suất=> Y lọc => Đồng hồ áp suất=> Van Bướm DN150",
+      "Van Bướm DN150=>Đồng hồ đo áp suất=>Van 1 chiều DN150=> Khớp nối mềm DN150=>Bơm nước lạnh=>Khớp nối mềm DN150=> Đồng hồ áp suất=> Y lọc => Đồng hồ áp suất"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 1 / Tiểu đội trưởng"
+  },
+  {
+    "id": 74,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Bản vẽ Shopdrawing là gì",
+    "options": [
+      "Bản vẽ Shopdrawing (bản vẽ thi công chi tiết) là bản vẽ được triển khai cụ thể hóa từ bản vẽ thiết kế nhằm phục vụ trực tiếp cho việc lắp đặt, gia công và thi công thực tế tại công trường",
+      "Bản vẽ Shopdrawing (bản vẽ thi công chi tiết) là bản vẽ được triển khai cụ thể hóa từ bản vẽ thiết kế nhằm phục vụ trực tiếp cho việc lắp đặt, gia công",
+      "Bản vẽ Shopdrawing (bản vẽ thi công chi tiết) là bản vẽ được triển khai cụ thể hóa từ bản vẽ thiết kế nhằm phục vụ trực tiếp cho việc lắp đặt, gia công và thi công thực tế tại công trường"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 75,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Ký hiện BOD Trên bản vẽ nghĩa là gì",
+    "options": [
+      "Cao độ tính đến tim ống (thường dùng trong bản vẽ điều hòa thông gió để kiểm tra khoảng cách va chạm với trần)",
+      "Cao độ tính đến đỉnh ống (thường dùng trong bản vẽ điều hòa thông gió để kiểm tra khoảng cách va chạm với trần)",
+      "Cao độ tính đến đáy ống (thường dùng trong bản vẽ điều hòa thông gió để kiểm tra khoảng cách va chạm với trần)"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 76,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Trên bản vẽ ghi  EAD 700x800-BOD=FFL+7900 nghĩa là gì",
+    "options": [
+      "Ống gió tươi, kích thước 700x800 Cao độ từng đáy xuống sàn hoàn thiện là 7.9M\nB.Ống gió thải, kích thước 700x800 Cao độ từng đáy xuống sàn hoàn thiện là 7.9M",
+      "Ống gió thải, kích thước 700x800 Cao độ từng đỉnh xuống sàn hoàn thiện là 7.9M"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 77,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Ký hiệu Cos +3900 (hoặc Cos +3.900) trên bản vẽ kỹ thuật/kiến trúc có nghĩa là gì",
+    "options": [
+      "Cos: Đại diện cho độ cao  (tương đương ). Trong bản vẽ xây dựng, cao độ luôn quy đổi và tính bằng đơn vị mét (m).",
+      "Cos: Đại diện cho độ dốc",
+      "Cos: Đại diện cho khoảng cách, kích thước",
+      "I.2 Thợ bậc 2 ( 4 Câu )"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 78,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Kể tên các hệ thống con chi tiết nằm trong hệ thống VRV, VRF",
+    "options": [
+      "Hệ thống đường ống Gas, Hệ thống đường nước ngưng, Hệ thống dây Link dàn lạnh – Dàn Nóng, Dàn nóng –ĐKTT, Kết nối BMS, Hệ thống cấp gió tươi, Hoặc sử lý gió sơ cấp, Thiết bị ( Giàn nóng, dàn lạnh, các thiết bị xử lý gió sơ cấp PAU, HRV, Quạt …)",
+      "Hệ thống đường ống Gas, Hệ thống đường nước ngưng, Hệ thống dây Link dàn lạnh – Dàn Nóng, Dàn nóng –ĐKTT, Kết nối BMS, Hệ thống cấp gió tươi, Hoặc sử lý gió sơ cấp, Các hệ thống phân phối gió lạnh ( Ống gió, cửa gió, Van trên đường ống",
+      "Hệ thống đường ống Gas, Hệ thống đường nước ngưng, Hệ thống dây Link dàn lạnh – Dàn Nóng, Dàn nóng –ĐKTT, Kết nối BMS, Hệ thống cấp gió tươi, Hoặc sử lý gió sơ cấp, Các hệ thống phân phối gió lạnh ( Ống gió, cửa gió, Van trên đường ống ), Thiết bị ( Giàn nóng, dàn lạnh, các thiết bị xử lý gió sơ cấp PAU, HRV, Quạt …)"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 79,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Nêu quy trình hàn ống đồng",
+    "options": [
+      "Thổi khí Nito vào ống, áp suất Nito >0.03~ 0.05 Mpa, Gia nhiệt, Chấm mối hàn, Sau khi hàn xong, thổi nito vào trong ống 3-5 phút, đến khi ống nguội hoàn toàn, lưu ý không được sự dụng nước làm mát ngay sau khi hàn ống",
+      "Vệ sinh điểm hàn, đảm bảo ống và dụng cụ kết nối phù hợp với nhau, Thổi khí Nito vào ống, áp suất Nito >0.03~ 0.05 Mpa, Gia nhiệt, Chấm mối hàn, Sau khi hàn xong, thổi nito vào trong ống 3-5 phút, đến khi ống nguội hoàn toàn, lưu ý không được sự dụng nước làm mát ngay sau khi hàn ống",
+      "Vệ sinh điểm hàn, đảm bảo ống và dụng cụ kết nối phù hợp với nhau, Thổi khí Nito vào ống, áp suất Nito >0.03~ 0.05 Mpa, Gia nhiệt, Chấm mối hàn, Sau khi hàn xong"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 80,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": ": Tiêu chuẩn lắp đặt bộ chia Gas",
+    "options": [
+      "Lắp đặt bộ chia Gas thăng bằng trong trường hợp vướng mặt bằng thì độ nghiêng không được quá 15°, Khoảng cách 2 bộ chia >=1000mm, Khoảng cách từ vị trí chuyển hướng đến bộ chia >=500mm",
+      "Lắp đặt bộ chia Gas thăng bằng trong trường hợp vướng mặt bằng thì độ nghiêng không được quá 15°, Khoảng cách từ vị trí chuyển hướng đến bộ chia >=500mm",
+      "Lắp đặt bộ chia Gas thăng bằng trong trường hợp vướng mặt bằng thì độ nghiêng không được quá 15°, Khoảng cách 2 bộ chia >=1000mm,"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 81,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": ": Quy trình thử áp ống đồng",
+    "options": [
+      "Kiểm tra toàn bộ đường ống: không méo, móp, nứt; các mối hàn kín đúng bản vẽ và tiêu chuẩn kỹ thuật, Đảm bảo van, phụ kiện, mối nối được bịt kín; các đầu ống được chuẩn bị đầy đủ để kết nối phục vụ công tác thử áp – thử kín, Đảm bảo van, phụ kiện, mối nối được bịt kín; các đầu ống được chuẩn bị đầy đủ để kết nối phục vụ công tác thử áp – thử kín.",
+      "Làm sạch bên trong ống: thổi khí sạch để loại bỏ dầu, mạt hàn, bụi bẩn trước khi tiến hành thử áp, Bổ sung băng cảnh báo an toàn tại các vị trí thử nghiệm và khu vực nguy hiểm để cảnh báo áp lực cao, Dán tem niêm phong tại các đầu nối, mặt bích, van khoá để kiểm soát hiện tượng rò rỉ hoặc tác động từ bên ngoài trong quá trình thử",
+      "Chuẩn bị đồng hồ áp lực (áp kế) đã được kiểm định hoặc hiệu chuẩn để phục vụ công tác đo, ghi nhận kết quả thử áp, Bước 1: Tăng áp suất dần đến 3kg/cm2 trong thời gian ít nhất 3 phút, Bước 2: Tiếp tục tăng áp lực đến 15kg/cm2 trong 5 phút. Kiểm tra sơ bộ tuyến ống và áp lực duy trì, Bước 3: Nâng áp lực đến 40~42kg/cm2 duy trì 24 giờ. Theo dõi áp lực thay đổi",
+      "Câu A và B đúng",
+      "Cả 3 đáp án A,B,C trên đúng",
+      "Đáp án đúng:E",
+      "CÂU HỎI PHỎNG VẤN THỢ BẬC 2 (1-10)",
+      "Cau 6: 1 KW lạnh bằng bao nhiêu BTU",
+      "Kw Lạnh=3.410BTU/H.",
+      "Kw Lạnh=3.012BTU/H",
+      "Kw Lạnh=3.412BTU/H"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 82,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Khi lắp đặt điều hòa, khoảng cách và chiều dài ống đồng giữa dàn nóng và dàn lạnh bao nhiêu mét",
+    "options": [
+      "Chiều dài tối thiểu (3 mét): Đây là quy định bắt buộc của hầu hết các hãng. Nếu lắp ống ngắn hơn 3m, gas lạnh không kịp bay hơi/sương đọng hết, dẫn đến máy chạy bị rung, ồn do dồn nén gas và dễ làm hỏng lốc (compressor).",
+      "Chiều dài tiêu chuẩn (3 - 7 mét): Khoảng cách tối ưu giúp máy đạt hiệu suất làm lạnh/sưởi ấm tốt nhất, tiết kiệm điện năng và không cần nạp thêm gas khi lắp đặt.",
+      "Chiều dài tối đa (15 Mét)",
+      "Cả 3 đáp án trên đều đúng"
+    ],
+    "correct_index": 3,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 83,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Các nguyên nhân phổ biến  khiến điều hòa không mát và cách khắc phục",
+    "options": [
+      "Nguyên nhân: Thiếu hoặc rò rỉ gas hoặc máy nén (lốc) gặp sự cố, Khắc phục: Vệ sinh lưới lọc định kỳ, kiểm tra lượng gas và gọi thợ kỹ thuật sửa chữa nếu hỏng hóc linh kiện bên trong.",
+      "Nguyên nhân: Thiếu hoặc rò rỉ gas, lọc gió/dàn lạnh bị bám bẩn lâu ngày, hoặc máy nén (lốc) gặp sự cố, Khắc phục: Vệ sinh lưới lọc định kỳ, kiểm tra lượng gas và gọi thợ kỹ thuật sửa chữa nếu hỏng hóc linh kiện bên trong.",
+      "Nguyên nhân: Thiếu hoặc rò rỉ gas, lọc gió/dàn lạnh bị bám bẩn lâu ngày,  Khắc phục: Vệ sinh lưới lọc định kỳ, kiểm tra lượng gas và gọi thợ kỹ thuật sửa chữa nếu hỏng hóc linh kiện bên trong.",
+      "Khắc phục: Vệ sinh lưới lọc định kỳ, kiểm tra lượng gas và gọi thợ kỹ thuật sửa chữa nếu hỏng hóc linh kiện bên trong"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 84,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Trên máy điều hòa không khí có ghi số liệu sau: 220V–12 000 BTU/h. Nêu các thông số kĩ thuật của máy điều hòa nói trên?",
+    "options": [
+      "220V: điện áp lớn nhất, 12 000 BTU/h: công suất làm lạnh định mức",
+      "220V: điện áp nhỏ nhất, 12 000 BTU/h: công suất làm lạnh định mức",
+      "220V: điện áp định mức, 12 000 BTU/h: công suất làm lạnh định mức",
+      "CÂU HỎI PHỎNG VẤN THỢ BẬC 2 (1-10)"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 85,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Kể tên các loai quạt thông gió",
+    "options": [
+      "Quạt thông gió gắn trần, Quạt thông gió gắn tường, Quạt hút ly tâm, Quạt hút hướng trục, Quạt hút mùi WC, Quạt hút mùi bếp, Quạt hút công nghiệp",
+      "Quạt thông gió gắn tường, Quạt hút ly tâm, Quạt hút hướng trục, Quạt hút mùi WC, Quạt hút mùi bếp, Quạt hút công nghiệp",
+      "Quạt thông gió gắn trần, Quạt thông gió gắn tường, Quạt hút ly tâm, Quạt hút hướng trục, Quạt hút mùi WC, Quạt hút mùi bếp"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 86,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Các loại miệng gió thông dụng hiện nay?",
+    "options": [
+      "Miệng gió 1 lớp cánh chỉnh, Miệng gió khe dài kiểu Linear, Miệng gió khe dài kiểu slot, Miệng gió sọt trứng, Miệng gió khuyếch tán kiểu 4 hướng hoặc kiểu tròn",
+      "Miệng gió khe dài kiểu Linear, Miệng gió khe dài kiểu slot, Miệng gió sọt trứng, Miệng gió khuyếch tán kiểu 4 hướng hoặc kiểu tròn, Miệng lấy gió ngoài trời (louver), Đầu thổi gió (jet Nozzle).",
+      "Miệng gió 1 lớp cánh chỉnh, Miệng gió khe dài kiểu Linear, Miệng gió khe dài kiểu slot, Miệng gió sọt trứng, Miệng gió khuyếch tán kiểu 4 hướng hoặc kiểu tròn, Miệng lấy gió ngoài trời (louver), Đầu thổi gió (jet Nozzle).",
+      "-Câu 8: Ký tự SAG 600x600 trong hình 1 nghĩa là gì",
+      "Trong bản vẽ và kỹ thuật thông gió (HVAC), ký hiệu SAG 600x600 nghĩa là Miệng gió cấp vuông kích thước 600x600 mm",
+      "Trong bản vẽ và kỹ thuật thông gió (HVAC), ký hiệu SAG 600x600 nghĩa là Miệng gió hồi vuông kích thước 600x600 mm\n Đáp án đúng: A"
+    ],
+    "correct_index": 2,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 87,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Ký tự EAG 250x250+ OBD trong hình 1 nghĩa là gì",
+    "options": [
+      "Trong bản vẽ và kỹ thuật thông gió (HVAC), ký hiệu EAG 250x250 + OBD có nghĩa đầy đủ là: Miệng gió tươi kích thước 250x250 mm có kèm Van điều chỉnh lưu lượng gió (OBD)",
+      "Trong bản vẽ và kỹ thuật thông gió (HVAC), ký hiệu EAG 250x250 + OBD có nghĩa đầy đủ là: Miệng gió thải kích thước 250x250 mm có kèm Van điều chỉnh lưu lượng gió (OBD)"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 88,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Ký tự  OAL 2000x600+LCCT trong hình 1 nghĩa là gì",
+    "options": [
+      "Trong bản vẽ kỹ thuật thông gió (HVAC), ký hiệu OAL 2000x600 + LCCT có nghĩa là: Miệng gió trong nhà (Louver) lấy gió tươi/thải khí kích thước 2000x600 mm, tích hợp Lưới lọc bụi và Lưới chống côn trùng (LCCT)",
+      "Trong bản vẽ kỹ thuật thông gió (HVAC), ký hiệu OAL 2000x600 + LCCT có nghĩa là: Miệng gió nan nan chớp ngoài trời (Louver) lấy gió tươi/thải khí kích thước 2000x600 mm, tích hợp Lưới lọc bụi và Lưới chống côn trùng (LCCT)",
+      "CÂU HỎI DÀNH CHO THỢ BẬC 2 TRỞ LÊN (1-10)"
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 89,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Chức năng vận chuyển nước lanh tuần hoàn trong hệ thống là bộ phận nào",
+    "options": [
+      "Tháp giải nhiệt,",
+      "Bơm nước lạnh ( Chiller Water Pump)",
+      "Bơm nước giải nhiệt."
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 90,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Van điện từ có chức năng nhiệm vụ gì",
+    "options": [
+      "Điều tiết lưu lượng nước lạnh đi vào dàn lạnh AHU, Nhận tín hiệu từ bộ điều khiển để đóng/mở hoặc tiết lưu dòng nước, giúp duy trì nhiệt độ phòng chính xác theo nhu cầu và tiết kiệm năng lượng khi phòng đã đủ lạnh.",
+      "Nhận tín hiệu từ bộ điều khiển để đóng/mở hoặc tiết lưu dòng nước, giúp duy trì nhiệt độ phòng chính xác theo nhu cầu và tiết kiệm năng lượng khi phòng đã đủ lạnh."
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 91,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Tháp giải nhiệt có nhiệm vụ gì",
+    "options": [
+      "Thải nhiệt lượng của hệ thống ra ngoài môi trường",
+      "Điều tiết lưu lượng nước lạnh đi vào dàn lạnh AHU"
+    ],
+    "correct_index": 0,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 92,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Khoảng cách tối thiểu giữa 2 van bướm tay quay là bao nhiêu",
+    "options": [
+      "Quy tắc tiêu chuẩn (Theo đường kính ống): Khoảng cách tối thiểu giữa hai van nối tiếp được quy định là tối thiểu  (gấp 2lần đường kính trong  của đường ống) để đảm bảo khi 2 van cùng mở cánh van không chạm vào nhau;",
+      "Quy tắc tiêu chuẩn (Theo đường kính ống): Khoảng cách tối thiểu giữa hai van nối tiếp được quy định là tối thiểu  (gấp 5 lần đường kính trong  của đường ống) để đảm bảo khi 2 van cùng mở cánh van không chạm vào nhau;",
+      "Quy tắc tiêu chuẩn (Theo đường kính ống): Khoảng cách tối thiểu giữa hai van nối tiếp được quy định là tối thiểu  (gấp 4 lần đường kính trong  của đường ống) để đảm bảo khi 2 van cùng mở cánh van không chạm vào nhau."
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
+  },
+  {
+    "id": 93,
+    "type": "multiple_choice",
+    "category": "Thực hành - Thợ ĐHTG Bậc 2",
+    "question": "Van xả khí thường lắp ở đâu trong hệ thống đường ống",
+    "options": [
+      "Van xả khí (Air Release Valve) luôn được ưu tiên lắp đặt tại các điểm thấp nhất của hệ thống đường ống. Nguyên lý hoạt động dựa trên việc khí nhẹ hơn nước, do đó bọt khí sẽ tích tụ ở các vị trí thấp nhất hoặc trên cùng của mạng lưới.",
+      "Van xả khí (Air Release Valve) luôn được ưu tiên lắp đặt tại các điểm cao nhất của hệ thống đường ống. Nguyên lý hoạt động dựa trên việc khí nhẹ hơn nước, do đó bọt khí sẽ tích tụ ở các vị trí nhô cao hoặc trên cùng của mạng lưới."
+    ],
+    "correct_index": 1,
+    "exam_set": "Tự luận - Thực hành ĐHTG Bậc 2"
   }
 ];

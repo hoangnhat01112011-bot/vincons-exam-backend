@@ -171,7 +171,6 @@ function initExam() {
                     let rankPrac = prac.filter(q => String(q.category || '').toLowerCase().includes(rankKey) || String(q.exam_set || '').toLowerCase().includes(rankKey));
                     if (rankPrac.length > 0) prac = rankPrac;
                 }
-            }
             } else if (discLower.includes('cấp thoát nước') || discLower.includes('ctn')) {
                 prac = QUESTIONS.filter(q => {
                     const c = String(q.category || '').toLowerCase();
