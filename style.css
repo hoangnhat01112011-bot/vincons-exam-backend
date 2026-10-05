@@ -1208,3 +1208,25 @@ footer {
 .bim-param-grid strong {
     color: var(--accent);
 }
+
+
+/* Force global style override for new brand logo typography */
+.brand-logo img, .logo-container img {
+    max-height: 48px !important;
+}
+
+.brand-text h2, .logo-text h1 {
+    font-size: 1.25rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+    text-shadow: 0 2px 10px rgba(0, 180, 216, 0.6), 0 0 20px rgba(56, 189, 248, 0.4) !important;
+}
+
+.brand-text p, .logo-text p {
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    color: #38bdf8 !important;
+    letter-spacing: 0.5px !important;
+}
