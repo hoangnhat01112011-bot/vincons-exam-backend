@@ -1,6 +1,6 @@
 import * as XLSX from 'xlsx';
 
-export const exportToExcel = (stats, data, activeMonth) => {
+export const exportToExcel = (stats, data) => {
   // 1. Tạo Sheet 1: BẢNG CHI TIẾT TIỀN ĂN (Như mẫu)
   // Lấy danh sách các ngày
   const days = new Set();
@@ -24,11 +24,11 @@ export const exportToExcel = (stats, data, activeMonth) => {
   const header1 = ['TT', 'Họ và tên'];
   sortedDays.forEach(() => header1.push('Tháng')); 
   // Add remaining columns to header1 to maintain length
-  ['Tổng xuất ăn', 'Đơn giá', 'Thành tiền', 'Lũy kế tháng trước', 'Đã ứng(CK)', 'Truy thu', 'Thu quỹ đồ dùng', 'Thanh toán'].forEach(() => header1.push(''));
+  ['Tổng', 'Đơn giá', 'Thành tiền', 'Lũy kế tháng trước', 'Truy thu', 'Đóng quỹ đã dùng', 'Đã ứng trước', 'Thanh toán'].forEach(() => header1.push(''));
   wsData.push(header1);
 
   // Row 2: Header chi tiết
-  const header2 = ['TT', 'Họ và tên', ...sortedDays, 'Tổng xuất ăn', 'Đơn giá', 'Thành tiền', 'Lũy kế tháng trước', 'Đã ứng(CK)', 'Truy thu', 'Thu quỹ đồ dùng', 'Thanh toán'];
+  const header2 = ['TT', 'Họ và tên', ...sortedDays, 'Tổng', 'Đơn giá', 'Thành tiền', 'Lũy kế tháng trước', 'Truy thu', 'Đóng quỹ đã dùng', 'Đã ứng trước', 'Thanh toán'];
   wsData.push(header2);
 
   // Dữ liệu thành viên
@@ -45,9 +45,9 @@ export const exportToExcel = (stats, data, activeMonth) => {
     row.push(stats.costPerMeal);
     row.push(m.eatingCost);
     row.push(m.prevMonthBalance || '');
-    row.push(m.advance || '');
     row.push(m.arrears || '');
     row.push(m.fundUsed || '');
+    row.push(m.advance || '');
     row.push(m.finalPayment); // Dư/Thiếu
     
     wsData.push(row);
@@ -69,14 +69,14 @@ export const exportToExcel = (stats, data, activeMonth) => {
   
   // Sum other financial columns
   const sumPrev = stats.memberStats.reduce((s, m) => s + (m.prevMonthBalance || 0), 0);
-  const sumArrears = stats.memberStats.reduce((s, m) => s + (m.arrears || 0), 0);
+  const sumArrears = stats.memberStats.reduce((s, m) => s + (m.arrears || 0) + (m.privateFoodCost || 0), 0);
   const sumFund = stats.memberStats.reduce((s, m) => s + (m.fundUsed || 0), 0);
   const sumFinal = stats.memberStats.reduce((s, m) => s + (m.finalPayment || 0), 0);
   
   totalRow.push(sumPrev);
-  totalRow.push(stats.totalAdvance);
   totalRow.push(sumArrears);
   totalRow.push(sumFund);
+  totalRow.push(stats.totalAdvance);
   totalRow.push(sumFinal);
 
   wsData.push(totalRow);
@@ -121,6 +121,5 @@ export const exportToExcel = (stats, data, activeMonth) => {
   XLSX.utils.book_append_sheet(wb, wsFood, 'Thực phẩm Hàng ngày');
   XLSX.utils.book_append_sheet(wb, wsOther, 'Chi phí Khác');
 
-  const safeMonth = activeMonth ? activeMonth.replace('-', '_') : new Date().toLocaleDateString('vi-VN').replace(/\//g, '-');
-  XLSX.writeFile(wb, `BaoCao_TienAn_Thang_${safeMonth}.xlsx`);
+  XLSX.writeFile(wb, `BaoCao_TienAn_${new Date().toLocaleDateString('vi-VN').replace(/\//g, '-')}.xlsx`);
 };

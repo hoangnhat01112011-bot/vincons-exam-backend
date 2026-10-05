@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { LayoutDashboard, Users, Utensils, ReceiptText, Calculator, CalendarPlus, Wallet, KeyRound } from 'lucide-react';
+import { LayoutDashboard, Users, Utensils, ReceiptText, Calculator, CalendarPlus, Wallet, KeyRound, CreditCard, Lock, Unlock } from 'lucide-react';
 import Dashboard from './components/Dashboard';
 import Members from './components/Members';
 import DailyFood from './components/DailyFood';
 import OtherExpenses from './components/OtherExpenses';
 import FundCollection from './components/FundCollection';
+import TransferList from './components/TransferList';
 import Login from './components/Login';
 import { useAppStore } from './store.jsx';
 
@@ -13,7 +14,7 @@ function App() {
     return sessionStorage.getItem('food_cost_auth_session') === 'true';
   });
   const [activeTab, setActiveTab] = useState('dashboard');
-  const { data, activeMonth, setActiveMonth } = useAppStore();
+  const { data, activeMonth, setActiveMonth, activeData, toggleLockMonth } = useAppStore();
 
   const handleLoginSuccess = () => {
     sessionStorage.setItem('food_cost_auth_session', 'true');
@@ -55,6 +56,8 @@ function App() {
         return <OtherExpenses />;
       case 'fund-collection':
         return <FundCollection />;
+      case 'transfer-list':
+        return <TransferList />;
       default:
         return <Dashboard />;
     }
@@ -108,6 +111,14 @@ function App() {
             <Wallet size={20} />
             Thu quỹ Đồ dùng
           </button>
+
+          <button 
+            className={`w-full nav-item ${activeTab === 'transfer-list' ? 'active' : ''}`}
+            onClick={() => setActiveTab('transfer-list')}
+          >
+            <CreditCard size={20} />
+            Danh sách Chuyển khoản
+          </button>
         </nav>
       </aside>
 
@@ -126,16 +137,52 @@ function App() {
                 ))}
               </select>
             </div>
-            <button className="btn btn-outline" onClick={handleCreateMonth}>
+            <button 
+              className={`btn ${activeData?.isLocked ? 'btn-danger' : 'btn-primary'}`} 
+              onClick={() => {
+                toggleLockMonth(activeMonth);
+                alert(activeData?.isLocked ? 'Đã mở khóa! Bạn có thể chỉnh sửa dữ liệu kỳ này.' : 'Đã lưu trạng thái & Khóa dữ liệu thành công! Toàn bộ số liệu đã được bảo vệ trên ổ cứng.');
+              }}
+              style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', height: '38px', padding: '0 1rem' }}
+            >
+              {activeData?.isLocked ? (
+                <>
+                  <Lock size={16} /> Đã khóa dữ liệu
+                </>
+              ) : (
+                <>
+                  <Unlock size={16} /> Lưu & Khóa dữ liệu
+                </>
+              )}
+            </button>
+            <button className="btn btn-outline" onClick={handleCreateMonth} style={{ height: '38px' }}>
               <CalendarPlus size={18} />
               Tạo tháng mới
             </button>
-            <button className="btn-outline" style={{ border: '1px solid hsl(var(--border))', padding: '0.5rem', color: 'hsl(var(--muted-foreground))' }} onClick={handleChangePassword} title="Đổi mật khẩu">
+            <button className="btn-outline" style={{ border: '1px solid hsl(var(--border))', padding: '0.5rem', color: 'hsl(var(--muted-foreground))', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '38px', width: '38px' }} onClick={handleChangePassword} title="Đổi mật khẩu">
               <KeyRound size={18} />
             </button>
           </div>
         </div>
         <div style={{ flex: 1, overflowY: 'auto' }}>
+          {activeData?.isLocked && (
+            <div style={{
+              backgroundColor: 'rgba(239, 68, 68, 0.1)',
+              border: '1px solid rgba(239, 68, 68, 0.4)',
+              color: '#dc2626',
+              padding: '0.75rem 1rem',
+              borderRadius: '8px',
+              marginBottom: '1rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              fontWeight: '500',
+              fontSize: '0.85rem'
+            }}>
+              <Lock size={16} /> 
+              Kỳ kế toán này đã được KHÓA dữ liệu. Toàn bộ tính năng thêm, sửa, xóa hoặc import đã được tạm khóa để bảo vệ số liệu. Bấm nút "Đã khóa dữ liệu" ở trên để mở khóa nếu cần điều chỉnh.
+            </div>
+          )}
           {renderContent()}
         </div>
       </main>

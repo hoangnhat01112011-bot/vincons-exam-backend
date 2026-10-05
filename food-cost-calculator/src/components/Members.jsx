@@ -1,14 +1,13 @@
 import React, { useState, useRef, useMemo } from 'react';
 import { useAppStore } from '../store.jsx';
-import { Plus, Trash2, Upload, DatabaseBackup, X } from 'lucide-react';
+import { Plus, Trash2, Upload, X, Download, Printer, Search } from 'lucide-react';
 import * as XLSX from 'xlsx';
-import julyData from '../data/julyData.json';
 
 const formatCurrency = (val) => {
   return new Intl.NumberFormat('vi-VN').format(val || 0) + ' ₫';
 };
 
-const CurrencyInput = ({ value, onChange, style, negativeRed }) => {
+const CurrencyInput = ({ value, onChange, style, negativeRed, positiveGreen }) => {
   const [isEditing, setIsEditing] = useState(false);
   
   if (isEditing) {
@@ -26,13 +25,18 @@ const CurrencyInput = ({ value, onChange, style, negativeRed }) => {
   }
 
   const isNegative = value < 0;
-  const color = negativeRed && isNegative ? 'hsl(var(--destructive))' : 'inherit';
+  let color = 'inherit';
+  if (negativeRed && isNegative) {
+    color = 'hsl(var(--destructive))';
+  } else if (positiveGreen && value > 0) {
+    color = '#10b981'; // Green color for positive CK amounts
+  }
   
   return (
     <div 
       className="input text-right" 
       onClick={() => setIsEditing(true)}
-      style={{ ...style, cursor: 'text', color, display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}
+      style={{ ...style, cursor: 'text', color, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', fontWeight: positiveGreen && value > 0 ? '600' : 'normal' }}
     >
       {formatCurrency(value)}
     </div>
@@ -43,10 +47,68 @@ const CurrencyInput = ({ value, onChange, style, negativeRed }) => {
 const MONTH_DAYS = [26, 27, 28, 29, 30, 31, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
 
 export default function Members() {
-  const { activeData, updateData, overwritePeriod, stats } = useAppStore();
+  const { data, activeData, updateData, stats } = useAppStore();
   
   const [name, setName] = useState('');
   const [editingModal, setEditingModal] = useState(null); // holds member object being edited
+  const [showTrashModal, setShowTrashModal] = useState(false);
+
+  const duplicateNames = useMemo(() => {
+    const counts = {};
+    if (activeData && activeData.members) {
+      activeData.members.forEach(m => {
+        const norm = m.name.normalize('NFC').toLowerCase().trim();
+        counts[norm] = (counts[norm] || 0) + 1;
+      });
+    }
+    return counts;
+  }, [activeData?.members]);
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filterType, setFilterType] = useState('all'); // 'all', 'transferred', 'negative'
+
+  const filteredMemberStats = useMemo(() => {
+    return stats.memberStats.filter(m => {
+      const matchesSearch = m.name.normalize('NFC').toLowerCase().includes(searchTerm.normalize('NFC').toLowerCase().trim());
+      if (filterType === 'transferred') {
+        return matchesSearch && m.advance > 0;
+      }
+      if (filterType === 'negative') {
+        return matchesSearch && m.finalPayment < 0;
+      }
+      return matchesSearch;
+    });
+  }, [stats.memberStats, searchTerm, filterType]);
+
+  const totals = useMemo(() => {
+    let meals = 0;
+    let eatingCost = 0;
+    let prevMonthBalance = 0;
+    let advance = 0;
+    let arrears = 0;
+    let fundUsed = 0;
+    let finalPayment = 0;
+
+    filteredMemberStats.forEach(m => {
+      meals += Number(m.meals) || 0;
+      eatingCost += Number(m.eatingCost) || 0;
+      prevMonthBalance += Number(m.prevMonthBalance) || 0;
+      advance += Number(m.advance) || 0;
+      arrears += Number(m.arrears) || 0;
+      fundUsed += Number(m.fundUsed) || 0;
+      finalPayment += Number(m.finalPayment) || 0;
+    });
+
+    return { meals, eatingCost, prevMonthBalance, advance, arrears, fundUsed, finalPayment };
+  }, [filteredMemberStats]);
+
+  const handleExport = () => {
+    exportToExcel(stats, data);
+  };
+
+  const handlePrint = () => {
+    window.print();
+  };
 
   const handleAdd = (e) => {
     e.preventDefault();
@@ -68,9 +130,41 @@ export default function Members() {
   };
 
   const handleDelete = (id) => {
-    if (confirm('Bạn có chắc chắn muốn xóa thành viên này?')) {
-      updateData('members', activeData.members.filter(m => m.id !== id));
+    if (activeData.isLocked) {
+      alert('Không thể xóa: Kỳ kế toán này đã được khóa chỉnh sửa!');
+      return;
     }
+    const memberToDelete = activeData.members.find(m => m.id === id);
+    if (!memberToDelete) return;
+
+    if (confirm(`Bạn có chắc chắn muốn xóa thành viên ${memberToDelete.name}?`)) {
+      const updatedMembers = activeData.members.filter(m => m.id !== id);
+      const deletedMembers = activeData.deletedMembers || [];
+      const updatedDeleted = [
+        ...deletedMembers,
+        { ...memberToDelete, deletedAt: new Date().toISOString() }
+      ];
+      
+      updateData('members', updatedMembers);
+      updateData('deletedMembers', updatedDeleted);
+    }
+  };
+
+  const handleRestoreMember = (id) => {
+    if (activeData.isLocked) {
+      alert('Không thể khôi phục: Kỳ kế toán này đã được khóa chỉnh sửa!');
+      return;
+    }
+    const deletedList = activeData.deletedMembers || [];
+    const memberToRestore = deletedList.find(m => m.id === id);
+    if (!memberToRestore) return;
+
+    const updatedDeleted = deletedList.filter(m => m.id !== id);
+    const { deletedAt, ...cleanMember } = memberToRestore; // loại bỏ timestamp xóa
+    const updatedMembers = [...activeData.members, cleanMember];
+
+    updateData('members', updatedMembers);
+    updateData('deletedMembers', updatedDeleted);
   };
 
   const handleUpdate = (id, field, value) => {
@@ -165,7 +259,7 @@ export default function Members() {
           const nameStr = String(nameVal).trim();
           if (nameStr.toLowerCase().startsWith('tổng')) continue;
 
-          let advance = advanceColIdx !== -1 ? Number(row[advanceColIdx]) || 0 : 0;
+          let advance = 0; // Khởi tạo bằng 0 để tránh cộng dồn nhân đôi với danh sách chuyển khoản
           let prevMonthBalance = prevMonthColIdx !== -1 ? Number(row[prevMonthColIdx]) || 0 : 0;
           let arrears = arrearsColIdx !== -1 ? Number(row[arrearsColIdx]) || 0 : 0;
           let fundUsed = fundColIdx !== -1 ? Number(row[fundColIdx]) || 0 : 0;
@@ -210,13 +304,6 @@ export default function Members() {
       e.target.value = '';
     };
     reader.readAsBinaryString(file);
-  };
-
-  const handleSyncJulyLegacy = () => {
-    if (confirm('Bạn có chắc muốn ghi đè toàn bộ dữ liệu hiện tại bằng dữ liệu MẪU CŨ của Tháng 7 không?\nThao tác này sẽ đặt lại tháng hiện tại về 07/2026 và nạp dữ liệu cũ.')) {
-      overwritePeriod('2026-07', julyData);
-      alert('Đồng bộ thành công! Hiện tại hệ thống đang hiển thị Tháng 07/2026 với số liệu cũ.');
-    }
   };
 
   return (
@@ -287,11 +374,7 @@ export default function Members() {
         <h2 className="card-title">Quản lý Thành viên & Xuất ăn</h2>
         <div className="flex justify-between items-start mb-4">
           <p className="card-description">Quản lý tổng xuất ăn, ứng, quỹ (Các thông tin này sẽ hiển thị lên báo cáo)</p>
-          <div className="flex gap-2">
-            <button className="btn btn-outline" style={{ borderColor: 'hsl(var(--primary))', color: 'hsl(var(--primary))' }} onClick={handleSyncJulyLegacy}>
-              <DatabaseBackup size={18} />
-              Đồng bộ Tháng 7 (File cũ)
-            </button>
+          <div>
             <input 
               type="file" 
               accept=".xlsx, .xls" 
@@ -302,6 +385,14 @@ export default function Members() {
             <button className="btn btn-outline" onClick={() => fileInputRef.current.click()}>
               <Upload size={18} />
               Nhập từ Excel
+            </button>
+            <button className="btn btn-outline" style={{ borderColor: 'hsl(var(--success))', color: 'hsl(var(--success))' }} onClick={handleExport}>
+              <Download size={18} />
+              Xuất Excel
+            </button>
+            <button className="btn btn-outline" onClick={handlePrint}>
+              <Printer size={18} />
+              In ấn
             </button>
           </div>
         </div>
@@ -324,6 +415,115 @@ export default function Members() {
       </div>
 
       <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
+        {activeData.members.length > 0 && (
+          <div className="p-4 flex justify-between items-center gap-4 flex-wrap" style={{ borderBottom: '1px solid hsl(var(--border))', backgroundColor: 'hsl(var(--muted) / 0.2)' }}>
+            {/* Thanh tìm kiếm bên trái */}
+            <div className="relative" style={{ minWidth: '280px', flex: 1, maxWidth: '400px' }}>
+              <Search className="absolute left-3 top-1/2" style={{ transform: 'translateY(-50%)', color: 'hsl(var(--muted-foreground))' }} size={16} />
+              <input 
+                type="text" 
+                className="input pl-9 w-full" 
+                placeholder="Tìm kiếm thành viên theo tên..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                style={{ height: '36px' }}
+              />
+            </div>
+            
+            {/* Bộ lọc bên phải */}
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Lọc theo:</span>
+              <div style={{ display: 'flex', gap: '0.35rem', backgroundColor: 'rgba(0, 0, 0, 0.05)', padding: '4px', borderRadius: '8px' }}>
+                <button 
+                  onClick={() => setFilterType('all')}
+                  style={{ 
+                    border: 'none', 
+                    cursor: 'pointer', 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center',
+                    padding: '0.4rem 0.8rem',
+                    fontSize: '0.75rem',
+                    fontWeight: '600',
+                    borderRadius: '6px',
+                    transition: 'all 0.2s',
+                    backgroundColor: filterType === 'all' ? 'white' : 'transparent',
+                    color: filterType === 'all' ? 'hsl(var(--primary))' : 'hsl(var(--muted-foreground))',
+                    boxShadow: filterType === 'all' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none',
+                  }}
+                >
+                  Tất cả ({stats.memberStats.length})
+                </button>
+                <button 
+                  onClick={() => setFilterType('transferred')}
+                  style={{ 
+                    border: 'none', 
+                    cursor: 'pointer', 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center',
+                    padding: '0.4rem 0.8rem',
+                    fontSize: '0.75rem',
+                    fontWeight: '600',
+                    borderRadius: '6px',
+                    transition: 'all 0.2s',
+                    backgroundColor: filterType === 'transferred' ? '#10b981' : 'transparent',
+                    color: filterType === 'transferred' ? 'white' : 'hsl(var(--muted-foreground))',
+                    boxShadow: filterType === 'transferred' ? '0 1px 3px rgba(0,0,0,0.15)' : 'none',
+                  }}
+                >
+                  Đã chuyển khoản ({stats.memberStats.filter(m => m.advance > 0).length})
+                </button>
+                <button 
+                  onClick={() => setFilterType('negative')}
+                  style={{ 
+                    border: 'none', 
+                    cursor: 'pointer', 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center',
+                    padding: '0.4rem 0.8rem',
+                    fontSize: '0.75rem',
+                    fontWeight: '600',
+                    borderRadius: '6px',
+                    transition: 'all 0.2s',
+                    backgroundColor: filterType === 'negative' ? '#ef4444' : 'transparent',
+                    color: filterType === 'negative' ? 'white' : 'hsl(var(--muted-foreground))',
+                    boxShadow: filterType === 'negative' ? '0 1px 3px rgba(0,0,0,0.15)' : 'none',
+                  }}
+                >
+                  Đang âm tiền ({stats.memberStats.filter(m => m.finalPayment < 0).length})
+                </button>
+              </div>
+
+              {/* Nút thùng rác */}
+              {(activeData.deletedMembers || []).length > 0 && (
+                <button 
+                  onClick={() => setShowTrashModal(true)}
+                  style={{
+                    backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                    color: '#ef4444',
+                    border: '1px solid rgba(239, 68, 68, 0.2)',
+                    padding: '0.4rem 0.8rem',
+                    fontSize: '0.75rem',
+                    fontWeight: '600',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.25rem',
+                    height: '36px',
+                    transition: 'all 0.2s'
+                  }}
+                  title="Xem danh sách thành viên vừa xóa để khôi phục"
+                >
+                  🗑️ Khôi phục đã xóa ({(activeData.deletedMembers || []).length})
+                </button>
+              )}
+            </div>
+          </div>
+        )}
+
         {activeData.members.length === 0 ? (
           <div className="empty-state">
             Chưa có thành viên nào. Hãy thêm thành viên hoặc Import từ Excel.
@@ -340,64 +540,89 @@ export default function Members() {
                   <th className="text-right">Thành tiền</th>
                   <th className="text-right">Lũy kế tháng trước</th>
                   <th className="text-right">Đã ứng(CK)</th>
-                  <th className="text-right">Truy thu</th>
+                  <th className="text-right">Truy thu (Bổ sung)</th>
                   <th className="text-right">Thu quỹ đồ dùng</th>
                   <th className="text-right font-bold">Thanh toán</th>
                   <th className="text-center">Xóa</th>
                 </tr>
               </thead>
               <tbody>
-                {stats.memberStats.map((m, idx) => (
-                  <tr key={m.id}>
-                    <td>{idx + 1}</td>
-                    <td>
-                      <button 
-                        className="btn-outline" 
-                        style={{ padding: '0.35rem 0.5rem', width: '100%', minWidth: '130px', textAlign: 'left', border: '1px dashed hsl(var(--border))', fontWeight: 500 }}
-                        onClick={() => setEditingModal(JSON.parse(JSON.stringify(m)))}
-                        title="Click để nhập chi tiết xuất ăn từng ngày"
-                      >
-                        {m.name}
-                      </button>
+                {filteredMemberStats.length === 0 ? (
+                  <tr>
+                    <td colSpan="11" className="text-center py-8 text-muted-foreground font-medium" style={{ fontSize: '0.9rem' }}>
+                      Không tìm thấy thành viên nào khớp với bộ lọc hiện tại.
                     </td>
-                    
-                    <td className="text-center">
-                      <input 
-                        type="number"
-                        className="input text-center"
-                        value={m.meals}
-                        onChange={(e) => handleUpdate(m.id, 'meals', Number(e.target.value))}
-                        style={{ padding: '0.35rem', width: '100%', minWidth: '70px', fontSize: '0.85rem' }}
-                        step="0.5"
-                        min="0"
-                      />
-                    </td>
-                    
-                    <td className="text-right text-primary font-medium">{formatCurrency(stats.costPerMeal)}</td>
-                    <td className="text-right font-medium">{formatCurrency(m.eatingCost)}</td>
-                    
-                    <td className="text-right">
-                      <CurrencyInput 
-                        value={m.prevMonthBalance} 
-                        onChange={(val) => handleUpdate(m.id, 'prevMonthBalance', val)}
-                        style={{ padding: '0.35rem', width: '100%', minWidth: '100px', fontSize: '0.85rem' }}
-                        negativeRed={true}
-                      />
-                    </td>
-                    
-                    <td className="text-right">
-                      <CurrencyInput 
-                        value={m.advance} 
-                        onChange={(val) => handleUpdate(m.id, 'advance', val)}
-                        style={{ padding: '0.35rem', width: '100%', minWidth: '90px', fontSize: '0.85rem' }}
-                      />
-                    </td>
+                  </tr>
+                ) : (
+                  filteredMemberStats.map((m, idx) => {
+                  const norm = m.name.normalize('NFC').toLowerCase().trim();
+                  const isDuplicate = duplicateNames[norm] > 1;
+                  return (
+                    <tr key={m.id}>
+                      <td>{idx + 1}</td>
+                      <td>
+                        <button 
+                          className="btn-outline" 
+                          style={{ 
+                            padding: '0.35rem 0.5rem', 
+                            width: '100%', 
+                            minWidth: '130px', 
+                            textAlign: 'left', 
+                            border: isDuplicate ? '1px solid #ef4444' : '1px dashed hsl(var(--border))', 
+                            fontWeight: 500,
+                            color: isDuplicate ? '#dc2626' : 'inherit',
+                            backgroundColor: isDuplicate ? 'rgba(239, 68, 68, 0.05)' : 'transparent'
+                          }}
+                          onClick={() => setEditingModal(JSON.parse(JSON.stringify(m)))}
+                          title={isDuplicate ? "CẢNH BÁO: Tên trùng lặp! Click để chỉnh sửa." : "Click để nhập chi tiết xuất ăn từng ngày"}
+                        >
+                          {m.name} {isDuplicate && "⚠️"}
+                        </button>
+                      </td>
+                      
+                      <td className="text-center">
+                        <input 
+                          type="number"
+                          className="input text-center"
+                          value={m.meals}
+                          onChange={(e) => handleUpdate(m.id, 'meals', Number(e.target.value))}
+                          style={{ padding: '0.35rem', width: '70px', fontSize: '0.85rem' }}
+                          step="0.5"
+                          min="0"
+                        />
+                      </td>
+                      
+                      <td className="text-right text-primary font-medium">{formatCurrency(stats.costPerMeal)}</td>
+                      <td className="text-right font-medium">{formatCurrency(m.eatingCost)}</td>
+                      
+                      <td className="text-right">
+                        <CurrencyInput 
+                          value={m.prevMonthBalance} 
+                          onChange={(val) => handleUpdate(m.id, 'prevMonthBalance', val)}
+                          style={{ padding: '0.35rem', width: '100px', fontSize: '0.85rem' }}
+                          negativeRed={true}
+                        />
+                      </td>
+                      
+                      <td className="text-right">
+                        <div 
+                          className="font-semibold text-right"
+                          style={{ 
+                            padding: '0.35rem 0.5rem', 
+                            fontSize: '0.85rem', 
+                            color: m.advance > 0 ? '#10b981' : 'inherit',
+                            fontWeight: m.advance > 0 ? '600' : 'normal'
+                          }}
+                        >
+                          {formatCurrency(m.advance)}
+                        </div>
+                      </td>
                     
                     <td className="text-right">
                       <CurrencyInput 
                         value={m.arrears} 
                         onChange={(val) => handleUpdate(m.id, 'arrears', val)}
-                        style={{ padding: '0.35rem', width: '100%', minWidth: '90px', fontSize: '0.85rem' }}
+                        style={{ padding: '0.35rem', width: '90px', fontSize: '0.85rem' }}
                       />
                     </td>
                     
@@ -405,7 +630,7 @@ export default function Members() {
                       <CurrencyInput 
                         value={m.fundUsed} 
                         onChange={(val) => handleUpdate(m.id, 'fundUsed', val)}
-                        style={{ padding: '0.35rem', width: '100%', minWidth: '90px', fontSize: '0.85rem' }}
+                        style={{ padding: '0.35rem', width: '90px', fontSize: '0.85rem' }}
                       />
                     </td>
                     
@@ -418,12 +643,88 @@ export default function Members() {
                       </button>
                     </td>
                   </tr>
-                ))}
+                  );
+                })
+                )}
               </tbody>
+              <tfoot>
+                <tr style={{ backgroundColor: 'hsl(var(--muted) / 0.5)', fontWeight: 'bold', borderTop: '2px solid hsl(var(--border))' }}>
+                  <td colSpan="2" className="text-center" style={{ position: 'sticky', bottom: 0, backgroundColor: 'hsl(var(--muted))', zIndex: 5 }}>TỔNG CỘNG ({filteredMemberStats.length} người)</td>
+                  <td className="text-center">{totals.meals.toFixed(1).replace('.0', '')}</td>
+                  <td></td>
+                  <td className="text-right">{formatCurrency(totals.eatingCost)}</td>
+                  <td className="text-right" style={{ color: totals.prevMonthBalance < 0 ? 'hsl(var(--destructive))' : 'inherit' }}>
+                    {formatCurrency(totals.prevMonthBalance)}
+                  </td>
+                  <td className="text-right" style={{ color: '#10b981' }}>
+                    {formatCurrency(totals.advance)}
+                  </td>
+                  <td className="text-right">{formatCurrency(totals.arrears)}</td>
+                  <td className="text-right">{formatCurrency(totals.fundUsed)}</td>
+                  <td className="text-right" style={{ color: totals.finalPayment < 0 ? 'hsl(var(--destructive))' : '#10b981' }}>
+                    {formatCurrency(totals.finalPayment)}
+                  </td>
+                  <td></td>
+                </tr>
+              </tfoot>
             </table>
           </div>
         )}
       </div>
+
+      {/* Modal Thùng Rác khôi phục thành viên */}
+      {showTrashModal && (
+        <div style={{
+          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+          backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 1000,
+          display: 'flex', alignItems: 'center', justifyContent: 'center'
+        }}>
+          <div className="card" style={{ width: '90%', maxWidth: '500px', maxHeight: '80vh', overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
+            <div className="flex justify-between items-center mb-4" style={{ borderBottom: '1px solid hsl(var(--border))', paddingBottom: '0.75rem' }}>
+              <h3 className="card-title m-0 flex items-center gap-2" style={{ color: '#ef4444' }}>
+                🗑️ Khôi phục thành viên đã xóa
+              </h3>
+              <button className="btn-outline" style={{ padding: '0.25rem' }} onClick={() => setShowTrashModal(false)}>
+                <X size={20} />
+              </button>
+            </div>
+
+            {(activeData.deletedMembers || []).length === 0 ? (
+              <div className="empty-state" style={{ padding: '2rem' }}>Thùng rác trống.</div>
+            ) : (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', maxHeight: '400px', overflowY: 'auto' }}>
+                {(activeData.deletedMembers || []).map(m => (
+                  <div key={m.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.75rem', border: '1px solid hsl(var(--border))', borderRadius: '8px', backgroundColor: 'hsl(var(--muted) / 0.1)' }}>
+                    <div>
+                      <div className="font-bold" style={{ fontSize: '0.9rem' }}>{m.name}</div>
+                      <div style={{ fontSize: '0.7rem', color: 'hsl(var(--muted-foreground))' }}>
+                        Đã xóa: {new Date(m.deletedAt).toLocaleString('vi-VN')}
+                      </div>
+                    </div>
+                    <button 
+                      className="btn btn-outline" 
+                      onClick={() => handleRestoreMember(m.id)}
+                      style={{ 
+                        borderColor: '#10b981', 
+                        color: '#10b981', 
+                        fontSize: '0.75rem', 
+                        padding: '0.3rem 0.6rem',
+                        fontWeight: '600'
+                      }}
+                    >
+                      ↩️ Khôi phục
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="flex justify-end mt-6 pt-4" style={{ borderTop: '1px solid hsl(var(--border))' }}>
+              <button className="btn btn-outline" onClick={() => setShowTrashModal(false)}>Đóng</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

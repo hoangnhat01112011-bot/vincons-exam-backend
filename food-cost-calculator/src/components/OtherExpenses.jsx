@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-import { useAppStore } from '../store.jsx';
+import { useAppStore } from '../store';
 import { Plus, Trash2, Info } from 'lucide-react';
 import { format } from 'date-fns';
 
 const formatCurrency = (val) => {
   return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(val || 0);
+};
+
+const parseFormattedNumber = (val) => {
+  if (!val) return 0;
+  const cleaned = String(val).replace(/[.,]/g, '');
+  return Number(cleaned) || 0;
 };
 
 const EXPENSE_TYPES = [
@@ -30,7 +36,7 @@ export default function OtherExpenses() {
       id: Date.now().toString(),
       date,
       type,
-      amount: Number(amount),
+      amount: parseFormattedNumber(amount),
       note
     };
 
@@ -85,14 +91,18 @@ export default function OtherExpenses() {
           <div className="form-group" style={{ flex: '1 1 200px', marginBottom: 0 }}>
             <label className="form-label">Số tiền (VNĐ)</label>
             <input 
-              type="number" 
+              type="text" 
               className="input" 
-              placeholder="VD: 50000"
+              placeholder="VD: 50.000 hoặc 50000"
               value={amount}
               onChange={e => setAmount(e.target.value)}
-              min="0"
               required
             />
+            {amount && (
+              <div style={{ fontSize: '0.75rem', color: 'hsl(var(--primary))', marginTop: '4px', fontWeight: '500' }}>
+                Nhận diện: {formatCurrency(parseFormattedNumber(amount))}
+              </div>
+            )}
           </div>
           <div className="form-group" style={{ flex: '2 1 300px', marginBottom: 0 }}>
             <label className="form-label">Ghi chú</label>

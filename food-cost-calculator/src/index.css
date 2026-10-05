@@ -317,9 +317,6 @@ input, select {
 .items-center { align-items: center; }
 .gap-2 { gap: 0.5rem; }
 .gap-4 { gap: 1rem; }
-.w-full { width: 100%; }
-.font-medium { font-weight: 500; }
-.font-bold { font-weight: 700; }
 
 /* Empty state */
 .empty-state {
@@ -327,3 +324,78 @@ input, select {
   text-align: center;
   color: hsl(var(--muted-foreground));
 }
+
+@media print {
+  .no-print,
+  .sidebar,
+  .header .btn,
+  .header select,
+  .header button,
+  .members-container .card:first-of-type,
+  .members-container form,
+  .table th:last-child,
+  .table td:last-child {
+    display: none !important;
+  }
+  
+  .main-content {
+    padding: 0 !important;
+    background-color: white !important;
+    overflow: visible !important;
+  }
+  
+  .app-container {
+    height: auto !important;
+    overflow: visible !important;
+  }
+  
+  .card {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .table-container {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  
+  .table {
+    width: 100% !important;
+    border: 1px solid #000 !important;
+  }
+  
+  .table th, .table td {
+    border-bottom: 1px solid #000 !important;
+    border-right: 1px solid #ddd !important;
+    padding: 0.5rem !important;
+    color: #000 !important;
+  }
+  
+  .table th:last-child, .table td:last-child {
+    border-right: none !important;
+  }
+  
+  input.input {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    text-align: center !important;
+    box-shadow: none !important;
+  }
+  
+  /* Remove number input spinners in print */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .input.text-right {
+    text-align: right !important;
+  }
+}
+
