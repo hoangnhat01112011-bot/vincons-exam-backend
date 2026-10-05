@@ -158,18 +158,19 @@ function initExam() {
                     const isLýThuyết = c.includes('lý thuyết');
                     if (isLýThuyết) return false;
 
-                    const matchSub = (discLower.includes('thông gió') && (c.includes('thông gió') || e.includes('thông gió'))) ||
-                                     (discLower.includes('đhkk') && (c.includes('đhkk') || c.includes('điều hòa') || e.includes('đhkk'))) ||
-                                     (discLower.includes('chiller') && (c.includes('chiller') || e.includes('chiller')));
+                    const isHvacPrac = c.includes('thực hành') || e.includes('thực hành') || c.includes('đhtg') || e.includes('đhtg');
+                    if (!isHvacPrac) return false;
+
+                    if (discLower.includes('thông gió')) return c.includes('thông gió') || e.includes('thông gió');
+                    if (discLower.includes('đhkk')) return c.includes('đhkk') || e.includes('đhkk');
+                    if (discLower.includes('chiller')) return c.includes('chiller') || e.includes('chiller');
                     
-                    if (matchSub) return true;
-                    return c.includes('đhtg') || c.includes('điều hòa') || e.includes('đhtg');
+                    return true;
                 });
 
-                // Filter by Rank (Bậc 1, Bậc 2, Bậc 3, Tiểu đội trưởng) within sub-discipline if available
                 if (rankKey && prac.length > 0) {
                     let rankPrac = prac.filter(q => String(q.category || '').toLowerCase().includes(rankKey) || String(q.exam_set || '').toLowerCase().includes(rankKey));
-                    if (rankPrac.length > 0) prac = rankPrac;
+                    prac = rankPrac;
                 }
             } else if (discLower.includes('cấp thoát nước') || discLower.includes('ctn')) {
                 prac = QUESTIONS.filter(q => {
