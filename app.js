@@ -80,10 +80,14 @@ function initExam() {
                     const e = String(q.exam_set || '').toLowerCase();
                     return c.includes('cấp thoát nước') || c.includes('ctn') || e.includes('cấp thoát nước') || e.includes('ctn');
                 });
-            } else if (discLower.includes('điều hòa') || discLower.includes('đhtg') || discLower.includes('hvac')) {
+            } else if (discLower.includes('điều hòa') || discLower.includes('đhtg') || discLower.includes('hvac') || discLower.includes('thông gió') || discLower.includes('đhkk') || discLower.includes('chiller')) {
                 theoryQuestions = QUESTIONS.filter(q => {
                     const c = String(q.category || '').toLowerCase();
                     const e = String(q.exam_set || '').toLowerCase();
+                    const matchSub = (discLower.includes('thông gió') && (c.includes('thông gió') || e.includes('thông gió'))) ||
+                                     (discLower.includes('đhkk') && (c.includes('đhkk') || c.includes('điều hòa') || e.includes('đhkk'))) ||
+                                     (discLower.includes('chiller') && (c.includes('chiller') || e.includes('chiller')));
+                    if (matchSub) return true;
                     return c.includes('điều hòa') || c.includes('đhtg') || c.includes('hvac') || e.includes('điều hòa') || e.includes('đhtg') || e.includes('hvac');
                 });
             } else if (discLower.includes('phòng cháy') || discLower.includes('pccc')) {
@@ -139,14 +143,35 @@ function initExam() {
             if (isNaN(timeLeft) || timeLeft <= 0) {
                 timeLeft = 30 * 60;
             }
-        } else { // Thực hành / Tự Luận - Thực Hành - Phân tách độc lập 100% theo Bộ môn
+        } else { // Thực hành / Tự Luận - Thực Hành - Phân tách độc lập 100% theo Bộ môn & Bậc thợ
             let prac = [];
-            if (discLower.includes('điều hòa') || discLower.includes('đhtg') || discLower.includes('hvac')) {
+            const examCat = String((candidateInfo && candidateInfo.examCategory) || '').toLowerCase();
+            const rankKey = (job.includes('Bậc 1') || selectedSet.includes('Bậc 1') || examCat.includes('bậc 1')) ? 'bậc 1' :
+                            ((job.includes('Bậc 2') || selectedSet.includes('Bậc 2') || examCat.includes('bậc 2')) ? 'bậc 2' :
+                            ((job.includes('Bậc 3') || selectedSet.includes('Bậc 3') || examCat.includes('bậc 3')) ? 'bậc 3' :
+                            (examCat.includes('tiểu đội trưởng') ? 'tiểu đội trưởng' : '')));
+
+            if (discLower.includes('điều hòa') || discLower.includes('đhtg') || discLower.includes('hvac') || discLower.includes('thông gió') || discLower.includes('đhkk') || discLower.includes('chiller')) {
                 prac = QUESTIONS.filter(q => {
                     const c = String(q.category || '').toLowerCase();
                     const e = String(q.exam_set || '').toLowerCase();
-                    return (c.includes('đhtg') || c.includes('điều hòa') || e.includes('đhtg')) && !c.includes('lý thuyết');
+                    const isLýThuyết = c.includes('lý thuyết');
+                    if (isLýThuyết) return false;
+
+                    const matchSub = (discLower.includes('thông gió') && (c.includes('thông gió') || e.includes('thông gió'))) ||
+                                     (discLower.includes('đhkk') && (c.includes('đhkk') || c.includes('điều hòa') || e.includes('đhkk'))) ||
+                                     (discLower.includes('chiller') && (c.includes('chiller') || e.includes('chiller')));
+                    
+                    if (matchSub) return true;
+                    return c.includes('đhtg') || c.includes('điều hòa') || e.includes('đhtg');
                 });
+
+                // Filter by Rank (Bậc 1, Bậc 2, Bậc 3, Tiểu đội trưởng) within sub-discipline if available
+                if (rankKey && prac.length > 0) {
+                    let rankPrac = prac.filter(q => String(q.category || '').toLowerCase().includes(rankKey) || String(q.exam_set || '').toLowerCase().includes(rankKey));
+                    if (rankPrac.length > 0) prac = rankPrac;
+                }
+            }
             } else if (discLower.includes('cấp thoát nước') || discLower.includes('ctn')) {
                 prac = QUESTIONS.filter(q => {
                     const c = String(q.category || '').toLowerCase();
