@@ -1,4 +1,4 @@
-// File questions.js - Đã tạm thời gỡ bỏ 119 câu hỏi ĐHTG để chuẩn bị nạp ngân hàng đề mới
+// File questions.js - Cập nhật 100 câu hỏi Lý thuyết ĐHTG phân bổ ngẫu nhiên thành 50 Bộ đề thi (20 câu/đề)
 const QUESTIONS = [
   {
     "id": 1,
@@ -5683,5 +5683,1405 @@ const QUESTIONS = [
       "Biên bản họp nội bộ thầu phụ"
     ],
     "correct_index": 2
+  },
+  {
+    "id": "q_hvac_theory_1",
+    "question": "Câu 1. Trước khi bắt đầu công việc thi công ĐHTG, người thợ cần làm gì trước tiên?",
+    "options": [
+      "Lấy dụng cụ và bắt đầu thi công",
+      "Kiểm tra bản vẽ, biện pháp thi công, khu vực làm việc và yêu cầu an toàn",
+      "Chỉ kiểm tra vật tư",
+      "Chờ người khác làm trước"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_2",
+    "question": "Câu 2. Khi làm việc trên cao, biện pháp nào là quan trọng nhất?",
+    "options": [
+      "Sử dụng đầy đủ phương tiện bảo vệ cá nhân và hệ thống chống rơi phù hợp",
+      "Làm nhanh để giảm thời gian trên cao",
+      "Đi giày thể thao",
+      "Chỉ cần có người đứng bên dưới"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_3",
+    "question": "Câu 3. Khi sử dụng máy cắt, máy mài, người thợ cần:",
+    "options": [
+      "Sử dụng đúng thiết bị, kiểm tra trước khi vận hành và mang bảo hộ lao động theo quy định",
+      "Dùng tay giữ sát lưỡi cắt",
+      "Không cần kiểm tra dây điện",
+      "Tháo chắn bảo vệ để thao tác dễ hơn"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_4",
+    "question": "Câu 4. Khi phát hiện dây điện của thiết bị thi công bị hở, người thợ nên:",
+    "options": [
+      "Dùng tiếp nếu máy vẫn chạy",
+      "Quây băng cảnh báo để cảnh báo cho mọi người",
+      "Dùng băng keo để quấn tạm để dùng tiếp",
+      "Ngừng sử dụng và báo người phụ trách để xử lý"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_5",
+    "question": "Câu 5. Khi nâng một đoạn ống gió nặng lên cao, điều nào không được phép?",
+    "options": [
+      "Kiểm tra thiết bị nâng",
+      "Kiểm tra dây treo và điểm móc",
+      "Đứng bên dưới tải đang được nâng",
+      "Có người cảnh giới khu vực"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_6",
+    "question": "Câu 6. Khi hàn đồng hoặc hàn kim loại tại công trường, cần đặc biệt chú ý:",
+    "options": [
+      "Phòng cháy chữa cháy, thông gió và bảo vệ khu vực xung quanh",
+      "Không cần che chắn",
+      "Chỉ cần mang găng tay",
+      "Có thể hàn gần vật liệu dễ cháy"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_7",
+    "question": "Câu 7. Khi phát hiện điều kiện làm việc không an toàn, người thợ có quyền:",
+    "options": [
+      "Tiếp tục tìm mọi cách để làm cho xong việc",
+      "Chủ động bỏ đi chỗ khác",
+      "Tự tìm chỗ khác để ngồi nghỉ cho đến khi cảm thấy an toàn",
+      "Dừng công việc và báo cáo người phụ trách"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_8",
+    "question": "Câu 8. Khi thi công trong khu vực có nhiều đội MEP cùng làm việc, người thợ cần:",
+    "options": [
+      "Tự ý thay đổi tuyến ống",
+      "Chỉ quan tâm phần việc của mình",
+      "Phối hợp với các đội liên quan và tuân thủ bản vẽ/biện pháp được duyệt",
+      "Thi công trước rồi báo sau"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_9",
+    "question": "Câu 9. Mục đích của việc rào chắn khu vực thi công là:",
+    "options": [
+      "Để không cho nhà thầu ngoài vào",
+      "Trang trí công trường nhìn cho chuyên nghiệp",
+      "Ngăn người không phận sự tiếp cận khu vực nguy hiểm",
+      "Làm chỗ để vật tư cho đảm bảo"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_10",
+    "question": "Câu 10. Sau khi hoàn thành công việc trong ngày, người thợ cần:",
+    "options": [
+      "Thu dọn vật tư, dụng cụ, vệ sinh và đảm bảo khu vực an toàn",
+      "Tất hết nguồn điện để đề phòng cháy nổ",
+      "Chụp lại hiện trạng đang thi công để ngày mai làm tiếp",
+      "Để nguyên dụng cụ tại vị trí thi công để hôm sau không phải mang ra"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_11",
+    "question": "Câu 11. Trước khi lắp đặt một tuyến ống gió, người thợ cần căn cứ chủ yếu vào:",
+    "options": [
+      "Kinh nghiệm cá nhân",
+      "Dựa vào các ý kiến của các thành viên trong tổ",
+      "Bản vẽ thi công được phê duyệt và hiện trạng thực tế",
+      "Vị trí thuận tiện nhất"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_12",
+    "question": "Câu 12. Shop drawing có mục đích chính là:",
+    "options": [
+      "Chỉ dùng cho bộ phận văn phòng",
+      "Chỉ dùng để nghiệm thu vật tư",
+      "Thay thế hoàn toàn thiết kế",
+      "Thể hiện chi tiết để phục vụ thi công và phối hợp thực tế"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_13",
+    "question": "Câu 13. Khi kích thước trên bản vẽ khác với kích thước thực tế tại công trường, người thợ nên:",
+    "options": [
+      "Tự ý thay đổi kích thước",
+      "Tự ý sửa bản vẽ",
+      "Báo kỹ thuật/giám sát để xác nhận và xử lý",
+      "Bỏ qua sai khác"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_14",
+    "question": "Câu 14. Khi định vị vị trí treo giá đỡ, yếu tố nào cần kiểm tra?",
+    "options": [
+      "Cao độ, khoảng cách, tuyến ống và khả năng chịu lực cửa giá đỡ",
+      "Chiều dài ty ren giá đỡ, cao độ của các giá đỡ",
+      "Kiểm tra xem các tắc kê đạn đã được đóng cận thận chưa",
+      "Kiểm tra  giàn giáo có đảm bảo an toàn không."
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_15",
+    "question": "Câu 15. Trước khi khoan vào sàn hoặc tường, cần kiểm tra:",
+    "options": [
+      "Kiểm tra xem bê tông hay tường có đủ chắc không",
+      "Các đường ống, cáp điện và hệ thống ngầm có thể bị ảnh hưởng",
+      "Kiểm tra mũi khoan có đảm bảo không.",
+      "Kiểm tra xem có bị vướng vào sắt kết cấu không"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_16",
+    "question": "Câu 16. Cao độ của tuyến ống được xác định nhằm:",
+    "options": [
+      "Làm tuyến ống đẹp hơn בלבד",
+      "Không có tác dụng",
+      "Giảm số lượng công nhân",
+      "Đảm bảo đúng thiết kế và tránh xung đột với hệ thống khác"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_17",
+    "question": "Câu 17. Khi hai tuyến MEP giao nhau, ưu tiên xử lý bằng:",
+    "options": [
+      "Báo cáo cho tổ trưởng để phối hợp với giám sát kỹ thuật phối hợp xử lý",
+      "Tự ý đổi cao độ",
+      "Phối hợp theo bản vẽ phối hợp và chỉ dẫn kỹ thuật",
+      "Cắt một tuyến bất kỳ"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_18",
+    "question": "Câu 18. Khi nhận vật tư ống đồng, cần kiểm tra:",
+    "options": [
+      "Kiểm tra xem có đủ chiều dài không",
+      "Đường kính, chiều dày , chủng loại và màu sắc của ống đồng",
+      "Đường kính, chiều dày , chủng loại và trọng lượng của ống đồng",
+      "Đường kính, chiều dày, chủng loại và tình trạng vật tư"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_19",
+    "question": "Câu 19. Vật tư bị móp, méo hoặc hư hỏng nghiêm trọng nên:",
+    "options": [
+      "Che lại để không nhìn thấy",
+      "Dùng ở vị trí khó quan sát",
+      "Phân loại và báo cáo để xử lý",
+      "Đưa vào lắp đặt ngay"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_20",
+    "question": "Câu 20. Một tuyến ống thi công đúng yêu cầu phải đảm bảo:",
+    "options": [
+      "Chỉ cần đúng chiều dài",
+      "Đúng vị trí, cao độ, kích thước, hướng tuyến và yêu cầu kỹ thuật",
+      "Chỉ cần nhìn đẹp",
+      "Chỉ cần lắp được thiết bị"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_21",
+    "question": "Câu 21. Chức năng chính của hệ thống ống gió là:",
+    "options": [
+      "Dẫn điện",
+      "Dẫn môi chất lạnh",
+      "Dẫn nước",
+      "Dẫn và phân phối không khí"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_22",
+    "question": "Câu 22. Khi lắp ống gió chữ nhật, cần đặc biệt chú ý:",
+    "options": [
+      "Kích thước, độ kín, độ thẳng và hệ thống giá đỡ",
+      "Kiểm tra số lượng bulông có đủ không",
+      "Độ dày và màu sắc tôn",
+      "Độ dày và  chiều dài ống"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_23",
+    "question": "Câu 23. Mối nối ống gió cần được xử lý nhằm:",
+    "options": [
+      "Tăng trọng lượng ống",
+      "Đảm bảo độ kín và độ chắc chắn theo yêu cầu thiết kế",
+      "Giảm kích thước ống",
+      "Làm ống bóng hơn"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_24",
+    "question": "Câu 24. Khi gia công ống gió, đường cắt bị ba via nhiều có thể:",
+    "options": [
+      "Làm giảm tiếng ồn",
+      "Làm tăng lưu lượng gió",
+      "Không ảnh hưởng gì",
+      "Gây nguy hiểm và ảnh hưởng chất lượng lắp đặt"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_25",
+    "question": "Câu 25. Khi treo ống gió, giá đỡ phải:",
+    "options": [
+      "Được bố trí theo yêu cầu thiết kế/tiêu chuẩn và đảm bảo chắc chắn",
+      "Bố trí theo thực tế cho phù hợp",
+      "Dùng dây điện để treo",
+      "Tìm cách giảm bớt giá đỡ để tiết kiệm chi phí"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_26",
+    "question": "Câu 26. Không được phép sử dụng hệ thống nào làm giá treo ống gió nếu chưa được thiết kế cho mục đích đó?",
+    "options": [
+      "Hệ thống khác như ống nước hoặc cáp điện",
+      "Ty ren đúng quy cách",
+      "Kết cấu được phê duyệt",
+      "Giá đỡ chuyên dụng"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_27",
+    "question": "Câu 27. Khi nối ống gió bằng mặt bích, cần đảm bảo:",
+    "options": [
+      "Chỉ cần bắt một vài bulông",
+      "Có thể để hở mối nối",
+      "Mặt bích thẳng, liên kết chắc chắn và gioăng kín theo yêu cầu",
+      "Không cần gioăng"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_28",
+    "question": "Câu 28. Gioăng tại mối nối ống gió có tác dụng chính là:",
+    "options": [
+      "Hạn chế rò rỉ không khí",
+      "Làm đẹp đường ống",
+      "Tăng trọng lượng ống",
+      "Tăng tốc độ gió"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_29",
+    "question": "Câu 29. Khi lắp van gió, cần chú ý:",
+    "options": [
+      "Đúng hướng, đúng vị trí và có khả năng thao tác/bảo trì",
+      "Không cần kiểm tra chiều",
+      "Chỉ cần bắt chắc",
+      "Có thể đặt ở vị trí không thể tiếp cận"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_30",
+    "question": "Câu 30. Van VCD thường được sử dụng để:",
+    "options": [
+      "Điều chỉnh lưu lượng nước",
+      "Điều chỉnh lưu lượng gió",
+      "Cấp điện cho quạt",
+      "Điều chỉnh áp suất gas"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_31",
+    "question": "Câu 31. Khi lắp miệng gió, yếu tố nào quan trọng?",
+    "options": [
+      "Chỉ số lượng vít",
+      "Chỉ màu sắc",
+      "Chỉ kích thước cổ gió",
+      "Vị trí, cao độ, hướng thổi/hút và độ hoàn thiện"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_32",
+    "question": "Câu 32. Nếu ống gió bị móp làm giảm đáng kể tiết diện, người thợ nên:",
+    "options": [
+      "Cứ lắp tiếp",
+      "Đục thêm lỗ",
+      "Dùng băng keo che lại",
+      "Sửa chữa/thay thế để đảm bảo tiết diện thiết kế"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_33",
+    "question": "Câu 33. Khi nối ống gió mềm vào cổ gió, cần tránh:",
+    "options": [
+      "Kéo căng quá mức hoặc tạo nhiều nếp gấp gây cản trở dòng khí",
+      "Uốn cong hợp lý",
+      "Kiểm tra kín khí",
+      "Cố định hai đầu"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_34",
+    "question": "Câu 34. Ống gió mềm quá dài và bị võng nhiều có thể:",
+    "options": [
+      "Làm tăng lưu lượng",
+      "Làm tăng công suất quạt",
+      "Không ảnh hưởng",
+      "Tăng trở lực và làm giảm hiệu quả phân phối gió"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_35",
+    "question": "Câu 35. Sau khi hoàn thành hệ thống ống gió, cần:",
+    "options": [
+      "Đóng kín toàn bộ và không kiểm tra",
+      "Vệ sinh bên trong, kiểm tra mối nối, giá đỡ và các vị trí liên quan trước nghiệm thu",
+      "Chỉ kiểm tra bên ngoài",
+      "Sơn lại toàn bộ"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_36",
+    "question": "Câu 36. Ống đồng trong hệ thống điều hòa thường dùng để:",
+    "options": [
+      "Dẫn điện",
+      "Dẫn môi chất lạnh",
+      "Dẫn nước sinh hoạt",
+      "Dẫn khí nén"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_37",
+    "question": "Câu 37. Khi cắt ống đồng, dụng cụ phù hợp là:",
+    "options": [
+      "Kìm điện",
+      "Dao cắt ống chuyên dụng",
+      "Búa",
+      "Máy đục bê tông"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_38",
+    "question": "Câu 38. Sau khi cắt ống đồng, cần xử lý ba via nhằm:",
+    "options": [
+      "Làm đẹp đầu ống",
+      "Tăng đường kính ống",
+      "Giảm chiều dài ống",
+      "Tránh mạt đồng lọt vào hệ thống và đảm bảo đầu ống phù hợp cho loe/nối"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_39",
+    "question": "Câu 39. Khi loe đầu ống đồng, mặt loe phải:",
+    "options": [
+      "Nứt càng nhiều càng tốt",
+      "Méo để dễ siết",
+      "Đều, đúng kích thước và không bị nứt",
+      "Mỏng bất kỳ"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_40",
+    "question": "Câu 40. Siết đai ốc loe nên thực hiện:",
+    "options": [
+      "Theo lực siết yêu cầu của nhà sản xuất bằng dụng cụ phù hợp",
+      "Không cần kiểm soát lực",
+      "Bằng tay càng chặt càng tốt",
+      "Dùng búa đóng"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_41",
+    "question": "Câu 41. Nếu mối loe bị nứt, người thợ nên:",
+    "options": [
+      "Bỏ qua nếu vết nứt nhỏ",
+      "Dùng băng keo quấn lại",
+      "Bôi dầu lên vết nứt",
+      "Cắt bỏ và làm lại mối loe đúng kỹ thuật"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_42",
+    "question": "Câu 42. Khi hàn ống đồng cho hệ thống lạnh, việc cấp khí nitơ khô phù hợp trong quá trình hàn có tác dụng:",
+    "options": [
+      "Làm ống đồng mềm hơn",
+      "Tăng áp suất gas vận hành",
+      "Hạn chế hình thành oxit bên trong đường ống",
+      "Tăng nhiệt độ hàn"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_43",
+    "question": "Câu 43. Sau khi hàn đường ống môi chất, cần kiểm tra:",
+    "options": [
+      "Độ kín và chất lượng mối hàn theo quy trình",
+      "Chỉ chiều dài ống",
+      "Màu sơn",
+      "Độ bóng của ống"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_44",
+    "question": "Câu 44. Chức năng của quá trình hút chân không hệ thống lạnh là:",
+    "options": [
+      "Tăng điện áp máy nén",
+      "Làm sạch bên ngoài ống",
+      "Loại bỏ không khí và hơi ẩm khỏi hệ thống",
+      "Tăng lượng môi chất"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_45",
+    "question": "Câu 45. Nếu trong hệ thống lạnh còn nhiều hơi ẩm, có thể:",
+    "options": [
+      "Không ảnh hưởng",
+      "Gây ảnh hưởng đến độ tin cậy và hiệu suất hệ thống",
+      "Giảm tải máy nén",
+      "Làm tăng công suất lạnh"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_46",
+    "question": "Câu 46. Khi thực hiện hút chân không, người thợ cần:",
+    "options": [
+      "Dùng máy nén khí",
+      "Chỉ mở van gas",
+      "Dùng quạt",
+      "Sử dụng bơm chân không và đồng hồ/dụng cụ phù hợp"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_47",
+    "question": "Câu 47. Sau khi hút chân không đạt yêu cầu, việc kiểm tra giữ chân không nhằm:",
+    "options": [
+      "Kiểm tra dây điện",
+      "Tăng áp suất gas",
+      "Làm nóng đường ống",
+      "Kiểm tra khả năng giữ trạng thái chân không và phát hiện vấn đề có thể xảy ra"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_48",
+    "question": "Câu 48. Khi nạp môi chất lạnh, loại môi chất phải:",
+    "options": [
+      "Trộn các loại gas khác nhau",
+      "Đúng loại được quy định cho hệ thống",
+      "Dùng bất kỳ gas nào có sẵn",
+      "Chọn tùy ý"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_49",
+    "question": "Câu 49. Khi làm việc với môi chất lạnh, người thợ cần:",
+    "options": [
+      "Xả môi chất trực tiếp tùy ý",
+      "Tuân thủ quy trình an toàn, sử dụng PPE và thiết bị chuyên dụng",
+      "Làm việc trong không gian kín không thông gió",
+      "Dùng lửa kiểm tra rò rỉ"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_50",
+    "question": "Câu 50. Dùng lửa trực tiếp để kiểm tra rò rỉ môi chất lạnh là:",
+    "options": [
+      "Phương pháp an toàn",
+      "Không phù hợp và có thể nguy hiểm",
+      "Phương pháp tiêu chuẩn",
+      "Phương pháp bắt buộc"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_51",
+    "question": "Câu 51. Mục đích chính của bảo ôn đường ống lạnh là:",
+    "options": [
+      "Tăng trọng lượng ống",
+      "Tăng áp suất gas",
+      "Hạn chế trao đổi nhiệt và ngăn hiện tượng đọng sương đối với tuyến cần bảo ôn",
+      "Làm đẹp đường ống"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_52",
+    "question": "Câu 52. Khi lắp bảo ôn ống đồng, mối nối bảo ôn cần:",
+    "options": [
+      "Không cần quan tâm",
+      "Để hở",
+      "Được xử lý kín theo yêu cầu",
+      "Cắt bỏ"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_53",
+    "question": "Câu 53. Nếu bảo ôn đường ống gas lạnh bị hở tại mối nối, nguy cơ thường gặp là:",
+    "options": [
+      "Tăng công suất lạnh",
+      "Đọng sương và nhỏ nước",
+      "Tăng lưu lượng gas",
+      "Giảm điện áp"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_54",
+    "question": "Câu 54. Khi cắt bảo ôn, nên:",
+    "options": [
+      "Cắt vừa đủ, tránh làm rách hoặc biến dạng vật liệu",
+      "Xé bằng tay",
+      "Cắt càng ngắn càng tốt",
+      "Dùng lửa đốt"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_55",
+    "question": "Câu 55. Không nên để bảo ôn bị:",
+    "options": [
+      "Ép, dập hoặc hở quá mức",
+      "Liên tục",
+      "Đúng chiều dày",
+      "Cố định chắc chắn"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_56",
+    "question": "Câu 56. Khi hai tuyến ống lạnh cần bảo ôn riêng biệt, nguyên tắc chung là:",
+    "options": [
+      "Có thể gộp chung tùy ý",
+      "Bỏ bảo ôn một tuyến",
+      "Thực hiện theo thiết kế và yêu cầu kỹ thuật của hệ thống",
+      "Chỉ bảo ôn đoạn gần thiết bị"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_57",
+    "question": "Câu 57. Tại vị trí giá đỡ ống đồng có bảo ôn, cần:",
+    "options": [
+      "Có giải pháp đỡ phù hợp, hạn chế cầu nhiệt và bảo vệ lớp bảo ôn",
+      "Cắt bỏ bảo ôn rộng ra",
+      "Không cần giá đỡ",
+      "Ép nát hoàn toàn lớp bảo ôn"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_58",
+    "question": "Câu 58. Bảo ôn bị thấm nước lâu ngày có thể:",
+    "options": [
+      "Không ảnh hưởng",
+      "Giảm hiệu quả cách nhiệt và gây các vấn đề liên quan",
+      "Tăng hiệu suất lạnh",
+      "Luôn tốt hơn"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_59",
+    "question": "Câu 59. Khi thi công bảo ôn ngoài trời, cần đặc biệt chú ý:",
+    "options": [
+      "Để hở mối nối",
+      "Bỏ toàn bộ lớp bảo vệ",
+      "Không cần chống nước",
+      "Bảo vệ lớp bảo ôn khỏi tác động môi trường theo thiết kế"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_60",
+    "question": "Câu 60. Tiêu chí quan trọng khi nghiệm thu bảo ôn là:",
+    "options": [
+      "Đúng vật liệu, chiều dày, liên tục, kín mối nối và hoàn thiện theo yêu cầu",
+      "Chỉ cần đủ chiều dài",
+      "Chỉ cần nhìn đẹp",
+      "Chỉ cần đúng màu"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_61",
+    "question": "Câu 61. Nước ngưng của dàn lạnh sinh ra chủ yếu do:",
+    "options": [
+      "Nước mưa",
+      "Nước cấp sinh hoạt",
+      "Nước từ đường ống gas",
+      "Quá trình ngưng tụ hơi nước trên bề mặt lạnh"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_62",
+    "question": "Câu 62. Đường ống nước ngưng thông thường cần:",
+    "options": [
+      "Lắp hoàn toàn nằm ngang",
+      "Có độ dốc phù hợp theo thiết kế để đảm bảo thoát nước",
+      "Không cần kiểm tra cao độ",
+      "Lắp ngược dốc"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_63",
+    "question": "Câu 63. Nếu đường ống nước ngưng bị võng tạo thành túi nước, có thể:",
+    "options": [
+      "Không ảnh hưởng",
+      "Tăng khả năng thoát nước",
+      "Làm lạnh tốt hơn",
+      "Gây ứ đọng và tràn nước"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_64",
+    "question": "Câu 64. Khi lắp ống nước ngưng, cần tránh:",
+    "options": [
+      "Kiểm tra thử nước",
+      "Gấp khúc hoặc võng gây cản trở thoát nước",
+      "Giá đỡ chắc chắn",
+      "Độ dốc phù hợp"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_65",
+    "question": "Câu 65. Thử nước đường ống ngưng nhằm:",
+    "options": [
+      "Kiểm tra áp suất gas",
+      "Kiểm tra khả năng thoát nước và phát hiện rò rỉ/tắc nghẽn",
+      "Kiểm tra máy nén",
+      "Kiểm tra điện áp"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_66",
+    "question": "Câu 66. Khi phát hiện nước ngưng chảy ngược hoặc thoát chậm, cần kiểm tra trước:",
+    "options": [
+      "Dây điện",
+      "Màu sơn",
+      "Độ dốc, điểm võng, tắc nghẽn và cấu tạo đường ống",
+      "Quạt dàn nóng"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_67",
+    "question": "Câu 67. Ống nước ngưng cần được:",
+    "options": [
+      "Treo bằng dây điện",
+      "Đặt trên trần không cần giá đỡ",
+      "Cố định chắc chắn và bảo đảm tuyến ống theo thiết kế",
+      "Để tự do"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_68",
+    "question": "Câu 68. Khi đấu ống nước ngưng vào hệ thống thoát nước chung, cần:",
+    "options": [
+      "Bịt kín mọi trường hợp",
+      "Đấu tùy ý",
+      "Tuân thủ thiết kế và yêu cầu về bẫy nước/thông khí nếu có quy định",
+      "Không cần kiểm tra"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_69",
+    "question": "Câu 69. Một trong những nguyên nhân gây chảy nước từ dàn lạnh là:",
+    "options": [
+      "Dây điện quá ngắn",
+      "Miệng gió quá sạch",
+      "Giá đỡ chắc chắn",
+      "Đường nước ngưng bị tắc hoặc thoát nước không tốt"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_70",
+    "question": "Câu 70. Sau khi hoàn thành đường nước ngưng, cần:",
+    "options": [
+      "Đóng trần ngay",
+      "Không cần nghiệm thu",
+      "Chỉ nhìn bằng mắt",
+      "Thử nước và kiểm tra thực tế trước khi đóng trần/che khuất"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_71",
+    "question": "Câu 71. Khi lắp dàn lạnh treo tường, cần đảm bảo:",
+    "options": [
+      "Có thể nghiêng tùy ý",
+      "Chỉ cần treo chắc",
+      "Đặt sát mọi vật cản",
+      "Đúng vị trí, cao độ, cân bằng và thuận tiện bảo trì"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_72",
+    "question": "Câu 72. Khi lắp dàn lạnh âm trần cassette, cần kiểm tra:",
+    "options": [
+      "Chỉ chiều dài ống đồng",
+      "Chỉ dây điều khiển",
+      "Chỉ màu mặt nạ",
+      "Cao độ, độ cân bằng, kích thước lỗ mở và vị trí kết nối"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_73",
+    "question": "Câu 73. Nếu dàn lạnh lắp không cân bằng, có thể:",
+    "options": [
+      "Ảnh hưởng thoát nước ngưng và hoàn thiện thiết bị",
+      "Không ảnh hưởng",
+      "Tăng áp suất gas",
+      "Tăng hiệu suất"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_74",
+    "question": "Câu 74. Khi lắp dàn nóng, cần đảm bảo:",
+    "options": [
+      "Che kín toàn bộ cửa hút/thải gió",
+      "Đặt sát tường bất kể khoảng cách",
+      "Thông thoáng, chắc chắn, đúng khoảng cách và thuận tiện bảo trì theo yêu cầu",
+      "Đặt trên vật liệu không ổn định"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_75",
+    "question": "Câu 75. Khi lắp dàn nóng trên giá thép, giá đỡ phải:",
+    "options": [
+      "Không cần kiểm tra",
+      "Đủ khả năng chịu tải và được cố định chắc chắn",
+      "Có thể dùng vật liệu tạm",
+      "Chỉ cần đẹp"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_76",
+    "question": "Câu 76. Khi kết nối ống đồng vào thiết bị, người thợ cần:",
+    "options": [
+      "Ép ống cho vừa",
+      "Dùng ống bất kỳ",
+      "Hàn trực tiếp vào mọi loại đầu nối",
+      "Đảm bảo đúng đường kính, đúng cổng kết nối và mối nối kín"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_77",
+    "question": "Câu 77. Khi đấu dây điện cho thiết bị điều hòa, cần:",
+    "options": [
+      "Đấu thử từng dây",
+      "Chỉ cần thiết bị chạy",
+      "Theo sơ đồ điện và đúng quy cách dây/đầu nối",
+      "Đấu theo màu dây bất kỳ"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_78",
+    "question": "Câu 78. Khi đấu dây điều khiển, người thợ cần:",
+    "options": [
+      "Tuân thủ sơ đồ đấu nối của nhà sản xuất",
+      "Đấu tùy ý",
+      "Bỏ dây tiếp địa",
+      "Đảo dây tùy trường hợp"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_79",
+    "question": "Câu 79. Tiếp địa cho thiết bị có mục đích:",
+    "options": [
+      "Tăng lưu lượng gió",
+      "Đảm bảo an toàn điện theo thiết kế/quy định",
+      "Tăng công suất lạnh",
+      "Giảm đường kính ống"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_80",
+    "question": "Câu 80. Trước khi chạy thử thiết bị, cần kiểm tra:",
+    "options": [
+      "Chỉ bật nguồn điện",
+      "Chỉ kiểm tra quạt",
+      "Chỉ kiểm tra remote",
+      "Kết nối cơ khí, môi chất, thoát nước, điện và các điều kiện liên quan"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_81",
+    "question": "Câu 81. Quạt thông gió có chức năng chính là:",
+    "options": [
+      "Cấp điện",
+      "Tạo nước ngưng",
+      "Làm lạnh môi chất",
+      "Tạo và duy trì dòng không khí theo yêu cầu hệ thống"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_82",
+    "question": "Câu 82. Khi lắp quạt, cần kiểm tra:",
+    "options": [
+      "Chỉ tiếng ồn",
+      "Chỉ màu sơn",
+      "Chiều quay, hướng gió, cố định, rung và các kết nối liên quan",
+      "Chỉ kích thước"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_83",
+    "question": "Câu 83. Quạt bị rung mạnh khi vận hành có thể do:",
+    "options": [
+      "Nước ngưng thoát tốt",
+      "Ống đồng đúng quy cách",
+      "Miệng gió sạch",
+      "Cố định không tốt, mất cân bằng hoặc vấn đề cơ khí"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_84",
+    "question": "Câu 84. Khi kết nối quạt với ống gió, khớp nối mềm có thể có tác dụng:",
+    "options": [
+      "Làm lạnh không khí",
+      "Hạn chế truyền rung từ quạt sang hệ thống ống",
+      "Tăng trọng lượng quạt",
+      "Tăng điện áp"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_85",
+    "question": "Câu 85. Khi lắp van một chiều trong hệ thống thông gió, cần:",
+    "options": [
+      "Lắp đúng hướng dòng khí",
+      "Không cần kiểm tra",
+      "Lắp ngược chiều",
+      "Đặt tùy ý"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_86",
+    "question": "Câu 86. Fire damper có liên quan chủ yếu đến:",
+    "options": [
+      "Tăng công suất lạnh",
+      "Thoát nước ngưng",
+      "Điều chỉnh gas",
+      "Yêu cầu an toàn cháy và ngăn cháy lan qua hệ thống ống gió theo thiết kế"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_87",
+    "question": "Câu 87. Khi lắp thiết bị giảm rung cho quạt, mục đích là:",
+    "options": [
+      "Tăng điện áp",
+      "Tăng áp suất gas",
+      "Giảm truyền rung và tiếng ồn kết cấu",
+      "Tăng lưu lượng nước"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_88",
+    "question": "Câu 88. Nếu quạt quay ngược chiều thiết kế, người thợ cần:",
+    "options": [
+      "Kiểm tra nguồn điện/đấu nối và hướng dẫn của nhà sản xuất",
+      "Tăng điện áp",
+      "Bịt cửa hút",
+      "Để quạt chạy tiếp"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_89",
+    "question": "Câu 89. Khi kiểm tra hệ thống thông gió, một trong những yếu tố quan trọng là:",
+    "options": [
+      "Lưu lượng gió và trạng thái vận hành theo yêu cầu thiết kế",
+      "Màu ống gió",
+      "Số lượng bulông không liên quan",
+      "Độ bóng của tôn"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_90",
+    "question": "Câu 90. Khi miệng gió có lưu lượng thấp bất thường, cần xem xét:",
+    "options": [
+      "Tắc nghẽn, van điều chỉnh, tổn thất hệ thống, quạt và cân bằng gió",
+      "Chỉ độ dày tôn",
+      "Chỉ màu miệng gió",
+      "Chỉ lớp sơn"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_91",
+    "question": "Câu 91. Mục đích của kiểm tra độ kín đường ống môi chất là:",
+    "options": [
+      "Phát hiện rò rỉ trước khi đưa hệ thống vào vận hành",
+      "Tăng lượng gas",
+      "Làm lạnh đường ống",
+      "Làm sạch bảo ôn"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_92",
+    "question": "Câu 92. Khi thử áp đường ống môi chất, người thợ phải:",
+    "options": [
+      "Dùng oxy tùy ý",
+      "Tuân thủ áp suất, môi chất thử và quy trình được phê duyệt/nhà sản xuất yêu cầu",
+      "Dùng bất kỳ khí nào có sẵn",
+      "Tăng áp càng cao càng tốt"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_93",
+    "question": "Câu 93. Sau khi hoàn thành lắp đặt, trước khi bàn giao hệ thống cần:",
+    "options": [
+      "Chỉ bật máy",
+      "Kiểm tra, thử nghiệm, chạy thử và ghi nhận kết quả theo yêu cầu",
+      "Chỉ vệ sinh",
+      "Chỉ chụp ảnh"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_94",
+    "question": "Câu 94. Khi chạy thử điều hòa, các thông số cần quan tâm có thể bao gồm:",
+    "options": [
+      "Nhiệt độ, trạng thái vận hành, dòng điện, áp suất/nhiệt độ môi chất và các thông số theo hướng dẫn",
+      "Chỉ tiếng quạt",
+      "Chỉ remote",
+      "Chỉ màu thiết bị"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_95",
+    "question": "Câu 95. Khi phát hiện hệ thống hoạt động bất thường, người thợ nên:",
+    "options": [
+      "Ghi nhận hiện tượng, kiểm tra theo quy trình và báo người phụ trách khi cần",
+      "Tự ý thay linh kiện",
+      "Tiếp tục chạy đến khi tự dừng",
+      "Tăng gas ngay"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_96",
+    "question": "Câu 96. Dàn lạnh hoạt động nhưng nước liên tục chảy ra ngoài. Nguyên nhân nào cần ưu tiên kiểm tra?",
+    "options": [
+      "Sơn dàn nóng",
+      "Màu dây điện",
+      "Đường thoát nước ngưng, độ dốc, điểm tắc/võng và độ cân bằng dàn lạnh",
+      "Độ dày tôn ống gió"
+    ],
+    "correct_index": 2,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_97",
+    "question": "Câu 97. Sau khi hoàn thành tuyến ống đồng, phát hiện áp suất thử không giữ ổn định. Cách xử lý phù hợp nhất là:",
+    "options": [
+      "Tìm và xử lý nguyên nhân rò rỉ, sau đó thử lại theo quy trình",
+      "Bổ sung gas để bù",
+      "Bọc thêm bảo ôn",
+      "Cho hệ thống chạy ngay"
+    ],
+    "correct_index": 0,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_98",
+    "question": "Câu 98. Một đoạn ống gió có tiếng ồn và rung bất thường khi quạt chạy. Người thợ nên kiểm tra trước:",
+    "options": [
+      "Nước ngưng",
+      "Giá đỡ, liên kết, khớp nối mềm, van và các vị trí có thể gây rung",
+      "Đường kính ống đồng",
+      "Màu sơn ống"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_99",
+    "question": "Câu 99. Khi tuyến ống ĐHTG thực tế bị xung đột với dầm kết cấu, phương án đúng là:",
+    "options": [
+      "Tự ý thay đổi kích thước ống",
+      "Báo kỹ thuật/giám sát để phối hợp và phê duyệt phương án xử lý",
+      "Ép ống cho lọt qua",
+      "Tự ý khoan/cắt dầm"
+    ],
+    "correct_index": 1,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
+  },
+  {
+    "id": "q_hvac_theory_100",
+    "question": "Câu 100. Một người thợ ĐHTG được đánh giá có tay nghề tốt nhất khi:",
+    "options": [
+      "Có thể tự xử lý mọi việc mà không cần bản vẽ",
+      "Chỉ cần làm được một loại hệ thống",
+      "Thi công thật nhanh nhưng bỏ qua một số yêu cầu",
+      "Thi công đúng bản vẽ, đúng kỹ thuật, an toàn, biết kiểm tra chất lượng và xử lý tình huống đúng quy trình"
+    ],
+    "correct_index": 3,
+    "category": "Lý thuyết - Điều hòa thông gió",
+    "exam_set": "Lý thuyết - ĐHTG (50 Bộ đề)",
+    "type": "multiple_choice"
   }
 ];
