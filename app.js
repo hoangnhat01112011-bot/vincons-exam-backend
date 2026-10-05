@@ -100,11 +100,19 @@ function initExam() {
                 });
             }
 
-            // Strictly filter by Rank (Bậc 2 or Bậc 3) WITHIN discipline
-            if (job.includes('Bậc 2') || selectedSet.includes('Bậc 2')) {
+            // Strictly filter by Rank (Tiểu đội trưởng, Thợ Bậc 1, Bậc 2, Bậc 3) WITHIN discipline
+            const examCat = String((candidateInfo && candidateInfo.examCategory) || '');
+            if (job.includes('Bậc 1') || selectedSet.includes('Bậc 1') || examCat.includes('Bậc 1')) {
+                let b1 = theoryQuestions.filter(q => String(q.category || '').includes('Bậc 1') || String(q.exam_set || '').includes('Bậc 1'));
+                if (b1.length > 0) theoryQuestions = b1;
+                else {
+                    let b2 = theoryQuestions.filter(q => String(q.category || '').includes('Bậc 2') || String(q.exam_set || '').includes('Bậc 2'));
+                    if (b2.length > 0) theoryQuestions = b2;
+                }
+            } else if (job.includes('Bậc 2') || selectedSet.includes('Bậc 2') || examCat.includes('Bậc 2')) {
                 let b2 = theoryQuestions.filter(q => String(q.category || '').includes('Bậc 2') || String(q.exam_set || '').includes('Bậc 2'));
                 if (b2.length > 0) theoryQuestions = b2;
-            } else if (job.includes('Bậc 3') || selectedSet.includes('Bậc 3')) {
+            } else if (job.includes('Bậc 3') || selectedSet.includes('Bậc 3') || examCat.includes('Bậc 3') || examCat.includes('Tiểu đội trưởng')) {
                 let b3 = theoryQuestions.filter(q => String(q.category || '').includes('Bậc 3') || String(q.exam_set || '').includes('Bậc 3'));
                 if (b3.length > 0) theoryQuestions = b3;
             }
