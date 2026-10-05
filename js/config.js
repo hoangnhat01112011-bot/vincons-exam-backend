@@ -143,13 +143,42 @@ window.syncQuestionOverridesFromCloud = async function() {
     } catch(e) {}
 };
 
+// Helper to apply dynamic BCH Subtitle stored in localStorage and Google Sheets
+window.applyBchSubtitleOverrides = function() {
+    try {
+        const storedSubtitle = localStorage.getItem('vincons_bch_subtitle');
+        if (storedSubtitle && storedSubtitle.trim()) {
+            const els = document.querySelectorAll('.bch-subtitle-text');
+            els.forEach(el => {
+                el.textContent = storedSubtitle.trim();
+            });
+        }
+    } catch(e) {}
+};
+
+window.syncBchSubtitleFromCloud = async function() {
+    if (typeof CONFIG === 'undefined') return;
+    try {
+        const res = await CONFIG.apiCall('/api/auth/get-settings');
+        const json = await res.json();
+        if (json.status === 'success' && json.data && json.data.bch_subtitle) {
+            localStorage.setItem('vincons_bch_subtitle', json.data.bch_subtitle.trim());
+            window.applyBchSubtitleOverrides();
+        }
+    } catch(e) {}
+};
+
 // Auto apply overrides on load
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         window.applyQuestionOverrides();
         window.syncQuestionOverridesFromCloud();
+        window.applyBchSubtitleOverrides();
+        window.syncBchSubtitleFromCloud();
     });
 } else {
     window.applyQuestionOverrides();
     window.syncQuestionOverridesFromCloud();
+    window.applyBchSubtitleOverrides();
+    window.syncBchSubtitleFromCloud();
 }

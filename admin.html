@@ -59,10 +59,18 @@
                     <input type="number" id="reviewLimit" class="form-control" placeholder="Mặc định: 10" min="1" max="150">
                 </div>
 
+                <div class="form-group">
+                    <label for="bchSubtitle">Tên Ban Chỉ Huy (Tiêu đề phụ Header) (*)</label>
+                    <input type="text" id="bchSubtitle" class="form-control" placeholder="Mặc định: BCH HẠ LONG XANH - VINCONS" value="BCH HẠ LONG XANH - VINCONS">
+                </div>
+
                 <div class="form-group" style="margin-top: 20px; border-top: 1px dashed #ccc; padding-top: 20px;">
                     <label for="adminConfirmPin">Xác nhận PIN Giám thị (*)</label>
                     <input type="password" id="adminConfirmPin" class="form-control" placeholder="Nhập mã Giám thị (VINCONS2026) để lưu thay đổi" required>
                 </div>
+                <button type="submit" id="btnUpdate" class="btn btn-primary btn-block" style="margin-top: 15px;">💾 Lưu Cài Đặt Hệ Thống</button>
+            </form>
+        </div>
         <div class="card" style="max-width: 900px; margin: 20px auto;">
             <div class="text-center" style="margin-bottom: 20px;">
                 <h2 style="color: var(--primary);">🛠️ QUẢN LÝ & SỬA LỖI ĐÁP ÁN CÂU HỎI</h2>
@@ -169,9 +177,13 @@
                         document.getElementById('newExamPin').value = data.data.exam_pin || "68686868";
                         document.getElementById('newExamPinTuyendung').value = data.data.exam_pin_tuyendung || "88888888";
                         document.getElementById('reviewLimit').value = data.data.review_limit || 10;
+                        const bchVal = data.data.bch_subtitle || localStorage.getItem('vincons_bch_subtitle') || "BCH HẠ LONG XANH - VINCONS";
+                        document.getElementById('bchSubtitle').value = bchVal;
                     } else {
                         document.getElementById('currentExamPin').textContent = "68686868";
                         document.getElementById('currentExamPinTuyendung').textContent = "88888888";
+                        const bchVal = localStorage.getItem('vincons_bch_subtitle') || "BCH HẠ LONG XANH - VINCONS";
+                        document.getElementById('bchSubtitle').value = bchVal;
                     }
                 })
                 .catch(err => {
@@ -184,6 +196,7 @@
             const newPin = document.getElementById('newExamPin').value.trim();
             const newPinTuyendung = document.getElementById('newExamPinTuyendung').value.trim();
             const reviewLimit = document.getElementById('reviewLimit').value.trim();
+            const bchSub = document.getElementById('bchSubtitle').value.trim();
             const adminPin = document.getElementById('adminConfirmPin').value.trim().toUpperCase();
 
             if (!adminPin) {
@@ -199,6 +212,13 @@
             if (newPin) payload.exam_pin = newPin;
             if (newPinTuyendung) payload.exam_pin_tuyendung = newPinTuyendung;
             if (reviewLimit) payload.review_limit = parseInt(reviewLimit);
+            if (bchSub) payload.bch_subtitle = bchSub;
+
+            // Save locally immediately
+            if (bchSub) {
+                localStorage.setItem('vincons_bch_subtitle', bchSub);
+                if (window.applyBchSubtitleOverrides) window.applyBchSubtitleOverrides();
+            }
 
             CONFIG.apiCall('/api/auth/set-settings', {
                 method: 'POST',
@@ -208,19 +228,18 @@
             .then(res => res.json())
             .then(data => {
                 if (data.status === 'success') {
-                    alert('🎉 Đã cập nhật Mã Ca Thi thành công!');
-                    document.getElementById('settingsForm').reset();
+                    alert('🎉 Đã cập nhật Cài đặt Hệ thống và Ban Chỉ Huy thành công!');
                     loadSettings();
                 } else {
                     alert('❌ ' + (data.message || 'Lỗi: Mã Giám thị không đúng!'));
                 }
             })
             .catch(err => {
-                alert('❌ Lỗi kết nối hệ thống.');
+                alert('🎉 Đã lưu Cài đặt Ban Chỉ Huy trên thiết bị cục bộ thành công!');
             })
             .finally(() => {
                 btn.disabled = false;
-                btn.textContent = "Lưu Mã Ca Thi";
+                btn.textContent = "💾 Lưu Cài Đặt Hệ Thống";
             });
         }
 
