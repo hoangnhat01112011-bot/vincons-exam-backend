@@ -273,8 +273,12 @@ function showQuestion(index) {
             }
         };
         if (imgPanel) imgPanel.style.display = 'block';
+        const examContainer = document.getElementById('examContainer');
+        if (examContainer) examContainer.style.gridTemplateColumns = '1fr 1fr';
     } else if (imgPanel) {
         imgPanel.style.display = 'none';
+        const examContainer = document.getElementById('examContainer');
+        if (examContainer) examContainer.style.gridTemplateColumns = '1fr';
     }
 
     const numLabel = document.getElementById('questionNumLabel');
